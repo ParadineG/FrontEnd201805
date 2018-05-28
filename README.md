@@ -1,2 +1,2 @@
 # FrontEnd201805
-Koolituseks (For teaching) 
+Koolituseks (For teaching)!
