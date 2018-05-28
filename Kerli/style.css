@@ -1,0 +1,10 @@
+body {
+    font-family: 'Open Sans', Arial, Helvetica, Sans-serif;
+}
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+h1 {
+    color: #817fa0;
+}
