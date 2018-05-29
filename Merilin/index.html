@@ -1,13 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
     <head>
         <meta charset="utf-8">
         <title>Tiitel koolitusele</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <!--Valikuline:-->
         <base href="http://localhost/Merilin/" target="_blank">
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
+        
+        <link rel="stylesheet" href="style.css" type="text/css" title="default">
+        <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
+        <link rel="stylesheet" href="print.css" type="text/css" media="print">
+   
     </head>
+    <!--<body onoffline="update(false)">-->
     <body>
-        <h1>Tere tulemast!</h1>
+        <header>
+             <h1>Tere tulemast!</h1>
+             <h2>Front-End koolitusele!</h2>
+        </header>
+        <nav>
+            <ul>
+                <!--http://localhost/Merilin/-->
+                <li><a href="/Georg/">Georgi koduleht</a></li>
+                <li><a href="../Kerli/">Kerli koduleht</a></li>
+                <li><a href="https://google.com">Google koduleht</a></li>
+            </ul>
+        </nav>
+        <article id="artikkel1">
+            <header>
+              <h1>Lorem Ipsum</h1>
+              <p>Autor Juku Kask</p>
+            </header>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel iaculis libero, nec auctor elit. Mauris nec maximus ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare porttitor eros, sed convallis sem eleifend non. Vivamus ex magna, consequat eu nibh sit amet, fermentum efficitur ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+            <p>
+                Proin mollis malesuada tellus at semper. Vestibulum pulvinar tempus tellus eu feugiat. Fusce commodo ligula diam, sit amet mollis ligula ornare nec. Fusce eu justo sodales, ultricies augue in, consequat orci. Nullam suscipit malesuada est eu vestibulum. Nam et dui ut turpis porttitor lobortis. Etiam a rhoncus magna. Praesent a enim vitae nunc tempus pretium id non ligula. 
+            <footer>
+                <a href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
+            </footer>
+        </article>
+        <footer>
+            Copyright @ 2018
+        </footer>
     </body>
 </html>
