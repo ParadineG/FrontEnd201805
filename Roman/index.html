@@ -1,15 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
     <head>
         <meta charset="utf-8">
         <title>Tiitel koolitusele</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <!-- Valikuline: -->
         <base href="/Roman/"  target="_blank">
+        <!-- Põhi ikoonid -->
+        <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
+        
+        <!-- apple -->
+        <meta name="apple-mobile-web-app-title" content="Tradent">
+        <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+        <link rel="mask-icon" href="/icon/safari-pinned-tab.svg" color="#5bbad5">
+        <!-- legacy -->
+        <link rel="shortcut icon" href="/icon/favicon.ico">
+        <!-- microsoft -->
+        <meta name="msapplication-TileColor" content="#ffc40d">
+        <meta name="msapplication-config" content="/icon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
         
         <link rel="stylesheet" href="style.css" type="text/css" title="default">
+        <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
+        <link rel="stylesheet" href="print.css" type="text/css" media="print">
+        
         
     </head>
+    <!-- body onoffline="update(false)" -->
     <body>
-        <h1>Tere Tulemast!</h1>
+        <header>
+            <h1>Tere Tulemast!</h1>
+            <h2>Front-End koolitusele!</h2>
+        </header>
+        <nav>
+            <ul>
+                <!-- http://localhost/Roman/ -->
+                <li><a href="/Georg/">Georgi koduleht</a> </li>
+                <li><a href="../Kerli/">Kerli koduleht</a></li>
+                <li><a href="https://google.com">Google koduleht</a></li>
+            </ul>
+        </nav>
+        <article id="artikkel1">
+            <header>
+                <h1>Lorem Ipsum</h1>
+                <p>Autor: Juku Kask</p>
+            </header>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis erat diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Praesent congue ornare arcu, eu fringilla urna pharetra vel. Nunc ornare tellus non aliquet gravida. Morbi in neque tristique, posuere dolor a, volutpat metus. Nullam vitae commodo enim, sit amet tincidunt dui. Aliquam erat volutpat. Proin id justo sollicitudin, convallis purus at, laoreet nulla. Nunc tincidunt orci ac justo porta, in pellentesque purus efficitur. Sed et venenatis justo. Aliquam vel neque in diam rhoncus iaculis. Nunc eget mattis odio. Morbi ex velit, elementum vitae auctor sit amet, rutrum quis odio. Etiam id elit neque. Donec congue risus in eros laoreet, id ullamcorper nibh fermentum. 
+            </p>
+            <p>
+                Proin eget sollicitudin sapien, id consectetur nulla. In eget erat aliquet, dignissim diam sed, sollicitudin velit. Sed elementum orci a mattis pharetra. Nam non ultrices massa. Mauris tincidunt velit a diam aliquam, efficitur scelerisque leo finibus. Mauris id lobortis orci. Curabitur convallis dignissim lectus id vestibulum. In pretium aliquam pulvinar. Suspendisse non leo sed velit congue tincidunt. Etiam gravida tempor luctus. Donec faucibus velit ut condimentum porta. Mauris ut ultrices dui. Sed id ante ut lorem interdum fermentum. Fusce facilisis, ipsum et cursus tristique, augue nisi ornare felis, vitae elementum lacus dolor eget nunc. 
+            </p>
+            <footer>
+                <a href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
+            </footer>
+        </article>
+        <footer>
+            Copyright @ 2018
+        </footer>
     </body>
 </html>
