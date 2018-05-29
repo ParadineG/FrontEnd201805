@@ -3,4 +3,12 @@ h1  {
     }
 div.pealkiri{
     background-color: rgb(240, 211, 227);
+    padding: 1%;
+}
+body{
+    margin: 2%;
+    
+}
+header{
+    background-color: rgb(214, 214, 214);
 }
