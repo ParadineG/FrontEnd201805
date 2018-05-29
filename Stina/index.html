@@ -1,13 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
     <head>
         <meta charset="utf-8">
         <title>Tiitel koolitusele</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <!--Valikuline: -->
         <base href="http://localhost/Stina/" target="_blank">
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
+
+        <link rel="stylesheet" href="style.css" type="text/css" title="default">
+        <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
+        <link rel="stylesheet" href="print.css" type="text/css" media="print">
     </head>
+    <!--onoffline="update(false)"-->
     <body>
-        <h1>Tere tulemast!</h1>
+        <header>
+                <h1>Tere tulemast!</h1>
+                <h2>Front-end koolitusele</h2>
+        </header>
+         <nav>
+             <ul>
+                 <!--http://localhost/Roman/ 3 eri viisi linke lisada. kaks punkti liigub kausta võrra väljapoole ../../ kaks kausta väljapoole-->
+                 <li><a href="/Georg/"> Georgi koduleht</a></li>
+                 <li><a href="../Kerli/"> Kerli koduleht</a></li>
+                 <li><a href="https://google.com"> Google koduleht</a></li>
+             </ul>
+         </nav>  
+        <article id="artikkel1">
+                <header>
+                        <h1>Lorem Ipsum</h1>
+                        <p>Autor: Paju Oks</p>
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec metus libero, elementum ut aliquam eu, imperdiet in enim. Aenean quis est eu augue elementum sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse non molestie mauris. Vestibulum faucibus tellus nulla, pharetra blandit diam efficitur a. Curabitur lobortis feugiat orci, luctus laoreet mi consectetur et. Quisque sed massa tempus, ullamcorper nisl imperdiet, pellentesque risus. Etiam eget arcu sit amet mi luctus facilisis. Aenean magna mauris, condimentum scelerisque ligula accumsan, sagittis laoreet tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc nec erat lorem. Cras sodales justo sit amet dolor mattis, ut venenatis velit faucibus. Etiam sagittis metus id elit accumsan, quis commodo ligula facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam tempus nisl non leo tincidunt, ac molestie dolor venenatis. 
+                </p>
+                <p>
+                    Aliquam et porttitor odio, sit amet pretium eros. Fusce vestibulum augue vel mi venenatis, quis dictum dui sagittis. Proin eleifend massa non magna volutpat volutpat. Vivamus tristique porttitor neque. Donec non quam sed nisi interdum pellentesque. Nulla facilisi. Nunc accumsan placerat enim, pulvinar condimentum magna congue sed. Cras viverra accumsan lacus ac consequat. Quisque ullamcorper arcu vitae tempus tempus. In nulla ligula, scelerisque quis mollis in, tempus id urna. Phasellus efficitur congue lectus, in semper nibh pretium nec. Maecenas suscipit facilisis auctor. Vivamus in est rhoncus, tempus nibh eget, accumsan nisl. 
+                </p>
+                <footer>
+                    <a href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
+                </footer>
+        </article>
+        <footer>
+            Copyright @ 2018
+        </footer>
     </body>
 </html>
