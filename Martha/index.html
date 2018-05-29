@@ -10,43 +10,70 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
         <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
 
-
-
         <!-- Kommentaar -->
         <base href="http://localhost/Martha/" target="_blank">
         <link rel="stylesheet" href="style.css" type="text/css" title="default">
         <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
         <link rel="stylesheet" href="print.css" type="text/css" media="print">
-        
-
 
     </head>
     <!-- body onoffline="update(false)" -->
     <body>
         <header>
             <h1>Tere tulemast!</h1>
-            <h2>Koerad ja kassid!</h2>
+            <div class="pealkiri">
+            <section>
+                    <h2>Koerad ja kassid!</h2>
+                    <p>Lorem ipsum dolor sit amet.</p>
+            </section>
+            <section>
+                    <h2>Koerad ja kassid 2</h2>
+                    <p>Lorem ipsum dolor sit amet.</p>
+            </section>
+            </div>
+            
         </header>
         <!-- Menu jaoks kasutatakse-->
         <nav>
-            <ul>
+            <ol reversed>
                 <!--localhost/Martha-->
                 <li><a href="/Georg">Georgi koduleht</a></li>
                 <li><a href="../Kerli">Kerli koduleht</a></li>
                 <li><a href="https://google.com">Google koduleht</a></li>  
-            </ul>
+            </ol>
         </nav>
+        <main>
         <article id="artikkel1">
                 <header>
                         <h1>Lorem Ipsum</h1>
-                        <p>Autor: jaja</p>
+                        <p>Autor: Jaja</p>
+                        <aside>
+                            <p> <!-- aside- nö kaudselt seotud teema -->
+                               <blockquote>Koerad suudavad kõvemini haukuda kui kassid.</blockquote>
+                            </p>
+                        </aside>
                     </header>
                     <p>
-                            Nulla ante lectus, pellentesque accumsan ligula sit amet, imperdiet pretium neque. Mauris vestibulum massa vitae dignissim vestibulum.
+                          
+                        Nulla ante lectus, pellentesque accumsan ligula sit amet, imperdiet pretium neque. Mauris vestibulum massa vitae dignissim vestibulum.
+                    <figure> <!--aitab esile tuua pildi sisust-->
+                            <img src="/icon/favicon.svg" alt="Figure Example" width="150">
+                            <figcaption>Joonis 1</figcaption>
+                     </figure>
                     </p>
+                    <hr>
                     <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo nibh, vestibulum ac maximus at, facilisis at nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Donec ipsum nisi, luctus a tellus et, laoreet commodo lectus. Maecenas sit amet pharetra nisl. Phasellus in massa gravida, tempor augue at, luctus lacus.
                     </p>
+                    <hr>
+            </main>
+                <section>
+                        <ul>
+                                <li> esimene</a></li>
+                                <li> teine </a></li>
+                                <li> kolmas</a></li>  
+                            </ul>
+                </section>
                 <footer>
                     <a href="atrikkel1" target="_self">Tagasi artikli algusesse</a>
 
@@ -56,5 +83,16 @@
         <footer>
             Copyright @ 2918
         </footer>
+        <address> <br>
+            <a href="mailto:jukster(ät)gmail.com">
+                    jukster(ät)gmail.com
+            </a><br>
+                <a href="tel:45645645">
+                        45645645
+            </a><br><br>
+            Estonia 74011 <br>
+            Tallinn <br>
+           
+        </address>
     </body>
 </html>
