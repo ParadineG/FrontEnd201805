@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
     <Head>
         <meta charset="utf-8">
         <title>Tiitel koolitusele</title>
-        <!--_blank avab lingi uues tabis/aknas. <base>  on valikuline-->
-        <base href="http://localhost/Ott/" target="_blank">
-        <link rel="stylesheet" href="style.css" type="text/css">
-    </Head>
-    <body>
-        <h1>Tere Tulemast</h1>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--_blank avab lingi uues tabis/aknas. <base>  on valikuline-->
+        <base href="/Ott/" target="_blank">
+        <!--Põhi ikoonid-->
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
+        
+        <link rel="stylesheet" href="style.css" type="text/css" title="default">
+        <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
+        <link rel="stylesheet" href="print.css" type="text/css" media="print">
+    </Head>
+
+    <!-- body onoffline="update;{false}"-->
+    <body >
+        <header>
+                <h1>Tere Tulemast</h1>
+                <h2>Front-End Koolitusele</h2>
+        </header>
+            <nav>
+                <ul>
+                    <!--http://localhost/Ott/-->
+                    <li><a href="/Georg/">Georgi koduleht</a></li>
+                    <li><a href="../kerli/">Kerli koduleht</a></li>
+                    <li><a href="https://google.com">Google koduleht</a></li>
+                </ul>
+            </nav>
+        <article id="artikkel1">
+            <head>
+                    <h1>Lorem Ipsum</h1>
+                    <p>Autor: Juku</p>
+            </head>
+            <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum dolor ut elit ornare malesuada. Nunc sed leo tempus, semper nulla at, vestibulum enim. Nulla elementum, nisi a volutpat egestas, odio risus fringilla augue, non dapibus tellus lectus consequat enim. Sed vestibulum cursus purus eget facilisis. Curabitur nec sem consectetur, tincidunt velit in, dapibus erat. Integer vitae fringilla odio. Praesent euismod est quis justo consequat dapibus. Suspendisse fringilla, felis quis bibendum condimentum, turpis tortor pulvinar justo, quis sollicitudin ligula urna nec eros. Mauris placerat lectus eros, non ornare ex fringilla quis. Donec malesuada, sapien scelerisque pellentesque pellentesque, massa elit auctor velit, et iaculis nisi diam non sapien. Suspendisse rhoncus ornare semper. Quisque scelerisque molestie nulla, ac gravida enim ornare et. Mauris vitae est orci. Suspendisse at turpis blandit, rhoncus libero eget, gravida elit. Sed eget neque suscipit, porttitor massa lacinia, ornare sapien. Cras sed dictum tellus, quis aliquet enim. 
+            </p>
+            <p>
+                    Etiam malesuada gravida ornare. Morbi sit amet facilisis leo, eu auctor arcu. Aenean placerat vel urna sed efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut condimentum et mauris non elementum. Ut et felis vitae lectus tincidunt laoreet. Vivamus eget lectus at nisl molestie hendrerit. Sed malesuada odio sed justo accumsan congue. Ut sit amet accumsan sapien. Fusce rutrum nec enim et venenatis. Suspendisse dolor nibh, sollicitudin a quam eu, facilisis aliquet augue. 
+            </p>
+            <footer> 
+                <a href="#artikkel1" target="_self">Tagasi artikli algusesse.</a>
+            </footer>
+        </article>
+        <footer>
+            Copyright @ 2018
+        </footer>
     </body>
 </html>
