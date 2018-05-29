@@ -1,14 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="et">
     <head>
         <meta charset="utf-8">
-        <title>Tiitel koolistusele</title>
+        <title>Tiitel koolitusele</title>
+        
+        <meta name="vievport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon-16x16.svg">
         <!-- Valikuline:-->
         <base href="http://localhost/Marcus/" target="_blank">
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="style.css" type="text/css" title="default">
+        <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
+        <link rel="stylesheet" href="print.css" type="text/css" media="print">
     </head>
+    <!--<body onoffline="update(false)">-->
     <body>
+        <header>
+                <h1>Tere Tulemast!</h1>
+                <h2>Front-End koolitusele</h2>
+        </header>
         <font color="red">Tere uuesti!</font>
-        <h1>Tere Tulemast!</h1>
+        <nav>
+            <ul>
+                <!--"../Kerli/ => ../ viib kaustas sammu tagasi rootkausta-->
+                <li><a href="../Kerli/">Kerli koduleht</a></li>
+                <li><a href="/Georg/">Georgi koduleht</a></li>
+                <li><a href="https://google.com">Google koduleht</a></li>
+                <li><a href="/icon/favicon-16x16.png">Google koduleht</a></li>
+            </ul>
+        </nav>
+        <article id="artikkel1"> 
+                <header>
+                        <h1>Artikli pealkiri</h1>
+                        <p>Autor: Mina Ise</p>
+                </header>
+                <p>
+                    Tühi jutt ja Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus faucibus consequat sapien, non interdum ipsum. Sed sodales, dolor non consequat euismod, lectus mi cursus nunc, tincidunt viverra eros ex eget ligula. Morbi sit amet ligula urna. Aliquam ac risus lobortis, aliquet eros non, luctus nulla. In varius ac sapien sed fermentum. Phasellus egestas metus quis porttitor interdum. Nam a consectetur enim, eu elementum tellus. Sed eget elementum orci.
+                </p>
+                <p>
+                        Duis ultrices mauris ut lectus convallis iaculis. Morbi dictum non ligula in luctus. Nullam at blandit lacus, id lobortis enim. Integer interdum blandit magna, at facilisis dolor tempus ut. Donec mollis porttitor nibh, pretium eleifend est. Curabitur fermentum, neque vitae ullamcorper lacinia, metus lacus mattis erat, sed tincidunt erat tellus nec justo. Pellentesque varius urna quis pulvinar ultricies. Donec tincidunt, risus vitae pharetra efficitur, sapien dui tincidunt erat, ac sollicitudin odio erat eget felis. Aenean maximus euismod tellus ut fermentum. Ut finibus tellus lorem, ut ultrices risus iaculis vitae. Etiam rhoncus risus nisl, ut auctor leo blandit ut. Suspendisse tempus ipsum ligula, non mollis ex egestas ut. Sed volutpat, lacus nec egestas lacinia, ipsum magna fermentum est, id consequat nisi metus non justo. Aliquam lobortis, libero non aliquam efficitur, neque mi sagittis odio, non suscipit justo lectus sit amet lacus. Cras semper dui mauris, blandit mollis eros pellentesque a.
+                </p>
+                <footer>
+                    <a href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
+                </footer>
+        </article>
+        <footer>
+            Copyright @ 2018
+        </footer>
     </body>
 </html>
