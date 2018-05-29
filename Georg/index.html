@@ -13,28 +13,82 @@
         <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
         <link rel="stylesheet" href="print.css" type="text/css" media="print">
     </head>
-    <body class="home">
+    <body>
         <header>
-            <h1>HTMLi proov</h1>
-            <h2>Alapealkiri</h2>
+            <h1>Tere tulemast</h1>
+
+            <div class="pealkiri">
+            <section>
+                <h2>section tagiga h2 text</h2>
+                <p>Lorem ipsum mdasmdkj akd</p>
+            </section>
+            </div>
+            
+            <h2>ilma sectionita tekst</h2>
+            <p>Lorem ipsum mdasmdkj akd</p>
+
+            <h2>Lingid</h2>
         </header>
+
+        <nav>
+            <ul>
+                <li><a href="/Georg">Georgi koduleht</a></li>
+                <li><a href="../Kerli">Kerli koduleht</a></li>
+                <li><a href="https://google.com">Google koduleht</a></li>  
+            </ul>
+        </nav>
+
         <article id="artikkel1">
             <header>
-                <h1>Etiam facilisis nisl vel convallis tempor</h1>
+                <h1>Artikli pealkiri</h1>
                 <p>Autor: Juku</p>
+                <aside>
+                    <blockquote>Täna kirjutasin oodatust kauem aga kirjutatud sai.</blockquote>
+                </aside>
             </header>
+
             <p>
-                Sed malesuada nec nisi quis venenatis. In et sollicitudin mi. In et suscipit tellus, et fringilla risus. In ultricies vitae ante vitae ornare. Nunc semper tincidunt elit, at volutpat purus malesuada eu. Praesent ac mauris quis nunc porttitor semper at id eros. Integer vel urna ante. Aliquam congue felis id est dapibus gravida. Morbi pellentesque sem vitae sem bibendum, vel tempus mi congue. Curabitur eget laoreet dolor. Curabitur sit amet lacinia est. Aliquam sit amet magna in augue euismod auctor eu vel massa. Aliquam ac quam nec nisl aliquam semper. Praesent ac maximus eros. Etiam commodo maximus finibus.
+                Sed malesuada nec nisi quis venenatis. In et sollicitudin mi. 
+                <figure>
+                    <img src="/icon/favicon.svg" alt="Figure Example" width="150">
+                    <figcaption>Joonis 1</figcaption>
+                </figure>
+                In et suscipit tellus, et fringilla risus. In ultricies vitae ante vitae ornare. Nunc semper tincidunt elit, at volutpat purus malesuada eu. Praesent ac mauris quis nunc porttitor semper at id eros. Integer vel urna ante. Aliquam congue felis id est dapibus gravida. Morbi pellentesque sem vitae sem bibendum, vel tempus mi congue. Curabitur eget laoreet dolor. Curabitur sit amet lacinia est. Aliquam sit amet magna in augue euismod auctor eu vel massa. Aliquam ac quam nec nisl aliquam semper. Praesent ac maximus eros. Etiam commodo maximus finibus.
             </p>
+
+            <section>
+                <ol reversed="reversed" start="4">
+                    <li>list item 1</li>
+                    <li>list item 2</li>
+                    <li>list item 3</li>
+                    <li value="6">list item 4</li>
+                    <li>list item 5</li>
+                </ol>
+            </section>
+
             <p>
                 Nulla et neque ut urna imperdiet ornare nec id nisl. Quisque ullamcorper dictum nunc et mollis. Maecenas ac fringilla dui. Maecenas hendrerit felis sit amet leo convallis consequat. Donec ultrices placerat neque, ut porttitor libero. Nulla mollis libero quis pellentesque vestibulum. Fusce eu tincidunt leo, et consectetur purus. Etiam nisi ante, tempus et felis non, bibendum fermentum nulla. Cras eleifend nisl dignissim semper sodales. Morbi interdum lectus velit, ut faucibus dui accumsan et.
             </p>
+
             <footer>
                 <a href="#artikkel1" target="self">Tagasi algusesse</a>
             </footer>
         </article>
+
         <footer>
+            <address>
+                <a href="mailto:juku(ät)mail.ee">
+                    juku(ät)mail.ee
+                </a><br>
+                <a href="tel:+372554938">
+                        +37255493867
+                    </a><br>
+                    Estonia 74011 <br>
+                    Kulleste vald <br>
+                    Lambi tee 28 
+            </address>
             Copyright @ 2018
         </footer>
+
     </body>
 </html>
