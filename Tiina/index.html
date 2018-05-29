@@ -23,10 +23,20 @@
         <!--Seal on tavaliselt pealkiri-->
         <header>
             <h1>Tere tulemast!</h1>
-            <h2>Front-end koolitusele</h2>
+            <div class="pealkiri">
+                <section>
+                    <h2>Front-end koolitusele</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </section> 
+                <section>
+                        <h2>Front-end koolitusele 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </section> 
+            </div>
         </header>
+
         <nav>
-            <ul>
+            <ul style="list-style-type: none;">
                 <!--http://localhost/Tiina/-->
                 <!--Jätab alguse samaks ja otsib sealt seda kindlat kausta(otsib root kausta)-->
                 <li><a href="/Georg/">Georgi koduleht</a></li>
@@ -35,19 +45,29 @@
                 <li><a href="https://google.com">Google koduleht</a></li>
             </ul>
         </nav>
+
         <main> 
 
-        <!--Siis kui me soovime lehele teha artikli, siis see on vaja ära märkida. 
-            Tagidest oleneb kuidas masin aru saab sellest ja mis moodi mõistab seda otsingumootor-->
+        <!--css failis märgitakse id # märgiga-->
         <article id="artikkel1">
                 <header>
                         <h1>Lorem Ipsum</h1>
                         <p>Autor: Kuku Pai</p>
+                        <!--Kaudselt seotud elemendiga.-->
+                        <aside>
+                            <!--Võib lisada ka autori või muu teksti sinna sisse.-->
+                            <blockquote>Täna kirjutasin oodatust kauem, aga kirjutatud sai.</blockquote> 
+                        </aside>
                 </header> 
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    <figure>
+                        <img src="/icon/favicon.svg" alt="Ikoon" width="150" >
+                        <figcaption>Pilt.1  Ikoon</figcaption>
+                    </figure>
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p> 
                 <p>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
@@ -55,16 +75,65 @@
                     voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut 
                     labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi 
                     consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-                </p> 
+                </p>
+                <!--Tõmbab joone, et anda märku teema erinemisest/suunata tähelepanu, sellele, et teema vahetub-->
+                <hr>
+                <section>
+                    <!--reversed - boolean-->
+                    <ol reversed="reversed" start="4">
+                        <li>Esimene</li>
+                        <li value="2">Teine</li>
+                        <li value="2">Kolmas</li>
+                        <li>Neljas</li>
+                        <li>Viies</li>
+                    </ol>
+                </section>
+                <!--Jätab alles selle lõigu sellisena nagu on. Kasutatakse luuletuste kirjutamiseks.-->
+                <pre>
+    \   ^__^ 
+     \  (oo)\_______
+        (__)\       )\/\
+            ||----w |
+            ||     ||
+                </pre>  
                 <footer>
                     <!--a on ankur ja need kirjutatakse tavaliselt body'sse-->
                     <a href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
                 </footer>
         </article>
-        
         </main>
+        <article id="artikkel2">
+                <header>
+                        <h1>Lorem Ipsum</h1>
+                        <p>Autor: Kuku Pai</p>
+                        <!--Kaudselt seotud elemendiga.-->
+                        <aside>
+                            <!--Võib lisada ka autori või muu teksti sinna sisse.-->
+                            <blockquote>Täna kirjutasin oodatust kauem, aga kirjutatud sai.</blockquote> 
+                        </aside>
+                </header> 
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
+                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut 
+                    labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi 
+                    consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                </p>
+                <footer>
+                        <!--a on ankur ja need kirjutatakse tavaliselt body'sse-->
+                        <a href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
+                </footer>
+        </article>
         <footer>
+            <address>
+                <a href="mailto:kuku(ät)mail.ee">kuku(ät)mail.ee</a><br>
+                <a href="+372 5555 8888">+372 5555 8888</a><br>
+                Estonia 76607<br>
+                Keila<br>
+                Pargi 22
+            </address>
             Copyright @ 2018
+             
         </footer>
     </body>
 </html>
