@@ -2,7 +2,7 @@
  <html lang= "et">
     <head>
         <meta charset="utf-8">
-        <title>Tiitel Koolitusele</title>
+            <title>Tiitel Koolitusele</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,14 +20,16 @@
     <!-- body onoffline="update(false)" -->
     <body>
         <header>
+                <div class="tiitel">
             <h1>Tere tulemast!</h1>
+                </div>
             <div class="pealkiri">
             <section>
-                    <h2>Koerad ja kassid!</h2>
+                    <h2>Koerad!</h2>
                     <p>Lorem ipsum dolor sit amet.</p>
             </section>
             <section>
-                    <h2>Koerad ja kassid 2</h2>
+                    <h2>Kassid!</h2>
                     <p>Lorem ipsum dolor sit amet.</p>
             </section>
             </div>
@@ -46,43 +48,66 @@
         <article id="artikkel1">
                 <header>
                         <h1>Lorem Ipsum</h1>
+                        <hr>
                         <p>Autor: Jaja</p>
+                        <p> Was posted on: <time datetime="2018-05-29"> May 29</time></p>
                         <aside>
                             <p> <!-- aside- nö kaudselt seotud teema -->
-                               <blockquote>Koerad suudavad kõvemini haukuda kui kassid.</blockquote>
+                               <blockquote><small>Blockquote</small></blockquote>
                             </p>
                         </aside>
                     </header>
-                    <p>
-                          
-                        Nulla ante lectus, pellentesque accumsan ligula sit amet, imperdiet pretium neque. Mauris vestibulum massa vitae dignissim vestibulum.
-                    <figure> <!--aitab esile tuua pildi sisust-->
+                    <p>                        
+                        <figure> <!--aitab esile tuua pildi sisust-->
                             <img src="/icon/favicon.svg" alt="Figure Example" width="150">
                             <figcaption>Joonis 1</figcaption>
                      </figure>
+                     Nulla ante <abbr title="hüperteksti märgistuskeel">HTML</abbr> lectus, pellentesque accumsan ligula sit amet, imperdiet pretium neque. Mauris vestibulum massa vitae dignissim vestibulum.
                     </p>
+                        
+
                     <hr>
                     <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo nibh, vestibulum ac maximus at, facilisis at nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Donec ipsum nisi, luctus a tellus et, laoreet commodo lectus. Maecenas sit amet pharetra nisl. Phasellus in massa gravida, tempor augue at, luctus lacus.
+                            Lorem ipsum dolor <a href="#Definition" target="_self"> definition</a> amet, consectetur adipiscing elit. Donec justo nibh, vestibulum ac maximus at, facilisis at nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Donec ipsum nisi, luctus a tellus et, laoreet commodo lectus. Maecenas sit amet pharetra nisl. Phasellus in massa gravida, tempor augue at, luctus lacus.  Proin placerat ex rutrum, feugiat augue quis, tincidunt eros. Nam bibendum tempus interdum. Cras ultricies eros quis dictum interdum. Sed bibendum venenatis enim, ut facilisis leo. Proin commodo nec mauris quis ornare. Aenean et congue purus. Aenean posuere purus vitae sapien hendrerit porta. In nec ornare ante.  Proin placerat ex rutrum, feugiat augue quis, tincidunt eros. Nam bibendum tempus interdum. Cras ultricies eros quis dictum interdum. Sed bibendum venenatis enim, ut facilisis leo. Proin commodo nec mauris quis ornare. Aenean et congue purus. Aenean posuere purus vitae sapien hendrerit porta. In nec ornare ante.  Proin placerat ex rutrum, feugiat augue quis, tincidunt eros. Nam bibendum tempus interdum. Cras ultricies eros quis dictum interdum. Sed bibendum venenatis enim, ut facilisis leo. Proin commodo nec mauris quis ornare. Aenean et congue purus. Aenean posuere purus vitae sapien hendrerit porta. In nec ornare ante.
                     </p>
                     <hr>
             </main>
                 <section>
                         <ul>
-                                <li> esimene</a></li>
-                                <li> teine </a></li>
-                                <li> kolmas</a></li>  
+                                <li><strong>strong</strong></a></li>
+                                <li><em>em</em></a></li>
+                                <li><mark>mark</mark></a></li>
+                                <li><ins>insert</ins> <u>underline</u></li> 
+                                <li><del>delete</del> <s>strikethrough</s></li> 
+                                <li><small>small</small> <span>span</span></li>
+                                <li>H<sub>2</sub>O 5<sup>2</sup></li>
+                                <li>5 + <var>x</var> = 10</li>
+                                <li><kbd>Ctrl</kbd>+ <kbd>S</kbd></li>
                             </ul>
                 </section>
+                <section>
+                    <ol reversed="reversed" start="4">
+                        <li><data value="53">Juku</data></li>
+                        <li value="1"><data value="04">Kalle</data></li>
+                        <li><data value="73">Tobi</data></li>
+                    </ol>
+                </section>
+                <p>
+
+                </p>
                 <footer>
+                    <dl target"_self">
+                        <dt><dfn id="Definition">Definition</dfn></dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada eget nibh vel gravida. Sed egestas orci rhoncus eros eleifend, a malesuada lorem volutpat.</dd>
+                        <dt><dfn>Definition 2</dfn></dt>
+                        <dd> Nulla sit amet odio tempor, mollis tortor vel, imperdiet lacus. </dd>                   
+                    </dl>
                     <a href="atrikkel1" target="_self">Tagasi artikli algusesse</a>
-
                 </footer>
-
+                <br>
         </article>
-        <footer>
-            Copyright @ 2918
-        </footer>
+        <hr>
+        
         <address> <br>
             <a href="mailto:jukster(ät)gmail.com">
                     jukster(ät)gmail.com
@@ -92,7 +117,11 @@
             </a><br><br>
             Estonia 74011 <br>
             Tallinn <br>
-           
+            <br>
+            
+           <footer>
+            Copyright @ 2918
+        </footer>
         </address>
     </body>
 </html>
