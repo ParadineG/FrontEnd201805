@@ -13,28 +13,155 @@
         <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
         <link rel="stylesheet" href="print.css" type="text/css" media="print">
     </head>
-    <body class="home">
+    <body>
         <header>
-            <h1>HTMLi proov</h1>
-            <h2>Alapealkiri</h2>
+            <h1>Tere tulemast</h1>
+
+            <div class="pealkiri">
+            <section>
+                <h2>Pealkiri</h2>
+                <p>Lorem ipsum mdasmdkj akd</p>
+            </section>
+            </div>
+
+            <h2>Pealkiri 2</h2>
+            <p>Lorem ipsum mdasmdkj akd</p>
+
+            <h2>Lingid</h2>
         </header>
+
+        <nav>
+            <ul>
+                <li><a href="/Georg">Georgi koduleht</a></li>
+                <li><a href="../Kerli">Kerli koduleht</a></li>
+                <li><a href="https://google.com">Google koduleht</a></li>  
+            </ul>
+        </nav>
+
         <article id="artikkel1">
             <header>
-                <h1>Etiam facilisis nisl vel convallis tempor</h1>
+                <h1>Artikli pealkiri</h1>
                 <p>Autor: Juku</p>
+                <aside>
+                    <blockquote>
+                        <p>Täna kirjutasin oodatust kauem aga kirjutatud sai.</p>
+                        <cite>It's worth noting that the W3C specification says that a reference to a creative work, as included within a cite element, may include the name of the work’s author. However, the WHATWG specification for cite says the opposite: that a person’s name must never be included, under any circumstances.</cite>
+                    </blockquote>
+                </aside><hr>
             </header>
+            <section>
+                <ul reversed="" start="1">
+                    <li><strong>list item 1 (strong)</strong></li>
+                    <li><b>list item 2 (bold)</b></li>
+                    <li><em>list item 3 (em)</em></li>
+                    <li><i>list item 4 (italic)</i></li>
+                    <li><mark>item 5 (mark)</mark></li>
+                    <li><s>item 6 (strike)</s></li>
+                    <li><del>item 7 (delete)</del></li>
+                    <li><ins>item 8 (insert)</ins></li>
+                    <li><u>item 9 (underline)</u></li>
+                    <li><small>item 10 (small)</small></li>
+                    <li><span>item 11(span)</span></li>
+                    <li><sub>item 12(sub)</sub><sup>item 13(sup)</sup></li>
+                    <li><var>item 14 (var)</var></li>
+                    <li><kbd>Item 15 (Ctrl + S)</kbd></li>
+                    
+                </ul>
+            </section>
             <p>
-                Sed malesuada nec nisi quis venenatis. In et sollicitudin mi. In et suscipit tellus, et fringilla risus. In ultricies vitae ante vitae ornare. Nunc semper tincidunt elit, at volutpat purus malesuada eu. Praesent ac mauris quis nunc porttitor semper at id eros. Integer vel urna ante. Aliquam congue felis id est dapibus gravida. Morbi pellentesque sem vitae sem bibendum, vel tempus mi congue. Curabitur eget laoreet dolor. Curabitur sit amet lacinia est. Aliquam sit amet magna in augue euismod auctor eu vel massa. Aliquam ac quam nec nisl aliquam semper. Praesent ac maximus eros. Etiam commodo maximus finibus.
+                Lorem ipsum <a href="#definition" target="_self">definition</a> dolor sit amet consectetur adipisicing elit.
+                <figure>
+                    <img src="/icon/favicon.svg" alt="Figure Example" width="150">
+                    <figcaption>Joonis 1</figcaption>
+                </figure> 
+                Praesentium sequi necessitatibus perspiciatis! <q><strong>(q) tag</strong>Temporibus voluptas labore cupiditate iusto at, ducimus modi, praesentium minima sequi molestias vero quibusdam quo assumenda iste cumque?</q>                
+                Arvuti ütles: <samp>Error 7401: Clean buffer (samp)</samp>.
             </p>
+
+            <section>
+                <hr>
+                <pre>
+                        ###### #    #   ##   #    # #####  #      ######
+                        #       #  #   #  #  ##  ## #    # #      #      
+                        #####    ##   #    # # ## # #    # #      ##### 
+                        #        ##   ###### #    # #####  #      #      
+                        #       #  #  #    # #    # #      #      #      
+                        ###### #    # #    # #    # #      ###### ######
+                </pre>
+
+                <ol reversed="reversed" start="4">
+                    <li><data value="53">Juku</data></li>
+                    <li value="1"><data value="04">Kalvi</data></li>
+                    <li value="1"><data value="27">Kalle</data></li>
+                    <li><data value="73">Helen</data></li>
+                    <li><data value="92">Kalvi-Kalle</data></li>
+                </ol>
+            </section>
+
             <p>
-                Nulla et neque ut urna imperdiet ornare nec id nisl. Quisque ullamcorper dictum nunc et mollis. Maecenas ac fringilla dui. Maecenas hendrerit felis sit amet leo convallis consequat. Donec ultrices placerat neque, ut porttitor libero. Nulla mollis libero quis pellentesque vestibulum. Fusce eu tincidunt leo, et consectetur purus. Etiam nisi ante, tempus et felis non, bibendum fermentum nulla. Cras eleifend nisl dignissim semper sodales. Morbi interdum lectus velit, ut faucibus dui accumsan et.
+                <ul>
+                    <li>User: <bdi>jcranmer</bdi>: 12 posts.</li>
+                    <li>User: <bdi>bedIntruder</bdi>: 3500 posts</li>
+                    <li>User: <bdi>nähvits</bdi>: 1 posts</li>
+                </ul>
+                <ruby>
+                    漢 <rt> chinaPower</rt>
+                </ruby><br><br>
+                Lorem ipsum <abbr title="hüpertekst märgistuskeel">HTML</abbr>dolor sit amet consectetur, adipisicing elit. Optio doloribus velit nesciunt blanditiis vitae doloremque reprehenderit corporis. In sequi dignissimos, magnam dolore sunt labore fugiat unde natus accusantium fugit necessitatibus?
+                <br><br>
+                https://longurlmaker.com<wbr>
+                /go?id=z4Is.gd8c11rangy50farawayRedirx1drawn%2Bout60c3protractedTinyLinkstringylingeringfar%2BreachinglMyURLS
+                <wbr>Hurl86018lengthy7frunningoutstretched1111ilengthy2xSimURLSmallr800xSimURL361juEasyURLSimURL0022faraway1095xhighfar%2Boff1
+                <wbr>618sustained0Shima8961toutstretchedexpanded0stretch611220drawn%2BoutdwkTightURL8kDoioplongish10Xil14b101ShredURLTraceURLbp
+                toweringB6512TinyURL6towering0rGetShorty004bm5301URLprotracted0prolonged61MooURLy1948jspread%2Bout428u0t3stretchingfaraw<wbr>aylast
+                ing11ShredURLc2bDigBigexpandedX.se90a20TinyUR<wbr>L26WapURLr1cprolongedkelongatedc1f2c01loftylengthycontinuede7WapURL
+                gGetShorty2NutshellURLcontinued6a2lastingr5protracted1expandeddistantspread%2BoutURl.iersustainedNotLongSHurl3w2Sim
+                URL011xSnipURL02GetShorty2prolonged0f02f60blingeringIs.<wbr>gd301URLTinyLinktowering3d200t01osustained2WapURL90ShortURL1
+                1spread%2Boute02URLPieFly2toweringDwarfurl70elongated9s070SnipURL6Is.gd7spread%2Boutc0hy210vtcnf43Redirxb9148n1lingering6P
+                iURL16URLcutaspread%2BoutYATUCoutstr<wbr>etchede70lUlimita1e610ShortenURL1lnk.inenduringUlimit0U760l8m72011793v7020TightURLelong
+                atedYATUCt6UrlTeaetc91e5kspun%2Bout010d1e1b1Dwarfurl6Shortlinksb0sustained0enlarged6great1187e5e690URLCutter<wbr>1spun%2Bo
+                ut10drawn%2Bouttall4EasyURLDecentURLenduringd1eTraceURL5yGetShortyTinyLinkfar%2Boff1prolonged4cc<wbr>0stretcheddeepprotract
+                ed3f001elongate9018ystretchinglastingi7TinyURL7expanded910continuedremotef8sustainedz175lingeringcblof<wbr>typrolonged10079running0UlimitB6515Shrinkr00LiteURL1loftyoutstretchedclnk.in3farawayg5runningTinyLinkspread%2
+                Bout1stringy11c036greatfarawayst<wbr>retchingefar%2Boff31spread%2Bout4kDoiopMooURL53m19Beam.tolastingShredURL1s25ShimBeam.to8nstretchtowe
+                ring80StartURLShortURL4lengthened018Is.gdNotLongzWapU<wbr>RLNutshellURLe2spun%2Bout119elongated7elongated5outstretchedh8k1stri
+                ngyloftyShredURL84running06308d071Minilien3wg3UrlTealoftystretchedwCanURLfa<wbr>r%2Boff7atf104083towering820ganglingw35m1a063LiteURLt08
+                1NanoRef361lnk.in0deep0Shrinkr6e80far%2Boff9170Redirxy6btspread%2<wbr>Boutsustained10UlimitShortlinks2toweringGetShorty3ShrinkrDecentURLsu
+                staineddbg1nfShortURL331a001enlargedB65RedirxelongatedMinilien809UrlT
             </p>
+
+            <hr>
+            <header>
+                <h1>Lorem ipsum</h1>
+                <p>Autor: Juku Kask</p>
+                <p>Was posted on: <time datetime="2018-05-29">May 29</time></p>
+            </header>
+            <hr>
+
             <footer>
+                <dl>
+                    <dt><dfn id="definition">Definition</dfn></dt>
+                    <dd>The dd tag is used to describe a term/name in a description list.</dd>
+                    <dt>Item in a definition list</dt>
+                    <dd>The dd tag is used to describe a term/name in a description list.</dd>
+                </dl>
                 <a href="#artikkel1" target="self">Tagasi algusesse</a>
             </footer>
         </article>
+
         <footer>
-            Copyright @ 2018
+            <address>
+                <a href="mailto:juku(ät)mail.ee">
+                    juku(ät)mail.ee
+                </a><br>
+                <a href="tel:+372554938">
+                        +37255493867
+                    </a><br>
+                    Estonskyi 74011 <br>
+                    Kulleste vald <br>
+                    Lambi tee 28 
+            </address>
+            <small>Copyright @ 1918</small>
         </footer>
+
     </body>
 </html>

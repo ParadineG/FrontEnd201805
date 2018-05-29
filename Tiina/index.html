@@ -52,11 +52,14 @@
         <article id="artikkel1">
                 <header>
                         <h1>Lorem Ipsum</h1>
-                        <p>Autor: Kuku Pai</p>
+                        <p>Autor: <cite>Kuku Pai</cite></p>
                         <!--Kaudselt seotud elemendiga.-->
                         <aside>
                             <!--Võib lisada ka autori või muu teksti sinna sisse.-->
-                            <blockquote>Täna kirjutasin oodatust kauem, aga kirjutatud sai.</blockquote> 
+                            <blockquote>
+                                <p>Täna kirjutasin oodatust kauem, aga kirjutatud sai.</p>,
+                                <cite>Kuku Pai - raamatus "Elutee"</cite>
+                            </blockquote> 
                         </aside>
                 </header> 
                 <p>
@@ -67,25 +70,40 @@
                     </figure>
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
                     voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p> 
+                    <q>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</q>
+                    Arvuti ütles näiteks seda: <samp>Error. Not a number</samp>, kuidas sellele asjale lähenenda.
+                </p>
+                <section>
+                        <!--reversed - boolean-->
+                        <ul >
+                            <li><strong>strong</strong><b> bold</b></li>
+                            <li><em>em</em><i> italic</i></li>
+                            <li><mark>mark</mark></li>
+                            <li><ins>insert</ins> <u>underline</u></li>
+                            <li><del>delete</del> <s>strikethrough</s></li>
+                            <li><small>small</small> <span>span</span></li>
+                            <li>H<sub>2</sub>O  5<sup>2</sup></li>
+                            <li>5 + <var>x</var> = 10</li>
+                            <li><kbd>Ctrl</kbd> + <kbd>S</kbd></li>
+                        </ul>
+                </section> 
                 <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
+                    Sed ut perspiciatis <a href="#definition" target="_self">definiton</a> unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
                     architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
                     voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut 
                     labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi 
                     consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
                 </p>
-                <!--Tõmbab joone, et anda märku teema erinemisest/suunata tähelepanu, sellele, et teema vahetub-->
-                <hr>
+                
+                
                 <section>
                     <!--reversed - boolean-->
                     <ol reversed="reversed" start="4">
-                        <li>Esimene</li>
-                        <li value="2">Teine</li>
-                        <li value="2">Kolmas</li>
-                        <li>Neljas</li>
-                        <li>Viies</li>
+                        <li><data value="53">Juku</data></li>
+                        <li value="2"><data value="24">Kalle</data></li>
+                        <li value="2"><data value="99">Malle</data></li>
+                        <li><data value="18">Juhan</data></li>
+                        
                     </ol>
                 </section>
                 <!--Jätab alles selle lõigu sellisena nagu on. Kasutatakse luuletuste kirjutamiseks.-->
@@ -95,10 +113,21 @@
         (__)\       )\/\
             ||----w |
             ||     ||
-                </pre>  
+                </pre> 
+                <!--Tõmbab joone, et anda märku teema erinemisest/suunata tähelepanu, sellele, et teema vahetub-->
+                <hr> 
                 <footer>
+                    <dl>
+                        <dt><dfn id="definition">Definition</dfn></dt>
+                        <dd>A definiton is a statement of the meaning of the word</dd>
+                        <dt>Definition</dt>
+                        <dd>A definiton is a statement of the meaning of the word</dd>
+                        <dt>Definition</dt>
+                        <dd>A definiton is a statement of the meaning of the word</dd>
+                    </dl>
                     <!--a on ankur ja need kirjutatakse tavaliselt body'sse-->
                     <a href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
+
                 </footer>
         </article>
         </main>
@@ -106,6 +135,7 @@
                 <header>
                         <h1>Lorem Ipsum</h1>
                         <p>Autor: Kuku Pai</p>
+                        <p>Was posted on:<time datetime="2018-05-29"> May 29</time></p>
                         <!--Kaudselt seotud elemendiga.-->
                         <aside>
                             <!--Võib lisada ka autori või muu teksti sinna sisse.-->
@@ -113,15 +143,22 @@
                         </aside>
                 </header> 
                 <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
+                    Sed ut <abbr title="Hüpertekst märgistuskeel.">HTML</abbr> perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
                     architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
                     voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut 
                     labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi 
                     consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
                 </p>
+                <p>
+                    <ruby>
+                        漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
+                        字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+                    </ruby>
+                    <!--<wbr>ühe pika teksti lõikamiseks visuaalselt-->
+                </p>
                 <footer>
                         <!--a on ankur ja need kirjutatakse tavaliselt body'sse-->
-                        <a href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
+                        <a href="#artikkel2" target="_self">Tagasi artikli algusesse</a>
                 </footer>
         </article>
         <footer>
@@ -132,8 +169,7 @@
                 Keila<br>
                 Pargi 22
             </address>
-            Copyright @ 2018
-             
+            <small>Copyright @ 2018</small>    
         </footer>
     </body>
 </html>
