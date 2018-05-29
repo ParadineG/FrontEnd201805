@@ -2,15 +2,39 @@
 <html lang="et">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Uus leht</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Valikuline-->
         <base href="http://localhost/Kerli/" target="_blank">
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <title>Uus leht</title>
+        <link rel="shortcut icon" type="image/png" sized="32x32" href="/icon/favicon-32x32.png">
+        <link rel="shortcut icon" type="image/png" sized="16x16" href="/icon/favicon-16x16.png"> 
+        <link rel="shortcut icon" type="svg/xml" sized="any" href="/icon/favicon.svg">       
+        <link rel="stylesheet" href="style.css" type="text/css" title="default">
+        <link rel="stylesheet" href="print.css" type="text/css" media="print">
+        <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
     </head>
     <body class="home">
-        <div class="container">
+        <header>
             <h1>HTMLi proov</h1>
-        </div>
+            <h2>Alapealkiri</h2>
+        </header>
+        <article id="artikkel1">
+            <header>
+                <h1>Etiam facilisis nisl vel convallis tempor</h1>
+                <p>Autor: Juku</p>
+            </header>
+            <p>
+                Sed malesuada nec nisi quis venenatis. In et sollicitudin mi. In et suscipit tellus, et fringilla risus. In ultricies vitae ante vitae ornare. Nunc semper tincidunt elit, at volutpat purus malesuada eu. Praesent ac mauris quis nunc porttitor semper at id eros. Integer vel urna ante. Aliquam congue felis id est dapibus gravida. Morbi pellentesque sem vitae sem bibendum, vel tempus mi congue. Curabitur eget laoreet dolor. Curabitur sit amet lacinia est. Aliquam sit amet magna in augue euismod auctor eu vel massa. Aliquam ac quam nec nisl aliquam semper. Praesent ac maximus eros. Etiam commodo maximus finibus.
+            </p>
+            <p>
+                Nulla et neque ut urna imperdiet ornare nec id nisl. Quisque ullamcorper dictum nunc et mollis. Maecenas ac fringilla dui. Maecenas hendrerit felis sit amet leo convallis consequat. Donec ultrices placerat neque, ut porttitor libero. Nulla mollis libero quis pellentesque vestibulum. Fusce eu tincidunt leo, et consectetur purus. Etiam nisi ante, tempus et felis non, bibendum fermentum nulla. Cras eleifend nisl dignissim semper sodales. Morbi interdum lectus velit, ut faucibus dui accumsan et.
+            </p>
+            <footer>
+                <a href="#artikkel1" target="self">Tagasi algusesse</a>
+            </footer>
+        </article>
+        <footer>
+            Copyright @ 2018
+        </footer>
     </body>
 </html>
