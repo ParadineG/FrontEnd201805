@@ -23,20 +23,39 @@
             <form accept-charset="UTF-8" autocomplete="on" method="GET" action="" >
                 <!--for seostatakse id'ga.Id peab olema alati unikaalne. Kui vaja kutsuda rohkem, siis on korrektseks kasutuseks klass.-->
                 <!--disabled - nupp ei tööta ja on välja lülitatud. Autofocus - nupp mida vajutatakse kui vajutada enterit-->
+                <label for="hidden">Varjatud: </label>
+                <input type="hidden" id="hidden" name="hidden" value=""><br>
                 <label for="nimi">Nimi: </label>
-                <input id="nimi" name="eesnimi"><br>
+                <input type="text" id="nimi" name="eesnimi" required><br>
+                <label for="search">Otsing: </label>
+                <input type="search" id="search" name="search" value="Tere!" readonly><br>
                 <!--telephone URL E-mail Password Date Time Number Range Color Checkbox Radio-->
                 <label for="tel">Telefon: </label>
-                <input type="tel" id="tel" name="tel" /><br>
+                <input type="tel" id="tel" name="tel" pattern="[+0-9]{9}" title="Numbers and + only" /><br>
                 
                 <label for="URL">URL: </label>
-                <input type="URL" id="URL" name="URL"><br>
+                <input type="URL" id="URL" name="URL" list="kodukad"><br>
+                <datalist id="kodukad">
+                    <option value="http://neti.ee">
+                    <option value="http://google.ee">
+                    <option value="http://neti.ee">
+                </datalist>
+                <select name="valik" multiple>
+                    <optgroup label="1">
+                    <option value="http://neti.ee" label="neti">
+                    <option value="http://google.ee">
+                    <option value="http://neti.ee"></optgroup>
+                    <optgroup label="2">
+                    <option value="http://neti.ee" label="neti">
+                    <option value="http://google.ee">
+                    <option value="http://neti.ee"></optgroup>
+                </select>
                 <label for="email">E-mail: </label>
-                <input type="email" id="email" name="email" ><br>
+                <input type="email" id="email" name="email" placeholder="nimi@mail.ee"><br>
                 <label for="parool">Password: </label>
-                <input type="password" id="parool" name="password"><br>
+                <input type="password" id="parool" name="password" minlenght="3" maxlength="6"><br>
                 <label for="date">Kuupäev: </label>
-                <input type="date" id="date" name="date" ><br>
+                <input type="date" id="date" name="date" min="1999" max="2020"><br>
                 <label for="month">Kuu: </label>
                 <input type="month" id="month" name="month" ><br>
                 <label for="week">Nädal: </label>
@@ -44,12 +63,12 @@
                 <label for="time">Time: </label>
                 <input type="time" id="time" name="time" ><br>
                 <label for="file">File: </label>
-                <input type="file" id="file" name="file" ><br
+                <input type="file" id="file" name="file" accept="image/*"><br
 
                 <label for="number">Number: </label>
                 <input type="number" id="number" name="number" ><br>
                 <label for="range">Vahemik: </label>
-                <input type="range" id="range" name="range" ><br>
+                <input type="range" id="range" name="range" step="20"><br>
                 <label for="color">Värv: </label>
                 <input type="color" id="color" name="color" ><br><br>
                 
@@ -60,6 +79,11 @@
                 <label for="checkbox">Kass: </label>
                 <input type="checkbox" id="checkbox" name="checkbox"  value="Kass"><br>
 
+                <input type="button" disabled value="Nupp">
+                <input type="reset" value="Reset">
+                <input type="submit" formmethod="GET" autofocus value="saada">
+                <input type="image" src="/icon/favicon-32x32.png" alt="Nupuke">
+               
                 <button type="button" disabled>Nupp</button>
                 <button type="reset">Reset</button>
                 <button type="submit" formmethod="GET" autofocus>Saada</button>
