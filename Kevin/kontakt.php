@@ -61,7 +61,7 @@
 </div>
 
 <div class="sisestanupp">
-<input class="sisestus" style="border:none" type="submit" value="Sisesta">
+<input class="sisestus" style="border:none" type="submit1" value="Sisesta">
 </div>	
 </form>
 </div>
@@ -71,7 +71,7 @@
 <?php
 include 'connect.php';
 
-$sql ="SELECT `kliendi_andmed`.ID,`kliendi_andmed`.`eesnimi`,`kliendi_andmed`.`perenimi`,`kliendi_andmed`.`email`,`kliendi_andmed`.`telefoninr.`,
+$sql ="SELECT `kliendi_andmed`.ID,`kliendi_andmed`.`eesnimi`,`kliendi_andmed`.`perenimi`,`kliendi_andmed`.`email`,`kliendi_andmed`.`telefoninr.`
 FROM `kliendi_andmed`";
 
 $result = $conn->query($sql);
