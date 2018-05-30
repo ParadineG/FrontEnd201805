@@ -30,18 +30,22 @@
    </body>
    <body>
         <main>
-            <form accept-charset="utf-8" autocomplete="on" method="GET" action="index.html"> <!--siin kasutan meetodit POST/GET, novalidate valideerimissüsteemid vaikimisi ei toimi-->
+            <form accept-charset="utf-8" autocomplete="on" method="GET" action=""> <!--siin kasutan meetodit POST/GET, novalidate valideerimissüsteemid vaikimisi ei toimi-->
                 <label for="nimi">Nimi:</label>
-                <input id="nimi" name="eesnimi"><br> 
+                <input type="hidden" id="hidden" name="hidden" value="peidetud"><br>
+
+                <label for="search">Otsing:</label>
+                <input type="search" id="search" name="search" value="tere" readonly><br>
+
                 <label for="parool">Password:</label>
-                <input type="password" id="parool" name="parool"><br>
+                <input type="password" id="parool" name="parool" minlength="3" maxlength="6"><br>
                 <!--id peab olema alati unikaalne nimetus, eesnimi tuleb kasti sisse kui saada vajutad-->
                 
                 <label for="tel">Telefon:</label><!--tel -telefoni nr sisestamiseks, saab määrata max-min suurused, nutiseadmetel annab nr klaviatuuri-->
-                <input type="tel" id="tel" name="tel"><br>
+                <input type="tel" id="tel" name="tel" pattern="[+0-9]{9}" title="Numbers and + only"><br> <!--[+0-9]{9} =regular expression -->
                 
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date"><br>
+                <label for="date">Kuupäev:</label>
+                <input type="date" id="date" name="date" min="1979-01-01" max="201-01-01"><br>
                 
                 <label for="month">Kuu:</label>
                 <input type="month" id="month" name="month"><br>
@@ -56,16 +60,34 @@
                 <input type="datetime-local" id="datetime-local" name="datetime-local"><br>
                 
                 <label for="file">Fail:</label> <!--tuleb kasutada POSTiga-->
-                <input type="file" id="file" name="file"><br>
+                <input type="file" id="file" name="file" accept="image/*"><br>
 
                 <label for="url">URL:</label><!--url-käsitleb veebilehe aadressi, vormide täitmiseks, nt lisad kodulehe -->
-                <input id="url" name="url"><br>
+                <input id="url" name="url" list="kodukad"><br>
+                    <datalist id="kodukad">
+                        <option value="http://neti.ee" label="Neti">
+                        <option value="http://google.ee">
+                        <option value="http://postimees.ee">
+                    </datalist>
+                    <select name="valik" multiple>
+                    <optgroup label="1">    
+                        <option value="http://neti.ee" label="Neti">
+                        <option value="http://google.ee" label="Google" selected>
+                        <option value="http://postimees.ee" label="Postimees" disabled>
+                    </optgroup>
+                    <optgroup label="2">
+                        <option value="http://neti.ee" label="Neti">
+                        <option value="http://google.ee" label="Google" selected>
+                        <option value="http://postimees.ee" label="Postimees" disabled>
+                    </optgroup>
+                    </select>
+                    
                 
                 <label for="e-mail">E-mail:</label>
-                <input id="e-mail" name="e-mail"><br>
+                <input id="e-mail" name="e-mail" placeholder="nimi@mail.ee" multiple><br> <!--multiple laseb mitu e-posti panna-->
                 
                 <label for="range">Vahemik:</label>
-                <input type="range" id="range" name="range"><br> <!--kasutuses kus vaja helitugevust, seal kasutada kus vaja % nt, et alati 1-100 number, võimalik stepi panna-->
+                <input type="range" id="range" name="range" step="20"><br> <!--kasutuses kus vaja helitugevust, seal kasutada kus vaja % nt, et alati 1-100 number, võimalik stepi panna-->
                 
                 <label for="color">Värv:</label>
                 <input type="color"id="color" name="color"><br>
@@ -77,7 +99,17 @@
                 <input type="radio"id="radio1" name="radio">
                 <label for="radio2">Naine:</label>
                 <input type="radio"id="radio2" name="radio"><br>
-
+                
+                <input type="button" disabled value="Nupp"> <!--võib ka nii...buttoni puhul inputiga (button allpool)-->
+                <input type="reset" value="Uuenda">
+                <input type="submit" formmethod="GET" autofocus value="Saada"> 
+                <input type="image" src="/icon/Favicon-32x32.png" alt="Nupuke"> 
+                <select name="valik">
+                        <option value="http://neti.ee" label="Neti">
+                        <option value="http://google.ee">
+                        <option value="http://postimees.ee">
+                </select>
+            
                 <button type="button" disabled>Nupp</button> <!--muudab nähtamatuks-->
                 <button type="reset">Uuenda</button>
                 <button type="submit" autofocus>Saada</button> <!--autofocus automaatselt muudab aktiivseks-->
