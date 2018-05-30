@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Valikuline-->
         <base href="http://localhost/Kerli/" target="_blank">
+        <meta name ="referrer" content="strict-origin-when-cross-origin">
         <title>Uus leht</title>
         <link rel="shortcut icon" type="image/png" sized="32x32" href="/icon/favicon-32x32.png">
         <link rel="shortcut icon" type="image/png" sized="16x16" href="/icon/favicon-16x16.png"> 
@@ -107,6 +108,13 @@
                     Sed malesuada <abbr title="Hypertext markup language">HTML</abbr> nec nisi quis venenatis. In et sollicitudin mi.In et suscipit tellus, et fringilla risus. In ultricies vitae ante vitae ornare. Nunc semper tincidunt elit, at volutpat purus malesuada eu. Praesent ac mauris quis nunc porttitor semper at id eros. Integer vel urna ante. Aliquam congue felis id est dapibus gravida. Morbi pellentesque sem vitae sem bibendum, vel tempus mi congue. Curabitur eget laoreet dolor. Curabitur sit amet lacinia est. Aliquam sit amet magna in augue euismod auctor eu vel massa. Aliquam ac quam nec nisl aliquam semper. Praesent ac maximus eros. Etiam commodo maximus finibus.
                 </p>
                 <p>
+                    <picture>
+                        <source srcset="/icon/favicon.svg" media="(min-width: 1080px)">
+                        <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x" alt="Pildi näide" width="40" referrerpolicy="unsafe-url" crossorigin="" longdesc="#description">
+                    </picture>
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="10" stroke="yellow" stroke-width="1" fill="red" />
+                    </svg>                 
                     http://www.google.com/<wbr>jhsoihokaanjpebbbbbbbbbbbfasobpobbasbb<wbr>
                 </p>
                 <section>
@@ -124,6 +132,14 @@
                     <a href="#artikkel1" target="_self">Tagasi algusesse</a>
                  </footer>
             </article>
+            <hr>
+            <section>
+                <video muted loop width="200px" poster="/icon/favicon-16x16.png" controls preload>
+                    <source src="/Sky.mp4">
+                    <track kind="subtitles" src="subs-en.vtt" srclang="en" label="English">
+                        Tugi puudub
+                </video>
+            </section>
         </main><hr>
         <footer>
             <address>
