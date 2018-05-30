@@ -19,9 +19,9 @@
 		<div class="navigatisoon">
 			<nav id="nav" role='navigation'>
 		  		<ul>
-		    		<!--<li class="active"><a href="index.html">Avaleht</a></li>-->
-		    		<li><a href="/kevin/index.html">Avaleht</a></li>
+		    		<li><a href="index.html">Avaleht</a></li>-->
 		    		<li><a href="/kevin/portfolio.html">Portfoolio</a></li>
+		    		<li class="active"><a href="/kevin/kontakt.php">Kontakt</a></li>
 		  		</ul>
 			</nav>
 		</div>
@@ -46,12 +46,12 @@
 				<br />
 			<label>E-mail</label>
 				<div class="lahter">
-					<input type="email" name="email" placeholder="example@example.com" />
+					<input type="email" name="email" placeholder="example@example.com" multiple />
 				</div>
 				<br />
 			<label>Telefoni nr.</label>
-				<div class="lahter">	
-					<input type="tel" name="telefoninr" placeholder="+37255556666" />
+				<div class="lahter">
+					<input type="tel" name="telefoninr" pattern="[+0-9]{12}" title="numbers and + only" />
 				</div>
 				<br />
 					
@@ -71,7 +71,7 @@
 <?php
 include 'connect.php';
 
-$sql ="SELECT `kliendi_andmed`.ID,`kliendi_andmed`.`eesnimi`,`kliendi_andmed`.`perenimi`,`kliendi_andmed`.`email`,`kliendi_andmed`.`telefoninr.`,
+$sql ="SELECT `kliendi_andmed`.ID,`kliendi_andmed`.`eesnimi`,`kliendi_andmed`.`perenimi`,`kliendi_andmed`.`email`,`kliendi_andmed`.`telefoninr.`
 FROM `kliendi_andmed`";
 
 $result = $conn->query($sql);
@@ -83,7 +83,7 @@ if ($result->num_rows > 0) {
             <th>Eesnimi</th>
             <th>Perenimi</th>
             <th>Email</th>
-            <th>elefoni nr.</th>
+            <th>Telefoni nr.</th>
             <th>Kustuta</th>
         </tr>";
     echo "<form action='kustuta.php' method='post'>";
