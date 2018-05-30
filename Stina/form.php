@@ -22,8 +22,10 @@
         <main>
             <form accept-chartset="utf-8" autocomplete="on" 
             method="GET" action="">
+                <label for="hidden">Varjatud: </label>
+                <input type="hidden" id="hidden" name="hidden" value="peidetud"><br
                 <label for="nimi">Nimi: </label>
-                <input id="nimi" name="eesnimi"><br>
+                <input id="nimi" name="eesnimi" required><br>
                 <label for="email">E-mail: </label>
                 <input type="email" id="email" name="email" placeholder="nimi@mail.ee" multiple><br>
                 <label for="password">Parool: </label>
