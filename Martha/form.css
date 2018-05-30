@@ -1,0 +1,14 @@
+main{
+    padding-top: 0.2cm;
+    padding-bottom: 0.2cm;
+    padding-left: 0.1cm;
+    padding-right:0.1cm;
+    border: 1px solid;
+    outline-style: double;
+    outline-color: green;
+
+}
+body{
+    margin-top: 1.75cm;
+    margin-left: 10px;
+}
