@@ -6,7 +6,8 @@
 	<script type="text/javascript" src="java.js"></script>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<base href="http://localhost/kevin">
+	<base href="/kevin/">
+	<meta name="referrer" content=""><!--no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin, origin-when-crossorigin, strict-origin-when-crossorigin, unsafe-url-->
 	<link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
 	<link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
@@ -46,6 +47,21 @@
 		
 	</article>
 	<section>
+		<!--<picture>
+			<source srcset="/icon/favicon.svg" media="(min-width:1080px)">
+			<img src="/icon/favicon-32x32.png" srcset="/icon/favicon-32x32.png" alt="icon">
+		</picture>-->
+		<!--
+			<svg height="100" width="100">
+				<circle cx="50" cy="50" r="10" stroke="green" stroke-width="5" fill="yellow"/>
+			</svg>
+			<video  muted loop width="200px" poster="/icon/favicon-16x16.png" controls preload>
+				<source src"/Sky.mp4">
+				<track kind="subtitles" src="subtiite-eng.vtt" srclang="eng" label="English">
+				video tugi puudub!
+			</video>
+		-->
+
 		<p>
 			Curabitur rutrum, <abbr title="hüperteksti märgistuskeel">HTML</abbr> purus at fermentum sagittis, justo arcu efficitur enim, sed venenatis massa est nec nisl. Phasellus gravida felis at consequat semper. Vestibulum interdum porttitor facilisis. Curabitur quis tempus nunc. Etiam id erat lorem.
 		</p>
@@ -53,6 +69,27 @@
 			<li><kbd>Ctrl</kbd> + <kbd>S</kbd></li>
 			<li>5 + <var>x</var> = 10</li>
 		</ul>
+		<table border="1">
+			<caption>pealkiri</caption>
+			<thead>
+				<tr>
+					<th>Päis</th>
+					<th>Päis</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td>Jalus</td>
+					<td>Jalus</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>Keha</td>
+					<td>Keha</td>
+				</tr>
+			</tbody>
+		</table>
 	</section>
 	<footer>
 		<a id="nupp" href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
@@ -61,6 +98,14 @@
 				<dd>Curabitur rutrum, purus at fermentum sagittis, justo arcu efficitur enim</dd>
 			</dl>	
 	</footer>
+
+<form action="/kevin/create.php">
+    <input type="submit" value="loo andmebaas" />
+</form>
+<form action="/kevin/tabel.php">
+    <input type="submit" value="loo tabel" />
+</form>
+
 
 </body>
 </html>
