@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="et">
+    <head>
+        <!-- Kodeering -->
+        <meta charset="utf-8">
+        <!-- Lehe nimi -->
+        <title>Mauri teine leht</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="/Mauri/" target="_self">
+        <!-- Referrer tüübid: no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin
+        origin-when-crossorigin, strict-origin-when-crossorigin, unsafe-url -->
+        <meta name="referrer" content="strict-origin-when-crossorigin">
+        <!-- Ikoonid -->
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
+        <!-- Stiilid -->
+        <link rel="stylesheet" href="style.css" type="text/css" title="default">
+        <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
+        <link rel="stylesheet" href="print.css" type="text/css" media="print">
+        <!-- Valikuline kommentaar -->
+    </head>
+    <body>
+        <main>
+            <!-- -->
+            <form accept-charset="utf-8" autocomplete="on" method="GET" action="">
+                <!-- Nimi -->
+                <label for="nimi">Nimi:</label>
+                <input type="text" id="nimi" name="eesnimi" required>
+                <br>
+                <!-- Telefon -->
+                <label for="tel">Telefon:</label>
+                <input type="tel" id="tel" name="tel" placeholder="+372" pattern="[+0-9]{12}" title="Numbers and + only">
+                <br>
+                <!-- URL -->
+                <label for="url">URL:</label>
+                <input type="url" id="url" name="url" list="kodukad">
+                <!-- Datalist listide jaoks -->
+                <datalist id="kodukad">
+                    <option value="http://neti.ee" label="Neti">
+                    <option value="http://google.com">
+                    <option value="http://postimees.ee">
+                </datalist>
+                <br>
+                <!-- E-mail -->
+                <label for="email">E-mail:</lable>
+                <input type="email" id="email" name="email" placeholder="nimi@email.com" multiple>
+                <br>
+                <!-- Password -->
+                <lable for="parool">Parool:</label>
+                <input type="password" id="parool" name="parool" minlength="3" maxlength="6">
+                <br>
+                <!-- Kuupäev -->
+                <lable for="kuupäev">Kuupäev:</lable>
+                <input type="date" id="kuupäev" name="kuupäev" min="1979-01-01" max="2012-01-01">
+                <br>
+                <!-- Kuu -->
+                <lable for="kuu">Kuu:</lable>
+                <input type="month" id="kuu" name="kuu">
+                <br>
+                <!-- Nädal -->
+                <lable for="nädal">Nädal:</lable>
+                <input type="week" id="nädal" name="nädal">
+                <br>
+                <!-- Aeg -->
+                <lable for="aeg">Aeg:</lable>
+                <input type="time" id="aeg" name="aeg">
+                <br>
+                <!-- Kuupäev + Aeg -->
+                <lable for="kohalik aeg">Kuupäev + kell:</lable>
+                <input type="datetime-local" id="kohalik aeg" name="kohalik aeg">
+                <br>
+                <!-- Number -->
+                <lable for="number">Number:</lable>
+                <input type="number" id="number" name="number">
+                <br>
+                <!-- Fail -->
+                <lable for="fail">Fail:</lable>
+                <input type="file" id="fail" name="fail" accept="image/*">
+                <br>
+                <!-- Vahemik -->
+                <lable for="vahemik">Vahemik:</lable>
+                <input type="range" id="vahemik" name="vahemik" step="20">
+                <br>
+                <!-- Värv -->
+                <lable for="värv">Värv:</lable>
+                <input type="color" id="värv" name="värv">
+                <br>
+                <!-- Linnuke -->
+                <lable for="linnuke">Linnukese kast:</lable>
+                <input type="checkbox" id="linnuke" name="linnuke">
+                <br>
+                <!-- Üksik valik -->
+                <lable for="valik1">1:</lable>
+                <input type="radio" id="valik1" name="valik" value="1">
+                <br>
+                <lable for="valik2">2:</lable>
+                <input type="radio" id="valik2" name="valik" value="2">
+                <br>
+                <lable for="valik3">3:</lable>
+                <input type="radio" id="valik3" name="valik" value="3">
+                <br>
+                <!-- Otsing, hetkel ei erine tavalisest text tüüpi inputist -->
+                <lable for="otsing">Otsing:</lable>
+                <input type="search" id="otsing" name="otsing" value="tere" readonly>
+                <br>
+                <!-- Peidetud input -->
+                <label for="peidus">Peidus:</label>
+                <input type="hidden" id="peidus" name="peidus" value="See on peidetud tekst">
+                <br>
+                <!-- Valikvastus -->
+                <select name="select">
+                    <optgroup label="1">
+                        <option value="http://neti.ee" label="Neti">
+                        <option value="http://google.com" label="Google" selected>
+                        <option value="http://postimees.ee" label="Postimees" disabled>
+                    </optgroup>
+                    <optgroup label="2">
+                        <option value="http://neti.ee" label="Neti">
+                        <option value="http://google.com" label="Google" selected>
+                        <option value="http://postimees.ee" label="Postimees" disabled>
+                    </optgroup>
+                </select>
+                <!-- Input tüüpi nupud -->
+                <input type="button" value="Nupp">
+                <input type="reset" value="Reset">
+                <input type="submit" value="Saada" formmethod="GET">
+                <br>
+                <!-- Pildiga nupp -->
+                <input type="image" src="/icon/favicon-32x32.png" alt="Nupuke">
+                <br>
+                <!-- Nupud -->
+                <button type="button" disabled autofocus>Vajuta</button>
+                <button type="submit" formmethod="GET">Saada</button>
+                <button type="reset">Reset</button>
+            </form>
+
+            <!-- Ajutine php kood
+
+            <?php
+            if(isset($_POST['eesnimi']))
+                echo '<p>'.$_POST['eesnimi'].'</p>'; 
+            ?>
+
+            -->
+        </main>
+
+
+    </body>
+</html>
