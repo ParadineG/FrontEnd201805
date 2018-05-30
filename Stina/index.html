@@ -8,6 +8,11 @@
 
         <!--Valikuline: -->
         <base href="http://localhost/Stina/" target="_blank">
+        <meta name="referrer" content="strict-origin-when-crossorigin">
+        <!--no-referrer no-referrer-when-downgrade(turvaliselt ebaturvalisele lehele liikudes infot ei saa kätte) same-origin(info liigub veebilehe siseselt) 
+            origin(ainult domaini nimi) strict-origin ()
+        origin-when-crossorigin(enda kodulehe piires täispikkuses url, teistel lehtedel mitte) strict-origin-when-crossorigin unsafe-url -->
+
         <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
         <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
@@ -74,7 +79,22 @@
 
                 <p>
                     Siin on uus peatükk selles loos. 
+
+                    
                 </p>
+
+                <p>An example demonstrating the use of the <code>&lt;input type="color"&gt;</code>
+                    control.</p>
+                 
+                 <label for="colorWell">Color:</label>
+                 <input type="color" value="#ff0000" id="colorWell">
+                 
+                 <p>Watch the paragraph colors change when you adjust the color picker.
+                    As you make changes in the color picker, the first paragraph's
+                    color changes, as a preview (this uses the <code>input</code>
+                    event). When you close the color picker, the <code>change</code>
+                    event fires, and we detect that to change every paragraph to
+                    the selected color.</p>
 
                      <ul>
                         <li>User <bdi>hrefs</bdi>: 60 points</li>
@@ -90,8 +110,68 @@
                         </ol>
                     </section>
                 <p>
+
+
+
+                    <!--picutre puhul kasut srcset ja img puhul src, iframe kasutab . svg (vektorgraafika) faili ei kasut. realistlike piltide kuvamiseks. kasut logode 
+                        kuvamiseks.   longdesc="#definition"     openclipart - leiab avaliku domaini pilte. map area tag     -->
+                    <picture> 
+                        <source srcset="/icon/favicon.svg" media="(mind-width: 1080px)">
+                         <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x" 
+                            alt="Faviconi logo valgel taustal" width="150" referrerpolicy="unsafe-url" crossorigin="anonymous">
+                    </picture>
+                    <video autoplay muted loop width="250px" poster="/icon/favicon-16x16.png" controls preload>
+                        <source src="/Sky.mp4">
+                        <track kind="subtitles" src="subtiiter-en.vtt" srclang="en" label="English">
+                        Video tugi puudub!
+                    </video>
+                    
+
+
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="10" stroke="green" stroke-width="5" fill="yellow"/>
+                    </svg>
+
+
+
                     Aliquam et porttitor odio, sit <strong>amet</strong> pretium eros. Fusce vestibulum augue vel mi venenatis, quis dictum dui sagittis. <q>Proin eleifend massa non magna volutpat volutpat. Vivamus tristique porttitor neque.</q> Donec non quam sed nisi interdum pellentesque. Nulla facilisi. Nunc accumsan placerat enim, pulvinar condimentum magna congue sed. Cras viverra accumsan lacus ac consequat. Quisque ullamcorper arcu vitae tempus tempus. In nulla ligula, scelerisque quis mollis in, tempus id urna. Phasellus efficitur congue lectus, in semper nibh pretium nec. Maecenas suscipit facilisis auctor. Vivamus in est rhoncus, tempus nibh eget, accumsan nisl. 
                 </p>
+
+                <table border="1">
+                    <caption>
+                        <p>Tabeli pealkiri</p>
+                        <p> js asdjoasd aüpsod 8ds9 adhasdj ja mis sa teed kui tabel on nii pisike</p>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Päis 0</th>
+                            <th> Päis 1</th>
+                        </tr>
+                     </thead>
+                    <tfoot>
+                        <tr>
+                            <td>Jalus 1</td>
+                            <td>Jalus 2</td>
+
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Keha 1</td>
+                            <td>Keha 2</td>
+                        </tr>
+                        <tr>
+                                <td>Keha 1</td>
+                                <td>Keha 2</td>
+                            </tr>
+                    </tbody>
+                </table>
+
+
+
+                <iframe width="560" height="315" referrerpolicy="no-referrer-when-downgrade" src="https://www.youtube.com/embed/XR7Ev14vUh8"
+                 frameborder="0" allowfullscreen></iframe>
+
                 <p>
                         https://longurlmaker.com/go<wbr>?id=51sdrawnZoutlengthy7z70mURLCutter0lingeringDigBig91farZreachingd7URLcut0drawnZout3farZoffMinilien1100farawayelonga<wbr>telongish15olastingYepItfarZreachingod09ge<wbr>n0Sitelutions066c0a7q0glongish1SnipURL00TightU<wbr>RL6protracted31farawayYepItvw86y0lnkZin00S<wbr>mallr0085lastingk21XiloutstretchedlPiUR<wbr>L10w5vaNe106esu03ShrinkUR<wbr>LShortURL40enduring82dlengthyfaraway8expanded9<wbr>1enlarged037Shim8stretch0<wbr>f035c074f6distant1e970lengthened2lanky0501Tr<wbr>aceURLG8LRubyURL01rTightURLhvtallg151t<wbr>all6rangyenlargedXZs<wbr>eprotracted006xl<wbr>ingering60030176s0StartURLCanURL<wbr>c2c0YepIt0c1ganglingwNotLongdeepq1b3141<wbr>i004qgreatURLPie463706ShortenURL1<wbr>tallG8L1FwdURLspreadZout3enduringShredURLYATUC011<wbr>EzURLspunZout1las<wbr>tingsustained7bspunZo<wbr>ut3oc4rangyfarZreac<wbr>hinga267great53enduring803distantdor3g<wbr>60NotLongShrinkr9sustained00<wbr>01cf113YepIt14lnkZin10elo<wbr>ngateURLvi110stretching1farawayGetShorty8aSho<wbr>rl4continued4516URLenduring014Lite<wbr>URLe25b1SimURLvTinyLinkShortURL8o<wbr>e0longishaCanURL11ShrinkURLcs9Sitelutions1estretch0j0Ne<wbr>110i1TinyURL18elongate13drawnZouth04Ti<wbr>nyLink1agTinyLinkf60farZoffla91xGetSh<wbr>orty7drawnZoutURLCutter1FhURL0Shrtn<wbr>dstretchc0Ne10gangling<wbr>894lengthy41gShortURL31tf1GetShortyURLHawkelong<wbr>atedB653tUrlTea1EzURL0continue<wbr>d106qhigh631gangling72deepXZse72stretchingo1lofty0Dece<wbr>ntURLURLZcoZukgfarZofffi6string<wbr>y1417f3expanded01802lasting61EasyURLspreadZou<wbr>t11Ne1protracted0ShortUR<wbr>LcdaxstretchXileprotracted67FhURLTiny<wbr>URL92spunZout0tMooURLlFhU<wbr>RL065cu91l2lanky19r150384ShortURLrangyrrangye<wbr>0ShrinkURL365852a3remoted9lastingUrlTeapr<wbr>otractedEasyURL84cstretchingsq1YepItmURlZie4stretchl10401419301URL8petmURlZiefc097toweringStartURLdistant9FwdURL50a7SHurl<wbr>
                 </p>
