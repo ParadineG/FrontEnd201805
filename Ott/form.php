@@ -71,8 +71,6 @@
                 <label for="radio" >Naine: </label>
                 <input type="radio" id="radio" name="radio" value="Naine"> <br>
 
-                
-
                 <button type="button" disabled>Nupp</button>
                 <button type="reset">Reset</button>
                 <button type="submit" formmethod="POST" autofocus>Saada</button>
