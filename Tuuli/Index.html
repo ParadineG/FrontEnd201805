@@ -5,11 +5,14 @@
 
       <title>Tiitel koolitusele</title>  
       
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
 
       <!--Valikuline: -->
       <base href="http://localhost/Tuuli/" target="_blank">
+      <meta name="referrer" content=" strict-origin-when-crossorigin">
+      <!-- no-referrer (teised lehed ei saa sinu sisenemisest või väljumisest infot kätte, sinu lehe piires) no-referrer-when-downgrade same-origin (veebisisene liikumine on lubatud) origin (tagastab info, tagastab domeeni nime, see isik tuli lehelt neti.ee aga täpsemat infot pole) strict-origin (tsgastab info, tuleb turvaliselt lehelt)
+      origin-when-crossorigin (enda kodulehe piires tyäispikke url, kui väljaspool saadab domeeni nimesid) strict-origin-when-crossorigin (kõige parem valik, ei lase infot läbi kui lähed ebaturvalisele lehele) unsafe-url(vastupidine no referrerile) -->
       <!--Põhi ikoonid-->
       <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -74,9 +77,7 @@
                     Arvuti ütles näiteks seda: <samp>Error 7401: Clear buffer</samp>, kuidas asjale läheneda.
                     <p>
                         <p>
-                            <ruby>
-                                
-                            </ruby>
+                            
                          https://www.google.com/<wbr>search?q=jutekott&ie=utf-8&oe=utf-8&client=firefox-b-ab<wbr>
                         </p>
                 <section>
@@ -93,6 +94,28 @@
             
                     </ul>
                 </section>
+                <p>
+                    <picture>
+                        <!--picture puhul kasutan srcset, svg avamine pikk, logode puhul hea kasutada, svg-d saab ise kirjutada, 
+                        circle vajab lõppu />, img puhul soovitatav width ja height ära määrata, longdesc kasutad siis kui info liiga pikk et 
+                        alt alla panna, tuleb alati alt-iga koos kasutada-->
+                        <source srcset="/icon/favicon.svg" media="(min-width: 1080px)">
+                        <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x" 
+                        alt="Picture excample" width="150" referrerpolicy="unsafe-url" crossorigin="anonymous" longdesc="#definition">
+                        <!--map area-->
+                    </picture>
+                    <video muted loop width="250px" poster="/icon/favicon-16x16.png" controls preload>
+                        <source src="/Sky.mp4">
+                            <track kind="subtitles" src="subtiiter-en.vtt" srclang="en" label="English">
+                            Video tugi puudub!
+                    </video>
+                    <!--iframe viis kuidas panna teist veebilehte sisse panna, referrerpolicy alla lehe omaniku nimi nt, 
+                        sandbox annab täiendavaid võimalusi, frameborder võtab raamid ära, allowfullscreen kui nt youtube videot soovid suurelt vaadata-->
+                    <iframe width="560" height="315" referrerpolicy="no-referrer-when-downgrade" 
+                        src="https://www.neti.ee" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="10" stroke="red" stroke-width="5" fill="yellow"/>
+                    </svg>
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de FFinibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
                 </p><hr>
                 <section>
@@ -107,16 +130,45 @@
                             <li><data value="53">Juku</data></li>
                             <li value="1"><data value="04">Kalle</data></li>
                             <li value="1"><data value="27">Malle</data></li>
-                            <li><data value=73> Tobi</data></li>
-                            <li><data value=92> Juhan</data></li>
-                            <li>Neljas</li>
-                            <li>Viies</li>
+                            <li><data value="73"> Tobi</data></li>
+                            <li><data value="92"> Juhan</data></li>
+                            
                         </ol>
                 </section>
                 
                 <p>
                         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de FFinibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
                     </p>
+                    <table border="3">
+                        <caption>
+                            <p>Tabeli1 pealkiri</p>
+                            <p> Contrary to popular belief, Lorem Ipsum is not simply random </p>
+                        </caption>
+                        
+                        <thead>
+                            <tr>
+                                <th>Päis 0</th>
+                                <th>Päis 1</th>
+                               
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td>Jalus 1</td>
+                                <td>Jalus 2</td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>Keha 1</td>
+                                <td>Keha 2</td>
+                            </tr>
+                            <tr>
+                                    <td>Keha 1</td>
+                                    <td>Keha 2</td>
+                                </tr>
+                        </tbody>
+                    </table>
                 <footer>
                      <d1>
                        <dt><dfn id="definition"> Definition</dfn></dt>
@@ -124,7 +176,7 @@
                        <dt>Definition2</dt>
                        <dd>A definition is a statement of the meaning...</dd>    
                     </d1>
-                   <a href="artikkel1" target="_self">Tagasi artikli algusesse</a>    
+                   <a href="#artikkel1" target="_self">Tagasi artikli algusesse</a>    
                 </footer>
         </article>
         <footer>
