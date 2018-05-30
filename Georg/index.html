@@ -2,13 +2,19 @@
 <html lang="et">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        
         <!--Valikuline-->
         <base href="http://localhost/Georg/" target="_blank">
-        <title>Uus leht</title>
+        <meta name="referrer"content="">
+        <!-- no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin
+             origin-when-crossorigin, strict-origin-when-crossorigin, unsafe-url -->
+        <title>Title</title>
+        <!-- Põhi ikoonid -->
         <link rel="icon" type="image/png" sized="32x32" href="/icon/favicon-32x32.png">
         <link rel="icon" type="image/png" sized="16x16" href="/icon/favicon-16x16.png"> 
-        <link rel="icon" type="svg/xml" sized="any" href="/icon/favicon.svg">       
+        <link rel="icon" type="svg/xml" sized="any" href="/icon/favicon.svg">
+
         <link rel="stylesheet" href="style.css" type="text/css" title="default">
         <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
         <link rel="stylesheet" href="print.css" type="text/css" media="print">
@@ -49,6 +55,7 @@
                     </blockquote>
                 </aside><hr>
             </header>
+
             <section>
                 <ul reversed="" start="1">
                     <li><strong>list item 1 (strong)</strong></li>
@@ -68,19 +75,22 @@
                     
                 </ul>
             </section>
-            <p>
+            
+            <p><!--figure vajalik et pilti ilusti teksti vahele panna-->
                 Lorem ipsum <a href="#definition" target="_self">definition</a> dolor sit amet consectetur adipisicing elit.
                 <figure>
                     <img src="/icon/favicon.svg" alt="Figure Example" width="150">
                     <figcaption>Joonis 1</figcaption>
                 </figure> 
                 Praesentium sequi necessitatibus perspiciatis! <q><strong>(q) tag</strong>Temporibus voluptas labore cupiditate iusto at, ducimus modi, praesentium minima sequi molestias vero quibusdam quo assumenda iste cumque?</q>                
+                <br>
                 Arvuti ütles: <samp>Error 7401: Clean buffer (samp)</samp>.
             </p>
 
             <section>
                 <hr>
                 <pre>
+
                         ###### #    #   ##   #    # #####  #      ######
                         #       #  #   #  #  ##  ## #    # #      #      
                         #####    ##   #    # # ## # #    # #      ##### 
@@ -98,15 +108,63 @@
                 </ol>
             </section>
 
+            <picture>
+                <!-- svg: scaleb ekraani laiusega ilma, et kvaliteet langeks-->
+                <!-- kõigepealt kasutab browser img faili, kui vajalik kasutab source faili-->
+                <!-- kasutab img faili seni kuni width ületab source media=max-width suuruse-->
+                <source srcset="/icon/favicon.svg" media="(min-width: 1080px)"> 
+                <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x" 
+                    alt="Picture Example" width="150" referrerpolicy="unsafe-url" crossorigin="anonymous" 
+                    longdesc="kui kirjeldus on pikk siis see alt asemel või linkida descriptioni juurde(#)">
+            </picture>
+
+            <!--<video autoplay>-->
+            <video muted loop width="300px" poster="/icon/favicon-16x16.png" controls preload>
+                <source src="/Sky.mp4">
+                <track kind="subtitles" src="subtiiter-en.vtt" srclang="en" label="English">
+                Video tugi puudub.
+            </video>
+
+            <svg height="100" width="width">
+                <circle cx="500" cy="50" r="30" stroke="purple" stroke-width="5" fill="aqua" />
+            </svg>            
+            
+            <iframe src="https://www.youtube.com/embed/Zp_8E9CA7v4?controls=1&amp;showinfo=0" width="560" height="315" 
+            referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+
+            <table border="1">
+                <caption>Table Caption</caption>
+                <thead>
+                    <tr>
+                        <th>Päis 1</th>
+                        <th>Päis 2</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td>Jalus 1</td>
+                        <td>Jalus 2</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Tabel on nii lai kui selle sisu</td>
+                        <td>Keha 2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul>
+                <li>User: <bdi>jcranmer</bdi>: 12 posts.</li>
+                <li>User: <bdi>bedIntruder</bdi>: 3500 posts</li>
+                <li>User: <bdi>nähvits</bdi>: 1 posts</li>
+            </ul>
+
+            <ruby>
+                漢 <rt> <b>chinaPower</b></rt>
+            </ruby><br><br>
+
             <p>
-                <ul>
-                    <li>User: <bdi>jcranmer</bdi>: 12 posts.</li>
-                    <li>User: <bdi>bedIntruder</bdi>: 3500 posts</li>
-                    <li>User: <bdi>nähvits</bdi>: 1 posts</li>
-                </ul>
-                <ruby>
-                    漢 <rt> chinaPower</rt>
-                </ruby><br><br>
                 Lorem ipsum <abbr title="hüpertekst märgistuskeel">HTML</abbr>dolor sit amet consectetur, adipisicing elit. Optio doloribus velit nesciunt blanditiis vitae doloremque reprehenderit corporis. In sequi dignissimos, magnam dolore sunt labore fugiat unde natus accusantium fugit necessitatibus?
                 <br><br>
                 https://longurlmaker.com<wbr>
@@ -146,6 +204,7 @@
                 </dl>
                 <a href="#artikkel1" target="self">Tagasi algusesse</a>
             </footer>
+
         </article>
 
         <footer>
