@@ -3,13 +3,11 @@ h1{
     color: palevioletred;
 }
 
-.pealkiri {
-    
+h2{
+    color: gray;
 }
 
-.tiitel {
-    
-  
-    
-  
+.joonis1 {
+    float: right;
+
 }
