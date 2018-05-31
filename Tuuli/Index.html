@@ -1,36 +1,85 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" prefix="og: http://ogp.me/ns# fb: http://ogp.me/fb# article: http://ogp.me/ns/article#">
    <head>
       <meta charset="utf-8">
-
-      <title>Tiitel koolitusele</title>  
+        <!--SEO: ideaalne pikkus 6 sõna-->
+      <title>Tiitel koolitusele</title>  <!--tiitel ja h1 peaksid olema natuke erinevad-->
       
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
+      <!--juhul kui on tegu veebi rakendusega-->
+      <meta name="application-name" content="Tradent"> <!--kuvatakse ikoonil selle nimetuse all-->
+      
+      <!--pannakse reeglina veebi tegija või lehe omaniku nimi, ei rõhutata seda tigti-->
+      <meta name="author" content="Tuuli">
+      <link rel="author" href="mailto:tuuli@jutekott.ee">
+      
+      <!--jäetud koodikirjutajatele, kui kasutan kellegi valmis kirjut koodi-->
+      <meta name="generator" content="Frontweaver 8.2">
+      
+      <!-- SEO: ideaalne pikkus 155 tähemärki-->
+      <meta name="description" content="Front-end koolitusel õpime veebi.
+      Front-end koolitusel õpime veebi.
+      Front-end koolitusel õpime veebi.
+      Front-end koolitusel õpime veebi.">
+      <!--SEO: iseendale, võtmesõna võiks asuda teksti enda sees, enam väga ei kasutata, liiga palju pole mõtet panna-->
+      <meta name="keywords" content="front-end koolitus">
+
+      <!--SEO: opengraph-->
+      <meta property="fb:app_id" content="3021456554544">
+      <meta property="og:type" content="article">
+      <meta property="og:url" content="http://koduleht.ee/Roman3021456554544">
+      <meta property="og:title" content="Tere Tulemast!">
+      <meta property="og:description" content="Front-end koolitusel õpime veebi.
+            Front-end koolitusel õpime veebi.
+            Front-end koolitusel õpime veebi.
+            Front-end koolitusel õpime veebi.">
+      <meta property="og:image" content="https://koduleht.ee/icon/favicon-32x32.png!">
+      <meta property="article:published_time" content="2018-05-29T16:00">
 
       <!--Valikuline: -->
       <base href="http://localhost/Tuuli/" target="_blank">
       <meta name="referrer" content=" strict-origin-when-crossorigin">
       <!-- no-referrer (teised lehed ei saa sinu sisenemisest või väljumisest infot kätte, sinu lehe piires) no-referrer-when-downgrade same-origin (veebisisene liikumine on lubatud) origin (tagastab info, tagastab domeeni nime, see isik tuli lehelt neti.ee aga täpsemat infot pole) strict-origin (tsgastab info, tuleb turvaliselt lehelt)
       origin-when-crossorigin (enda kodulehe piires tyäispikke url, kui väljaspool saadab domeeni nimesid) strict-origin-when-crossorigin (kõige parem valik, ei lase infot läbi kui lähed ebaturvalisele lehele) unsafe-url(vastupidine no referrerile) -->
+      
+      <!--varjatud aadress=link, kasutaja näeb ja saab minna=ankur, linki ja ankrut on võimalik seostada autoriga-->
+      <link rel="alternate" type="application/atom+xml" href="https://www.theregister.co.uk/headline.atom"> <!--atom/rss ehk voog, aatom hilisem, saab panna nii, et lisad oma lehe ja siis teised savaad seda jälgida feedina-->
+      <link rel="alternate" text="text/html" href="/en/Roman" hreflang="en" title="English Roman page"><!--link samale lehele teises keeles-->
+      <!--printimiseks-->
+      <link rel="alternate" text="text/html" href="/en/Roman" hreflang="en" media="print" title="English Roman printing page"> <!--kui keelt pole, paned lihtsalt media=print-->
+      <!-- leht mis abistab antud lehe kasutust-->
+      <link rel="help" href="/help">
+      <!--ainult opensearch-ga ja kui otsing hõlmab tervet lehte-->
+      <link rel="help" href="/search">
+      
+      <!-- sama teema jätk uuel lehel-->
+      <link rel="prev" rev="next" href="/Roman/01">
+      <!--sama teema eelnev leht-->
+      <link rel="next" rev="prev" href="/Roman/03">
+
       <!--Põhi ikoonid-->
       <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
       <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
     
+      
+
 
       <link rel="stylesheet" href="style.css" type="text/css"title="default">
       <link rel="alternate stylesheet" href="fancy.css" type="text/css"title="fancy">
       <link rel="stylesheet" href="print.css" type="text/css" media="print">     
-      
+    
       
     </head> 
    <!-- onoffline="update(false)" -->
 
    </body> 
-        
+        <noscript>
+            <h2>Palun lülita javascript sisse või uuenda veebilehitsejal</h2>
+        </noscript>
         <header>
-            <h1> Tere tulemast!</h1>  
+            <h1> Tere tulemast!</h1><!--pikkus h1 max 6 sõna-->  
             <div class="pealkiri">
                 <section>
                     <h2> Front-end koolitusele!</h2>
@@ -52,27 +101,39 @@
 
             </ul>
         </nav>
-        <article id="artikkel1">
+        <article id="artikkel1" itemscope itemtype="http://schema.org/TechArt" role="presentation feed"><!--itemscope, itemprop otsingumootorite sõbralikuks tegemine-->
                 <header>
                    <h1> Lorem Ipsum</h1>   
-                   <p> Autor: <cite>Tuuli Talvik</cite></p>
+                   <p> Autor: 
+                       <a rel="author" href="mailto:tuuli@jutekott.ee?subject=?Koolituse%20artiklilt">
+                           <cite itemprop="author">Tuuli Talvik</cite>
+                        </a>
+                    </p>
                    <aside>
                        <blockquote>
                            <p>Täna kirjutasin midagi muud</p>
                            <cite>Juku Kask - raamatus "Elutee"</cite>
-                           <p>Was posted on: <time datetime="2018-05-29"> May 29</time></p>
+                           <p>Was posted on: <time datetime="2018-05-29" itemprop="datePublished"> May 29</time></p>
                         
 
                        </blockquote>
                        
                    </aside>
                 </header>
-                <p>
+                <section itemprop="articleBody">
+                <p itemprop="description">
+                </section>
+                    <a href="peatykk01.html" rel="bookmark">Viide peatükk 1-le</a> <!--hea kasutada sisukorra puhul??-->
                     Lorem Ipsum <a href="#definition"target="_self">definition</a> is simply dummy text of the printing and typesetting industry. 
                     <figure>
                         <img src="/icon/favicon.svg" alt="Figure Example" width="150">
                         <figcaption>Joonis 1</figcaption>
                     </figure>
+                    <a href="https://html.com/wp-content/uploads/html-cheat-sheet.pdf" 
+                        download type="applicaion/pdf">Fail allalaadimiseks</a><br>
+                    <a href="http://random.com" rel="nofollow">Leht, mida autor ei usalda</a><br><!--kasuta siis kui sul mingi leht, mida ei saa usaldada, pole sinu teemaga seotud nt-->
+                    <a href="http://random.com" rel="noopener">Leht, mida autor ei usalda</a><br><!--osa infot läheb läbi, pop-up versioonis ei tohiks avada linki-->
+                    <a href="http://random.com" rel="no-referrer" referrerpolicy="no-referrer">Leht, mida autor ei usalda</a><br><!--ei tule üldse infot läbi-->
                     Lorem Ipsum <abbr title="hüperteksti märgistuskeel">HTML</abbr> has been the industry's standard dummy text ever since the 1500s, <q>when an unknown printer took</q> a galley of type and scrambled it to make a type specimen book.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.               </p>
                     Arvuti ütles näiteks seda: <samp>Error 7401: Clear buffer</samp>, kuidas asjale läheneda.
                     <p>
@@ -169,7 +230,9 @@
                                 </tr>
                         </tbody>
                     </table>
+                
                 <footer>
+                    Võtmesõnad:<a rel="tag" href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a><!--täpsustab millega sa räägid, et pole nt linn Lorem Ipsum vaid arendajate fake keel???-->
                      <d1>
                        <dt><dfn id="definition"> Definition</dfn></dt>
                        <dd>A definition is a statement of the meaning...</dd> 
@@ -191,7 +254,19 @@
                 Kellukese
             </address>
             <small>Copyright @ 2018</small>
+            <a rel="license" href="/privacy-policy">Privacy policy</a>
         </footer>
-
+        
+        <!-- Google Analytics lisamine; veebis inff...google analytics-tracking-analytics.js saab koodi-->
+        <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                
+                ga('create', 'UA-XXXXX-Y', 'auto');
+                ga('send', 'pageview');
+        </script>
+                
    </body>
 </html>

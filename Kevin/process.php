@@ -6,6 +6,7 @@ $perenimi=$_POST['perenimi'];
 $email=$_POST['email'];
 $telefoninr=$_POST['telefoninr'];
 
+
 $sql1 = "INSERT INTO `kliendi_andmed` (`eesnimi`, `perenimi`, `email`, `telefoninr.`)
 VALUES ('$eesnimi','$perenimi','$email','$telefoninr')"; 
 

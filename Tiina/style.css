@@ -1,14 +1,45 @@
+/*Valib kõik elemendid ja annab sellel stiili.
+Määrab tekstile punase värvi
+*{
+    color: crimson;
+}*/
+/*Elemendipõhine valik*/
+p{
+    background-color: aliceblue;
+}
+
+body{
+    margin: 4%;
+
+}
 h1  {
     color: blueviolet;
     }
 div.pealkiri{
-    background-color: rgb(240, 211, 227);
+    /*background-color: rgb(240, 211, 227);*/
     padding: 1%;
 }
-body{
-    margin: 2%;
-    
-}
+
 header{
     background-color: rgb(214, 214, 214);
+    
+}
+.katse{
+    background-color: darkgray;
+}
+.katse2{
+    color: purple!important;
+}
+#definition{
+    color:pink;
+}
+.katse ruby{
+    color:pink;
+}
+/*Otsib ühe astme alt poolt*/
+body > header{
+    background-color: blanchedalmond;
+}
+ul,ol {
+    color: springgreen;
 }
