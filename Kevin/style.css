@@ -132,8 +132,14 @@ a#nupp {
 .hobisektsioon {
   text-align:center;
 }
-.toosektsioon {
+h1#toopealkiri {
   text-align:center;
+}
+
+div.columnpilt {
+  width: 80%;
+  position: relative;
+  display:block;
 }
 /*header#hobi {
   font-family: lato;
@@ -154,4 +160,28 @@ h1#soundcloud #too {
   font-weight: 0.8;
   padding: 1em 0;
   display: block;
+}
+input.loo {
+  float: left;
+  font-family: lato;
+  color: rgb(128, 0, 0);
+  text-transform: uppercase;
+  text-shadow: 0px 3px 3px #1111;
+  font-size: 30px;
+  margin-left: 100px;
+}
+input.loo2 {
+  font-family: lato;
+  color: rgb(128, 0, 0);
+  text-transform: uppercase;
+  text-shadow: 0px 3px 3px #1111;
+  font-size: 30px;
+  float:right;
+  margin-right: 100px;
+}
+body.kontakt {
+  text-align: center;
+}
+div#data {
+  text-align: center;
 }
