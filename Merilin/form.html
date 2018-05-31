@@ -20,6 +20,8 @@
         <main>
             <form accept-charset="utf-8" autocomplete="on" 
             method="GET" action="">
+            <fieldset>
+                <legend> 1. osa </legend>
                 <label for="hidden">Varjatud: </label>
                 <input type="hidden" id="hidden" name="hidden" value="peidetud"><br>
                 <label for="nimi">Nimi: </label>
@@ -28,6 +30,9 @@
                 <input type="email" id="email" name="email" placeholder="nimi@gmail.com" multiple><br>
                 <label for="parool">Salasõna: </label>
                 <input type="password" id="parool" name="parool" minlength="3" maxlength="6"><br>
+            </fieldset>
+            <fieldset>
+                <legend> 2. osa </legend>
                 <label for="date">Kuupäev: </label>
                 <input type="date" id="date" name="date" min="1979-01-01" max="2012-01-01"><br>
                 <label for="month">Kuu: </label>
@@ -40,6 +45,7 @@
                 <input type="file" id="file" name="file" accept="image/*"><br>
                 <label for="range">Vahemik: </label>
                 <input type="range" id="range" name="range" step="20"><br>
+            </fieldset>
                 <label for="color">Värv: </label>
                 <input type="color" id="color" name="color"><br>
                 <label for="checkbox">Tsekkimine: </label>
@@ -55,22 +61,23 @@
                 <label for="url">URL: </label>
                 <input type="url" id="url" name="url" list="kodukad"><br>
                 <datalist id="kodukad">
-                    <option value="http://neti.ee" label="Neti">
-                    <option value="http://google.ee">
-                    <option value="http://juku.ee">
+                    <option value="http://neti.ee">Neti</option>
+                    <option value="http://google.ee" label="Google">Google</option>>
+                    <option value="http://juku.ee">Juku
                 </datalist>
-                <select name="valik" multiple>
+                <select name="valik" multiple size="0" title="kodus" width=200>
                     <optgroup label="1">
-                            <option value="http://neti.ee" label="Neti">
-                            <option value="http://google.ee" label="Google" selected>
-                            <option value="http://juku.ee" label="Juku" disabled>
+                            <option value="http://neti.ee" label="Neti">Neti</option>
+                            <option value="http://google.ee" label="Google" selected>Google</option>
+                            <option value="http://juku.ee" label="Juku" disabled>Juku</option>
                     </optgroup> 
                     <optgroup label="2">
-                            <option value="http://neti.ee" label="Neti">
-                            <option value="http://google.ee" label="Google">
-                            <option value="http://juku.ee" label="Juku">
+                            <option value="http://neti.ee" label="Neti">Neti</option>
+                            <option value="http://google.ee" label="Google">Google</option>
+                            <option value="http://juku.ee" label="Juku">Juku</option>
                         </optgroup>   
-                    </select>
+                    </select><br>
+                    <textarea name="tekstiala" cols="30" rows="5">Tere...</textarea><br>
                 <input type="button" disabled value="Nupp">
                 <input type="reset" value="Reset">
                 <input type="submit" formmethod="GET" autofocus value="Saada">
@@ -81,7 +88,24 @@
                 <button type="reset">Reset</button>
                 <button type="submit" formmethod="POST" autofocus>Saada</button>
 <!-- INPUT TÜÜBID tel url e-mail password date time number range color checkbox radio file -->
-            </form>
+            </form><br>
+            <form onsubmit="return false" oninput="o.value = a.valueAsNumber + b.valueAsNumber">
+                <input name="a" type="number" step="any"> + 
+                <input name="b" type="number" step="any"> = 
+                <input name="o" for="a b"></output>  
+            </form><br>
+            <progress value="200" max="300"></progress>
+            <meter min="0.5" max="1.5" value="0.6" low="0.7" high="1.2" optimum="1">tere</meter>
+            <details open>
+                <summary><em>Kõkkuvõte detailidest</em></summary>
+                <p> Juuuuuaaaaaaaaammmmmmmmmeee eeeeeeeeeiiiiiiiiilllllllllllleeeeeeeeeeeeee.</p>
+                <p>GGGGGIIIIIIIIIIGGGGGGGGAAAAAAAAAA ooooooooooooooooooooommmmmmmmmmmmmeeeeee.</p>
+            </details>
+            <dialog open>
+                <h2>Tere dialoog!</h2>
+                <p>UAAAAAA</p>
+                <p>ei näe seda ilma openita</p>
+            </dialog><br>
         </main>
     </body>
 </html>
