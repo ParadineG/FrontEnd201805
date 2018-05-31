@@ -1,7 +1,35 @@
+/*määrab rohelist teksti
+*{
+    color: green;
+}
+*/
+
+/*Elemendi põhine valik*/
 h1 {
+    background-color: aliceblue;
     color:green;
+}
+
+p{
+    background-color: burlywood;
 }
 
 .pealkiri {
     background-color: aquamarine;
+}
+
+#definition { /*saab kasutada ainult korra*/
+   color: orange;
+}
+
+.katse ruby{
+    color: crimson
+}
+
+body > header {
+    background-color: blanchedalmond;
+}
+
+ul, ol{ /*listide värvimiseks*/
+    color: darkblue;
 }

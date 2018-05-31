@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" prefix="og:http://ogp.me/ns# fb: http://ogp.me/fb# article: http://ogp/ns/article#">
 <head>
+	<!--SEO ideaalne pikkus 6 sõna, h1 element oleks lehel üks kord-->
 	<link rel="stylesheet" type="text/css" href="style.css" title="default">
 	<link rel="alternate stylesheet" type="text/css" href="style2.css" title="style2">
 	<script type="text/javascript" src="java.js"></script>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<base href="/kevin/">
+	<meta name="generator" content="frontweaver 8.2">
+	<neta name="author" content="Kevin">
+	<!--SEO opengraph-->
+	<meta property="fb:app_id" content="koodsiia">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="http://www.koduleht.ee/kevin">
+	<meta property="og:title" content="Tere tulemast Front-End Koolitusele">
+	<meta property="og:description" content="blablablablablabla">
+	<meta property="og:image" content="/icon/favicon.svg">
+	<meta property="article:published_time" content="2018-05-29T16:00">
+
+	<!--<meta name="application-name" content="Tradent"/>veebirakendus-->
+	<meta name="description" content=""><!-- 155 tähemärki-->
 	<meta name="referrer" content=""><!--no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin, origin-when-crossorigin, strict-origin-when-crossorigin, unsafe-url-->
 	<link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
 	<link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
+	<link rel="alternate" type="application/atom+xml" href="https://www.theregister.co.uk/headlines.atom">
+	<link rel="alternate" type="text/html" href="/en/kevin" lang="en" title="English page">
 	<title>Tarkvaraarenduse Front-end</title>
 	<title></title>
 </head>
@@ -19,18 +35,32 @@
 		<div class="navigatisoon">
 			<nav id="nav" role='navigation'>
 		  		<ul>
-		    		<!--<li class="active"><a href="index.html">Avaleht</a></li>-->
+		    		<li class="active"><a href="index.html">Avaleht</a></li>
 		    		<li><a href="/kevin/portfolio.html">Portfoolio</a></li>
 		    		<li><a href="/kevin/kontakt.php">Kontakt</a></li>
 		  		</ul>
 			</nav>
 		</div>
 	</header>
-	<h1>Tere Tulemast</h1>
-	<article id="artikkel1">
+	<article id="artikkel1" itemscope itemtype="http://schema.org/TechArticle">
+	<section>
+	<h1>Tere Tulemast Front-End Koolitusele</h1>
+	<p>autor: 
+		<a rel="author" href="mailto:juku@kalk.ee?Subject=Koolituse%artiklilt">
+			<cite itemdrop="author">juku kask</cite>
+		</a>
+		<p>Was posted on: 
+			<time datetime="2018-05-29" itemdrop="datetime"></time>
+		</p>
+	</p>
 		<header>
-			<h1>Lorem Ipsum</h1>
-			<p>
+			<h2 itemdrop="name">Lorem Ipsum</h2>
+				<a href="peatykk1" rel="bookmark">viide</a><br>
+				<a href="http://random.com" rel="nofollow">Leht mida ei usaldata</a><br>
+				<a href="http://random.com" rel="noopener">Leht mida ei usaldata</a><br>
+				<a href="http://random.com" rel="noopener">Leht mida ei usaldata</a><br>
+
+			<p idemdrop="description">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus erat quis nulla pulvinar, id commodo tortor molestie. Sed tempus luctus hendrerit. Donec quis leo et justo lacinia commodo. Proin pulvinar lacinia sapien, in eleifend eros pharetra rhoncus. Vestibulum lobortis, quam non luctus finibus, felis magna semper justo, id tempor risus nisl quis lacus. Mauris pellentesque lacus urna, quis condimentum ex hendrerit ut. Integer ante sem, sodales quis lacinia sit amet, condimentum sed quam.
 			</p>
 			<aside>
@@ -44,7 +74,7 @@
 			</p>
 			
 		</header>
-		
+	</section>	
 	</article>
 	<section>
 		<!--<picture>
@@ -65,6 +95,7 @@
 		<p>
 			Curabitur rutrum, <abbr title="hüperteksti märgistuskeel">HTML</abbr> purus at fermentum sagittis, justo arcu efficitur enim, sed venenatis massa est nec nisl. Phasellus gravida felis at consequat semper. Vestibulum interdum porttitor facilisis. Curabitur quis tempus nunc. Etiam id erat lorem.
 		</p>
+		<!--
 		<ul>
 			<li><kbd>Ctrl</kbd> + <kbd>S</kbd></li>
 			<li>5 + <var>x</var> = 10</li>
@@ -89,22 +120,17 @@
 					<td>Keha</td>
 				</tr>
 			</tbody>
-		</table>
+		</table>-->
 	</section>
 	<footer>
 		<a id="nupp" href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
 			<dl>
 				<dt><dfn>Definition</dfn></dt>
 				<dd>Curabitur rutrum, purus at fermentum sagittis, justo arcu efficitur enim</dd>
-			</dl>	
+			</dl>
+		Võtmesõnad: <a rel="tag" href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem Ipsum</a>	
 	</footer>
 
-<form action="/kevin/create.php">
-    <input type="submit" value="loo andmebaas" />
-</form>
-<form action="/kevin/tabel.php">
-    <input type="submit" value="loo tabel" />
-</form>
 <!--
 			<form>
                 <label for="tel">Tel: </label>
@@ -141,12 +167,34 @@
                 </datalist>
                 <select name="valik" multiple>
                 	<optgroup>
-                		<option value="http//neti.ee" label="Neti">
+                		<option value="http//neti.ee" label="Neti">Neti</option>
                 		<option value="http//google.ee" label="Google" selected>
                 		<option value="http//facebook.com" label="Facebook" disabled>
                 	</optgroup>
                 </select>
-            </form>
--->
+            </form>-->
+            <form onsubmit="return false" oninput="o.value = a.valueAsNumber + b.valueAsNumber">
+    			<input name="a" type="number" step="any"> +
+    			<input name="b" type="number" step="any"> =
+    			<output name="o" for="a b"></ouput>
+ 			</form>
+            <progress max="150" value="100"></progress>
+            <meter min="0.5" max="1.5" value="1.3" low="0.7" high="1.2" optimum="1"></meter>
+            <details>
+            	<summary><em>Detailid</em></summary>
+            		<p> purus at fermentum sagittis, justo arcu efficitur enim, sed venenatis massa est nec nisl. Phasellus gravida</p>
+            </details><br>
+            <dialog open>
+            	<h2>Tere</h2>
+            	<p> purus at fermentum sagittis, justo arcu efficitur enim, sed venenatis massa est nec nisl. Phasellus gravida</p>
+            </dialog>
+            <noscript>
+            	<h2>Palun lülita sisse JS või uuenda veebilehitsejat!</h2>
+            </noscript>
+            <footer>
+            	<small>Copyright@2018</small>
+            	<a rel="license" href="/privacy-policy">Privacy Policy</a>
+            </footer>
+
 </body>
 </html>
