@@ -20,10 +20,13 @@
                 <h1>Form katsetused</h1>
             </header>
             <form accept-charset="utf-8" autocomplete="on" method="GET" action="">
+                <fieldset>
+                    <legend>1 pt</legend>
                 <label for="nimi">Nimi: </label>
                 <input type="hidden" id="nimi" name="eesnimi" type="text"><br><br>
                 <label for="tel">Tel: </label>
                 <input id="tel" name="tel" type="tel" pattern="[+0-9]{9}" title="Numbers and + only"><br><br>
+                </fieldset>
                 <label for="url">Url: </label>
                 <input id="url" name="url" type="url" list="kodukad">
                 <datalist id="kodukad">
@@ -33,14 +36,14 @@
                 </datalist><br><br>
                 <select name="valik" multiple>
                     <optgroup label="1">
-                        <option value="http://neti.ee" label="neti">
-                        <option value="http://google.ee" label="google" selected>
-                        <option value="http://postimees.ee" label="postimees">
+                        <option value="http://neti.ee" label="neti">neti</option>
+                        <option value="http://google.ee" label="google" selected>google</option>
+                        <option value="http://postimees.ee" label="postimees">postimees</option>
                     </optgroup>
                     <optgroup label="2">
-                        <option value="http://neti.ee" label="neti">
-                        <option value="http://google.ee" label="google" selected>
-                        <option value="http://postimees.ee" label="postimees">
+                        <option value="http://neti.ee" label="neti">neti</option>
+                        <option value="http://google.ee" label="google">google</option>
+                        <option value="http://postimees.ee" label="postimees">postimees</option>
                     </optgroup>
                 </select><br><br>
                 <label for="email">Email: </label>
@@ -68,16 +71,34 @@
                 <input id="radio" name="radio" type="radio"><br><br-->
                 <label for="search">Otsing: </label>
                 <input id="search" name="search" type="search" value="peppa"><br><br>
+                <textarea name="textarea" cols="30" rows="5" wrap="hard"></textarea><br><br>
                 <button type="button" autofocus>XxX</button>
                 <button type="submit" formmethod="POST">Submit</button>
                 <button type="reset">Reset</button>
                 <input type="button" autofocus value="Nupp">
-                <input type="image" src="../icon/favicon-16x16.png" alt="nupp">
+                <input type="image" src="../icon/favicon-16x16.png" alt="nupp"><br><br>
             <?php
                 if(isset($_POST['eesnimi']))
                 echo '<p>'.$_POST['eesnimi'].'</p>';
             ?>
             </form>
+            <form onsubmit="return false" oninput="o.value = a.valueAsNumber + b.valueAsNumber">
+                <input name="a" type="number" step="any"> +
+                <input name="b" type="number" step="any"> =
+                <output name="o" for="a b"></output>
+            </form><br>
+            <progress value="150" max="200"></progress>
+            <meter value="0.7" min="0.5" max="1.5" low="0.8" high="1.2" optimum="1"></meter>
+            <details open>
+                <summary>Aka dropdown</summary>
+                <p>1. The wrap attribute is new for the</p>
+                <p>2. The wrap attribute is new for the</p>
+            </details>
+            <dialog open>
+                <h3><AaABbB/h3>
+                <p>1. The wrap attribute is new for the</p>
+                <p>2. The wrap attribute is new for the</p>
+            </dialog>
         </main>
     </body>
 </html>
