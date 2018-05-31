@@ -1,13 +1,65 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" 
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/fb# article: http://ogp.me/ns/article#">
     <head>
         <meta charset="utf-8">
-        <title>Tiitel koolitusele</title>
+        <!-- SEO: ideaalne pikkus 6 sõna -->
+        <title>Front-End Koolitus on alanud!</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <!-- Juhul kui on tegu veebi rakendusega -->
+        <meta name="application-name" content="Tradent">
+
+        <meta name="author" content="Roman Gorislavski">
+        <link rel="author" href="mailto:paradine@kalk.ee">
+        <meta name="generator" content="Frontweaver 8.2">
+
+        <!-- SEO: ideaalne pikkus 155 tähemärki -->
+        <meta name="description" 
+            content="Front-end koolitusel õpime veebi. 
+                    Front-end koolitusel õpime veebi. 
+                    Front-end koolitusel õpime veebi. 
+                    Front-end koolitusel õpime veebi.">
+        <!-- SEO: iseendale -->            
+        <meta name="keywords" content="front-end koolitus">
+
+        <!-- SEO opengraph -->
+        <meta property="fb:app_id" content="30218405567573474865">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://koduleht.ee/Roman">
+        <meta property="og:title" content="Tere Tulemast Front-End Koolitusele!">
+        <meta property="og:description" 
+                content="Front-end koolitusel õpime veebi. 
+                    Front-end koolitusel õpime veebi. 
+                    Front-end koolitusel õpime veebi. 
+                    Front-end koolitusel õpime veebi.">
+        <meta property="og:image" content="http://koduleht.ee/icon/favicon-32x32.png">
+        <meta property="article:published_time" content="2018-05-29T16:00">
+
         <!-- Valikuline: -->
         <base href="/Roman/"  target="_blank">
+        <meta name="referrer" content="strict-origin-when-crossorigin">
+        <!-- no-referrer no-referrer-when-downgrade same-origin origin strict-origin
+        origin-when-crossorigin  strict-origin-when-crossorigin unsafe-url -->
+        <link rel="alternate" type="application/atom+xml" 
+            href="https://www.theregister.co.uk/headlines.atom">
+        <!-- link sama lehele teises keeles -->
+        <link rel="alternate" type="text/html" 
+            href="/en/Roman" hreflang="en" title="English Roman page">
+        <!-- printimiseks -->
+        <link rel="alternate" type="text/html" 
+            href="/en/Roman" hreflang="en" media="print" title="English Roman printing page">
+        
+        <!-- leht mis abistab antud lehe kasutust-->
+        <link rel="help" href="/help">
+        <!-- ainult opensearch-ga  ja kui otsing hõlmab tervelt lehte-->
+        <link rel="search" href="/search">
+
+        <!-- Sama teema jätk uuel lehel -->
+        <link rel="prev" rev="next" href="/Roman/01">
+        <!-- Sama teema eelnev leht -->
+        <link rel="next" rev="prev" href="/Roman/03">
+
         <!-- Põhi ikoonid -->
         <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -31,16 +83,19 @@
         
     </head>
     <!-- body onoffline="update(false)" -->
-    <body>    
+    <body>
+        <noscript>
+            <h2>Palun lülita javascript sisse või uuenda veebilehitseja!</h2>
+        </noscript>    
         <header>
-            <h1>Tere Tulemast!</h1>
+            <h2>Lorem Ipsum</h2>
             <div class="pealkiri">
                 <section>
-                    <h2>Front-End koolitusele!</h2>
+                    <h3>Front-End koolitusele!</h3>
                     <p>Lorem ipsum dolor sit amet.</p>
                 </section>
                 <section>
-                    <h2>Front-End koolitusele 2!</h2>
+                    <h3>Front-End koolitusele 2!</h3>
                     <p>Lorem ipsum dolor sit amet.</p>
                 </section>
             </div>
@@ -54,10 +109,19 @@
             </ul>
         </nav>
         <main>
-            <article id="artikkel1">
+            <article id="artikkel1" itemscope itemtype="http://schema.org/TechArticle" 
+                role="presentation feed">
                 <header>
-                    <h1>Lorem Ipsum</h1>
-                    <p>Autor: <cite>Juku Kask</cite></p>
+                    <!-- SEO: ideaalne pikkus 6 sõna -->
+                    <h1 itemprop="name">Tere Tulemast Front-End Koolitusele!</h1>
+                    <p>Autor: 
+                        <a rel="author" href="mailto:juku@kalk.ee?Subject=Koolituse%artiklilt">
+                            <cite itemprop="author">Juku Kask</cite>
+                        </a>
+                        <p>Was posted on: 
+                            <time datetime="2018-05-29" itemprop="datePublished">May 29</time>
+                        </p>
+                    </p>
                     <aside>
                         <blockquote>
                             <p>Täna kirjutasin oodatust kauem aga kirjutatud sai.</p>
@@ -70,71 +134,101 @@
     #        ##   ###### #    # #####  #      #      
     #       #  #  #    # #    # #      #      #      
     ###### #    # #    # #    # #      ###### ######
+                            <code>
+    &lt;code&gt;
+    std::cout &lt;&lt; "Hello World";                            
+                            </code>
                         </pre>
                     </aside>
                 </header>
-                <p>
-                    Lorem ipsum <a href="#definition" target="_self">definition</a> sit amet, consectetur adipiscing elit. Pellentesque quis erat diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                    <figure>
-                        <img src="/icon/favicon.svg" alt="Figure Example" width="150">
-                        <figcaption>Joonis 1</figcaption>
-                    </figure>
-                    In hac habitasse platea dictumst. <q>Praesent congue ornare arcu, eu fringilla urna pharetra vel.</q> Nunc ornare tellus non aliquet gravida. Morbi in neque tristique, posuere dolor a, volutpat metus. Nullam vitae commodo enim, sit amet tincidunt dui. Aliquam erat volutpat. Proin id justo sollicitudin, convallis purus at, laoreet nulla. Nunc tincidunt orci ac justo porta, in pellentesque purus efficitur. Sed et venenatis justo. Aliquam vel neque in diam rhoncus iaculis. Nunc eget mattis odio. Morbi ex velit, elementum vitae auctor sit amet, rutrum quis odio. Etiam id elit neque. Donec congue risus in eros laoreet, id ullamcorper nibh fermentum. 
-                    Arvuti ütles näiteks seda: <samp>Error 7401: Clean buffer</samp>, kuidas asjale läheneda.
-                </p>
-                <section>
-                    <ul>
-                        <li><strong>strong</strong><b>bold</b></li>
-                        <li><em>em</em> <i>italic</i></li>
-                        <li><mark>mark</mark></li>
-                        <li><ins>insert</ins> <u>underline</u></li>
-                        <li><del>delete</del> <s>strikethrough</s></li>
-                        <li><small>small</small> <span>span</span></li>
-                        <li>H<sub>2</sub>O 5<sup>2</sup></li>
-                        <li>5 + <var>x</var> = 10</li>
-                        <li><kbd>Ctrl</kbd> + <kbd>S</kbd></li>
-                    </ul>
+                <section itemprop="articleBody">
+                    <p itemprop="description">
+                        <a href="peatykk01.html" rel="bookmark">Viide peatükk 1-le</a> 
+                        Lorem ipsum <a href="#definition" target="_self">definition</a> sit amet, consectetur adipiscing elit. Pellentesque quis erat diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                        <figure>
+                            <img src="/icon/mstile-310x150" alt="Figure Example" width="150">
+                            <figcaption>Joonis 1</figcaption>
+                        </figure>
+                        <a href="https://html.com/wp-content/uploads/html-cheat-sheet.pdf" 
+                            download type="application/pdf">Fail allalaadimiseks</a><br>
+                        <a href="http://random.com" rel="nofollow">Leht mida autor ei usalda</a><br>
+                        <a href="http://random.com" rel="noopener">Leht mida autor ei usalda</a><br>
+                        <a href="http://random.com" rel="no-referrer" referrerpolicy="no-referrer">Leht mida autor ei usalda</a><br>
+                        In hac habitasse platea dictumst. <q>Praesent congue ornare arcu, eu fringilla urna pharetra vel.</q> Nunc ornare tellus non aliquet gravida. Morbi in neque tristique, posuere dolor a, volutpat metus. Nullam vitae commodo enim, sit amet tincidunt dui. Aliquam erat volutpat. Proin id justo sollicitudin, convallis purus at, laoreet nulla. Nunc tincidunt orci ac justo porta, in pellentesque purus efficitur. Sed et venenatis justo. Aliquam vel neque in diam rhoncus iaculis. Nunc eget mattis odio. Morbi ex velit, elementum vitae auctor sit amet, rutrum quis odio. Etiam id elit neque. Donec congue risus in eros laoreet, id ullamcorper nibh fermentum. 
+                        Arvuti ütles näiteks seda: <samp>Error 7401: Clean buffer</samp>, kuidas asjale läheneda.
+                    </p>
+                    <section>
+                        <ul>
+                            <li><strong>strong</strong><b>bold</b></li>
+                            <li><em>em</em> <i>italic</i></li>
+                            <li><mark>mark</mark></li>
+                            <li><ins>insert</ins> <u>underline</u></li>
+                            <li><del>delete</del> <s>strikethrough</s></li>
+                            <li><small>small</small> <span>span</span></li>
+                            <li>H<sub>2</sub>O 5<sup>2</sup></li>
+                            <li>5 + <var>x</var> = 10</li>
+                            <li><kbd>Ctrl</kbd> + <kbd>S</kbd></li>
+                        </ul>
+                    </section>
+                    <p>
+                        <picture>
+                            <source srcset="/icon/favicon.svg"  media="(min-width: 1080px)">
+                            <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x"
+                                alt="Picture example" width="150" referrerpolicy="unsafe-url" crossorigin="anonymous" longdesc="#definition" >
+                            <!-- map area -->
+                        </picture>
+                        <video muted loop width="250px" poster="/icon/favicon-16x16.png" controls preload>
+                            <source src="/Sky.mp4">
+                            <track kind="subtitles" src="subtiiter-en.vtt" srclang="en" label="English">
+                            Video tugi puudub!
+                        </video>
+                        <iframe width="560" height="315" referrerpolicy="no-referrer-when-downgrade" 
+                            src="https://www.youtube.com/embed/FSmJZePnykk?controls=1&amp;showinfo=0" 
+                            frameborder="0" allowfullscreen></iframe>
+                        <svg height="100" width="100">
+                            <circle cx="50" cy="50" r="10" stroke="green" stroke-width="5" fill="yellow"/>
+                        </svg>
+                        Proin eget sollicitudin sapien, id consectetur nulla. In eget erat aliquet, dignissim diam sed, sollicitudin velit. Sed elementum orci a mattis pharetra. Nam non ultrices massa. Mauris tincidunt velit a diam aliquam, efficitur scelerisque leo finibus. Mauris id lobortis orci. Curabitur convallis dignissim lectus id vestibulum. In pretium aliquam pulvinar. Suspendisse non leo sed velit congue tincidunt. Etiam gravida tempor luctus. Donec faucibus velit ut condimentum porta. Mauris ut ultrices dui. Sed id ante ut lorem interdum fermentum. Fusce facilisis, ipsum et cursus tristique, augue nisi ornare felis, vitae elementum lacus dolor eget nunc. 
+                    </p><hr>
+                    <section>
+                        <ol reversed="reversed" start="4">
+                            <li><data value="53">Juku</data></li>
+                            <li value="1"><data value="04">Kalle</data></li>
+                            <li value="1"><data value="27">Malle</data></li>
+                            <li><data value="73">Tobi</data></li>
+                            <li><data value="92">Juhan</data></li>
+                        </ol>
+                    </section>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis erat diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Praesent congue ornare arcu, eu fringilla urna pharetra vel. Nunc ornare tellus non aliquet gravida. Morbi in neque tristique, posuere dolor a, volutpat metus. Nullam vitae commodo enim, sit amet tincidunt dui. Aliquam erat volutpat. Proin id justo sollicitudin, convallis purus at, laoreet nulla. Nunc tincidunt orci ac justo porta, in pellentesque purus efficitur. Sed et venenatis justo. Aliquam vel neque in diam rhoncus iaculis. Nunc eget mattis odio. Morbi ex velit, elementum vitae auctor sit amet, rutrum quis odio. Etiam id elit neque. Donec congue risus in eros laoreet, id ullamcorper nibh fermentum. 
+                    </p>
+                    <p>
+                        <ul>
+                            <li>User <bdi>jcranmer</bdi>: 12 posts.</li>
+                            <li>User <bdi>hober</bdi>: 5 posts.</li>
+                            <li>User <bdi>إيان</bdi>: 3 posts.</li>
+                            <li>User <bdo dir="rtl">إيان</bdo>: 3 posts.</li>
+                        </ul>
+                        <ruby>
+                            漢 <rp>(</rp><rt>Kan</rt><rp>)</rp>
+                            字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+                        </ruby>
+                        https://longurlmaker.com/go<wbr>?id=FFXANFEYVADGCOWJWGZLNHQJSTNVXMVDRTDEYICU<wbr>
+                            IGBLUYUREUDRBTBUNOPKALNRERVDZYXHEZTZXNQCITUJNVDBJTMKEABJRXMRWKZBJSAHGRJO<wbr>
+                            LDYYZCAIVMTANUJESWWOHWPROPYVHHJSLIQKKRTGDMHQHQVZNSNUODLDSKYASISERJPBAIIE<wbr>
+                            VPVDGRCTJQOYTABMKAMDJFHAOWCOFKSAZNEGEHZOYOMRPOEAORDXWKYLGAZLKSMKFQQKYQZW<wbr>
+                            FLOUZTUOKXMHIKSOKSAVKNGQEXBCNAYSLMNLFHAQFMYNXRBIJCDUPKKTHLVVMUOYHBJNJKEO<wbr>
+                            WCBTUDBEGFYVQJPXVLTHFIFMJPATZEHWGJPBNRFTXDPNNELIQEPVMUIWKIQJMXFTHVVVMAPJ<wbr>
+                            EEXRJIZZNOVZJEWTMMDZKJTSEONRPCBTHYKRGKQTZMTIQPCCCGCNPWFTKTKZWLTDKDVQOMJN<wbr>
+                            YDWOTZRVFUJUQOOAIZAELTIVXDLLPVZOYVCSUTNZNXUEMIFUHFZSZHOXLZJBVIPUESMZMAZA<wbr>
+                            XTEJCJEJPDCPLQMWQVYMEOGJGSISTHSQAWADGEMVIPKTGXQXTOJYDPHJIPCCWUTXRTAYYNUG<wbr>
+                            DFAJCQHVFQTIGARPQTRNOLLGELEDZYKDDKNGBUBGKVPRWHGNBYAPJLWOXASXZDACNNIPHKWS<wbr>
+                            GLJCTQPUPQKZBGOZHGWGJWIXJRMRCJJIVTLOKBIARSZTYOSFUOMEKUBUMOLOYVXTPIHAJPAB<wbr>
+                            HAUGOMMJAYNLTPGGESVCNSVDBCDLSEMAEGHTSTCTSQFMFLSJDNMRGHUHKYSCCECGLJAEDCYW<wbr>
+                    </p>
                 </section>
-                <p>
-                    Proin eget sollicitudin sapien, id consectetur nulla. In eget erat aliquet, dignissim diam sed, sollicitudin velit. Sed elementum orci a mattis pharetra. Nam non ultrices massa. Mauris tincidunt velit a diam aliquam, efficitur scelerisque leo finibus. Mauris id lobortis orci. Curabitur convallis dignissim lectus id vestibulum. In pretium aliquam pulvinar. Suspendisse non leo sed velit congue tincidunt. Etiam gravida tempor luctus. Donec faucibus velit ut condimentum porta. Mauris ut ultrices dui. Sed id ante ut lorem interdum fermentum. Fusce facilisis, ipsum et cursus tristique, augue nisi ornare felis, vitae elementum lacus dolor eget nunc. 
-                </p><hr>
-                <section>
-                    <ol reversed="reversed" start="4">
-                        <li><data value="53">Juku</data></li>
-                        <li value="1"><data value="04">Kalle</data></li>
-                        <li value="1"><data value="27">Malle</data></li>
-                        <li><data value="73">Tobi</data></li>
-                        <li><data value="92">Juhan</data></li>
-                    </ol>
-                </section>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis erat diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Praesent congue ornare arcu, eu fringilla urna pharetra vel. Nunc ornare tellus non aliquet gravida. Morbi in neque tristique, posuere dolor a, volutpat metus. Nullam vitae commodo enim, sit amet tincidunt dui. Aliquam erat volutpat. Proin id justo sollicitudin, convallis purus at, laoreet nulla. Nunc tincidunt orci ac justo porta, in pellentesque purus efficitur. Sed et venenatis justo. Aliquam vel neque in diam rhoncus iaculis. Nunc eget mattis odio. Morbi ex velit, elementum vitae auctor sit amet, rutrum quis odio. Etiam id elit neque. Donec congue risus in eros laoreet, id ullamcorper nibh fermentum. 
-                </p>
-                <p>
-                    <ul>
-                        <li>User <bdi>jcranmer</bdi>: 12 posts.</li>
-                        <li>User <bdi>hober</bdi>: 5 posts.</li>
-                        <li>User <bdi>إيان</bdi>: 3 posts.</li>
-                        <li>User <bdo dir="rtl">إيان</bdo>: 3 posts.</li>
-                    </ul>
-                    <ruby>
-                        漢 <rp>(</rp><rt>Kan</rt><rp>)</rp>
-                        字 <rp>(</rp><rt>ji</rt><rp>)</rp>
-                    </ruby>
-                    https://longurlmaker.com/go<wbr>?id=FFXANFEYVADGCOWJWGZLNHQJSTNVXMVDRTDEYICU<wbr>
-                        IGBLUYUREUDRBTBUNOPKALNRERVDZYXHEZTZXNQCITUJNVDBJTMKEABJRXMRWKZBJSAHGRJO<wbr>
-                        LDYYZCAIVMTANUJESWWOHWPROPYVHHJSLIQKKRTGDMHQHQVZNSNUODLDSKYASISERJPBAIIE<wbr>
-                        VPVDGRCTJQOYTABMKAMDJFHAOWCOFKSAZNEGEHZOYOMRPOEAORDXWKYLGAZLKSMKFQQKYQZW<wbr>
-                        FLOUZTUOKXMHIKSOKSAVKNGQEXBCNAYSLMNLFHAQFMYNXRBIJCDUPKKTHLVVMUOYHBJNJKEO<wbr>
-                        WCBTUDBEGFYVQJPXVLTHFIFMJPATZEHWGJPBNRFTXDPNNELIQEPVMUIWKIQJMXFTHVVVMAPJ<wbr>
-                        EEXRJIZZNOVZJEWTMMDZKJTSEONRPCBTHYKRGKQTZMTIQPCCCGCNPWFTKTKZWLTDKDVQOMJN<wbr>
-                        YDWOTZRVFUJUQOOAIZAELTIVXDLLPVZOYVCSUTNZNXUEMIFUHFZSZHOXLZJBVIPUESMZMAZA<wbr>
-                        XTEJCJEJPDCPLQMWQVYMEOGJGSISTHSQAWADGEMVIPKTGXQXTOJYDPHJIPCCWUTXRTAYYNUG<wbr>
-                        DFAJCQHVFQTIGARPQTRNOLLGELEDZYKDDKNGBUBGKVPRWHGNBYAPJLWOXASXZDACNNIPHKWS<wbr>
-                        GLJCTQPUPQKZBGOZHGWGJWIXJRMRCJJIVTLOKBIARSZTYOSFUOMEKUBUMOLOYVXTPIHAJPAB<wbr>
-                        HAUGOMMJAYNLTPGGESVCNSVDBCDLSEMAEGHTSTCTSQFMFLSJDNMRGHUHKYSCCECGLJAEDCYW<wbr>
-                </p>
                 <footer>
+                    Võtmesõnad: <a rel="tag" href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem Ipsum</a>
                     <dl>
                         <dt><dfn id="definition">Definition</dfn></dt>
                         <dd>A definition is a statement of the meaning of a term (a word, phrase, or other set of symbols).</dd>
@@ -154,6 +248,34 @@
             <p>
                 Lorem ipsum <abbr title="hüperteksti märgistuskeel">HTML</abbr> dolor sit amet, consectetur adipiscing elit. Pellentesque quis erat diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Praesent congue ornare arcu, eu fringilla urna pharetra vel. Nunc ornare tellus non aliquet gravida. Morbi in neque tristique, posuere dolor a, volutpat metus. Nullam vitae commodo enim, sit amet tincidunt dui. Aliquam erat volutpat. Proin id justo sollicitudin, convallis purus at, laoreet nulla. Nunc tincidunt orci ac justo porta, in pellentesque purus efficitur. Sed et venenatis justo. Aliquam vel neque in diam rhoncus iaculis. Nunc eget mattis odio. Morbi ex velit, elementum vitae auctor sit amet, rutrum quis odio. Etiam id elit neque. Donec congue risus in eros laoreet, id ullamcorper nibh fermentum. 
             </p>
+            <table border="1">
+                <caption>
+                    <p>Tabel1 pealkiri</p>
+                    <p>Terwe jdfgnöklker knedkjfekdfgk s dkfjgjl kf kfkh kfen wekfkejjkscdk</p>
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Päis 0</th>
+                        <th>Päis 1</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Päis 0</th>
+                        <th>Päis 1</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Keha 1</td>
+                        <td>Keha 2</td>
+                    </tr>
+                    <tr>
+                        <td>Keha 1</td>
+                        <td>Keha 2</td>
+                    </tr>
+                </tbody>
+            </table>
             <footer>
                 <a href="#artikkel2" target="_self">Tagasi artikli algusesse</a>
             </footer>
@@ -171,6 +293,7 @@
                 Tamme tee 11
             </address>
             <small>Copyright@2018</small>
+            <a rel="license" href="/privacy-policy">Privacy Policy</a>
         </footer>
     </body>
 </html>

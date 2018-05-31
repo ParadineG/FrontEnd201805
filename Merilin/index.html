@@ -1,16 +1,55 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" prefix="og: http://ogp.me/ns# fb: http://ogp.me/fb# article: http://ogp.me/ns/article#">
     <head>
         <meta charset="utf-8">
-        <title>Tiitel koolitusele</title>
+        <title>Front-End koolitus on alanud</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--veebirakenduse jaoks on see metatag, tavalisel kodukal pole vaja-->
+        <meta name="application-name" content="Tradent" >
+        <meta name="author" content="Merilin.K">
+        <link rel="author" href="mailto:merilin.koor@gmail.com">
+        <!--Seda ise käsitsi ei lisata, koodikirjutajad või generaatorid teevad seda-->
+        <meta name="generator" content="Frontweaver 8.2">
+        <!--veebilehe kirjeldus, ideaalne pikkus 155 tähemärki-->
+        <meta name="description" 
+            content="Frond-End koolitusel õpime veebilehe tegemist.
+            Frond-End koolitusel õpime veebilehe tegemist.
+            Frond-End koolitusel õpi veebilehte" >
+        <!--SEO: iseendale (Google vaatab seda vähe nüüd, aga ise saab sellest lähtuda lehe tegemisel-->
+        <meta name="keywords" content="front-end koolitus, veebiarendus, HTML">
         
+        <!--SEO opengraph -->
+        <meta property="fb:app_id" content="45555544444455555554444">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://koduleht.ee/Merilin">
+        <meta property="og:title" content="Tere tulemast Front-End koolitusele">
+        <meta property="og:description" 
+        content="Frond-End koolitusel õpime veebilehe tegemist.
+            Frond-End koolitusel õpime veebilehe tegemist.
+            Frond-End koolitusel õpi veebilehte">
+        <meta property="og:image" content="http://koduleht.ee/icon/favicon-32x32.png">
+        <meta property="article:published_time" content="2018-05-29T16:00">
+       
         <!--Valikuline:-->
         <base href="http://localhost/Merilin/" target="_blank">
         <meta name="referrer" content="strict-origin-when-crossorigin">
         <!--no-referrer(ei saadeta üldse infot) no-refferer-when-downgrade(vaikimis valik; turvalisele lehele saadetakse url) same-origin origin(üldise lehe info saab kaasa) strict-origin() origin-when-crossorigin 
         strict-origin-when-crossorigin(teistele ainult domeeni nimi, ebaturvalisele ei saadeta infot) unsafe-url(saadetakse kogu info) -->
+        
+        <link rel="alternate" type="application/atom+xml" href="https://www.theregister.co.uk/headlines.atom">
+        <!--link samale lehele teises keeles-->
+        <link rel="alternate" type="text/html" href="/en/Merilin" hreflang="en" title="English Merilin page">
+        <!--printimiseks-->
+        <link rel="alternate" type="text/html" href="/en/Merilin" hreflang="en" media="print" title="English Merilin page for print">
+        <!--terve lehe jaoks tehtud abilehe link, mis abistab terve lehe kasutust-->
+        <link rel="help" href="/help">
+        <!--ainult opensearch-iga ja kui otsing hõlmab tervet lehte-->
+        <link rel="search" href="/search">
+        <!--Sama teema jätk uuel lehel-->
+        <link rel="prev" rev="next" href="/Merilin/03">
+        <!--Sama teema eelnev leht-->
+        <link rel="next" rev="prev" href="/Merilin/01">
         <!-- Põhi ikoonid -->
         <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -23,16 +62,18 @@
     </head>
     <!--<body onoffline="update(false)">-->
     <body>
-        
+        <noscript>
+            <h2>Palun lülita javascript sisse või uuenda veebilehitseja!</h2>
+        </noscript>
         <header>
-             <h1>Tere tulemast!</h1>
+             <h2>Tere tulemast Front-End koolitusele!</h2>
              <div class="pealkiri">
                 <section>
-                        <h2>Front-End koolitusele!</h2>
+                        <h3>Front-End koolitusele!</h3>
                         <p>Lorem ipsum dolor sit amet.</p>
                 </section>
                 <section>
-                        <h2>Front-End koolitusele 2!</h2>
+                        <h3>Front-End koolitusele 2!</h3>
                         <p>Lorem ipsum dolor sit amet 2.</p>
                 </section>
             </div>   
@@ -46,14 +87,14 @@
             </ul>
         </nav>
         <main>
-            <article id="artikkel1">
+            <article id="artikkel1" itemscope itemtype="http://schema.org/TechArticle" role="presentation feed">
                 <header>
-                <h1>Lorem Ipsum</h1>
-                <p>Autor: <cite>Juku Kask</cite></p>
-                <p>Was posted on: <time datetime="2018-05-29">May 29</time></p>
+                <h1 itemprop="name">Tere tulemast Front-End koolitusele</h1>
+                <p>Autor: <a rel="author" href="mailto:juku@mail.com?Subject=Tere%20Jälle"><cite itemprop="author">Juku Kask</cite></a></p>
+                <p>Was posted on: <time datetime="2018-05-29" itemprop="datePublished">May 29</time></p>
                 </header>
-                <p>
-
+                <p itemprop="description">
+                Artikli sissejuhatus.
                 </p>
                 <aside>
                     <blockquote>
@@ -146,10 +187,17 @@
         </main>
         <article id="artikkel2">
                 <header>
-                    <h1>Lorem Ipsum</h1>
+                    <h2>Lorem Ipsum</h2>
                     <p>Autor: <cite>Juku Kask</cite></p>
                     <p>Was posted on: <time datetime="2018-05-29">May 29</time></p>
                 </header>
+                <p> <!--sisukorra jaoks on see bookmarkimine hea võimalus-->
+                    <a href="peatykk01.html" rel="bookmark">Viide peatükk 1-le</a><br>
+                    <a href="http://random.com" rel="nofollow">Leht mida autor ei usalda</a><br>
+                    <a href="http://random.com" rel="no-referrer" referrerpolicy="no-referrer">Leht mida autor ei usalda</a><br>
+                    <a href="http://random.com" rel="noopener">Leht mida autor ei usalda</a><br>
+                    <a href="https://html.com/wp-content/uploads/html-cheat-sheet.pdf" download type="application/pdf">Mingi fail</a><br>
+                </p>
                 <p>
                 <table border="1">
                     <caption>Tabeli pealkiri</caption>
@@ -189,6 +237,7 @@
                 </p>
                 <p>
         <footer>
+            Võtmesõnad: <a rel="tag" href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem Ipsum</a>
             <address>
                 <a href="mailto:juku(ät)mail.ee">
                     juku(ät)mail.ee
@@ -201,6 +250,7 @@
                 Tamme tee <br>
             </address>
             <small>Copyright @ 2018</small>
+            <a rel="license" href="privacy-policy">Privacy Policy</a>
         </footer>
     </body>
 </html>
