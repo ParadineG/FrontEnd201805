@@ -20,6 +20,8 @@
         <main>
             <form accept-charset="utf-8" autocomplete="on" 
             method="GET" action="">
+                <fieldset>
+                <legend>1.osa</legend>
                 <label for="nimi">Nimi: </label>
                 <input type="text" id="nimi" name="eesnimi" required><br>
                 <label for="hidden">hidden: </label>
@@ -30,7 +32,9 @@
 
                 <label for="parool">Salasõna: </label>
                 <input type="password" id="parool" name="parool" minlength="3" maxlength="6"><br>
-
+                </fieldset>
+                <fieldset>
+                <legend>2.osa</legend>
                 <label for="date">Kuupäev: </label>
                 <input type="date" id="date" name="date" min="1979-01-01" max="2018-05-31">
                 <label for="month">Kuu: </label>
@@ -45,7 +49,7 @@
 
                 <label for="range">Vahemik: </label>
                 <input type="range" id="range" name="range" step="20"><br>
-
+                </fieldset>
                 <label for="color">Värv: </label>
                 <input type="color" id="color" name="color"><br>
 
@@ -87,13 +91,29 @@
                 <input type="reset" value="Reset">
                 <input type="submit" formmethod="GET" autofocus value="Saada">
                 <input type="image" src="/icon/Favicon-32x32.png" value="Nuppuke">
-                
+                <textarea name="tekstiala" cols="30" rows="7">Tere.... </textarea><br>
 
                 <button type="button" disabled>Nupp</button>
                 <button type="reset">Reset</button>
                 <button type="submit" formmethod="GET" autofocus>Saada</button>
 
-            </form>
+            </form><br>
+            <form onsubmit="return false" oninput="o.value = a.valueAsnumber + b.valueAsNumber">
+                <input name="a" type="number" step="any"> +
+                <input name="b" type="number" step="any"> =
+                <output name="o"for="a b"></output>
+            <progress value="100" max="150"></progress>
+            <meter min="0.2" max="2"value="0.7" low="0.7" high="1.2" optimum="1">Tere</meter>
+            <details>
+                <summary><em>Kokkuvõte detailidest</em></summary>
+                <p> Siin on tekst</p>
+                <p>Siin on tekst</p>
+            </details>
+            <dialog open>
+                <h2> Tere dialog!</h2>
+                <p> Siin on tekst</p>
+                <p>Siin on tekst</p>
+            </dialog><br>
         </main>
         <a href="/marcus/index.html" target="_self">Tagasi</a>
     </body>

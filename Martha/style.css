@@ -1,6 +1,8 @@
-
+/* * võtab enda alla kõik elemendid lehel */
 h1{
     color: palevioletred;
+    font-size: 1cm;
+   
 }
 
 h2{
@@ -23,8 +25,19 @@ li a{
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
+    font-size: 0.5cm;
 }
 li a:hover {
     background-color:palevioletred;
     color: white;
+}
+
+p {
+    background-color: lightblue;
+}
+#definition {
+    color: saddlebrown;
+}
+body > header {
+    background-color: gainsboro;
 }

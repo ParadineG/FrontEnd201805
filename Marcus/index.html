@@ -1,34 +1,93 @@
 <!doctype html>
-<html lang="et">
+<html lang="et" 
+    prefix="og:http/ogp.me/ns# fb: http://ogp.me/fb# article: http://ogp.me/ns/article#">
     <head>
         <meta charset="utf-8">
-        <title>Tiitel koolitusele</title>
-        
+
+        <title>Tiitel Front-End koolitusele</title>
+        <!--SEO: ideaalne pikkus on kuni 6 sõna-->
         <meta name="vievport" content="width=device-width, initial-scale=1.0">
+        <!-- Juhul kui on tegu veebi rakendusega -->
+        <meta name="application-name" content="Tradent"/>
+        <!--SEO: ideaalne pikkus on kuni 155 tähemärki - oleneb tähemärgi laiusest-->
+        <!--SEO: description lisatakse otsingumootorisse-->
+        <meta name="author" content="Mina">
+        <link rel="author" href="mailto:tere@mail.ee">
+
+        <meta name="description" content="Front-end koolitusel õpime veebi.
+                Front-end koolitusel õpime veebi.
+                Front-end koolitusel õpime veebi.
+                Front-end koolitusel õpime veebi.">
+        <!--SEO: iseendale-->        
+        <meta name="keywords" content="front-end koolitus, html, php">
+        <meta name="generator" content="Frontweaver 8.2">
+
+        <!--SEO: opengraph-->
+        <meta property="fb:app_id" content="302154811111">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://koduleht.ee/MB">
+        <meta property="og:title" content="Artikli pealkiri">
+        <meta property="fb:description" content="Front-end koolitusel õpime veebi" >
+        <meta property="og:image" content="http://koduleht.ee/icon/favicon-32x32.png">
+        <meta property="article:published_time" content="2018-05-29T16:00">
+
+
 
         <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
         <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon-16x16.svg">
+        <!-- Valikuline: -->
+        <base href="/marcus/"  target="_blank">
+        <meta name="referrer" content="strict-origin-when-crossorigin">
+        <!-- no-referrer no-referrer-when-downgrade same-origin origin strict-origin
+        origin-when-crossorigin  strict-origin-when-crossorigin unsafe-url -->
+
+        
         <!-- Valikuline:-->
         <base href="http://localhost/Marcus/" target="_blank">
-        <link rel="stylesheet" href="style.css" type="text/css" title="default">
+        <link rel="stylesheet" href="/localhost/style.css" type="text/css" title="default">
         <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
         <link rel="stylesheet" href="print.css" type="text/css" media="print">
+
+        <link rel="alternate" type="application/atom+xml"
+            HREF="https://www.theregister.co.uk/headlines.atom">
+        <!-- link sama lehele teises keeles -->
+            <link rel="alternate" type="text"
+            HREF="/en/Marcus" hreflang="en" title="English M page">
+        <!-- pprintismiseks-->
+        <link rel="alternate" type="text/html"
+        HREF="/en/Marcus" hreflang="en" media="print" title="English printing page">
+        <!-- leht, mis abistab antud lehe kasutust-->
+        <link rel="help" href="/help">
+        <!-- ainult opensearch-ga -->
+        <link rel="search" href="/search">
+        <!-- Sama teema jätkub uuel lehel -->
+        <link rel="prev" rev="next" href="/Marcus/01">
+        <!-- Sama teema eelnev leht -->
+        <link rel="next" rev="prev" href="/Marcus/02">
+
+
     </head>
     <!--<body onoffline="update(false)">-->
     <body>
+        <noscript>
+            <h2>Palun lülita javascript sisse või uuenda veebilehitsejat</h2>
+        </noscript>
         <header>
-                <h1>Tere Tulemast!</h1>
+            <!--SEO: ideaalne pikkus on kuni 6 sõna-->
+                <h2>Tere Tulemast Front-end koolitusele!</h2>
                 <div class="pealkiri"><section>
-                      <h2>Front-End koolitusele</h2>
+                      <h3>Front-End koolitusele</h3>
                       <p> Lorem ja ipsum la la laaa!</p>
                 </section>
                 <section>
-                        <h2>Front-End koolitusele 2!</h2>
+                        <h3>Front-End koolitusele 2!</h3>
                         <p> Lorem ja ipsum la la laaa!</p>
                   </section>
                 </div>
         </header>
+        <p class="katse katse2">Jupp teksti</p>
+        <p class="katse2">Jupp teksti</p>
         <font color="red">Tere uuesti!</font>
         <nav>
             <ul>
@@ -41,11 +100,13 @@
             </ul>
         </nav>
         <br>
-        <article id="artikkel1"> 
+        <article id="artikkel1" itemscope itemtype="http://schema.org/Techarticle" role"presentation feed"> 
                 <header>
-                        <h1 align="center">Artikli pealkiri</h1>
-                        <p>Autor: Mina Ise</p>
-                        <p>Was posted on:</p>time datetime="2018-05-29">May 29</time>
+                        <h1 itemprop="name" align="center">Artikli pealkiri</h1>
+                        <p>Autor: <a rel="author" href="mailto:juku@kalk.ee?subjet=Tere%20Jälle">
+                            <cite itemprop="author">Mina Ise</cite></a></p>
+                        <p><a href="peatykk01.html" rel"bookmark">Viide peatükk 1-le</a>
+                            Was posted on:</p><time datetime="2018-05-29" itemprop="datePublished">May 29</time>
                         <aside>
                             <blockquote>
                                 <p>Täna kirjutasin koodi</p>
@@ -63,13 +124,19 @@
                         </pre>
                         </aside>
                 </header>
-                <p>
+                <section itemprop="articlebody">
+                <p itemprop="description">
                     Tühi jutt ja Lorem ipsum <a href="#definition" target="_self"> definition</a> dolor sit amet, consectetur adipiscing elit. Phasellus faucibus consequat sapien, non interdum ipsum. Sed sodales, dolor non consequat euismod, lectus mi cursus nunc, tincidunt viverra eros ex eget ligula. Morbi sit amet ligula urna. Aliquam ac risus lobortis, aliquet eros non, luctus nulla. In varius ac sapien sed fermentum. Phasellus egestas metus quis porttitor interdum. Nam a consectetur enim, eu elementum tellus. Sed eget elementum orci.
                 <figure>
                     <img src="/icon/favicon.svg" alt="Figure example" width="150">
                     <figcaption>Joonis nr.1</figcaption>
                                         
                 </figure>
+                <a href="https://html.com/wp-content/uploads/html-cheat-sheet.pdf" 
+                    download type="application/pdf">Viiruste fail, poolmuidu</a><br>
+                <a href="http://random.com" rel="nofollow">Tasuta viirused</a><br>
+                <a href="http://random.com" rel="noopener">Tasuta viirused</a><br>
+                <a href="http://random.com" rel="no-refferer" referrerpoliciy="no-referrer">Tasuta viirused</a><br>
                 Arvuti ütles: <samp>Error 7401:clean bucket</samp> ,kuidas asjale läheneda?
                 </p><hr>
                 
@@ -159,10 +226,11 @@
                 </p>
 
                 <p align="center">keskel olev tekst</p>
-                
+                </section>
 
             
                 <footer>
+                    Võtmesõnad: <a rel="tag" href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem Ipsum - mis see on?</a>
                     <d1>
                     <dt><dfn id="definition">Definiton</dfn></dt>
                     <dd>See on definitsiooni defintisioon</dd>
@@ -183,6 +251,18 @@
         </article>
         <footer>
             <small>Copyright @ 2018</small>
+            <a rel="license" href="/privacy-policy">Privacy Policy</a>
         </footer>
+        <!-- Google Analytics -->
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('send', 'pageview');
+        </script>
+        <!-- End Google Analytics -->
     </body>
 </html>
