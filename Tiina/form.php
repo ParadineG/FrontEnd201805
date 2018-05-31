@@ -20,19 +20,23 @@
     <body>
         <main>
             <!--novalidate -valideerimine backendis -->
-            <form accept-charset="UTF-8" autocomplete="on" method="GET" action="" >
+            <form accept-charset="UTF-8" autocomplete="on" >
+                
+                <fieldset>
+                    <legend>1. osa</legend>
                 <!--for seostatakse id'ga.Id peab olema alati unikaalne. Kui vaja kutsuda rohkem, siis on korrektseks kasutuseks klass.-->
                 <!--disabled - nupp ei tööta ja on välja lülitatud. Autofocus - nupp mida vajutatakse kui vajutada enterit-->
-                <label for="hidden">Varjatud: </label>
-                <input type="hidden" id="hidden" name="hidden" value=""><br>
-                <label for="nimi">Nimi: </label>
-                <input type="text" id="nimi" name="eesnimi" required><br>
-                <label for="search">Otsing: </label>
-                <input type="search" id="search" name="search" value="Tere!" readonly><br>
-                <!--telephone URL E-mail Password Date Time Number Range Color Checkbox Radio-->
-                <label for="tel">Telefon: </label>
-                <input type="tel" id="tel" name="tel" pattern="[+0-9]{9}" title="Numbers and + only" /><br>
-                
+                    <label for="hidden">Varjatud: </label>
+                    <input type="hidden" id="hidden" name="hidden" value="peidetud"><br>
+                    <label for="nimi">Nimi: </label>
+                    <input type="text" id="nimi" name="eesnimi" required><br>
+                    <label for="search">Otsing: </label>
+                    <input type="search" id="search" name="search" value="Tere!" readonly><br>
+                    <!--telephone URL E-mail Password Date Time Number Range Color Checkbox Radio-->
+                    <label for="tel">Telefon: </label>
+                    <input type="tel" id="tel" name="tel" pattern="[+0-9]{9}" title="Numbers and + only" /><br>
+                </fieldset>
+
                 <label for="URL">URL: </label>
                 <input type="URL" id="URL" name="URL" list="kodukad"><br>
                 <datalist id="kodukad">
@@ -42,13 +46,13 @@
                 </datalist>
                 <select name="valik" multiple>
                     <optgroup label="1">
-                    <option value="http://neti.ee" label="neti">
-                    <option value="http://google.ee">
-                    <option value="http://neti.ee"></optgroup>
+                    <option value="http://neti.ee" label="neti">Neti</option>
+                    <option value="http://google.ee" label="Google" selected>Google</option>
+                    <option value="http://juku.ee" label="Juku" disabled>Juku</option></optgroup>
                     <optgroup label="2">
-                    <option value="http://neti.ee" label="neti">
-                    <option value="http://google.ee">
-                    <option value="http://neti.ee"></optgroup>
+                    <option value="http://neti.ee" label="neti">Neti</option>
+                    <option value="http://google.ee" selected>Google</option> <!--Firefox soovib sellist sisestamist sisu kuvamiseks-->
+                    <option value="http://juku.ee" disabled>Juku</option></optgroup>
                 </select>
                 <label for="email">E-mail: </label>
                 <input type="email" id="email" name="email" placeholder="nimi@mail.ee"><br>
@@ -79,6 +83,8 @@
                 <label for="checkbox">Kass: </label>
                 <input type="checkbox" id="checkbox" name="checkbox"  value="Kass"><br>
 
+                <textarea name="tekstiala" cols="30" rows="7" wrap="hard">Tere</textarea><br>
+
                 <input type="button" disabled value="Nupp">
                 <input type="reset" value="Reset">
                 <input type="submit" formmethod="GET" autofocus value="saada">
@@ -87,7 +93,24 @@
                 <button type="button" disabled>Nupp</button>
                 <button type="reset">Reset</button>
                 <button type="submit" formmethod="GET" autofocus>Saada</button>
-            </form>
+            </form><br>
+            <form onsubmit="return false" oninput="o.value=a.valueAsNumber + b.valueAsNumber">
+                <input name="a" type="number"step="any"> + <input name="b" type="number"step="any"> = <output name="o" for="a, b"></output>
+            </form><br>
+            <progress value="100" max="150"></progress><br><!--Leidub koos formiga-->
+            <meter min="0.5" max="1.5" value="0.7" low="0.8" high="1.2" optimum="1" ></meter><!--Liikumine on sentimeetrites-->
+
+            <details open>
+                <summary><em>Kokkuvõte detailidest</em></summary>
+                <p>jdf ghtstreter reter t rtegfdg dgfregegdzgf ar</p>
+                <p>jdf ghtstreter reter t rtegfdg dgfregegdzgf ar</p>
+                <p>jdf ghtstreter reter t rtegfdg dgfregegdzgf ar</p>
+            </details>
+            <dialog open>
+                <h2>Tere dialog!</h2>
+                <p>jdf ghtstreter reter t rtegfdg dgfregegdzgf ar</p>
+                <p>jdf ghtstreter reter t rtegfdg dgfregegdzgf ar</p>
+            </dialog>
             <?php
             if(isset($_POST['eesnimi']))
                 echo '<p>'.$_POST['eesnimi'].'</p>';
