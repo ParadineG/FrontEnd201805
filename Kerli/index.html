@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" prefix="og: http://ogp.me/ns# fb: http://ogp.me/fb# article: http://ogp.me/ns/article#">
     <head>
         <meta charset="utf-8">
+        <!-- SEO -->
+        <title>HTMLi proov</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="application-name" content="Leht">
+        <meta name="description" content="F-E test - see osa peaks sisaldama lehe kirjeldust">
+        <meta name="keywords" content="front-end">
+        <meta name="author" content="Pipi">
+        <link rel="author" href="mailto:pipi@pikksukk.ee">
+        <meta name="generator" content="Frontweaver 8.2">
+        <meta property="fb:app_id" content="34567828">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://koduleht.ee">
+        <meta property="og:title" content="Etiam facilisis nisl vel convallis tempor">
+        <meta property="og:descriptiom" content="F-E test - see osa peaks sisaldama lehe kirjeldust">
+        <meta property="og:image" content="http://koduleht.ee/Kerli/icon/favicon-32x32.png">
+        <meta property="article:published_time" content="2018-05-29">
         <!--Valikuline-->
         <base href="http://localhost/Kerli/" target="_blank">
         <meta name ="referrer" content="strict-origin-when-cross-origin">
-        <title>Uus leht</title>
+        <link rel="alternate" type="application/atom+xml" href="https://www.theregister.co.uk/headlines.atom">
+        <link rel="alternate" type="text/html" href="/en/Pipi" hreflang="en" title="En">
+        <!--printimiseks-->
+        <link rel="alternate" type="text/html" href="/en/Pipi" hreflang="en" title="En for printing">
+        <link rel="help" href="/help">
+        <linkrel="search" href="/search">
+        <link rel="prev" rev="next" href="/Kerli/1">
+        <linkrel="next" rev="prev" href="/Kerli/2">
         <link rel="shortcut icon" type="image/png" sized="32x32" href="/icon/favicon-32x32.png">
         <link rel="shortcut icon" type="image/png" sized="16x16" href="/icon/favicon-16x16.png"> 
         <link rel="shortcut icon" type="svg/xml" sized="any" href="/icon/favicon.svg">       
@@ -15,6 +37,9 @@
         <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
     </head>
     <body class="home">
+        <noscript>
+            <h2>Javascript</h2>
+        </noscript>
         <header>
             <h1>HTMLi proov</h1>
             <div class="alapealkiri">
@@ -30,7 +55,7 @@
             <aside>
                 <blockquote>
                     <p>Random mõtted...</p>
-                    <cite>Ninja - "Zzzz..."</cite>
+                    <cite itemprop="author">Ninja - "Zzzz..."</cite>
                 </blockquote>
             </aside>
         </header>
@@ -49,45 +74,51 @@
         </nav>
         <hr>
         <main>
-            <article id="artikkel1">
+            <article id="artikkel1" itemscope itemtype="http://schema.org/TechArticle" role="presentation feed">
                 <header>
-                    <h1>Etiam facilisis nisl vel convallis tempor</h1>
-                    <p>Autor: Juku</p>
+                    <h1 itemprop="name">Etiam facilisis nisl vel convallis tempor</h1>
+                    <p>Autor: <a rel="author" href="mailto:pipi@pikksukk.ee?Subject=Tagasiside">Juku</a></p>
                 </header>
-                <figure style="float: right;">
-                    <img src="/icon/favicon.svg" alt="Pildi näide" width="150">
-                    <figcaption>Pildi kirjeldus</figcaption>
-                </figure>
-                <p>
-                    Sed malesuada <a href="#definition" target="_self">cockroach</a> nec nisi quis venenatis. In et sollicitudin mi.In et suscipit tellus, et fringilla risus. In ultricies vitae ante vitae ornare. Nunc semper tincidunt elit, at volutpat purus malesuada eu. Praesent ac mauris quis nunc porttitor semper at id eros. Integer vel urna ante. Aliquam congue felis id est dapibus gravida. Morbi pellentesque sem vitae sem bibendum, vel tempus mi congue. Curabitur eget laoreet dolor. Curabitur sit amet lacinia est. Aliquam sit amet magna in augue euismod auctor eu vel massa. Aliquam ac quam nec nisl aliquam semper. Praesent ac maximus eros. Etiam commodo maximus finibus. Nt: <samp>Väike müü</samp>
-                </p>
-                <section>
-                        <ul>
-                            <li><strong>Esimene</strong></li>
-                            <li><em>Teine</em></li>
-                            <li><mark>Kolmas</mark></li>
-                            <li><ins>Neljas </ins><u>element</u></li>
-                            <li><del>Viies </del><s>element</s></li>
-                            <li><small>Kuues </small>element<span></span></li>
-                            <li>H<sub>2</sub>O; 5<sup>2</sup></li>
-                            <li>5 + <var>x</var> = 10</li>
-                            <li><kbd>Crtl</kbd> + <kbd>C</kbd></li>
-                        </ul>
+                <section itemprop="articleBody">
+                    <figure style="float: right;">
+                        <img src="/icon/favicon.svg" alt="Pildi näide" width="150">
+                        <figcaption>Pildi kirjeldus</figcaption>
+                    </figure>
+                    <p>
+                        Sed malesuada <a href="#definition" target="_self">cockroach</a> nec nisi quis venenatis. In et sollicitudin mi.In et suscipit tellus, et fringilla risus. In ultricies vitae ante vitae ornare. Nunc semper tincidunt elit, at volutpat purus malesuada eu. Praesent ac mauris quis nunc porttitor semper at id eros. Integer vel urna ante. Aliquam congue felis id est dapibus gravida. Morbi pellentesque sem vitae sem bibendum, vel tempus mi congue. Curabitur eget laoreet dolor. Curabitur sit amet lacinia est. Aliquam sit amet magna in augue euismod auctor eu vel massa. Aliquam ac quam nec nisl aliquam semper. Praesent ac maximus eros. Etiam commodo maximus finibus. Nt: <samp>Väike müü</samp>
+                    </p>
+                    <section>
+                            <ul>
+                                <li><strong>Esimene</strong></li>
+                                <li><em>Teine</em></li>
+                                <li><mark>Kolmas</mark></li>
+                                <li><ins>Neljas </ins><u>element</u></li>
+                                <li><del>Viies </del><s>element</s></li>
+                                <li><small>Kuues </small>element<span></span></li>
+                                <li>H<sub>2</sub>O; 5<sup>2</sup></li>
+                                <li>5 + <var>x</var> = 10</li>
+                                <li><kbd>Crtl</kbd> + <kbd>C</kbd></li>
+                            </ul>
+                        </section>
+                    <p itemprop="description">
+                        <a href="https://html.com/wp-content/uploads/html-cheat-sheet.pdf" download-type="application/pdf">Allalaaditav fail</a><br>
+                        <a href="pt1.html" rel="bookmark">Viide peatükk ühele</a><br>
+                        Nulla et neque ut urna imperdiet ornare nec id nisl. <q>Quisque ullamcorper dictum nunc et mollis.</q> Maecenas ac fringilla dui. Maecenas hendrerit felis sit amet leo convallis consequat. Donec ultrices placerat neque, ut porttitor libero. Nulla mollis libero quis pellentesque vestibulum. Fusce eu tincidunt leo, et consectetur purus. Etiam nisi ante, tempus et felis non, bibendum fermentum nulla. Cras eleifend nisl dignissim semper sodales. Morbi interdum lectus velit, ut faucibus dui accumsan et.
+                        <a href="http://random.com" rel="nofollow">Kahtlane Leht</a><br>
+                        <a href="http://random.com" rel="no-referrer" referrer-policy="no-referrer">Kahtlane Leht</a>
+                    </p>
+                    <section>
+                        <ol reversed="reversed" start="3">
+                            <li><data value="53">Esimene</data></li>
+                            <li value="1">Teine</li>
+                            <li><data value="63">Kolmas</data></li>
+                            <li>Neljas</li>
+                        </ol>
                     </section>
-                <p>
-                    Nulla et neque ut urna imperdiet ornare nec id nisl. <q>Quisque ullamcorper dictum nunc et mollis.</q> Maecenas ac fringilla dui. Maecenas hendrerit felis sit amet leo convallis consequat. Donec ultrices placerat neque, ut porttitor libero. Nulla mollis libero quis pellentesque vestibulum. Fusce eu tincidunt leo, et consectetur purus. Etiam nisi ante, tempus et felis non, bibendum fermentum nulla. Cras eleifend nisl dignissim semper sodales. Morbi interdum lectus velit, ut faucibus dui accumsan et.
-                </p>
-                <section>
-                    <ol reversed="reversed" start="3">
-                        <li><data value="53">Esimene</data></li>
-                        <li value="1">Teine</li>
-                        <li><data value="63">Kolmas</data></li>
-                        <li>Neljas</li>
-                    </ol>
+                    <footer>
+                        <a href="#artikkel1" target="_self">Tagasi algusesse</a>
+                    </footer>
                 </section>
-                <footer>
-                    <a href="#artikkel1" target="_self">Tagasi algusesse</a>
-                </footer>
             </article>
         </main><hr>
         <main>
@@ -95,7 +126,7 @@
                 <header>
                     <h1>In et sollicitudin mi</h1>
                     <p>Autor: Pets</p>
-                    <p>Postitatud: <time datetime="2018-05-29">May 29</time></p>
+                    <p>Postitatud: <time datetime="2018-05-29" itemprop="datePublished">May 29</time></p>
                 </header>
                 <figure style="float: right;">
                     <img src="/icon/favicon.svg" alt="Pildi näide" width="150">
@@ -125,6 +156,7 @@
                 </ol>
                 </section>
                 <footer>
+                    Võtmesõnad: <a rel="tag" href="https://en.wikipedia.org/wiki/Lorem_ipsum"Lorem ipsum></a>
                     <dl>
                         <dt><dfn id="definition">Cockroach</dfn></dt>
                         <dd> Any of numerous insects of the order or suborder Blattaria, having oval flat bodies and laying eggs in hardened cases, and including several species that are common household pests.</dd>
@@ -184,6 +216,7 @@
                 Viru vald<br> 
             </address>
                 <small>Copyright @ 2018</small>
+                <a rel="licence" href="/privacy-policy">Privacy policy</a>
         </footer>
     </body>
 </html>
