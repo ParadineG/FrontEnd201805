@@ -1,15 +1,55 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" prefix="og:http://ogp.me/ns# fb:http://ogp.me/fb# article:http://ogp.me/ns/article#">
     <head>
         <!-- Kodeering -->
         <meta charset="utf-8">
-        <!-- Lehe nimi -->
+        <!-- Lehe nimi (SEO [Search Engine Optimization] ideaalne pikkus oleks 6 sõna) -->
         <title>Mauri leht</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Veebirakenduse tag, juhul kui peaks tegu olema veebirakendusega -->
+        <meta name="application-name" content="Tradent">
+        <!-- Lehe kirjeldus (SEO ideaalne pikkus 155 tähemärki) -->
+        <meta name="description" content="Front-end koolituse raames tehtud leht. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet faucibus justo, sit amet pharetra mi. Fusce mollis ligula neque, et porta leo fermentum.">
+        <!-- Lehe märksõnad (SEO annab sellele väikese prioriteedi) -->
+        <meta name="keywords" content="front-end, koolitus, testi leht">
+        <!-- Lehe autor/lehe haldaja -->
+        <meta name="author" content="Mauri">
+        <link rel="author" href="mailto:juku@mail.ee">
+        <!-- Kui leht on genereeritud mingi rakenduse poolt nt -->
+        <meta name="generator" content="Frontweaver 8.2">
+        <!-- Kus kaustast lingid algavad ja kuidas need avatakse. '_blank' uues aknas, '_self' samas aknas -->
         <base href="/Mauri/" target="_blank">
         <!-- Referrer tüübid: no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin
-        origin-when-crossorigin, strict-origin-when-crossorigin, unsafe-url -->
+                origin-when-crossorigin, strict-origin-when-crossorigin, unsafe-url -->
         <meta name="referrer" content="strict-origin-when-crossorigin">
+        <!-- RSS või Atom feedi pakkumine -->
+        <link rel="alternate" type="application/atom+xml" href="https://www.theregister.co.uk/headlines.atom">
+        <!-- Erinevad keeled -->
+        <link rel="alternate" type="text/html" href="/en/Mauri" hreflang="en" title="English">
+        <link rel="alternate" type="text/html" href="/et/Mauri" hreflang="et" title="Estonian">
+        <!-- Printimiseks -->
+        <link rel="alternate" type="text/html" href="/en/Mauri" hreflang="en" media="print" title="English print page">
+        <!-- Abi saamiseks -->
+        <link rel="help" href="/help">
+        <!-- Otsingu jaoks. Googleda 'opensearch' -->
+        <link rel="search" href="/search">
+
+        <!-- SEO opengraph -->
+        <meta property="fb:app_id" content="">
+        <meta property="og:title" content="Mauri leht">
+        <meta property="og:type" content="test.koolitus">
+        <meta property="og:url" content="http://koduleht.ee/Mauri/">
+        <meta property="og:image" content="https://ia.media-imdb.com/images/M/MV5BZDJjOTE0N2EtMmRlZS00NzU0LWE0ZWQtM2Q3MWMxNjcwZjBhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UX182_CR0,0,182,268_AL_.jpg">
+        <meta property="og:description" content="Selle lehe kirjeldus">
+        <meta property="article:published_time" content="2018-05-29T12:00">
+
+        <!-- Sama teema jätkumine järgmisel lehel -->
+        <link rel="next" rev="next" href="/teine.html">
+        <!-- Sama teema eelnev leht -->
+        <link rel="prev" rev="prev" href="/ty.html">
+
+
+
         <!-- Ikoonid -->
         <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -22,17 +62,23 @@
     </head>
     <!-- onoffline="update(false)" -->
     <body>
+        <!-- Kui veebilehitseja on aegunud või JavaScript ei ole lubatud -->
+        <noscript>
+            <h2>
+                Palun lülitage JavaScript sisse või uuenda veebilehitsejat.
+            </h2>
+        </noscript>
         <header>
             <h1>Tere Tulemast!</h1>
             <div class="pealkiri">
-            <section>
-                <h2>Front-end koolitusele!</h2>
-                <p>Lorem ipsum dolor sit amet</p>
-            </section>
-            <section>
-                <h3>Front-end koolitusele 2!</h3>
-                <p>Lorem ipsum dolor sit amet</p>
-            </section>
+                <section>
+                    <h2>Front-end koolitusele!</h2>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </section>
+                <section>
+                    <h3>Front-end koolitusele 2!</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </section>
             </div>
         </header>
 
@@ -47,10 +93,11 @@
             </ul>
         </nav>
         <main>
-        <article id="artikkel1">
+        <article id="artikkel1" itemscope itemstype="http://schema.org/TechArticle">
             <header>
-                <h1>Artikli pealkiri</h1>
-                <p>Autor: <b><i><mark><u>Mauri</b></i></mark></u></p>
+                <!-- Ideaalne oleks kui <h1> tagi oleks lehel üks, nt: artikli pealkiri -->
+                <h1 itemprop="name">Artikli pealkiri</h1>
+                <p>Autor: <a rel="author" href="mailto:juku@mail.ee?Subect=Front-end%20koolitus"><b><i><mark><u>Mauri</b></i></mark></u></p></a>
                 <time datetime="2018-05-29">May 29</time>
                 <aside>
                     <blockquote>
@@ -68,6 +115,7 @@
             </header>
             <!-- Lorem Ipsumi tekst testimiseks -->
             <p>
+                <a href="peatykk01.html" rel="bookmark">Viide peatükk 1-le</a><br>
                 Lorem ipsum dolor sit amet, <a href="#definition" target="_self">definition</a> consectetur adipiscing elit. Ut mauris augue, viverra sed neque at, sagittis pretium nunc. <em>Aliquam at dictum diam</em>, at fermentum sapien. Duis quis leo diam. Sed arcu est, sodales vel est non, semper auctor nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Proin vestibulum consequat erat, iaculis maximus nisi vestibulum eget. Sed non ornare leo, tincidunt ornare risus. Duis velit diam, volutpat sed risus eu, porta dictum ipsum.
             </p>
             <p>
@@ -79,13 +127,18 @@
             </figure>
             <p>Arvuti ütles: <samp>Error 73: Tekkis viga!</samp></p>
             <p>
+                <!-- Ära järgne sellele lehele, pole minuga seotud/mida autor ei usalda -->
+                <a href="https://google.com" rel="nofollow">Kahtlane leht</a><br>
+                <a href="https://google.com" rel="noopener">Kahtlane leht</a><br>
+                <a href="https://google.com" rel="noreferrer">Kahtlane leht</a><br>
+                <a href="html-cheat-sheet.pdf" download type="application/pdf">HTML Cheat Sheet (download)</a><br>
                 <q>Aenean commodo vulputate nibh quis sodales.</q> Phasellus at lorem quis leo pellentesque mollis at id felis. Fusce nulla dui, bibendum in libero a, aliquam condimentum enim. <strong>Ut consectetur nibh sed orci euismod gravida</strong>. Vestibulum varius, purus iaculis vulputate gravida, nunc turpis elementum est, eu aliquam mi nisl id velit.
             </p>
             <p>
                 Cras lobortis, metus id sagittis egestas, metus mauris lacinia mi, eget tristique ipsum tellus eget ante. Suspendisse dapibus metus in rutrum efficitur. Nunc iaculis aliquet diam et semper. Etiam vehicula tellus et quam euismod volutpat. Phasellus dignissim condimentum lobortis. Praesent fermentum velit mauris. Quisque vel viverra ante. Aenean semper feugiat aliquet. Quisque convallis, ipsum in cursus pellentesque, nunc justo molestie tellus, et scelerisque risus enim a libero. Nam eu pellentesque ligula, id porta massa. Proin commodo ante risus, ac imperdiet justo auctor et. Nulla ac velit tellus. 
             </p>
             <!-- Sümbolite seletus (enamuselt võõrkeelsete tähtede häälduseks) -->
-            <ruby>
+            <ruby class="katse">
                 漢 <rp>(</rp><rt>Kan</rt><rp>)</rp>
                 字 <rp>(</rp><rt>ji</rt><rp>)</rp>
                 Ä <rp>(</rp><rt>äää</rt><rp>)</rp>
@@ -116,7 +169,7 @@
                 </tfoot>
             </table>
             <br><br>
-            <p>
+            <p class="katse">
                 Quisque pulvinar nunc neque, id tincidunt justo feugiat sed. Curabitur eu eros id mi egestas consequat. Nam vel turpis consectetur, lobortis sem ut, lacinia mi. Etiam quis suscipit nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam in risus non mi maximus scelerisque sed nec ligula. Nam vitae lorem sit amet mauris feugiat sodales. Integer interdum viverra leo. Nulla tincidunt dui libero, vitae molestie sem dapibus in. Aenean laoreet tincidunt libero sed euismod. Integer eget consequat nibh. Etiam accumsan posuere diam, ut accumsan ipsum dictum non. <i>Mauri</i>s tristique sapien tortor, interdum fringilla leo porttitor nec. Morbi dapibus velit ut diam vehicula fringilla. Proin placerat felis tempus turpis sollicitudin aliquam. Praesent dapibus diam dictum elementum euismod.
             </p>
             <hr>
@@ -177,12 +230,15 @@
             </video>
 
             <!-- Raam, kuhu saab ühteist sisse panna. Teisi lehti, YouTube videosi jne. -->
-            <iframe width="560" height="315" referrerpolicy="no-referrer-when-downgrade"
-            src="https://youtube.com/embed/xO8Cz-9qKTI?rel=0" frameborder="0" allowfullscreen>
+            <iframe width="560" height="315" referrerpolicy="no-referrer-when-downgrade" src="https://youtube.com/embed/xO8Cz-9qKTI?rel=0"
+                frameborder="0" allowfullscreen>
+            </iframe>
+            <iframe width="1024" height="315" referrerpolicy="no-referrer-when-downgrade" src="https://err.ee">
             </iframe>
 
             <!-- Artikli jalus -->
             <footer>
+                Võtmesõnad: <a rel="tag" href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem Ipsum</a>
                 <dl>
                     <dt><dfn id="definition">Definition</dfn></dt>
                     <dd>Definitsiooni kirjeldus</dd>
@@ -204,6 +260,8 @@
                 Kulle Vald<br>
                 Tamme tee 10<br><br>
                 <small>Copyright © 2018</small>
+                <br>
+                <small><a rel="license" href="privacy-policy.html">Privacy Policy</a></small>
             </address>
         </footer>
     </body>
