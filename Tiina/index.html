@@ -8,7 +8,14 @@
         <title>Tiitel koolitusele</title>
         
         <!--Kommentar. Base on mõningal juhul oluline-->
-        <base href="http://localhost/Tiina/" target="_blank">  
+        <base href="http://localhost/Tiina/" target="_blank">
+        <!--no-referrer(teised lehed ei saa sisenemisest ja väljumisest infot), no-referrer-when-downgrade(antakse vaikimisi-kui liigub ebaturvalisele lehele, siis infot ei jagata), 
+        same-origin(veebisisene liikumine(oma lehel liigub)), origin(tagastab alati info-domeeni nimi), strict-origin(saadab seda turvalistele lehtedele-edastab ainult domeeni nime), 
+        origin-when-crossorigin(saadab enda kodulehe piires täispikkuses, teistele lehtedele domeeni nimetust), strict-origin-when-crossorigin(ei anna infot ebaturvalisele lehele, 
+        teisel juhul nagu eelnevalt), unsafe-url(saadab kogu info, ükskõik, mis tingimustel)  
+        Neid andmeid näeb analüütiku programmidest, pealiskaudsemad andmed on võimalik saada serverist-->  
+        <meta name="referrer" content="">
+
         <!--Ikoonid tabi peal.Ikooni kaust pannakse root domeeni-->
         <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -65,7 +72,7 @@
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     <figure>
-                        <img src="/icon/favicon.svg" alt="Ikoon" width="150" >
+                        <img src="/icon/mstile-144x144.png" alt="Figure example" width="150" >
                         <figcaption>Pilt.1  Ikoon</figcaption>
                     </figure>
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
@@ -74,7 +81,6 @@
                     Arvuti ütles näiteks seda: <samp>Error. Not a number</samp>, kuidas sellele asjale lähenenda.
                 </p>
                 <section>
-                        <!--reversed - boolean-->
                         <ul >
                             <li><strong>strong</strong><b> bold</b></li>
                             <li><em>em</em><i> italic</i></li>
@@ -85,9 +91,29 @@
                             <li>H<sub>2</sub>O  5<sup>2</sup></li>
                             <li>5 + <var>x</var> = 10</li>
                             <li><kbd>Ctrl</kbd> + <kbd>S</kbd></li>
+
                         </ul>
                 </section> 
-                <p>
+                <p>                    
+                    <video  muted loop width="250px" poster="/icon/favicon-16x16.png" controls preload>
+                        <source src="/Sky.mp4">
+                       
+                            <track kind="subtitles" src="subtiiter-en.vtt" srclang="en" label="English">
+                        Video tugi puudub.
+                    </video>
+                    <!--src on oluline IE jaoks, muidu pilti ei kuvata|longdesc on pikem kirjeldus, võib olla id, selle pildi kirjeldab ära mingi lõik või muu link-->
+                    <picture>
+                        <source srcset="/icon/favicon.svg" media="(min-width: 1000px)">
+                        <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x" 
+                        alt="Picture example" width="150" referrerpolicy="unsafe-url" crossorigin="anonymous" longdesc="#definition">
+                        <!--map area -->
+                    </picture>
+                    <!--täis ekraanil vaatamiseks on vaja lisada allowfullscreen|allowpaymentrequest - Siis kui on tegemist lingiga poele|See pole otseselt toetatud
+                        allow="autoplay; encrypted-media" -->
+                    <iframe width="560" height="315" referrerpolicy="no-referrer-when-downgrade" src="https://www.postimees.ee" frameborder="0"></iframe>
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="10" stroke="pink" stroke-width="5" fill="green"/>
+                    </svg>
                     Sed ut perspiciatis <a href="#definition" target="_self">definiton</a> unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
                     architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
                     voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut 
@@ -113,6 +139,10 @@
         (__)\       )\/\
             ||----w |
             ||     ||
+                    <code>
+                        &lt;code&gt;
+                        std::cout &lt;&lt; "Hello World"
+                    </code>
                 </pre> 
                 <!--Tõmbab joone, et anda märku teema erinemisest/suunata tähelepanu, sellele, et teema vahetub-->
                 <hr> 
@@ -161,6 +191,36 @@
                         <a href="#artikkel2" target="_self">Tagasi artikli algusesse</a>
                 </footer>
         </article>
+        <hr>
+        <table border="1" >
+            <caption>Tabel 1</caption>
+            <thead>
+                <tr>
+                    <th>Päis 0</th>
+                    <th>Päis 1</th>
+                    <th>Päis 2</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td>Jalus0</td>
+                    <td>Jalus1</td>
+                    <td>Jalus2</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>Keha0</td>
+                    <td>Keha1</td>
+                    <td>Keha2</td>
+                </tr>
+                <tr>
+                    <td>Keha0</td>
+                    <td>Keha1</td>
+                    <td>Keha2</td>
+                </tr>
+            </tbody>
+        </table>
         <footer>
             <address>
                 <a href="mailto:kuku(ät)mail.ee">kuku(ät)mail.ee</a><br>

@@ -6,7 +6,8 @@
 	<script type="text/javascript" src="java.js"></script>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<base href="http://localhost/kevin">
+	<base href="/kevin/">
+	<meta name="referrer" content=""><!--no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin, origin-when-crossorigin, strict-origin-when-crossorigin, unsafe-url-->
 	<link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
 	<link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
@@ -46,6 +47,21 @@
 		
 	</article>
 	<section>
+		<!--<picture>
+			<source srcset="/icon/favicon.svg" media="(min-width:1080px)">
+			<img src="/icon/favicon-32x32.png" srcset="/icon/favicon-32x32.png" alt="icon">
+		</picture>-->
+		<!--
+			<svg height="100" width="100">
+				<circle cx="50" cy="50" r="10" stroke="green" stroke-width="5" fill="yellow"/>
+			</svg>
+			<video  muted loop width="200px" poster="/icon/favicon-16x16.png" controls preload>
+				<source src"/Sky.mp4">
+				<track kind="subtitles" src="subtiite-eng.vtt" srclang="eng" label="English">
+				video tugi puudub!
+			</video>
+		-->
+
 		<p>
 			Curabitur rutrum, <abbr title="hüperteksti märgistuskeel">HTML</abbr> purus at fermentum sagittis, justo arcu efficitur enim, sed venenatis massa est nec nisl. Phasellus gravida felis at consequat semper. Vestibulum interdum porttitor facilisis. Curabitur quis tempus nunc. Etiam id erat lorem.
 		</p>
@@ -53,6 +69,27 @@
 			<li><kbd>Ctrl</kbd> + <kbd>S</kbd></li>
 			<li>5 + <var>x</var> = 10</li>
 		</ul>
+		<table border="1">
+			<caption>pealkiri</caption>
+			<thead>
+				<tr>
+					<th>Päis</th>
+					<th>Päis</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td>Jalus</td>
+					<td>Jalus</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>Keha</td>
+					<td>Keha</td>
+				</tr>
+			</tbody>
+		</table>
 	</section>
 	<footer>
 		<a id="nupp" href="#artikkel1" target="_self">Tagasi artikli algusesse</a>
@@ -62,5 +99,54 @@
 			</dl>	
 	</footer>
 
+<form action="/kevin/create.php">
+    <input type="submit" value="loo andmebaas" />
+</form>
+<form action="/kevin/tabel.php">
+    <input type="submit" value="loo tabel" />
+</form>
+<!--
+			<form>
+                <label for="tel">Tel: </label>
+                <input id="tel" name="tel" type="tel"><br><br>
+                <label for="url">Url: </label>
+                <input id="url" name="url" type="url"><br><br>
+                <label for="email">Email: </label>
+                <input id="email" name="email" type="email" placeholder="xxx@mail.ee"><br><br>
+                <label for="password">PW: </label>
+                <input id="password" name="password" type="password"><br><br>
+                <label for="date">Kuupäev: </label>
+                <input id="date" name="date" type="date">
+                <label for="month">Kuu: </label>
+                <input id="month" name="month" type="month"><br><br>
+                <label for="time">Kell: </label>
+                <input id="time" name="time" type="time">
+                <label for="datetime-local">Kohalik: </label>
+                <input id="datetime-local" name="datetime-local" type="datetime-local"><br><br>
+                <label for="file">Fail: </label>
+                <input id="file" name="file" type="file"><br><br>
+                <label for="range">Vahemik: </label>
+                <input id="range" name="range" type="range"><br><br>
+                <label for="color">Värv: </label>
+                <input id="color" name="color" type="color"><br><br>
+                <label for="checkbox">Checkbox: </label>
+                <input id="checkbox" name="checkbox" type="checkbox"><br><br>
+                <label for="radio">Radio: </label>
+                <input id="radio" name="radio" type="radio"><br><br>
+                <input type="url" name="url" list="kodukad"><br>
+                <datalist>
+                		<option value="http//neti.ee" label="Neti">
+                		<option value="http//google.ee" label="Google">
+                		<option value="http//facebook.com" label="Facebook">
+                </datalist>
+                <select name="valik" multiple>
+                	<optgroup>
+                		<option value="http//neti.ee" label="Neti">
+                		<option value="http//google.ee" label="Google" selected>
+                		<option value="http//facebook.com" label="Facebook" disabled>
+                	</optgroup>
+                </select>
+            </form>
+-->
 </body>
 </html>

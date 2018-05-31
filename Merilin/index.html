@@ -8,6 +8,10 @@
         
         <!--Valikuline:-->
         <base href="http://localhost/Merilin/" target="_blank">
+        <meta name="referrer" content="strict-origin-when-crossorigin">
+        <!--no-referrer(ei saadeta üldse infot) no-refferer-when-downgrade(vaikimis valik; turvalisele lehele saadetakse url) same-origin origin(üldise lehe info saab kaasa) strict-origin() origin-when-crossorigin 
+        strict-origin-when-crossorigin(teistele ainult domeeni nimi, ebaturvalisele ei saadeta infot) unsafe-url(saadetakse kogu info) -->
+        <!-- Põhi ikoonid -->
         <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
         <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
@@ -62,6 +66,10 @@
                  (__)\       )\/\
                      ||----- |
                      ||     ||
+                <code>
+                    &lt;code nooltega&gt;
+                    std::cout &lt;&lt; "Hello World";
+                </code>
                 </pre>
                     </aside>
                 </header>
@@ -93,6 +101,20 @@
                             </ul>
                     </section>
                 </p>
+                <picture>
+                    <source srcset="/icon/favicon.svg" media="(max-width: 1000px)">
+                    <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x" alt="Picture example" width="150" reffererpolicy="unsafe-url" crossorigin="anonymous" longdesc="#definition" >
+                </picture>
+                <video muted loop width="250px" poster="/icon/favicon-16x16.png" controls preload>
+                    <source src="/Sky.mp4">
+                    <track kind="subtitles" src="subtiiter-en.vtt" srclang="en" label="English">
+                    Video tugi puudub!
+                </video>
+                <iframe width="600" height="315" referrerpolicy="no-refferer-when-downgrade"  
+                src="https://www.youtube.com/embed/FSmJZePnykk?controls=1&amp;showinfo=0" frameborder="0" allowfullscreen ></iframe>
+                <svg height="100" width="width">
+                    <circle cx="50" cy="50" r="10" stroke="blue" stroke-width="5" fill="yellow" />
+                </svg>
                 <p>
                     Proin mollis malesuada tellus at semper. Vestibulum pulvinar tempus tellus eu feugiat. Fusce commodo ligula diam, sit amet mollis ligula ornare nec. Fusce eu justo sodales, ultricies augue in, consequat orci. Nullam suscipit malesuada est eu vestibulum. Nam et dui ut turpis porttitor lobortis. Etiam a rhoncus magna. Praesent a enim vitae nunc tempus pretium id non ligula. 
                 </p><hr>
@@ -124,25 +146,36 @@
         </main>
         <article id="artikkel2">
                 <header>
-                <h1>Lorem Ipsum</h1>
-                <p>Autor: <cite>Juku Kask</cite></p>
-                <p>Was posted on: <time datetime="2018-05-29">May 29</time></p>
+                    <h1>Lorem Ipsum</h1>
+                    <p>Autor: <cite>Juku Kask</cite></p>
+                    <p>Was posted on: <time datetime="2018-05-29">May 29</time></p>
                 </header>
                 <p>
-
+                <table border="1">
+                    <caption>Tabeli pealkiri</caption>
+                    <thead>
+                        <tr>
+                            <th>Päis 0</th>
+                            <th>Päis 1</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td>Jalus 1</td>
+                            <td>Jalus 2</td>
+                        </tr>
+                    </tfoot>
+                        <tbody>
+                            <td>Keha 1</td>
+                            <td>Keha 2</td>
+                        </tbody>
+                </table>
                 </p>
                 <aside>
                     <blockquote>
                         <p>Täna kirjutasin oodatust kauem aga kirjutatud sai.</p>
                         <cite>Juku Kask raamatust "Elutee"</cite>
                         </blockquote>
-                <pre>
-             \   ^__^ 
-            \    (oo)\_______
-                 (__)\       )\/\
-                     ||----- |
-                     ||     ||
-                </pre>
                     </aside>
                 </header>
                 <p>
