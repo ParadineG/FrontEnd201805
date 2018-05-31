@@ -1,7 +1,37 @@
+
+/* Määrab rohelist teksti kõikidele elementidele
+*{
+    color:green;
+}
+*/
+/* Elemendi põhine valik*/
 h1{
+    background-color: aliceblue;
     color: tan;
+}
+
+p{
+    background-color: bisque
 }
 
 .pealkiri{
     background-color:aquamarine;
 }
+.katse{
+    background-color:rgb(34, 155, 114);
+}
+.katse2{
+    color:sienna!important;
+}
+#definition {
+    color:sandybrown;
+}
+.katse ruby{
+    color:crimson;
+}
+body > header {
+    background-color: blueviolet;
+} /* üks aste madalam*/
+ul, ol {
+    color:seagreen
+} /* terve nimekiri*/

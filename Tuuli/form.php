@@ -13,6 +13,9 @@
       <meta name="referrer" content=" strict-origin-when-crossorigin">
       <!-- no-referrer (teised lehed ei saa sinu sisenemisest või väljumisest infot kätte, sinu lehe piires) no-referrer-when-downgrade same-origin (veebisisene liikumine on lubatud) origin (tagastab info, tagastab domeeni nime, see isik tuli lehelt neti.ee aga täpsemat infot pole) strict-origin (tsgastab info, tuleb turvaliselt lehelt)
       origin-when-crossorigin (enda kodulehe piires tyäispikke url, kui väljaspool saadab domeeni nimesid) strict-origin-when-crossorigin (kõige parem valik, ei lase infot läbi kui lähed ebaturvalisele lehele) unsafe-url(vastupidine no referrerile) -->
+      
+      <
+
       <!--Põhi ikoonid-->
       <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -30,7 +33,9 @@
    </body>
    <body>
         <main>
-            <form accept-charset="utf-8" autocomplete="on" method="GET" action=""> <!--siin kasutan meetodit POST/GET, novalidate valideerimissüsteemid vaikimisi ei toimi-->
+            <form accept-charset="utf-8" autocomplete="on" method="GET" action=""> <!--autocomplete võib olla ka mujal, siin kasutan meetodit POST/GET, novalidate valideerimissüsteemid vaikimisi ei toimi-->
+                <fieldset>
+                    <legend>1.osa</legend>
                 <label for="nimi">Nimi:</label>
                 <input type="hidden" id="hidden" name="hidden" value="peidetud"><br>
 
@@ -46,7 +51,9 @@
                 
                 <label for="date">Kuupäev:</label>
                 <input type="date" id="date" name="date" min="1979-01-01" max="201-01-01"><br>
-                
+                </fieldset>
+                <fieldset>
+                    <legend>2.osa</legend>
                 <label for="month">Kuu:</label>
                 <input type="month" id="month" name="month"><br>
                 
@@ -55,7 +62,7 @@
                 
                 <label for="time">Kell:</label>
                 <input type="time" id="time" name="time"><br>
-                
+                </fieldset>
                 <label for="datetime-local">Aeg:</label>
                 <input type="datetime-local" id="datetime-local" name="datetime-local"><br>
                 
@@ -65,14 +72,14 @@
                 <label for="url">URL:</label><!--url-käsitleb veebilehe aadressi, vormide täitmiseks, nt lisad kodulehe -->
                 <input id="url" name="url" list="kodukad"><br>
                     <datalist id="kodukad">
-                        <option value="http://neti.ee" label="Neti">
+                        <option value="http://neti.ee">Neti</option><!--võib ka nii label="Neti">-->
                         <option value="http://google.ee">
                         <option value="http://postimees.ee">
                     </datalist>
                     <select name="valik" multiple>
                     <optgroup label="1">    
-                        <option value="http://neti.ee" label="Neti">
-                        <option value="http://google.ee" label="Google" selected>
+                        <option value="http://neti.ee">Neti</option>
+                        <option value="http://google.ee"selected>Google</option>
                         <option value="http://postimees.ee" label="Postimees" disabled>
                     </optgroup>
                     <optgroup label="2">
@@ -99,7 +106,9 @@
                 <input type="radio"id="radio1" name="radio">
                 <label for="radio2">Naine:</label>
                 <input type="radio"id="radio2" name="radio"><br>
-                
+
+                <textarea name="tekstiala" cols="30" rows="7" wrap="hard">Tere!</textarea><br><!--seda saab tõmmata lehitsejas-->
+
                 <input type="button" disabled value="Nupp"> <!--võib ka nii...buttoni puhul inputiga (button allpool)-->
                 <input type="reset" value="Uuenda">
                 <input type="submit" formmethod="GET" autofocus value="Saada"> 
@@ -113,8 +122,28 @@
                 <button type="button" disabled>Nupp</button> <!--muudab nähtamatuks-->
                 <button type="reset">Uuenda</button>
                 <button type="submit" autofocus>Saada</button> <!--autofocus automaatselt muudab aktiivseks-->
-            </form>
-       
+            </form><br>
+
+        <form onsubmit="return false" oninput="o.value = a.valueAsNumber + b.valueAsNumber"> <!--o on muutuja, määrame hiljem ära-->
+            <input name="a" type="number"step="any"> +
+            <input name="b" type="number"step="any"> =
+            <output name="o" for="a b"></output>
+        </form><br>
+
+        <progress value="100" max="150" >Teres</progress><!--tekstiosa Teres pole näha, arvud 0-100-->
+        <meter min="0.5" max="1.5" value="1.21" low="0.8" high="1.2" optimum="1"></meter> <!--meteri puhul on arvud 0-1 low ja high abil määrad min ja max, et siis tuleb hoiatus-->
+
+        <details open> <!--open kasutades, siis alati avatud vormis-->
+            <summary><em>Kokkuvõte detailidest</em></summary>
+            <p>dfköldkfldkfl fldklfkd lkldfklfk lfkdldkfd lklje</p>
+            <p>dfköldkfldkfl fldklfkd lkldfklfk lfkdldkfd lklje</p>
+        </details><br>
+        <dialog open>
+            <h2>Tere dialoog!</h2>
+            <p>dfköldkfldkfl fldklfkd lkldfklfk lfkdldkfd lklje</p>
+            <p>dfköldkfldkfl fldklfkd lkldfklfk lfkdldkfd lklje</p>
+        </dialog><br>   
+
         <?php
         if(isset($_POST['eesnimi']))
         echo '<p>'.$_POST['eesnimi'].'</p>';
