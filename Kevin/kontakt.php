@@ -26,7 +26,7 @@
 			</nav>
 		</div>
 	</header>
-<aside>
+
 	
 <form action="/kevin/create.php">
     <input class="loo" type="submit" value="loo andmebaas" />
@@ -34,13 +34,13 @@
 <form action="/kevin/kustuta2.php">
     <input class="loo2" type="submit" value="kustuta andmebaas" />
 </form>
-</aside>
+
 <div class="kontaktivorm">
 <form action="process.php" method="post" autocomplete="on">
 <div class="kliendi_andmed">
 <!--Kooli andmed-->
 <div class="klient">
-<h3>Minu andmed</h3>
+<h3 id="tabelipealkiri">Minu andmed</h3>
 	<br />
 		<div class="vorm">
 			<label >Eesnimi</label>
