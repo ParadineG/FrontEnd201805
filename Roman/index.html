@@ -8,6 +8,10 @@
         
         <!-- Valikuline: -->
         <base href="/Roman/"  target="_blank">
+        <meta name="referrer" content="strict-origin-when-crossorigin">
+        <!-- no-referrer no-referrer-when-downgrade same-origin origin strict-origin
+        origin-when-crossorigin  strict-origin-when-crossorigin unsafe-url -->
+
         <!-- Põhi ikoonid -->
         <link rel="icon" type="image/png" sizes="32x32 48x48" href="/icon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -70,13 +74,17 @@
     #        ##   ###### #    # #####  #      #      
     #       #  #  #    # #    # #      #      #      
     ###### #    # #    # #    # #      ###### ######
+                            <code>
+    &lt;code&gt;
+    std::cout &lt;&lt; "Hello World";                            
+                            </code>
                         </pre>
                     </aside>
                 </header>
                 <p>
                     Lorem ipsum <a href="#definition" target="_self">definition</a> sit amet, consectetur adipiscing elit. Pellentesque quis erat diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
                     <figure>
-                        <img src="/icon/favicon.svg" alt="Figure Example" width="150">
+                        <img src="/icon/mstile-310x150" alt="Figure Example" width="150">
                         <figcaption>Joonis 1</figcaption>
                     </figure>
                     In hac habitasse platea dictumst. <q>Praesent congue ornare arcu, eu fringilla urna pharetra vel.</q> Nunc ornare tellus non aliquet gravida. Morbi in neque tristique, posuere dolor a, volutpat metus. Nullam vitae commodo enim, sit amet tincidunt dui. Aliquam erat volutpat. Proin id justo sollicitudin, convallis purus at, laoreet nulla. Nunc tincidunt orci ac justo porta, in pellentesque purus efficitur. Sed et venenatis justo. Aliquam vel neque in diam rhoncus iaculis. Nunc eget mattis odio. Morbi ex velit, elementum vitae auctor sit amet, rutrum quis odio. Etiam id elit neque. Donec congue risus in eros laoreet, id ullamcorper nibh fermentum. 
@@ -96,6 +104,23 @@
                     </ul>
                 </section>
                 <p>
+                    <picture>
+                        <source srcset="/icon/favicon.svg"  media="(min-width: 1080px)">
+                        <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x"
+                            alt="Picture example" width="150" referrerpolicy="unsafe-url" crossorigin="anonymous" longdesc="#definition" >
+                        <!-- map area -->
+                    </picture>
+                    <video muted loop width="250px" poster="/icon/favicon-16x16.png" controls preload>
+                        <source src="/Sky.mp4">
+                        <track kind="subtitles" src="subtiiter-en.vtt" srclang="en" label="English">
+                        Video tugi puudub!
+                    </video>
+                    <iframe width="560" height="315" referrerpolicy="no-referrer-when-downgrade" 
+                        src="https://www.youtube.com/embed/FSmJZePnykk?controls=1&amp;showinfo=0" 
+                        frameborder="0" allowfullscreen></iframe>
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="10" stroke="green" stroke-width="5" fill="yellow"/>
+                    </svg>
                     Proin eget sollicitudin sapien, id consectetur nulla. In eget erat aliquet, dignissim diam sed, sollicitudin velit. Sed elementum orci a mattis pharetra. Nam non ultrices massa. Mauris tincidunt velit a diam aliquam, efficitur scelerisque leo finibus. Mauris id lobortis orci. Curabitur convallis dignissim lectus id vestibulum. In pretium aliquam pulvinar. Suspendisse non leo sed velit congue tincidunt. Etiam gravida tempor luctus. Donec faucibus velit ut condimentum porta. Mauris ut ultrices dui. Sed id ante ut lorem interdum fermentum. Fusce facilisis, ipsum et cursus tristique, augue nisi ornare felis, vitae elementum lacus dolor eget nunc. 
                 </p><hr>
                 <section>
@@ -154,6 +179,34 @@
             <p>
                 Lorem ipsum <abbr title="hüperteksti märgistuskeel">HTML</abbr> dolor sit amet, consectetur adipiscing elit. Pellentesque quis erat diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Praesent congue ornare arcu, eu fringilla urna pharetra vel. Nunc ornare tellus non aliquet gravida. Morbi in neque tristique, posuere dolor a, volutpat metus. Nullam vitae commodo enim, sit amet tincidunt dui. Aliquam erat volutpat. Proin id justo sollicitudin, convallis purus at, laoreet nulla. Nunc tincidunt orci ac justo porta, in pellentesque purus efficitur. Sed et venenatis justo. Aliquam vel neque in diam rhoncus iaculis. Nunc eget mattis odio. Morbi ex velit, elementum vitae auctor sit amet, rutrum quis odio. Etiam id elit neque. Donec congue risus in eros laoreet, id ullamcorper nibh fermentum. 
             </p>
+            <table border="1">
+                <caption>
+                    <p>Tabel1 pealkiri</p>
+                    <p>Terwe jdfgnöklker knedkjfekdfgk s dkfjgjl kf kfkh kfen wekfkejjkscdk</p>
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Päis 0</th>
+                        <th>Päis 1</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Päis 0</th>
+                        <th>Päis 1</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Keha 1</td>
+                        <td>Keha 2</td>
+                    </tr>
+                    <tr>
+                        <td>Keha 1</td>
+                        <td>Keha 2</td>
+                    </tr>
+                </tbody>
+            </table>
             <footer>
                 <a href="#artikkel2" target="_self">Tagasi artikli algusesse</a>
             </footer>
