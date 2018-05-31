@@ -1,6 +1,35 @@
+/*Määrab rohelist teksti kõikidele elementidele
+*{
+    color: green;
+}
+*/
+
+/*
+Elemendi põhine valik p juurde lisada class="katse"
+*/
+
 h1 {
+    background-color: azure;
     color: blue;
+}
+p {
+    background-color: gold;
 }
 .pealkiri {
     background-color: bisque;
+}
+.katse {
+    background-color: coral;
+}
+#definition {
+    color: rosybrown;
+}
+.katse ruby {
+    color: darkorange
+}
+body > header {
+    background-color: deeppink;
+}
+ul, ol {
+    color: darkslateblue;
 }
