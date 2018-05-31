@@ -14,18 +14,27 @@
 	<title>Tarkvaraarenduse Front-end</title>
 	<title></title>
 </head>
-<body>
+<body class="kontakt">
 	<header>
 		<div class="navigatisoon">
 			<nav id="nav" role='navigation'>
 		  		<ul>
-		    		<li><a href="index.html">Avaleht</a></li>-->
+		    		<li><a href="index.html">Avaleht</a></li>
 		    		<li><a href="/kevin/portfolio.html">Portfoolio</a></li>
 		    		<li class="active"><a href="/kevin/kontakt.php">Kontakt</a></li>
 		  		</ul>
 			</nav>
 		</div>
 	</header>
+<aside>
+	
+<form action="/kevin/create.php">
+    <input class="loo" type="submit" value="loo andmebaas" />
+</form>
+<form action="/kevin/kustuta2.php">
+    <input class="loo2" type="submit" value="kustuta andmebaas" />
+</form>
+</aside>
 <div class="kontaktivorm">
 <form action="process.php" method="post" autocomplete="on">
 <div class="kliendi_andmed">
@@ -51,7 +60,7 @@
 				<br />
 			<label>Telefoni nr.</label>
 				<div class="lahter">
-					<input type="tel" name="telefoninr" pattern="[+0-9]{12}" title="numbers and + only" />
+					<input type="tel" name="telefoninr" pattern="[+0-9]{9}" title="lma suunakoodita" />
 				</div>
 				<br />
 					
@@ -67,9 +76,10 @@
 </div>
 
 <h2>Andmete vaatamine</h2>
-
+<div id="data">
 <?php
 include 'connect.php';
+
 
 $sql ="SELECT `kliendi_andmed`.ID,`kliendi_andmed`.`eesnimi`,`kliendi_andmed`.`perenimi`,`kliendi_andmed`.`email`,`kliendi_andmed`.`telefoninr.`
 FROM `kliendi_andmed`";
@@ -77,7 +87,7 @@ FROM `kliendi_andmed`";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table>
+    echo "<table style='text-align:center; margin-left:auto; margin-right:auto'>
         <tr>
             <th>ID</th>
             <th>Eesnimi</th>
@@ -103,8 +113,21 @@ if ($result->num_rows > 0) {
     echo "<br>Tulemused puuduvad.";
 }
 
+mysqli_select_db ( $conn , "isikuandmed" );
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql2 = "ALTER TABLE `kliendi_andmed` AUTO_INCREMENT = 1;";
+		if ($conn->query($sql2) === TRUE) {
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+
+
 $conn->close();
 ?>
+</div>
 
  
 </body>
