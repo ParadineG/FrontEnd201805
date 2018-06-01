@@ -33,3 +33,109 @@ body > header {
 ul, ol {
     color: darkslateblue;
 }
+a:visited{
+    color: lightslategray
+}
+a:link {
+    color: navy
+}
+a:active, a:focus {
+    color: purple
+}
+a:hover {
+    color: plum
+}
+form ~ * {
+    background-color: aquamarine
+}
+/* :empty - tühi element. E F E >F E+F E~F *Tärn tähendab, et valitakse kõik elemendid. */
+:empty {
+    background-color: seagreen
+}
+dt + dd {
+    background-color: chartreuse
+}
+:lang(en) {
+    font-style: unset
+}
+[download]:hover{
+    color: crimson
+}
+/* E[attr] E[attr="value"] E[attr~="value"] E[attr^="value"] E[attr$="value"]
+    E[attr*="value"] E[attr|="value"] attr="kase-pall-käsi"  first-child mõjutab kõiki nimekirjasid
+    first-of-type mõjutab ainult esimest nimekirja */
+
+input[name|="radio"]:checked + br + label {
+        background-color: fuchsia;
+}
+/* :enabled :disabled */
+a:not(:hover) {
+    background-color: wheat
+}
+/* :root == html */
+ol li:first-child {
+    font-style: italic;
+}
+li:first-of-type {
+    font-weight: bold;
+}
+/* :last-child :last-of-type :only-child
+:nth-child(n) :nth-last-child :nth-of-type(n)   */
+li:nth-child(2n+4) {
+    background-color: black
+}
+:target {
+    background-color: sienna;
+}
+/* ::first-line; ::first-letter, ::before, ::after */
+
+legend::before {
+    content: "Vorm: ";
+}
+p::first-letter {
+    font-size: 150%;
+    color: lime;
+}
+/* @media all braille handheld projection tty tv.
+dpi või dpcm */
+@media print and (min-resolution: 118dpcm){
+    p::first-letter {
+        font-size: 150%;
+        color: lightcoral;
+    }
+}
+@media screen and (orientation: landscape) {
+    p::first-letter {
+        font-size: 150%;
+        color: mediumvioletred;
+    }
+}
+/* height device-height 
+seadmes üks suurus reeglina */ 
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+
+}
+
+@media (min-device-width: 1024px) and (max-device-width: 2000px) {
+    p::first-letter {
+        font-size: 100%;
+    } 
+}
+@media (aspect-ratio: 1920/1080 ) {
+    p::first-letter {
+        font-size: 100%;
+    }
+}
+/* 8-bit -> 3-bit red. 3-bit green, 2-bit blue === color: 2 */ 
+@media all and (min-color: 6){
+    p::first-letter {   
+        text-decoration: underline;
+    }
+}
+@supports not (display: flow-root){
+    textarea {
+        display: inline-block;
+        color: rgb(255, 152, 16);
+    }
+}
