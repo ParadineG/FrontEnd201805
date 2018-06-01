@@ -190,3 +190,118 @@ body.kontakt {
 div#data {
   text-align: center;
 }
+
+a:visited {
+  color: #F645;
+}
+
+a:link {
+  color: #96D5;
+}
+
+a:active, a:focus {
+  color: rgb(128, 0, 0); 
+} 
+
+a:hover {
+  color: rgb(29, 81, 165) 
+}
+
+/* :empty {
+  background-color:rgb(56, 57, 58);
+}
+*/
+/*E F E>F  E+F E~F 
+
+dialog ~ * {
+  background-color:rgb(56, 57, 58);
+}
+dt + dd {
+  background-color:rgb(56, 57, 58);
+}
+:lang(en) {
+  font-style: oblique;
+}
+[download]:hover {
+  color: rgb(29, 81, 165) 
+}
+
+E [attr] E[attr="value"] E[attr~="value"] E[attr^="value"] E[attr$="value"] E[attr*="value"] E[attr|="value"]  
+
+input[name|="radio"]:checked + br + label {
+  background-color:rgb(239, 0, 7);
+}
+
+a:not(:hover) {
+  background-color: rgb(29, 81, 165);
+
+}
+:root == html
+
+ol :first-child {
+  font-style: italic;
+  font-size: 30px;
+}
+:last-child :last-of-type :only-child
+:nth-child(n) :nth-last-child(n) :nth-of-type(n) :nth-last-of-type(n)
+:target {
+  background-color: ;
+};
+li:nth-child(2){
+  background-color: rgb(29, 81, 165);
+}
+
+ol li:first-child {
+  font-style: italic;
+  font-size: 30px;
+}
+grid
+tv and (scan:progressive) (scan:interlace)
+monochrome color-index
+8-bit-> 3-bit red 3-bit green, 2-bit blue === color: 2;
+device-height
+(aspect-ratio: 16/9)
+min-height max height
+:enabled :disabled;
+all braille handheld projection tty tv embossed speech
+::first-line ::first-letter ::before ::after;
+legend::before {
+  content:"Vorm: ";
+}
+
+p::first-letter {
+  font-size:200%;
+  color:#0c1016;
+  }
+
+@media screen and (orientation:landscape) {
+  p::first-letter {
+  font-size:200%;
+  color:rgb(107, 0, 0);
+  }
+}
+@media print, (min-resolution:300dpi) {
+  p::first-letter {
+  font-size:200%;
+  color:rgb(29, 81, 165);
+  }
+}
+
+@media (min-device-width: 1024px), (max-device-width: 1280px) {
+  p::first-letter {
+  font-size:400%;
+  }
+}
+@media all and (min-color:1){
+  p::first-letter {
+  text-decoration: underline;
+  }
+}
+@support not
+*/
+
+@supports (display: flow-root) {
+  p::first-letter {
+  text-decoration: underline;
+  }
+}

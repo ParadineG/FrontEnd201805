@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: flex-end;
+    /* flex-direction: row; */
+   /* width: 60vmin; */
+} 
+body  > * {
+    margin: 10px;
+    flex-grow: 1;
+}
+main {
+    min-width: 40%;
+    max-width: 40%;
+}
+aside {
+    min-width: 20%;
+    max-width: 20%;
+}
+
+body > header, body > footer {
+    min-width: 98%;
+    flex-grow: 3;
+}
+main p {
+    display: inline-block;
+    column-count: 2;
+}
+aside ~ aside {
+    align-self: flex-start;
+}
+
+body > header {
+    background-color: bisque;
+}
+body > footer {
+    background-color: rgb(196, 228, 170);
+}
+body > aside {
+    background-color: lightgrey;
+}
+main {
+    background-color: lavender;
+}
+/* meedia screeni kohanemine ekraani suurusele, väiksel ekraanil kaovad tulbad ära */
+@media screen and (max-width: 900px) {
+    aside, main {
+        min-width: 96%;
+        max-width: 96%;
+    }
+    aside {
+        order: 1;
+    }
+    body > footer {
+        order: 2;
+    }
+}

@@ -1,0 +1,51 @@
+body { /*flex kasutan nt galerii tegemise korral*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: flex-end;
+}
+body > *{
+    margin: 1px;
+    flex-grow: 3;
+    /*width: 60vmin;*/
+}
+body > header, body > footer {
+    min-width: 98%;
+    flex-grow: 3;
+}
+main {
+    max-width: 50%;
+    min-width: 50%;
+}
+@media screen and (max-width:800px){
+    aside, main {
+        min-width: 100%;
+    }
+    aside {
+        order: 1;
+    }
+    body > footer {
+        order: 2;
+    }
+}
+aside {
+    max-width: 24%;
+    min-width: 24%;
+}
+main p { /*flex luuletuse vormis, grid-tavaline üksteise all*/
+    display: inline-block;
+    column-count: 2; /*kui panna block ja width 50% siis jupitab lehe pooleks, column-count (teeb veerge nii palju kui nr määrad)*/
+}
+aside ~ aside {
+    align-self: flex-start;
+}
+body > header {
+    background-color: rgb(151, 126, 158)
+}
+body > footer {
+    background-color: rgb(126, 150, 180)
+}
+body > aside {
+    background-color: rgb(144, 145, 86)
+}
