@@ -173,7 +173,7 @@ p::first-letter {
     p::first-letter {
         text-decoration: underline;
     }  
-    
+
     @supports (display: flow-root) {
         textarea{
             color: forestgreen;
@@ -187,6 +187,6 @@ p::first-letter {
        }
    }
 }
-/* monochrome color-index grid*/
+/* monochrome color-index grid*/ 
 /* tv and (scan: progressive) või interlace*/
  
