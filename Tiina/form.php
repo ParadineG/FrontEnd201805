@@ -77,7 +77,7 @@
                 <input type="color" id="color" name="color" ><br><br>
                 
                 <label for="radio">Kass: </label>
-                <input type="radio" id="radio" name="loom" value="Kass"><br>
+                <input type="radio" id="radio" name="loom" value="Kass" checked><br>
                 <label for="radio1">Koer: </label>
                 <input type="radio" id="radio1" name="loom" value="Koer"><br>
                 <label for="checkbox">Kass: </label>

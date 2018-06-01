@@ -1,7 +1,42 @@
+
+/* elemendi põhine valik */
 h1 {
+    background-color: violet;
     color: blueviolet;
+    text-align: center;
+}
+
+p {
+    background-color: floralwhite;
+}
+/* Lisades !important saame teha overwrite kui peaks olema seda elementi muudetud kusalgi mujal */
+.katse {
+    color: crimson!important;
+}
+
+#definition {
+    color: firebrick;
 }
 
 .pealkiri {
     background-color: rgb(226, 170, 14);
 }
+
+body > header {
+    background-color: aquamarine;
+}
+
+ul, ol {
+    color: rgb(114, 0, 0);
+}
+
+table {
+    background-color: honeydew;
+}
+
+/* Lisab kõikidele elementidele
+* {
+    color: greenyellow;
+}
+*/
+

@@ -5,6 +5,7 @@
         <title>Tiitel koolitusele</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
 
         <!--Valikuline: -->
         <base href="http://localhost/Stina/" target="_blank">
@@ -59,9 +60,19 @@
                 <datalist id="kodukad">
                     <option value="http://neti.ee" label="Neti">
                     <option value="http://google.ee" label="Google">
-                    <option value="http://net.ee">
+                    <option value="http://net.ee" label="net">NET</option>
                 </datalist>   
+                
+                
+                <optgroup label="1">
+                <option value="http://neti.ee" label="Neti">
+                    <option value="http://google.ee" label="Google">
+                    <option value="http://net.ee" label="net">NET</option>
+                </optgroup>
 
+                <textarea name="tekstiala" cols="30" rows="7">Kirjuta siia.. </textarea><br>
+                <fieldset>
+                    <legend>1.osa </legend>
                 <label for="color">Värv: </label>
                 <input type="color" id="color" value="#ff0000" name="color"><br>
                 <label for="checkbox">Checkbox: </label>
@@ -70,7 +81,7 @@
                 <input type="checkbox" id="checkbox" name="checkbox"><br>
                 <label for="checkbox">Mida sa tahad?: </label>
                 <input type="checkbox" id="checkbox" name="checkbox"><br>
-
+                </fieldset>
                 <label for="radio1">Naine </label>
                 <input type="radio" id="radio1" name="radio" value="naine"><br>
                 <label for="radio2">Mees </label>
@@ -98,6 +109,33 @@
                 <input type="reset" value="Reset">
                 <input type="image" src="/icon/Favicon-32x32.png" target="_blank" alt="Nupuke">
             </form>
+            <form onsubmit="return false" oninput="o.value = a.valueAsNumber + b.valueAsNumber">
+                <input name="a" type="number" step="any"> + 
+                <input name="b" type="number" step="any"> =
+                <output name="o" for="a b"></output>
+            </form><br>
+
+            <progress value="100" max="2000"></progress>
+            <meter min="3" max="11" value="11" low="4" high="10" optimum="5">Tere</meter>
+           
+            <!--interaktiivsed elemendid edges ei tööta-->
+
+            <details open>
+                <summary><em>Kokkuvõte detailidest</em></summary>
+                <p> ajsfasop aos dksadk     skasoldkas pasdksdkas saoda9 a9sdashndkja 9u dasn </p>
+                <p> ajsfasop aos dksadk     skasoldkas pasdksdkas saoda9 a9sdashndkja 9u dasn </p>
+                <p> ajsfasop aos dksadk     skasoldkas pasdksdkas saoda9 a9sdashndkja 9u dasn </p>
+            </details><br>
+            <dialog open>
+                <h2>Tere dialoog!</h2>
+                <p> ajsfasop aos dksadk     skasoldkas pasdksdkas saoda9 a9sdashndkja 9u dasn </p>
+                <p> ajsfasop aos dksadk     skasoldkas pasdksdkas saoda9 a9sdashndkja 9u dasn </p>
+                <p> ajsfasop aos dksadk     skasoldkas pasdksdkas saoda9 a9sdashndkja 9u dasn </p>
+            </dialog>
+
+            
+            
+            
             <?php
             if(isset($_POST['eesnimi']))
                 echo '<p>'.$_POST['eesnimi'].'<p>';

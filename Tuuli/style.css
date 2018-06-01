@@ -1,7 +1,164 @@
+/*määrab rohelist teksti
+*{
+    color: green;
+}
+*/
+
+/*Elemendi põhine valik*/
 h1 {
+    background-color: aliceblue;
     color:green;
+}
+
+p{
+    background-color: burlywood;
 }
 
 .pealkiri {
     background-color: aquamarine;
 }
+
+#definition { /*saab kasutada ainult korra, ID põhine*/
+   color: orange;
+}
+
+.katse ruby{
+    color: crimson
+}
+
+body > header {
+    background-color: blanchedalmond;
+}
+
+ul, ol{ /*listide värvimiseks, mitme elemendi puhul*/
+    color: darkblue;
+}
+a:link{
+    color: green;
+}
+a:visited{/*lingiga seotud, pseudo klass nt lingile on vajutatud ja seda külastatud*/
+    color: gray;
+}
+a:active, a:focus{ /*focus mõeldud mitte hiire vaid klaviatuuriga liikumiseks tabide kaupa*/
+    color: steelblue;
+}
+
+a:hover{
+    color: palevioletred
+}
+:target {/*target vaatab spetsiifilist ID-d*/
+    background-color: aliceblue;
+} 
+:empty{ /*mõjutab kõiki neid elemente, kuhu pole värvi lisatud*/
+    background-color: dimgray;
+}
+/* E F E>F E+F E~F */
+form ~ * {
+    background-color: aqua;
+} 
+dt + dd {
+    background-color: khaki;
+}
+:lang(en) {
+    font-style: oblique;
+}
+[download]:hover{
+    color: brown;
+}
+/*E[attr] E[attr="value"] 
+E[attr~="value"] (enimkasutusel olev, reeglina kasutan seda) 
+E[attr^="value"] (attr="kase-pall", leiab kase ehk alguse)
+E[attr$="value"] ($siis leiab lõpu)
+E[attr*="value"] (otsib sõna seest väärtuse)
+E[attr|="value"] (otsib sidekriipsuga sõnu, sagedaselt kasutatatkse ka)*/
+
+input[name|="radio"]:checked + br + label {
+    background-color: chocolate;
+}
+a:not(:hover){
+    background-color: antiquewhite
+}
+/* :root == html */
+
+ol li:first-child { /*first-childmuudab muudab kõikide nimekirjade esimese vastavalt*/
+    font-style: italic;
+}
+li:first-of-type { /*first-type-of ainult konkreetse nimekirja esimest */
+    font-weight: 400;
+}
+/*sarnased veel :last-chlid :last-of-type :only-child */
+/* :nth-child(n) :nth-last-child(n) :nth-of-type(n) :nth-last-of-type(n)*/
+
+li:nth-child(2){/*listis teised olevad, lähevad roheliseks, kui panna 2n, siis iga teine rida*/
+    background-color: lightgreen;
+}
+li:nth-child(2n+1){
+    background-color: lightcoral;
+}
+/* :enabled :disabled*/
+
+/*pseudoelemendid lisavad sisu juurde, seda pole näha*/
+/* ::first-line ::first-letter ::before ::after*/
+legend::before{ /*muudab selle nii, et tagapool saab siniseks hiirega tõmmata*/
+    content: "Vorm:";
+}
+p::first-letter{ /*iga paragraaf hakkab suure värvilise tähega*/
+    font-size: 200%;
+    color: blueviolet;
+}
+/* @media all braille handheld projection tty tv embossed speech*/
+/* orientation võib olla landscape või portrait st orientation:portrait*/
+@media screen and (orientation: landscape){
+    p::first-letter{ 
+        font-size: 200%;
+        color: seagreen;
+    }
+}
+@media print and (min-resolution: 300dpi){/*printimisel resolutsioon tensity per insh, kaks ühikut dpi ja dpcm*/
+    p::first-letter{ 
+        font-size: 200%;
+        color: blue;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1280px){
+    p::first-letter{ 
+        font-size: 300%;
+    }
+}
+/* height deviceheight*/
+/*seadmes üks suurus reeglina*/
+@media (min-device-width: 1024px) and (max-device-width: 2000px){
+    p::first-letter{ 
+        color: slateblue
+    }
+}
+/* device-aspect-ratio */
+@media (aspect-ratio: 16/9){ /*saab kasutada videomaterjali puhul, kus ekraani laiusi vaja paika panna,
+    kõige popim resolutsioon 1366x768, 1920x1080, EUs 360x640 (kui väiksem arv ees, siis tavaliselt tegemist mobiiliga)*/
+    p::first-letter{ 
+        font-size: 100%;
+    }
+}
+/*kui palju pitte värviseadmes võimalik seadistada, kui 8-pit -> 3-bit red, 3-pit > green, 2-pit > blue === color: 2; 24 pit === color: 8*/
+@media all and (min-color: 8){ 
+    p::first-letter{ 
+    text-decoration: underline; 
+    }
+    @supports (display: flow-root){
+        textarea {
+            display: flow-root;
+            color: forestgreen;
+        }
+    }
+    @supports not (display: flow-root){
+        textarea {
+            display: inline-block;
+            color: blueviolet;
+        }
+    }
+}
+/*monochrome töötab pit põhimõttel*/
+/*color-index*/
+/*grid - terminalide puhul või vanemat tüüpi telefoni display, millel üks font toetatud*/
+/*tv and (scan: progressive või interlace) see teleka ekraani seadistamine (progressiivne vaatab 2 kaadrit, otsib erinevust üles)*/
+
