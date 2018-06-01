@@ -9,7 +9,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
         <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
 
-        <link rel="stylesheet" href="form.css" type="text/css" title="default">
+        <link rel="stylesheet" href="style.css" type="text/css" title="default">
         <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
         <link rel="stylesheet" href="print.css" type="text/css" media="print">
     </head>
@@ -38,12 +38,13 @@
                  <label for="url"> URL: </label>
                  <input type="url" id="url" name="url" list="kodulehed"><br><br>
                  </fieldset>
+                 <br>
                  <datalist id="kodulehed">
                      <option value="http://neti.ee" label="Neti">Neti</option>
                      <option value="http://Google.ee" label="hi"> Google</option>
                      <option value="http://juku.ee">Juku
                  </datalist>
-
+               
                  <select name="valik" multiple size="0" title="kkodus" width="200">
                      <optgroup label="1">
                         <option value="http://neti.ee"> Neti</option>
@@ -56,9 +57,15 @@
                      <option value="http://google.ee" label="Google" selected>Google</option>
                      <option value="http://juku.ee" label="Juku" disabled>Juku</option>
                      </optgroup>
-                </select><br>
+                </select><br> <br>
                 <textarea name="tekstiala" cols="30" rows="7">Tere....</textarea><br><br>
 
+                    <label for="radio">Mees: </label>
+                    <input type="radio" id="radio" name="radio" value="mees"><br>
+                    <label for="radio1">Naine: </label>
+                    <input type="radio" id="radio1" name="radio" value="naine"><br>
+                    
+                <br>
                  <label for="email"> EMAIL: </label>
                  <input type="email" id="email" name="email" placeholder="nimi@gmail.com" multiple> <br><br>
 
