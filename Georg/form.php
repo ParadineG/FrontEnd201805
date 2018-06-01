@@ -80,7 +80,7 @@
                     <input type="radio" id="radio" name="radio1" value="mees"><br><br>
 
                     <label for="radio">Naine</label>
-                    <input type="radio" id="radio" name="radio2" value="naine"><br><br>
+                    <input type="radio" id="radio" name="radio1" value="naine"><br><br>
 
                     <label for="radio">Teletups</label>
                     <input type="radio" id="radio" name="radiouni" value="teletups"><br><br>
@@ -126,7 +126,7 @@
 
             <!-- details open> siis on detailid automaatselt avatud-->
             <details>
-                <summary>Kiri millele user vajutab et detailse näha</summary>
+                <summary>Kiri millele user vajutab et detaile näha</summary>
                 <p>blablablablablablablabla</p>
                 <p>blablablablablablablabla</p>
             </details>
