@@ -1,6 +1,36 @@
+/* Määrab rohelist texti kõikidele elementidele
+* {
+    color: green;
+}
+*/
+/* Elemendi põhine valik */
 h1 {
+    background-color: aliceblue;
     color: blue;
+}
+p {
+    background-color: antiquewhite;
 }
 .pealkiri {
     background-color: aquamarine;
+}
+.katse {
+    background-color: lavender;
+}
+.katse2 {
+    color: sienna!important;
+}
+
+#definition {
+    color: saddlebrown;
+}
+.katse ruby {
+    color: crimson;
+}
+
+body > header {
+    background-color: blanchedalmond;
+}
+ul, ol {
+    color: seagreen;
 }
