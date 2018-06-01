@@ -1,6 +1,8 @@
-
+/* * võtab enda alla kõik elemendid lehel */
 h1{
     color: palevioletred;
+    font-size: 1cm;
+   
 }
 
 h2{
@@ -9,5 +11,33 @@ h2{
 
 .joonis1 {
     float: right;
+}
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
 
+li a{
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 0.5cm;
+}
+li a:hover {
+    background-color:palevioletred;
+    color: white;
+}
+
+p {
+    background-color: lightblue;
+}
+#definition {
+    color: saddlebrown;
+}
+body > header {
+    background-color: gainsboro;
 }

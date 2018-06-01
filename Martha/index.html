@@ -1,31 +1,87 @@
  <!DOCTYPE html>
- <html lang= "et">
+ <html lang= "et" prefix="of: http://ogp.me/ns# fb:http://ogp.me/fb# article: http://ogp.me/ns/article#">
     <head>
         <meta charset="utf-8">
-            <title>Tiitel Koolitusele</title>
+            <title>Front-End Testileht</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name"referrer" content="">
+        <meta name"referrer" content="strict-origin-when-crossorigin">
         <!--no-referrer no-referrer when downgrade same-origin origin strict-origin
         origin-when-crossorigin strict-origin-when-crossorigin(kõige turvalisem) unsafe-url-->
+ 
+        <!--Kui veebileht peaks käituma nagu veebirakendus-->
+        <meta name="application-name" content="Tradent">
+        <!--SEO: description=veebilehe kirjeldus, SEO kõge tähtsamad: 1.tiitel(pikkus u 6 sõna(ka h1 kohta) tiitel ja h1 sama sisu, kuid erinevalt edasi antud
+        Oleks hea, kui h1 lehel vaid ühe korra.-->
+        <!--SEO: author- lehe omanik või kes tegi lehe-->
 
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
-        <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
+        <meta name="author" content="Maria-Martha Kikkas">
+        
+        <!--SEO: osa infost, mida pole ilmselt vaja ise lisada-->
+        <meta name="generator" content="frontweaver 8.2">
+
+        <!--SEO: Description=max 155 tähemärki, võib ka nihkuda,-->
+        <meta name="description"
+                content="Front-End arendust pakkuv koolitus, veebiõpetus.
+                         Front-End arendust pakkuv koolitus, veebiõpetus.
+                         Front-End arendust pakkuv koolitus, veebiõpetus.
+                         Front-End arendust pakkuv koolitus, veebiõpetus.">
+        <!--SEO: Iseendale, google väga ei vaata enam keywordse, määrata endal võtmesõna ära, keyword võiks eksisteerida tiitlis, kirjelduses, teksti enda sees kindlasti-->
+        <meta name="keywords" content="Front-End koolitus">
+
+        <!--SEO opengraph-->
+        <meta property="fb:app_id" content="145145641641441564">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://koduleht.ee/Martha">
+        <meta property="og:title" content="Tere tulemast siia Front-End testilehele">
+        <meta property="og:description" content="Front-End arendust pakkuv koolitus, veebiõpetus.
+                                                 Front-End arendust pakkuv koolitus, veebiõpetus.
+                                                 Front-End arendust pakkuv koolitus, veebiõpetus.
+                                                 Front-End arendust pakkuv koolitus, veebiõpetus.">
+        <meta property="og:image" content="http://koduleht.ee/icon/favicon-32x32.png">
+        <meta property="article:published_time" content="2018-05-29T09:09">
+
+       
 
         <!-- Kommentaar -->
         <base href="http://localhost/Martha/" target="_blank">
         <link rel="stylesheet" href="style.css" type="text/css" title="default">
         <link rel="alternate stylesheet" href="fancy.css" type="text/css" title="fancy">
         <link rel="stylesheet" href="print.css" type="text/css" media="print">
+        <!--Sama leht, aga teises keeles-->
+        <link rel="alternate" type="text/html" href="/en/Martha" hreflang="en" title="English Martha page">
+          <!--printimiseks-->
+        <link rel="alternate" type="text/html" href="/et/Martha" hreflang="et" media="print" title="English Martha printing page">
+        <link rel="help" href="/help/">
+        <link rel="alternate" type="application/atom+xml">
+        <link rel="author" content="mailto:kdosa@hot.ee">
+        <!--kui mingi sama teema jätkub kas eemlmisel või järgmisel lehel-->
+        <link rel="prev" rev= "next"href="/Martha/01">
+        <link rel="next" rev="prev" href="/Martha/03">
 
+ 
+        <!--ainult opensearch ja kui otsing hõlmab tervelt lehte-->
+        <link rel="search" href="/search/">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/icon/favicon.svg">
     </head>
     <!-- body onoffline="update(false)" -->
     <body>
+        <noscript>
+            <p>Palun lülita javascript sisse või uuenda veebilehitsejat!</p>
+        </noscript>
         <header>
                 <div class="tiitel">
-            <h1>Tere tulemast!</h1>
-                </div>
+            <h1 itemprop="name"> Tere tulemast siia Front-End testilehele!</h1>
+            <!--
+            <p>Autor: <a rel="author" href="mailto:juku@kalk.ee?Subject=Tere%20Jälle">
+                <cite itemprop="author">Juku Kask</cite>   --> 
+           </a> 
+             <p time datetime="2018-05-29" itemprop="datePublished"></time></p>
+        </p>
+        </div>
             <div class="pealkiri">
             <section>
                     <h2>Alapealkiri 2 </h2>
@@ -40,12 +96,23 @@
                 <!--localhost/Martha-->
                 <li><a href="/Georg">Georgi koduleht</a></li>
                 <li><a href="../Kerli">Kerli koduleht</a></li>
-                <li><a href="https://google.com">Google koduleht</a></li>  
+                <li><a href="https://google.com">Google koduleht</a></li> 
             </ol>
         </nav>
         <main>
-        <article id="artikkel1">
+        <article id="artikkel1" itemscope itemtype="http://schema.org/TechArticle" role="presentation feed"></article>
                 <header>
+                    <header>
+                        <p itemprop="description">
+                            <a href="peatykk01.html" rel="bookmark">Viide esimesele peatükile</a><br><br><br>
+                            <a href="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf"
+                                 download type="application/pdf">Fail allalaadimiseks</a><br>
+                            <a href="http://random.com" rel="nofollow">Suvaline Leht, mida autor ei usalda</a> <br>  
+                            <a href="http://random.com" rel="noopener">Suvaline Leht, mida autor ei usalda</a> <br>    
+                            <a href="http://random.com" rel="no-referrer" referrer-policy="no-referrer">Suvaline Leht, mida autor ei usalda</a><br>        
+                        </p>
+
+                    </header>
                         <h1>Lorem Ipsum</h1>
                     
                         <p>Autor: Jaja</p>
@@ -59,13 +126,14 @@
                             !-->
                         </aside>
                     </header>
+                <section itemprop="articleBody">
                     <div class="joonis1">
                         <p>                 
                         <figure> <!--aitab esile tuua pildi sisust-->
                             <img src="/icon/favicon.svg" alt="Figure Example" width="150">
                             <figcaption>Joonis 1</figcaption>
                         </p>
-                     </figure>
+                     </figure>                    
                     </div>
                    <p> Nulla ante <abbr title="hüperteksti märgistuskeel">HTML</abbr> lectus, pellentesque accumsan ligula sit amet, imperdiet pretium neque. Mauris vestibulum massa vitae dignissim vestibulum.</p>
                     <table border="'1">
@@ -92,9 +160,11 @@
                     <p>
                             Lorem ipsum dolor <a href="#Definition" target="_self"> definition</a> amet, consectetur adipiscing elit. Donec justo nibh, vestibulum ac maximus at, facilisis at nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Donec ipsum nisi, luctus a tellus et, laoreet commodo lectus. Maecenas sit amet pharetra nisl. Phasellus in massa gravida, tempor augue at, luctus lacus.  Proin placerat ex rutrum, feugiat augue quis, tincidunt eros. Nam bibendum tempus interdum. Cras ultricies eros quis dictum interdum. Sed bibendum venenatis enim, ut facilisis leo. Proin commodo nec mauris quis ornare. Aenean et congue purus. Aenean posuere purus vitae sapien hendrerit porta. In nec ornare ante.  Proin placerat ex rutrum, feugiat augue quis, tincidunt eros. Nam bibendum tempus interdum. Cras ultricies eros quis dictum interdum. Sed bibendum venenatis enim, ut facilisis leo. Proin commodo nec mauris quis ornare. Aenean et congue purus. Aenean posuere purus vitae sapien hendrerit porta. In nec ornare ante.  Proin placerat ex rutrum, feugiat augue quis, tincidunt eros. Nam bibendum tempus interdum. Cras ultricies eros quis dictum interdum. Sed bibendum venenatis enim, ut facilisis leo. Proin commodo nec mauris quis ornare. Aenean et congue purus. Aenean posuere purus vitae sapien hendrerit porta. In nec ornare ante.
                     </p>
+                </section>
                     <hr>
             </main>
-               <!-- <section>
+            <!--
+                <section>
                         <ul>
                                 <li><strong>strong</strong></a></li>
                                 <li><em>em</em></a></li>
@@ -107,7 +177,7 @@
                                 <li><kbd>Ctrl</kbd>+ <kbd>S</kbd></li>
                             </ul>
                 </section>
-                !-->
+            -->
                 <!--
                    <section>
                     <ol reversed="reversed" start="4">
@@ -125,7 +195,7 @@
                     </picture>  
                -->
                
-                    <video autoplay muted loop width="250px">
+                    <video  muted loop width="250px" poster="/icon/favicon-16x16.png" controls preload>
                         <source src="/Sky.mp4">
                         <track kind="subtitles" src="subtiiter-en.vtt" srclang="en" label="English">
                         Video tugi puudub!
@@ -139,6 +209,9 @@
       
                 </p>
                 <footer>
+                        Võtmesõnad: <a rel="tag" href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem Ipsum</a>
+
+                   
                     <dl target"_self">
                         <dt><dfn id="Definition">Definition</dfn></dt>
                         <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada eget nibh vel gravida. Sed egestas orci rhoncus eros eleifend, a malesuada lorem volutpat.</dd>
@@ -163,7 +236,8 @@
             <br>
             
            <footer>
-            Copyright @ 2918
+            <small>Copyright @ 2019</small>
+            <a rel="license" href="/privacy-policy/">Privacy Policy</a>
         </footer>
         </address>
     </body>
