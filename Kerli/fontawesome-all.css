@@ -3,10 +3,10 @@
  * License - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
  @font-face {
-  font-family: 'FontAwesome';
-  src: url('/fa/fa-regular-400.eot');
-  src: url('/fa-regular-400.eot') format('embedded-opentype'), url('/fa/fa-regular-400.woff2') format('woff2'), url('/fa/fa-regular-400.woff') format('woff'), url('/fa/fa-regular-400.ttf') format('truetype'), url('/fa/fa-regular-400.svg') format('svg');
-  font-weight: normal;
+  font-family: 'Font Awesome\ 5 Free';
+  src: url('http://localhost/Kerli/fa/fa-solid-900.eot');
+  src: url('http://localhost/Kerli/fa-fa-solid-900.eot') format('embedded-opentype'), url('http://localhost/Kerli/fa/fa-solid-900.woff2') format('woff2'), url('http://localhost/Kerli/fa/fa-solid-900.woff') format('woff'), url('http://localhost/Kerli/fa/fa-solid-900.ttf') format('truetype'), url('http://localhost/Kerli/fa/fa-solid-900svg') format('svg');
+  font-weight: 900;
   font-style: normal;
 }
 .fa,

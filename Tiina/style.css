@@ -21,7 +21,7 @@ div.pealkiri{
 }
 
 header{
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(143, 244, 252);
     
 }
 .katse{
@@ -43,3 +43,134 @@ body > header{
 ul,ol {
     color: springgreen;
 }
+a:link{
+    color:green;
+}
+a:visited{
+    color: grey;
+ }
+/*focus -siis kui liikuda tabiga siis näitab sama moodi kui peale vajutades*/
+a:active, a:focus{
+     color: purple;
+ }
+a:hover{
+    color: palevioletred;
+}
+:target{
+    background-color: darkred;
+}
+/* :empty - element, mille sees ei ole midagi*/
+:empty{
+    background-color: lightsalmon;
+}
+/*E F|E > F|E+F|E~F, kus E on element ja F on funktsioon*/
+/* *- valib kõik elemendid, + järgmine element saab antud väärtused.*/
+form ~ *{
+    background-color: blue;
+}
+dt + dd{
+    background-color: goldenrod;
+}
+:lang(en){
+    font-style: oblique;
+}
+[download]:hover{
+    color: yellowgreen;
+}
+/*E[attr] | E[attr="value"] | E[attr~="value"] | E[attr^="value"] algab | E[attr$="value"] lõppeb selle osaga| E[attr*="value"] otsib spetsiifilist sõna/sõnatükki
+| E[attr|="value"] otsib sidekriipsuga sõnu| nt attr="kase-pall"*/
+input[name|="loom"]:checked + br ~ label{
+    background-color: deeppink;
+}
+/*:enabled, :disalbed*/
+a:not(:hover){
+    background-color: darkkhaki;
+}
+/*:root == html*/
+/*ol :first-child, ul :first-child{
+    font-style: oblique;
+    font-weight: bold;
+}*/
+ol li :first-child {
+    font-style: italic;
+}
+ul li:first-of-type{
+    font-weight: bold;
+}
+/*:last-child :last-of-type :only-child*/
+/*:nth-child(n) :nth-last-child(n) :nth-of-type(n)*/
+li:nth-child(2n){
+    background-color: purple;
+}
+li:nth-child(2n+3){
+    background-color: yellow;
+}
+/*Pseudoelemendid ::first-line, ::first-letter, ::before, ::after*/
+legend::before{
+    content: "Vorm: ";
+
+}
+p::first-letter{
+    font-size: 200%;
+    font-weight: bold;
+    color: slateblue;
+}
+/*@media all braill handheld projection tty tv embossed speech*/
+/*orientation:portrait*/
+@media screen and (orientation: landscape), print{
+    p::first-letter{
+        font-size: 200%;
+        font-weight: bold;
+        color: seagreen;
+    }
+}
+/*tpi või dpcm*/
+@media print and (min-resolution:118dpcm/*tihedus cm peale*/){
+    p::first-letter{
+        font-size: 200%;
+        font-weight: bold;
+        color: blue;
+    }
+}
+@media (min-width:1024px) and (max-width:1280px){
+    p::first-letter{
+        font-size: 300%;
+        
+    }
+}
+/* heigth device-height*/
+/*kasutatakse seadmete puhul, kus ei saa ekraani suurust muuta(telefonid)*/
+@media (min-device-width:1024px) and (max-device-width:2000px){
+    p::first-letter{
+        /*font-size: 100%;*/
+        color: mediumorchid;
+    }
+}
+/*video materjali kasutamise jaoks, mugavasse resolutsiooni panemiseks*/
+/*device-aspect-ratio*/
+@media (aspect-ratio:16/9/*1920x1080*/){
+    p::first-letter{
+        font-size: 100%;
+        color:black;
+    }
+}
+/*8-bit -> 3-bit red,3-bit green, 2-bit blue === color: 2*/
+@media all and (min-color:8){
+    p::first-letter{
+      text-decoration: underline;  
+    }
+    @supports (display: flow-root){
+        textarea{
+            display: flow-root;
+            color: orange;
+        }
+    }
+    @supports not (display: flow-root){
+        textarea{
+            display: inline-block;
+            color: blue;
+        }
+    }
+}
+/*monochrome, color-index(mitu värvi minimaalselt on), grid(used for consoles)*/
+/*tv and (scan:procressive) või scan:interlace*/

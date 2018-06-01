@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+body {
+  font-family: lato;
+  /*background-color:  #d5d5d5;e7e5e4*/
+  display: flex;
+ /* flex-direction: row;*/
+  flex-flow:row wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: flex-end;
+}
+
+body > * {
+  min-width:33%;
+  max-width:33%;
+  margin: 1px;
+  flex-grow: 1;
+  
+}
+
+
+main {
+  min-width:40%;
+  max-width:40%;
+}
+aside {
+  min-width:20%;
+  max-width:20%;
+}
+body > header, body > footer {
+  flex-grow: 2;
+  min-width: 98%;
+}
+
+
+main p {
+  display: inline-block;
+  column-count: 2;
+}
+
+aside ~ aside  {
+  align-self: flex-start;
+}
+
+
+body > header {
+  background-color: #d5d5d5;
+}
+
+body > footer{
+  background-color: #481e70;
+}
+body > aside{
+  background-color: #d617b6;
+}
+main {
+  background-color: #e7e5e4;
+}
+
+@media screen and (max-width: 900px){
+  aside, main{
+    min-width: 96%
+    max-width: 96%;
+  }
+  aside {
+    order:1;
+  }
+  body > footer {
+    order:2;
+  }
+
+}

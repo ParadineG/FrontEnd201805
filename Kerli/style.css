@@ -25,7 +25,7 @@ a {
     text-decoration: none;
     color: #e62a2a;
 }
-a:hover {
+a:hover, a:active, a:focus {
     color: #ff6666;
     text-decoration: underline;
 }
@@ -36,5 +36,107 @@ ul {
     list-style-type: circle;
 }
 td{
-    padding: 15px;
+    padding: 10px;
+}
+/* otsib tühjad elemendid */
+:empty {
+    background-color: white;
+}
+.fas {
+    color: #e79c9c;
+    background-color: transparent;
+    padding-right: 3px;
+}
+.table1 {
+    width: 80%;    
+}
+.table1 tr th {
+    padding: 10px 10px 10px 7px;
+}
+.mull {
+    position: absolute;
+}
+.label {
+    display: inline-block;
+    width: 12%;
+}
+textarea {
+    margin-left: 20px;
+}
+/*form ~ *{
+    background-color: red;
+}*/
+:lang(en) {
+    font-style: oblique;
+}
+.table1 thead tr th:nth-child(1) {
+    width: 30%;
+}
+[download]:hover {
+    color: #ff6666;
+}
+/* E[attr] E[attr="value"] E[attr~="value"] E[attrˇ="value"] E[attr$="value"] E[attr*="value"] E[attr|="value"] */
+input[name|="radio"]:checked + br + label{
+    background-color: #3a7bb1;
+}
+details p:nth-child(2) {
+    font-weight: 800;
+}
+/*a:not(visited) {
+    background: linear-gradient(#e66465, #9198e5);
+:first-child :first-of-type :last-of-type only-child
+:nth-child() :nth-of-type()
+}*/
+:target {
+    border: 2px solid #d4d4d4;
+}
+/* enabled disabled
+    ::first-line ::first-letter ::before ::after
+*/
+legend::before {
+    content: " Btn";
+}
+p::first-letter {
+    font-size: 200%;
+    color: #3f5732;
+}
+fieldset {
+    background: linear-gradient(to bottom, #fefefd 0%,#dce3c4 42%,#aebf76 100%);
+}
+@media print and (min-resolution: 118dpcm) {
+    img, iframe, video, .fas {
+        display: none;
+    }
+}
+@media screen and (orientation: landscape) {
+    p::first-letter {
+        font-size: 120%;
+        color: #7ab858;
+    }
+}
+/*@media all braille handheld projection tty tv embossed speech
+    @media (min-device-width: 1024px) and(max-device-width: 1280px) {
+    heigth device-height
+    monochrome color-index
+    tv and (scan: progressive) või interlace
+*/
+@media (min-width: 1024px) and(max-width: 1280px) {
+    p::first-letter {
+        font-size: 140%;
+    }
+}
+@media (aspect-ratio: 16/9) {
+    p::first-letter {
+        color: #7640a8;
+    }
+}
+/*@media (min-color: 1) {
+    p::after {
+        content: "TheEnd";
+    }
+}*/
+@supports (display: flow-root) {
+    textarea {
+        color: #2e0e4d;
+    }
 }
