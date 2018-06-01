@@ -26,3 +26,136 @@ body > header {
 ul, ol {
     color: salmon;
 }
+
+a:link {
+    color: chartreuse;
+}
+a:visited{
+color: gray;
+}
+
+a:active, a:focus {
+    color: darkviolet;
+}
+
+a:hover {
+    color: coral;
+}
+
+:target {
+    background-color: palegoldenrod;
+}
+
+/* :empty  ehk see on tühi element, pole sees lapselementi ega teksti */
+:empty {
+    background-color: rgb(241, 222, 171) ;
+}
+
+/* E F E>F E+F E~F */ 
+
+form ~ * {
+    background-color: aquamarine;
+}
+
+dt + dd {
+    background-color: rgb(156, 156, 235);
+}
+
+:lang(en) {
+    font-style: oblique;
+}
+
+[download]:hover {
+    color:red;
+}
+/* E[attr] E[attr="value"]ainult see atribuut on; E[attr~="value"]atribuute on mitu, aga üks neist on see; 
+E[attr^="value"]atribuut algab selle nimetusega; E[attr$="value"]atribuut lõpeb selle nimega; E[attr*="value"]otsib sõna seest mingit väärtust; 
+E[attr|="value"]otsib vist ka sidekriipsudega eraldatud sõnaosadest attr="kase-mahla-puu" */
+
+input[name|="radio"]:checked + br + label {
+    background-color: chocolate;
+}
+a:not(:hover) {
+    background-color: lightsteelblue;
+}
+/* :enabled  :disabled 
+:root == html kui on vaja html tag üle kirjutada */ 
+
+ol li:first-child {
+    font-style: italic;
+}
+
+li:first-of-type {
+    font-weight: bold;
+}
+/* :last-child, :last-of-type :only-child*/ 
+/* :nth-child(n) :nth-last-child(n) :nth-of-type(n) :nth-last-of-type(n) */
+
+li:nth-child(2n) {
+    background-color: lightcyan;
+}
+li:nth-child(2n+1) {
+    background-color: azure;
+}
+/* stilistilise poole pealt pseudoelemendid
+::first-line  ::first-letter ::before ::after */
+
+legend::before {
+    content: "Vorm: "
+}
+p::first-letter {
+    font-size: 200%;
+    color: seagreen;
+}
+/* @media all - siis on kõikidel seadmetele samad kujundused, veel on: braille, handheld, projection, tty, tv, embossed, speech)
+orientation:portrait, landscape - vist olid nii)*/
+
+/* 300dpi või 118dpcm printimise resolutsiooni sätted */
+@media print and (min-resolution: 118dpcm) {
+    p::first-letter {
+        font-size: 200%;
+        color: blue;
+    }
+}
+@media screen and (orientation: landscape) {
+    p::first-letter {
+        font-size: 200%;
+        color: blue;
+    }
+}    
+@media (min-width: 1024px) and (max-width: 1280px) {
+    p::first-letter {
+        font-size: 300%;
+        color: deeppink;
+    }      
+}   
+/* height - eksisteerib, aga pole praktikas väga kasutatav*/
+@media (min-device-width: 1024px) and (max-device-width: 2000px) {
+    p::first-letter {
+        color: rgb(42, 8, 233);
+    }      
+} 
+/* device-aspect-ratio et nt video näitamisel jääks pilt ilusti formaati, mitte ei veniks ära */
+@media (aspect-ratio: 16/9) {
+    font-size: 100%;
+}
+/* 8-bit -> 3-bit red, 3-bit green, 2-bit blue === color: 2) */ 
+@media all and (min-color: 8) {
+    p::first-letter {
+        text-decoration: underline;
+    }
+}
+/* monochrome- bittide põhimõttel ühe värvi põhiseks kõik; color-index; grid -> vanemat tüüpi telefonide jaoks, aga meie ei kasuta */
+/* tv and (scan: progressive ) või interlace */
+@supports (display: flow-root) {
+    textarea {
+        display: flow-root;
+        color: darkgreen;
+    }
+}
+@supports not (display: flow-root) {
+    textarea {
+        display: inline-block;
+        color: blueviolet;
+    }
+}
