@@ -30,7 +30,7 @@
                     <input id="username" name="username" required><br><br>
 
                     <label for="hidden">varjatud </label>
-                    <input id="hidden" name="hidden"><br><br>
+                    <input type="hidden" name="hidden"><br><br>
 
                     <label for="password">password</label>
                     <input type="password" id="password" name="password" minlength="3" maxlength="6"><br><br>
@@ -87,6 +87,7 @@
 
                     <input type="image" src="/icon/Favicon-32x32.png" alt="nupuke">
 
+                    <textarea name="tekstiala" cols="30" rows="5" wrap="hard">textarea</textarea>
                     <input type="button" value="nupp" disabled>
                     <input type="reset" value="reset">
                     <input type="submit" formmethod="GET" autofocus value="saada">
@@ -109,7 +110,34 @@
                     <button type="button" disabled>Button</button>
                     <button type="reset">Reset</button>
                 </form>
+    	        <br>
+                <form onsubmit="return false" oninput="o.value = a.valueAsNumber + b.valueAsNumber">
+                    <input name="a" type="number" step="any"> +
+                    <input name="b" type="number" step="any"> =
+                    <output name="o" for="a b"></output> 
+                </form>
+                
+                <!-- kasutatakse koos javascriptiga et millegi progressi näidata userile-->
+                <progress value="68" max="100"></progress>
+                <meter value="2" min="0" max="10"></meter>
+                <!-- low, high ja optimum muudavad visuaalselt mõõdikut -->
+                <meter value="0.1" low="0.2" high="0.75" optimum="0.5"></meter>
             </fieldset>
+
+            <!-- details open> siis on detailid automaatselt avatud-->
+            <details>
+                <summary>Kiri millele user vajutab et detailse näha</summary>
+                <p>blablablablablablablabla</p>
+                <p>blablablablablablablabla</p>
+            </details>
+
+            <!-- ilma open'ita pole üldse näha-->
+            <dialog open>
+                <h2>Dialog</h2>
+                <p>blablablablablablablabla</p>
+                <p>blablablablablablablabla</p>
+            </dialog>
+
         </main>
 
         <?php
