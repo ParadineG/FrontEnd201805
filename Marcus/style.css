@@ -11,7 +11,7 @@ h1{
 }
 
 p{
-    background-color: bisque
+    background-color: rgb(196, 228, 255)
 }
 
 .pealkiri{
@@ -33,5 +33,146 @@ body > header {
     background-color: blueviolet;
 } /* üks aste madalam*/
 ul, ol {
-    color:seagreen
+    color:seagreen;
 } /* terve nimekiri*/
+
+a:link { /* külastamata lingid*/
+    color: green;
+}
+
+a:visited { /* külastatud lingid*/
+    color: gray;
+}
+
+a:active, a:focus { /* aktiveeritud link, fookuses link (nt tabiga)*/
+    color: steelblue;
+}
+
+a:hover { /* kursor on lingi peal*/
+    color:palevioletred;
+}
+:target {
+    background-color:rgb(174, 202, 120);
+}
+:empty {
+    background-color: azure;
+}
+/* :empty <_ mõjutab tühjasid elemente*/
+
+/* E  F  E>F  E+F  E~F */
+
+form ~ * {
+    background-color: aquamarine;
+}
+
+dt + dd {
+    background-color: khaki;
+}
+
+:lang(en) {
+    font-style: oblique;
+}
+
+[download]:hover {
+    color: red;
+}
+
+/* E[attr] E[attr="value"] E[attr~="value"] E[attr^="value"] 
+E[attr$="value"] E[attr*="value"] E[attr|="value"] attr="kase-käsi-pall" */
+
+input[name|="radio"]:checked + br + label{
+    background-color: chocolate;
+}
+
+/* :enabled :disabled */
+a:not(:hover) {
+    background-color: wheat;
+}
+
+/* :root == html */
+ol:first-child, ul:first-child {
+    font-style: italic
+}
+
+li:first-of-type {
+    font-weight: bold;
+}
+
+/* :last-child :last-of-type :only-child*/
+/* :nth-child(n) :nth-last-child(n) :nth-of-type(n) :nth-last-of-type(n) */
+
+li:nth-child(2n) {
+    background-color: lightgreen;
+}
+
+li:nth-child(2n+3) {
+    background-color: lightpink;
+}
+
+/* ::first-line, ::first-letter ::before ::after */
+
+legend::before {
+    content: "Vorm ";
+}
+
+p::first-letter {
+    font-size: 200%;
+    color: blueviolet;
+}
+/* @media all braille handheld projection tty tv embossed speech*/
+/* orientation:portrait */
+@media screen and (orientation: landscape) {
+    p::first-letter {
+        font-size: 200%;
+        color: seagreen;
+    }
+}
+/*dpi või dpcm => ameerika inch vs euroopa centimeeter*/
+@media print and (min-resolution: 118dpcm) /*density per centimeter*/{
+    p::first-letter {
+        font-size: 200%;
+        color: blue;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+    p::first-letter {
+        font-size: 300%;
+    }
+}
+
+/* height */
+
+@media (min-device-width: 1024px) and (max-device-width: 2000px) {
+    p::first-letter {
+        font-size: 250%;
+    }
+}
+/* device-aspect-ratio */
+@media (min-aspect-ratio: 3/2) {
+    p::first-letter {
+        font-size: 75%;
+    }
+}
+/* 8-bit -> 3-bit red, 3-bit green, 2-bit blue === color: 2   24-bit == color: 8*/
+@media all and (min-color: 8) {
+    p::first-letter {
+        text-decoration: underline;
+    }
+}
+
+/* monochrome color-index grid <= mitu fonti on toetatud */
+
+/* tv and (scan: progressive) või (scan: interlace) */
+
+@supports (display: flow-root) {
+    textarea {
+        
+        color: forestgreen;
+    }
+}
+@supports not (display: flow-root) {
+    textarea {
+        display: inline-block;
+        color: blueviolet;
+    }
+}
