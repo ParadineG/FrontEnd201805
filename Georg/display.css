@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+body > * {
+    margin: 2px;
+    flex-grow: 1;
+}
+body > header {
+    background-color: azure;
+}
+
+body > footer {
+    background-color: tomato;
+}
+
+body > aside {
+    background-color: yellowgreen;
+}
+
+body > header, body > footer {
+    max-width: 98%;
+    flex-grow: 3;
+}
+main {
+    background-color: powderblue;
+    min-width: 40%;
+    max-width: 40%;
+}
+aside {
+    min-width: 20%;
+    max-width: 20%;
+}
+
+@media screen and (max-width:800px) {
+    aside, main{
+        min-width: 100%;
+        max-width: 100%;
+    }
+    aside:first-child-of-type {
+        order:4;
+    }
+    body > footer {
+        order: 2;
+    }
+}

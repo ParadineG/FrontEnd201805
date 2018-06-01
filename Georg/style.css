@@ -33,7 +33,19 @@ p {
 }
 
 a {
+    text-decoration: none;
+}
+a:link {
     color: red;
+}
+a:visited {
+    color: gray;
+}
+a:active, a:focus {
+    color: blue;
+}
+a:hover {
+    background-color: aquamarine;
 }
 
 pre {
@@ -44,4 +56,114 @@ pre {
 
 nav > ul > li {
     letter-spacing: 10px;
+}
+
+:empty {
+    background-color: navajowhite;
+}
+/* E F E<F E+F E~F*/
+
+/*(form ~ *) <-- targetib form ja kõik laps elemendid */
+form ~ * {
+    background-color: aquamarine;
+}
+
+dt + dd {
+    background-color: tomato;
+}
+
+:lang(en) {
+    font-style: oblique
+}
+
+[download]:hover {
+    color: blueviolet;
+}
+
+/* E[attr]  E[attr="value"] E[attr~="value"] E[attr^="value"] E[attr$="value"] E[attr*="value"] E[attr|="value"]*/
+
+input[name|="radio"]:checked ~ br + label {
+    background-color: brown;
+}
+
+a:not(:visited) {
+
+}
+
+/* :root == html */
+
+ol li:first-child {
+    font-style: italic;
+}
+
+li:first-of-type {
+    font-weight: 600;
+}
+/*:last-child, :last-of-type, :only-child, :nth-child(n), :nth-last-child(n), :nth-last-of-type(n) */
+
+li:nth-child(3) {
+    text-decoration: underline;
+}
+
+/* :enabled :disabled */
+/* ::first-line ::first-letter ::before ::after */
+
+legend::before {
+    content: "Legend: ";
+}
+
+p::first-letter {
+    font-size: 150%;
+}
+
+/* @media* all braille handheld projection tty tv embossed speech*/
+@media screen and (orientation: landscape) {
+    p::first-letter{
+        font-size: 200%;
+        color: seagreen;
+    }
+    
+}
+
+@media print {
+    p::first-letter{
+        font-size: 200%;
+        color: blue;
+    }
+}
+/*height device-height*/
+/*Seadmes üks suurus reelina*/
+@media (min-device-width: 1024px) and (max-device-width: 2000px){
+    p::first-letter{
+        color: turquoise;
+    }
+}
+
+/*ekraani resolutsiooni järgi teeb vastavalt muudatusi
+  device-aspect-ratio*/
+@media (min-aspect-ratio: 3/2) {
+    p::first-letter{
+        font-size: 100%;
+}
+/* 8-bit -> 3-bit red, 3-bit green, 2-bit blue === color: 2*/
+@media all and (min-color: 8) {
+    p::first-letter{
+        text-decoration: underline;
+    }
+}
+
+/*monochrome color-index grid*/
+/*tv and (scan: progressive) või interlace*/
+
+@media print and (min-resolution: 300dpi) {
+    p::first-letter {
+        font-size: 200%;
+        color: blue;
+    }
+}
+
+@supports (display: flow-root) {
+    textarea {
+        color: forestgreen;
+    }
 }
