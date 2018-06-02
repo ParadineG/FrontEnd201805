@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: flex-end;
+    /* flex-flow: wrap; */
+    /*width: 60vmin;*/
+}
+
+body > * {
+    margin: 10px;
+    flex-grow: 1;
+    /*width: 60vmin;*/
+}
+
+main {
+    min-width: 48%;
+    max-width: 48%;
+}
+
+aside {
+    min-width: 24%;
+    max-width: 24%;
+}
+
+body > header, body > footer {
+    max-width: 38%;
+    flex-grow: 3;
+}
+
+main  p {
+    display: inline-block;
+    column-count: 2;
+}
+
+aside ~ aside {
+    align-self: flex-start;
+}
+
+body > header {
+    background-color: antiquewhite;
+}
+
+body > footer {
+    background-color: grey;
+}
+
+body > aside {
+    background-color: lightblue;
+}
+
+main {
+    background-color: aquamarine;
+}
+
+@media screen and (max-width:900px){
+    aside, main{
+        min-width: 100%;
+        max-width:100%;
+    }
+    
+    aside{
+        order: 1;
+    }
+    body > footer{
+        order: 2;
+    }
+}

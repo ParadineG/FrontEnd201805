@@ -41,3 +41,152 @@ body > header {
 ul, ol {
     color: crimson;
 }
+
+a:link {
+    color: green;
+}
+a:visited {
+    color: grey;
+}
+
+a:active, a:focus {
+    color: steelblue;
+}
+
+a:hover {
+    color: palevioletred;
+}
+
+:target {
+    background-color: cornsilk;
+}
+
+/* :empty (tühi element) */
+:empty {
+    background-color: dimgray;
+}
+
+/* E F E>F E+F E~F */
+
+/* vormist iga järgnev element*/
+form ~ * {
+    background-color: aquamarine;
+}
+
+dt + dd {
+    background-color: khaki;
+}
+
+:lang(en) {
+    font-style: oblique;
+}
+
+[download]:hover {
+    color: red;
+}
+
+/* E[attr] E[attr="value"] E[attr="value"] E[attr~="value"] E[attr^="value"] E[attr$="value"]
+   E[attr*="value"]  E[attr|="value"] */
+
+   /*Värvib ära labeli millele eelneb break millele eelneb tsekitud radio nupp */
+input[name|="radio"]:checked + br + label {
+    background-color: chocolate;
+}
+/* :enabled :disabled */
+
+a:not(:hover) {
+    background-color: wheat;
+}
+/* :root == html (root kirjutab htmli üle */
+
+ol li:first-child {
+    font-style: italic;
+}
+
+li:first-of-type {
+    font-weight: bold;
+}
+/* :last-child :last-of-type :only-child  on analoogsed eelnevale*/
+
+/* :nth-child(n) :nth-last-child(n) :nth-of-type(n) :nth-last-of-type(n) */
+
+li:nth-child(2n) {
+    background-color: lightgreen;
+}
+
+li:nth-child(2n+1) {
+    background-color: lightpink;
+}
+
+/* pseudo elemendid*/
+/* ::first-time, ::first-letter, ::before, ::after */
+
+legend::before {
+    content: "Vorm";
+    
+}
+
+p::first-letter {
+    font-size: 200%;
+    color: blueviolet;
+}
+
+/* media query*/
+/* @media all bratile handheld projection tty tv embossed speech */
+/* orientation: portrait*/
+@media screen and (orientation: landscape) {
+    p::first-letter {
+        font-size: 200%;
+        color: seagreen;
+    }
+}
+/* dpi või dpcm*/
+@media print and (min-resolution:118dpcm) {
+    p::first-letter {
+        font-size: 200%;
+        color: blue;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+    p::first-letter {
+        font-size: 300%;
+        
+    }
+}
+/* height device-height*/
+/* sedme ük suuurus reeglina*/ 
+@media (min-device-width: 1024px) and (max-device-width: 2000) {
+    p::first-letter {
+        color: slateblue;
+        
+    }
+}
+
+/* device-aspect-ratio */
+@media (aspect-ratio: 16/9) {
+    p::first-letter {
+        font-size: 100%;
+    }
+}
+/* 8 bit -> 3-bit red, 3-bit green, 2-bit blue === color: 2 24-bit == color: 8*/
+@media all and (min-color: 8) {
+    p::first-letter {
+        text-decoration: underline;
+    }  
+
+    @supports (display: flow-root) {
+        textarea{
+            color: forestgreen;
+        }
+    }
+   
+    @supports not (display: flow-root) {
+       textarea{
+           display: inline-block;
+           color: blueviolet;
+       }
+   }
+}
+/* monochrome color-index grid*/ 
+/* tv and (scan: progressive) või interlace*/
+ 
