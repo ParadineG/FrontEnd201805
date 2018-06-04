@@ -34,6 +34,168 @@ table {
     background-color: honeydew;
 }
 
+/* Kui oled ühte linki külastanud, siis muuda see teist värvi */
+a:visited {
+    color: green;
+}
+/* Muudab linki värvi */
+a:link {
+    color: darkgoldenrod;
+}
+/* Kui vajutada linki peale, siis muudab värvi */
+/* Kui valik on fookuses (tabiga linkide vahel liikuda), siis muudab värvi */
+a:active, a:focus {
+    color: purple;
+}
+/* Kui vajutada nupu peale, siis muudab värvi */
+button:active {
+    color: orangered;
+}
+/* Kui hiirega üle minna, siis muudab värvi */
+a:hover {
+    color: yellowgreen;
+}
+/* Muudab tühjad elemendi värvi, näiteks vormi kastid jne */
+:empty {
+    background-color: rgba(139, 214, 124, 0.548);
+}
+/* Kui mingi link näiteks viitab kuhugi teise kohta, siis värvi selle taust teistsuguseks */
+:target {
+    background-color: aquamarine;
+}
+
+/* Muudab järgnevat elementi */
+form ~ * {
+    background-color: deeppink;
+}
+
+dt + dd {
+    background-color: maroon;
+}
+/* Muudab font stiili kõigil, millel on lang="en" attribuut pandud */
+:lang(en) {
+    font-style: oblique;
+}
+/* Muudab download attribuudiga tagi värvi */
+[download]:hover{
+    color: violet;
+}
+
+input[name|="valik"]:checked + br + label {
+    background-color: indigo;
+}
+
+/* :enabled :disabled */
+
+a:not(:hover) {
+    background-color: yellow;
+}
+/* Muudab ainult esimest last */
+li:last-child {
+    font-style: italic;
+}
+/* Muudab ainult esimest elementi */
+li:first-of-type {
+    font-weight: bold;
+}
+/* Kui muutujas on sees 2n, siis muudab iga teist rida, 2n-1, 3n jne */
+li:nth-child(2n - 1) {
+    background-color: yellowgreen;
+}
+
+li:nth-child(2n) {
+    background-color: rgba(0, 0, 255, 0.562);
+}
+
+/* Pseudoelementidel on :: ees */
+/* ::first-line, ::first-letter, ::before, ::after */
+
+legend::before {
+    content: "Vorm: ";
+}
+
+p::first-letter {
+    font-size: 200%;
+    color: lime;
+}
+
+/* @media all, braille, handheld, projection, tty, tv, embossed, speech*/
+
+/* Muudab kujundust kui minna portree peale üle */
+@media screen and (orientation: landscape) {
+    p::first-letter {
+        font-size: 200%;
+        color: hotpink;
+    }
+}
+/* Muudab kujundust kui minna print vaatesse */
+@media print {
+    p::first-letter {
+        font-size: 200%;
+        color: goldenrod;
+    }
+}
+/* Kui ekraani suurus jääb vahemikku, siis muuda midagi */
+@media (min-width: 1024px) and (max-width: 1280px) {
+    p::first-letter {
+        font-size: 300%;
+    }
+}
+/* Ekraani suhtega muudabe midagi */
+@media (aspect-ratio: 16/9) {
+    body{
+        background-color: yellowgreen;
+    }
+}
+
+@media all and (min-color: 8) {
+    p::first-letter {
+        text-decoration: underline;
+    }
+}
+/* Kui toetab mingit asja, siis tee teisiti
+@supports (display:flow-root) {
+
+}
+*/
+@keyframes slidein {
+    from { transform: scaleX(0.5); }
+    to   { transform: scaleX(1); }
+  }
+svg {
+    animation: 2s ease-in alternate infinite slidein;
+}
+/*
+@media print and (min-resolution: 300dpi) {
+
+}
+*/
+/*
+@media (monochrome: 0) {
+    p {
+        font-size: 50%;
+    }
+}
+*/
+/*
+@media (min-device-width: 320px) and (max-device-width: 640px) {
+
+}
+*/
+
+
+
+/* :first-child, :last-of-type, :only-child, :nth-child(n), :nth-last-child(n) :nth-of-type(n) */
+
+/* :root = html */
+
+/* E[attr], E[attr="value"], E[attr~="value"], E[attr^="value"], E[attr$="value"], E[attr*="value"], E[attr|="value"]
+
+
+/* E F, E > F, E + F, E~F */
+
+
+
 /* Lisab kõikidele elementidele
 * {
     color: greenyellow;

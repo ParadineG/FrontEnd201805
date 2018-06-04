@@ -1,0 +1,74 @@
+main, aside, footer {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    /* margin: 10px;*/
+}
+h1, h2, h3, h4, p {
+    padding-left: 15px;
+}
+p {
+    padding-right: 15px;
+    text-align: justify;
+}
+body > div > header {
+    background: linear-gradient(to bottom, #9966ff 0%, #ff99cc 100%);
+    grid-area: header;
+    margin-top: 10px;
+}
+body > div > header:hover {
+    transition-duration: 1s;
+    transition-property: transform;
+    transform: rotate(0.001turn);
+}
+body > div > footer {
+    background-color: #c2d18e;
+    grid-area: footer;
+}
+body > aside {
+    background-color: #e09b9b;
+    grid-area: aside;
+}
+aside#aside1 {
+    background-color: #e09b9b66;
+    grid-area: aside1;
+}
+aside#aside2 {
+    background-color: #e09b9b;
+    grid-area: aside2;
+}
+main {
+    background-color: #abc5d1;
+    grid-area: main;
+}
+body > div {
+    /*width: 1200px;*/
+    /*width: calc(300px + 40%);*/
+    height: auto;
+    display: -ms-grid;
+    display: grid;
+    /*grid-template-columns: 1fr 3fr 1fr;*/
+    /*grid-template-columns: 200px 600px 200px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header header"
+    "aside1 main aside2"
+    "footer footer footer";*/
+    grid: 
+    "header header header"
+    "aside1 main aside2"
+    "footer footer footer"
+    /20% 40% 20%;
+    grid-column-gap: 8px;
+    grid-row-gap: 4px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: center;
+    /*justify-content: space-evenly;*/
+    /*align-content: space-between;*/
+    /*em rem (ex ch) % vw view-width vh vmin vmax
+    absoluutsed ühikud: px cm mm Q in pc pt - printimiseks
+    nurga kraadid: deg rad(2PI) grad(400) turn(1)
+    ajaühikud: s ms
+    sagedus: Hz kHz
+    resolutsioon: dpi dpcm dppx
+    värvid: hex rgb hsl */
+}

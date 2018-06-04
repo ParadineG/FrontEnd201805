@@ -1,0 +1,74 @@
+body {
+    /*initial - vaikimisi pakutavad seaded lehele|inherit -võta mõne teise omadused üle
+    inline - järjestab teksti|block |flex-tuleb ära määrata ka suund|grid|list-item|table-cell|flow-root*/
+    display: flex; /*pildigalerii kasutamisel on väga hea*/
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: flex-end;
+    /*flex-direction: row;
+    flex-flow: wrap;
+    width: 60vmin;*/
+}
+
+body > *{
+    margin: 10px;
+   /*min-width: 33%;
+    max-width: 33%;*/
+    flex-grow: 1;
+}
+
+main{
+    min-width: 40%;
+    max-width: 40%;
+}
+
+aside{
+    min-width: 20%;
+    max-width: 20%;
+}
+body > header, body > footer{
+    min-width: 96%;
+    flex-grow: 3;
+}
+main p{
+    /*Sellisel kujul on paragrahvid teineteise kõrval, mitte all. Toimib ka inline-block ja [blockiga(blockid lähevad ikkagi teineteise alla)].*/
+    /*display: inline-flex;
+    width: 33vmin;*/
+    
+    display: inline-block; /*(inline-block|block)*/
+    column-count: 2;
+   
+    
+}
+aside ~ aside{
+    align-self: flex-start;
+}
+
+
+body > header{
+    background-color: lightblue;
+}
+body > aside{
+    background-color: rgb(182, 214, 255);
+}
+body > footer{
+    background-color: black;
+    color: white;
+}
+main{
+    background-color: darkcyan;
+}
+
+@media screen and (max-width:900px){
+    aside, main{
+        min-width: 100%;
+        max-width: 100%;
+    }
+    aside:first-child-of-type{
+        order: 1;
+    }
+    body > footer{
+        order: 2;
+    }
+}
