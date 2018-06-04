@@ -1,0 +1,126 @@
+body > div > header {
+    background-color: bisque;
+    grid-area: header;
+    transition-duration: 1s;
+    transition-property: transform;
+    border: 5px solid black;
+    border-style: groove;
+    padding: 10px;
+    border-width: 20px 10px;
+    border-bottom-style: double;
+    border-left-style: dashed;
+    border-right-style: dashed;
+    border-radius: 75px;
+    background-image: url(../icon/favicon.svg);
+    background-repeat: round;
+    background-attachment: fixed;
+    /*
+    box-shadow: 10px -10px 2px teal;
+    */
+
+    /*
+    border-image: url(../icon/favicon-32x32.png) 40% repeat;
+    */
+}
+
+header > h2, header > h3 {
+    background-color: rgba(255, 235, 205, 0.726);
+}
+
+body > div > header:hover, aside:hover, footer:hover, main:hover {
+    transform: scale(1.03);
+    background-image: url(../icon/favicon.svg);
+    background-repeat: round;
+    background-attachment: fixed;
+}
+
+body > div > footer {
+    background-color: antiquewhite;
+    grid-area: footer;
+    min-width: 60vmin;
+    max-width: 60vmax;
+    justify-self: stretch;
+    transition-duration: 1s;
+    transition-property: transform;
+    background-image: url(../icon/favicon.svg);
+    background-repeat: round;
+    background-attachment: fixed;
+    /*
+    background-clip: border-box;
+    background-size: auto;
+    */
+    /*
+    background-position: left 50px top 25px;
+    */
+}
+
+body > div > aside {
+    background-color: beige;
+    transition-duration: 1s;
+    transition-property: transform;
+    background-image: url(../icon/favicon.svg);
+    background-repeat: round;
+    background-attachment: fixed;
+    cursor: url(../icon/favicon-32x32.png), progress;
+}
+
+#aside-1 {
+    grid-area: aside-1;
+}
+
+#aside-2 {
+    grid-area: aside-2;
+}
+
+main {
+    background-color: burlywood;
+    grid-area: main;
+    transition-duration: 1s;
+    transition-property: transform;
+    background-image: url(../icon/favicon.svg);
+    background-repeat: round;
+    background-attachment: fixed;
+}
+
+body > div {
+    outline: blueviolet solid 5px;
+    outline-style: double;
+    margin: 25px;
+    border: 2px solid black;
+    padding: 10px;
+    display: grid;
+    display: -ms-grid;
+    /*
+    grid-template-columns: 1fr 750px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header" "aside-1 main aside-2" "footer footer footer";
+    */
+    grid: "header header header" "aside-1 main aside-2" "footer footer footer" / 1fr 3fr 1fr;
+    grid-column-gap: 8px;
+    grid-row-gap: 4px;
+    justify-items: stretch;
+    align-items: start;
+    justify-content: space-evenly;
+    align-content: space-between;
+}
+
+p~p {
+    font-size: 1.5em;
+}
+
+span {
+    font-size: 1.5rem;
+}
+
+/* Suhtelised ühikud: 0, em, %, rem, vw, vh, (ex, ch) */
+/* Absoluutsed ühikud: cm, mm, Q (1/4mm), in, px, pt, pc */
+/* Nurkühikud: deg (360), rad (2Pi), grad (400), turn (1) */
+/* Ajaühikud: s, ms */
+/* Sagedus: hz, khz */
+/* Resolutsioon: dpi dpcm */
+/* Värvid:
+    Hex: #A6BD78, 16 süsteemi arvud, 0, 1, 2, 3, 4, 5, 6, 7, ,8 , 9, A, B, C, D, E, F
+    FF == 255 RGB
+    rgb()
+    hsl(288, 15%, 69%) hsla(288, 15%, 69%, 1) I 0-359
+    */

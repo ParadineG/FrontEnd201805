@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: stretch;
     align-content: flex-end;
     /* flex-flow: wrap; */
@@ -15,17 +15,17 @@ body > * {
 }
 
 main {
-    min-width: 48%;
-    max-width: 48%;
+    min-width: 46%;
+    max-width: 46%;
 }
 
 aside {
-    min-width: 24%;
-    max-width: 24%;
+    min-width: 22%;
+    max-width: 22%;
 }
 
 body > header, body > footer {
-    max-width: 38%;
+    width: 96%;
     flex-grow: 3;
 }
 
@@ -40,6 +40,7 @@ aside ~ aside {
 
 body > header {
     background-color: antiquewhite;
+    
 }
 
 body > footer {
@@ -67,3 +68,6 @@ main {
         order: 2;
     }
 }
+ h1 h2 h3 h4 {
+     text-align: center;
+ }
