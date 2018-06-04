@@ -1,8 +1,8 @@
 body {
     /* flex on galeriide jaoks mugav */
     display: flex; 
-    flex-flow: wrap;
-    justify-content: space-evenly;
+    flex-flow: row wrap;
+    justify-content: space-around;
     align-items: stretch;
     align-content: flex-end;
       
@@ -14,14 +14,6 @@ body > *{
     flex-grow: 1;
     /* width; 75vmin; */
 }
-body > header, body > footer {
-    min-width: 98%;
-    flex-grow: 3; 
-}
-main p {
-    display: inline-block;
-    column-count: 3;
-}
 main{
     min-width: 40%;
     max-width: 40%;
@@ -31,27 +23,21 @@ aside{
     min-width: 20%;
     max-width: 20%;
 }
-
-aside ~ aside {
-    align-content: center;
+body > header, body > footer {
+    min-width: 96%;
+    flex-grow: 3; 
 }
-@media screen and (max-width:900px){
-
-    aside, main{
-        min-width: 100%;
-        max-width: 100%;
-    }
-
-    body > aside:first-child{
-        align-content: center;
-    }
-    body > footer {
-        order: 2;
-    }
+main p {
+    display: inline-block;
+    column-count: 2;
+}
+aside ~ aside {
+    align-content: flex-start;
 }
 
 body > header {
     background-color: lightblue;
+   
 }
 body > footer {
     background-color: lightcoral;
@@ -67,5 +53,17 @@ body > main {
 h4 {
     background-color: lightcyan;
 }
+@media screen and (max-width:900px){
 
+    aside, main{
+        min-width: 100%;
+        max-width: 100%;
+    }
 
+    body > aside:first-child{
+        align-content: center;
+    }
+    body > footer {
+        order: 2;
+    }
+}

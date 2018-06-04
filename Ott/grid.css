@@ -11,6 +11,26 @@
 body > div > header {
     background-color: antiquewhite;
     grid-area: header;
+    padding: 10px;
+    border-width: 20px;
+    border-width: 20px 10px;
+    border-width: 32px 16px 8px 4px;
+    border-style: dashed;
+    border-top-style: dotted;
+    border-color: black;
+    border-right-color: brown;
+    border-radius: 15px;
+    border-top-left-radius: 25px;
+    /*border-image: url(/icon/favicon-32x32.png) 20% round;*/
+    /*border: 20px solid black;*/
+    outline: lightblue solid 10px;
+    outline-offset: 45px;
+    margin: 20px;
+
+    box-shadow: -30px 25px 10px -10px rgb(226, 168, 158, 0.5);
+}
+header > h2, header > h3 {
+    background-color: rgb(87, 93, 99);
 }
 body > div > header:hover{
     transition-duration: 1s;
@@ -19,8 +39,19 @@ body > div > header:hover{
 }
 body > div > footer {
     background-color: grey;
+    background-image: url("/icon/favicon.svg"), url("/icon/favicon-32x32.png");
+    background-repeat: round;
+    background-attachment: fixed, local;
+    background-position: left 15px top 25px;
+    background-clip: content-box, padding-box;
+    background-origin: border-box;
+    background-size: auto;
+    padding: 25px;
+
     grid-area: footer;
     justify-self: stretch;
+    resize: both;
+
     max-width: 60vmin; /* in landscape == vh in portrait == vw */
     max-width: 60vmax; /* in landscape == vw in portrait == vh */
 }
@@ -34,19 +65,26 @@ aside#aside-1 {
 }
 aside#aside-2 {
     grid-area: aside-2;
+    cursor: url(/icon/favicon-32x32.png),
+    progress;
 }
 
 main {
     background-color: aquamarine;
     grid-area: main;
+    background-image: url("/icon/favicon.svg");
+    background-repeat: round;
+    background-attachment: fixed;
 }
+
 /* Start Grid */
 body > div {
+   
     margin: 50px auto;
     padding: 10px;
     border: 2px solid black;
     width: calc(800px + 20%);
-    height: 1500px;
+    height: 1200px;
     display: -ms-grid;
     display: grid;
    /* grid-template-columns: 1fr 750px 1fr;
@@ -59,7 +97,7 @@ body > div {
     ". header aside-2"
     "aside-1 main aside-2"
     "footer footer footer"
-     / 1fr 3fr 1fr;
+     / 1fr 3fr 1fr; 
     
     grid-column-gap: 8px;
     grid-row-gap: 4px;
@@ -67,6 +105,9 @@ body > div {
     align-items: start;
     justify-content: space-evenly;
     align-content: space-between;
+
+   
+    
 }
 
 /* End Grid*/ 
