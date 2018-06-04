@@ -1,0 +1,127 @@
+/*start grid*/
+/*värvid*/
+/*Hex: #0fc2db| #A7D == (AA77DD) 16-süsteem[0 1 2 3 4 5 6 7 8 9 a b c d e f]*/
+/* FF== 255 #RGB #RGBA, kus A-alpha #0fc2dbFF*/
+/*värvi nimetusega.... Black, coral,cyan etc*/
+/*rgb(183,164,188) rgba(183,164,188,1) max 255*/
+/*rgb(72%,64%,74%) rgba(72%,64%,74%,1)*/
+/*hsl(287,15%,69%) hsla(287,15%,69%,1) I 0-359*/
+body > div > header{
+    background-color: #0fc2db;
+    grid-area: header;
+    outline: blue solid 5px;
+    margin: 0;
+    /*border:2px solid black;*/
+    padding: 10; 
+    border-width: 20px 10px;
+    border-style: ridge;
+    border-top-style: double;
+    border-color: black;
+    border-right-color:white;
+    border-radius: 15px;
+    border-bottom-left-radius: 20px;
+    /*border-image: url(/icon/favicon-32x32.png) 50% space;*/
+    outline-offset: 15px;
+    box-shadow: -25px 20px 20px 15px #0fa1dbff ;
+}
+header > h2, header > h3 {
+    background-color: #0fa1db;
+}
+body > div > header:hover{
+    transform: rotate(0.01turn);
+    transition-duration: 1s;
+    transition-property: transform;
+}
+body > div > aside{
+    background-color: rgb(182, 214, 255);
+    
+}
+aside#aside-1{
+    grid-area: aside-1;
+}
+aside#aside-2{
+    grid-area: aside-2;
+    cursor:  url(/icon/favicon-32x32.png),progress;
+}
+body > div > footer{
+    background-color: black;
+    color: white;
+    background-image: url(/icon/favicon.svg), url(/icon/favicon-32x32.png);
+    background-repeat: round;
+    background-attachment: fixed, local;
+    background-position: left 15px top 25px;
+    background-clip: content-box, padding-box;
+    background-origin: content-box;
+    background-size: contain;
+    padding: 25px;
+
+    grid-area: footer;
+    justify-self: stretch;
+    
+
+    min-width: 60vmin;
+    max-width: 60vmax;
+
+}
+main{
+    background-color: darkcyan;
+    grid-area: main;
+    background-image: url(/icon/favicon.svg), url(/icon/favicon-32x32.png);
+    background-repeat: round;
+    background-attachment: fixed, local;
+    
+    background-clip: padding-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+body > div {
+    outline: blue solid 5px;
+    margin: 30px auto;
+    border:2px solid black;
+    padding: 20px; 
+    width: calc(800px + 30%);
+    height: 1100px;
+    display: -ms-grid;/*Toetab ka vanemaid veebilehe versioone*/
+    display: grid;
+   /* grid-template-columns: 1fr 700px 1fr; /*fr-vaba ühik(gridiga kaasa tulnud ühik, st et ekraan jaotatakse nii mitmeks osaks kui inimene ära määrab.)|*/
+    /*grid-template-rows: 250px 1000px 150px;
+    grid-template-areas: 
+        "header header header"
+        "aside-1 main aside-2"
+        "footer footer footer";*/
+    grid: 
+        ". header header"
+        "aside-1 main aside-2"
+        "footer footer footer"
+        / 1fr 3fr 1fr;
+    
+    grid-column-gap: 8px;
+    grid-row-gap: 4px;
+    justify-items: stretch;
+    align-items: start;
+    justify-content: space-evenly;
+    align-content: space-between;
+    
+    overflow: hidden;
+    resize: both;
+    
+}
+/*end grid*/
+
+/*Relatiivsed ühikud:  em |rem - root em(kehtib esimese elemendi järgi) | %-annab protsendi sisust| vw - annab protsendi veebilehitseja tervest laiusest |
+vh-annab protsendi kõrgusest | vmin  | vmax-lubab scale'ida nii palju kui tahab | ex-tema suurus on määratud tema fondi järgi | ch*/
+/*Absoluutsed ühikud: 0| [cm | mm | Q -1/4 mm | in | pc |  pt -1/72in- Peamiselt kasutatakse printimiseks ]|px */
+/*Nurga kraadid: deg (360)-kraadid| rad (2PI)-radiaanid| grad (400)-gradient| turn (1)*/
+/*ajaühikud: s | ms*/
+/*sagedus: Hz| kHz*/
+/*resolutsiooni ühikud: dpi(density per inch)| dpcm | dppx*/
+
+
+p ~ p{
+    font-size: 1.5em;
+}
+span{
+    font-size: 1.5rem;
+}

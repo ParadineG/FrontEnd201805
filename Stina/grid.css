@@ -1,0 +1,128 @@
+/* start grid 
+värvid
+Hex: #87A4bc #A7D (#AA77DD)  16-süsteem arvud 0 1 2 3 4 5 6 7 8 9 A B C D E F, 
+FF == 255 #RGB #RGBA A -alpha #B7A4BCFF   
+black white green coral
+rgb(183, 164, 188) rgba(183, 164, 188, 1) max 255   alpha 0-1
+rgb(72%, 64%, 74%) rgba(72%, 64%, 74%, 1)
+rgb(288, 15%, 69%) rgba(288, 15%, 69%, 1)  I 0-359 
+
+*/
+body > div > header {
+    
+    background-color: rgba(243, 247, 45, 0.863);
+    grid-area: header;
+    padding: 20px;
+    border-width: 20px 10px;
+    border-width: 32px 16px 8px 4px;
+    border-style: dashed;
+    border-top-style: dotted;
+    border-color: darkorange;
+    border-right-color: goldenrod;
+    border-radius: 15px;
+    border-top-left-radius: 25px;
+    /* border-image: url(/icon/favicon-32x32.png) 20% repeat; */
+    /* border: 2px solid black; */
+    outline: lightblue 20px;
+    outline-offset: 45px;
+    margin: 20px;
+
+    box-shadow: -30px 25px 5px -5px rgba(226, 168, 104, 0.5);
+}
+body > div > header:hover{
+        transform: rotate(0.01turn);
+        transition-duration: 1s;
+        transition-property: transform;
+}
+
+body > div > footer {
+    background-image: url(/icon/favicon-32x32.png), url(/icon/favicon.svg); 
+    background-repeat: space;
+    background-attachment: fixed, local;
+    background-position: left 15px top 25px;
+    background-clip: content-box, content-box;
+    background-origin: content-box;
+    background-size: cover;
+
+    padding: 25px;
+    grid-area: footer;
+    justify-self: stretch;
+    resize: both;
+    
+    min-width: 60vmin;
+    max-width: 60vmax;
+}
+body > div > aside {
+    background-color: rgb(218, 79, 98);
+}
+aside#aside-1 {
+    grid-area: aside-1;
+}
+
+aside#aside-2 {
+    grid-area: aside-2;
+    cursor: url(/icon/favicon-32x32.png),
+            progress;
+}
+
+main {
+    background-color: rgba(145, 175, 231, 0.795);
+    grid-area: main;
+
+    background-image: url("/icon/favicon-32x32.png");
+    background-repeat: round;
+    background-attachment: fixed;
+
+}
+body > div {
+    outline: blue solid 5px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid black;
+    width: calc(800px + 20%);
+    height: 800px;
+    display: -ms-grid;
+    display: grid;
+
+    /* grid-template-columns: 250px 750px 250px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header"
+        "aside-1 main aside-2"
+        "footer footer footer"; */
+    grid:
+        "header header header"
+        "aside-1 main aside-2"
+        "footer footer footer"
+        / 1fr 3fr 1fr;
+    /* 0 em-fondi suurus 16px, rem, % ,vw vh (ex ch) vmin vmax
+    absoluutsed ühikud 0 cm mm Q in pc pt px
+    nurga kraadid: deg (360) rad (2PI)
+    aeg ühikud: s ms 
+    sagedus (ainult teooria): Hz kHz
+    resolutsiooni ühikud: dpi dpcm dppx
+
+    värvid: Hex: #A6BD78
+*/
+
+    
+    grid-column-gap: 8px;
+    grid-row-gap: 4px;
+    justify-items: center;
+    align-items: start;
+    justify-content: space-evenly;
+    align-content: space-between;  
+
+    overflow: hidden;
+    text-overflow: ellipse;
+    resize: both;
+
+}
+/*end grid */ 
+#A6BD78
+p ~ p {
+    font-size: 1.5em;
+}
+span {
+    font-size: 1.5rem;
+}
