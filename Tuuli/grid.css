@@ -1,0 +1,129 @@
+   
+   /*VÄRVID*/
+   /* Hex: #B7A4bc #A7D (=#AA77DD) 16-süsteem arvud, nende lugemine käib 0 1 2 3 4 5 6 7 8 9 A B C D E F*/
+   /* FF == 255; #RGB=red green blue; #RGBA A-alpha ehk läbipaistvus #B7A4BCFF*/
+   /* black white green coral - saab värvi nime ka otse välja kirjutada*/
+   /* rgb(183, 164, 188) rgba(183, 164, 188, 1) max nr kuni 255-ni*/
+   /* rgb(72%, 64%, 74%) rgba(72%, 64%, 74%, 1)*/
+   /* hsl(288, 15%, 69%) hsla(288, 15%, 69%, 1) I number 0-359, II number=saturation %-des, III number=lightness mustast valgeni %-des*/
+    
+   /*start grid*/
+body > div > header {
+    background-color: #B7A4bc;
+    grid-area: header;
+    padding: 20px;
+    border-width: 20px;
+    border-width: 20px 10px;
+    border-width: 32px 16px 8px 4px;
+    border-style: dashed;
+    border-top-style: dotted;
+    border-color: white;
+    border-right-color: brown;
+    border-radius: 15px;
+    border-top-left-radius: 25px;
+    /*border-image: url(/icon/favicon-32x32.png) 20% round;*/
+    /*border: 20px solid black;*/
+    outline:lightskyblue solid 20px;
+    outline-offset: 45px;
+    margin: 20px;
+    box-shadow: -30px 25px 5px 10px rgba(226, 168, 158, 0.7);
+    
+}
+header > h2, header > h3 {
+    background-color: brown;
+}
+body > div > header:hover {
+    transform: rotate(0.01turn);  /*kasutan turn ühikut*/
+    transition-duration: 1s;
+    transition-property: transform;
+}
+body > div > footer {
+    background-color: rgb(126, 150, 180);
+    background-image: url(/icon/favicon.svg), url(/icon/favicon-32x32.png);
+    background-repeat: round;
+    background-attachment: fixed, local;
+    background-position: left 15px top 25px;
+    background-clip: border-box, padding-box;
+    background-origin: border-box;
+    background-size: auto;
+    padding: 25px;
+    grid-area: footer;
+    justify-self: stretch;
+    resize: both;
+    min-width: 60vmin;
+    max-width: 60vmax;
+}
+body > div > aside {
+    background-color: rgb(144, 145, 86);
+    grid-area: aside;
+}
+aside#aside-1 {
+    grid-area: aside-1;
+}
+aside#aside-2 {
+    grid-area: aside-2;
+    cursor: url(/icon/favicon-32x32.png),
+    progress; /*näitab et kursor mõtleb või muutub ikooniks*/
+}
+main {
+     background-color: rgb(228, 231, 36);
+     grid-area: main;
+
+     background-image: url(/icon/favicon.svg);
+    background-repeat: round;
+    background-attachment: fixed;
+}
+
+body > div {
+    outline: blue solid 5px;
+    margin: 20px auto;
+    width: calc(800px + 40%);
+    height: 600px;
+    display: -ms-grid; /*microsofti puhul, veebilehitsejate prefiksid*/
+    display: grid;
+
+    /*grid-template-columns: 1fr 750px 1fr; read ülevalt alla
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header"
+        "aside-1 main aside-2"
+        "footer footer footer";*/
+    grid: 
+        "header header header"
+        "aside-1 main aside-2"
+        "footer footer footer"
+        / 1fr 400Q 1fr;
+     grid-column-gap: 8px; 
+    grid-row-gap: 4px;
+    justify-items: center;
+    align-items: start;
+    justify-content: space-evenly;/*start- kõik alguses, end*/
+    align-content: space-between;
+    /*  overflow: hidden;
+        resize:both;*/
+  
+
+}
+    /*end grid*/
+    /*ÜHIKUD*/
+    /* relatiivsed ühikud - 0 em=fondi suurus(vaikimisi 16px); rem- font(vt allpool näidet); %; vw=viewport võtab laiust, sarnaneb %-le; vh=võtab kõrgust (vmin, vmax=lubadus skaleerida nii palju kui tahab)
+    (ex ch)=seotud pigem fondiga, vähe kasutuses*/
+    /*absoluutsed ühikud - 0; cm; mm; Q=1/4 mm; in=inches; pc=12points; pt=72 inchi - neid 6 kasutatakse print.css failis, ühte neist kasutada
+    px=kui width  kirjutada nr, siis arvestab vaikimisi piksleid*/
+    /*nurga kraadid: deg (360 täisring); rad(2PI raadius); grad (400 gradiendi määramiseks); turn (1 ring, kui panen 0,5turn siis järelikult pool ringi)*/
+    /*aja ühikud: s=sekund; ms=millisekund; */
+    /*sageduse ühikud (ainult teooria): Hz; kHz*/
+    /*resolutsiooni ühikud:dpi=tihedus inch kaupa; dpcm= tihedus cm kaupa (kasutatakse enim); dppx= tihedus px kaudu - koos media elementidega need */
+
+
+p ~ p {
+font-size: 1.5em;
+}
+span {
+    font-size: 1.5rem; /*em suurendab veel 1,5 võrra p olevat teksti, rem muudab tagasi 1,5 võrra*/
+}
+body > div > footer {
+    justify-self: stretch;
+    min-width: 60vmin;
+    max-width: 60vmax;
+}
