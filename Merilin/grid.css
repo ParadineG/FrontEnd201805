@@ -9,8 +9,27 @@
 body > div > header {
     background-color: bisque;
     grid-area: header;
-}
+    padding: 10px;
+    border-width: 20px;
+    border-width: 20px 10px;
+    /*border-width: 32px 13px 8px 4px;*/
+    border-style: dashed;
+    border-top-style: dotted;
+    border-color: black;
+    border-right-color: brown;
+    border-radius: 15px;
+    border-top-left-radius: 25px;
+    /*border-image: url(/icon/favicon-32x32.png) 20% round;*/
+    /* border: 20px solid black; */
+    outline: lightblue solid 20px; 
+    outline-offset: 45px;
+    margin: 20px;
 
+    box-shadow: -30px 25px 10px -5px rgba(226, 168, 158, 0.5); 
+}
+header > h2, header > h3 {
+    background-color: rgb(226, 196, 121);
+}
 body > div > header:hover{
     transform: rotate(0.01turn);
     transition-duration: 1s;
@@ -18,10 +37,19 @@ body > div > header:hover{
 }
 
 body > div > footer {
-    background-color: rgb(196, 228, 170);
+    background-color: rgb(196, 228, 199);
+    background-image: url(/icon/favicon.svg), url(/icon/favicon-32x32.png);
+    background-repeat: round;
+    background-attachment: fixed, local;
+    background-position: left 15px top 25px;
+    background-clip: content-box, padding-box;
+    background-origin: content-box;
+    background-size: contain;
+    padding: 25px;
+
     grid-area: footer;
     justify-self: stretch;
-
+    resize: horizontal;
     min-width: 60vmin; /*  in landscape == vh and in portrait == vw */
     max-width: 60vmax; /* in landscape == vw and in portrait == vh */
 }
@@ -36,16 +64,22 @@ aside#aside-1 {
 
 aside#aside-2 {
     grid-area: aside-2;
+    cursor: url("/icon/favicon-32x32.png"), 
+        progress;
 }
 
 main {
     background-color: lavender;
     grid-area: main;
+    background-image: url(/icon/favicon.svg);
+    /*background-image: url(/icon/favicon.svg);*/
+    background-repeat: round;
+    background-attachment: fixed;
 }
 
 body > div {
-    margin: 20px auto;
-    padding: 10px;
+    margin: 5px auto;
+    padding: 5px;
     border: 2px solid black;
     width: calc(800px + 20%);
     height: 1500px;
@@ -77,6 +111,10 @@ body > div {
     align-items: start;
     justify-content: space-evenly;
     align-content: space-between;
+    
+    overflow: hidden;
+    resize: both;
+   
 }
 
 p ~ p {
