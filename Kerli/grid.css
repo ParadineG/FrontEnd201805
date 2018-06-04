@@ -5,9 +5,15 @@ main, aside, footer {
 h1, h2, h3, h4, p {
     padding-left: 15px;
 }
+h2 {
+    border: 2px solid #5b32ac;
+    border-radius: 10px;
+    /*outline-offset: 5px;*/
+}
 p {
     padding-right: 15px;
     text-align: justify;
+    cursor: pointer;
 }
 body > div > header {
     background: linear-gradient(to bottom, #9966ff 0%, #ff99cc 100%);
@@ -21,7 +27,24 @@ body > div > header:hover {
 }
 body > div > footer {
     background-color: #c2d18e;
+    /*background-image: url(/icon/favicon-32x32.png);*/
+    background-image: url("/icon/favicon-32x32.png");
+    background-repeat: repeat-y;
+    background-position: right;
+    background-clip: padding-box;
+    background-origin: content-box;
+    background-size: contain;
+    /*background-attachment: fixed, local;*/
     grid-area: footer;
+    border: 10px solid transparent;
+    /*justify-self:  stretch;*/
+    /*border-image: url("/icon/favicon-32x32.png") 30% round;*/
+    /*background-image: url("/icon/favicon.svg"), url("/icon/favicon-32x32.png");
+    background-repeat: round;
+    background-position: right;     
+    background-attachment: fixed, local;*/
+    resize: both; /* töötab kui overflow on määratud */
+    overflow: auto;
 }
 body > aside {
     background-color: #e09b9b;
@@ -42,6 +65,7 @@ main {
 body > div {
     /*width: 1200px;*/
     /*width: calc(300px + 40%);*/
+    /*box-sizing: content-box|border-box;*/
     height: auto;
     display: -ms-grid;
     display: grid;
@@ -57,8 +81,8 @@ body > div {
     "aside1 main aside2"
     "footer footer footer"
     /20% 40% 20%;
-    grid-column-gap: 8px;
-    grid-row-gap: 4px;
+    grid-column-gap: 10px;
+    grid-row-gap: 8px;
     justify-items: stretch;
     align-items: stretch;
     justify-content: center;
