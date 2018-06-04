@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: flex-end;
+    /*flex-direction: row;
+    flex-wrap: wrap;*/
+    /*width: 60vmin;*/
+}
+body > *{
+    margin: 10px;
+    flex-grow: 1;
+    /*width: 60vmin;*/
+}
+main {
+    min-width: 40%;
+    max-width: 40%;
+}
+aside {
+    min-width: 20%;
+    max-width: 20%;
+}
+body > header, body > footer{
+    min-width: 96%;
+    flex-grow: 3;
+}
+main p {
+    display: inline-block;
+    column-count: 2;
+}
+aside ~ aside {
+    align-self: flex-start;
+}
+
+
+body > header {
+    background-color: rgb(184, 165, 189);
+}
+body > footer {
+    background-color: rgb(88, 106, 119);
+}
+body > aside {
+    background-color: rgb(226, 168, 158);
+}
+main{
+    background-color: coral;
+}
+@media screen and (max-width:800px){
+    aside, main{
+        min-width: 96%;
+        max-width: 96%;
+    }
+    aside {
+        order: 1;
+    }
+    body > footer{
+        order: 2;
+    }
+}
