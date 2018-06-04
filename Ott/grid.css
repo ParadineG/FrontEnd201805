@@ -1,0 +1,88 @@
+
+/* Värvid */
+/* Hex: #B7A4bc #A7D(#AA77DD) 16-süsteem arvud 0123456789ABCDEF*/
+/* 2 arvu max == 255, #RGB, #RGBA A-alpha*/
+/* black white green  coral jne*/
+/* rgb(red green black)(183, 164, 198), RGBA(183, 164, 1)*/
+/* rgb(72%, 64%, 74%) RGBA(72%, 64%, 74% 1) */
+/* hsl(288, 15%, 69%) hsla(288, 15%, 69%, 1) 1. 0-359 */
+
+
+body > div > header {
+    background-color: antiquewhite;
+    grid-area: header;
+}
+body > div > header:hover{
+    transition-duration: 1s;
+    transition-property: transform;
+    transform: rotate(0.001turn);
+}
+body > div > footer {
+    background-color: grey;
+    grid-area: footer;
+    justify-self: stretch;
+    max-width: 60vmin; /* in landscape == vh in portrait == vw */
+    max-width: 60vmax; /* in landscape == vw in portrait == vh */
+}
+
+body > div > aside {
+    background-color: lightblue;
+    grid-area: aside;
+}
+aside#aside-1 {
+    grid-area: aside-1;
+}
+aside#aside-2 {
+    grid-area: aside-2;
+}
+
+main {
+    background-color: aquamarine;
+    grid-area: main;
+}
+/* Start Grid */
+body > div {
+    margin: 50px auto;
+    padding: 10px;
+    border: 2px solid black;
+    width: calc(800px + 20%);
+    height: 1500px;
+    display: -ms-grid;
+    display: grid;
+   /* grid-template-columns: 1fr 750px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+     "header header header"
+     "aside-1 main aside-2"
+     "footer footer footer";*/
+    grid: 
+    ". header aside-2"
+    "aside-1 main aside-2"
+    "footer footer footer"
+     / 1fr 3fr 1fr;
+    
+    grid-column-gap: 8px;
+    grid-row-gap: 4px;
+    justify-items: stretch;
+    align-items: start;
+    justify-content: space-evenly;
+    align-content: space-between;
+}
+
+/* End Grid*/ 
+
+/* relatiivsed ühikud:(näiteks fontidega) em rem % vw vh vmin vmax (ex ch)*/
+/* absoluutsed ühikud:(näiteks printimisel) 0 cm mm q in pc pt px*/
+/* nurga kraadid: deg(kuni360), rad(2PI), grad(400), turn(1)*/
+/* aja ühikud: s ms*/
+/* dsgedus(ainult teooria): Hz kHz*/
+/* resulutsiooni ühikud: dpi dpcm dppx*/
+
+
+
+p ~ p {
+    font-size: 1.5em;
+}
+span {
+    font-size: 1.5rem;
+}
