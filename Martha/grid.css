@@ -1,0 +1,141 @@
+/*start grid
+    värvid
+    Hex: #B411bc #A70(#AA7700) 16-süsteem arvud @ 1 2 3 4 5 6 7 8 9 A B C D E F
+    FF == 255 #RGB #RGBA A=alpha
+    black white green coral
+    rgb(183, 164, 188) rgpa(183, 154, 188, 1) max 255 alpha 0-1
+    rgb(72%, 64%, 74%) rgpa(72%, 64%, 74%, 1) 
+    hsl(288, 15%, 69%) rgpa(288, 15%, 69%, 1) I 0-359
+    */
+
+
+
+body > div > header {
+    padding: 10px;
+    margin-bottom: 15px;
+    margin: auto;
+    text-align: center;
+    background-color:#006600;
+    grid-area: header;
+    border-width: 5px;
+    border-style: double;
+    padding-top: 2px;  
+    box-shadow: -10px 5px 10px 4px #064d86;
+    background-image: url(/icon/favicon.svg);
+    background-attachment: fixed;
+
+   
+}
+
+head > h2, header > h3 {
+    background-color: lightcoral;
+}
+
+body > div > header:hover {
+    background-color:#008000;
+    grid-area: header;
+    padding-top: 2px;
+    text-align: center;
+    transform: rotate(0.01turn);
+    transition-duration: 1s;
+    transition-property: transform;
+
+}
+body > div > footer {
+    background-color:  #ffd480;
+    outline: solid black 2px;
+    grid-area: footer;
+    background-image: url(/icon/favicon-32x32.png), url(/icon/favicon.svg);
+    background-repeat: round;
+    background-attachment: fixed;
+    background-clip: content-box, padding-box;
+    background-origin: border-box;
+    background-size: contain; 
+    cursor: progress;
+}
+ 
+body > div > aside {
+    background-color:  #ffb3cc;
+    grid-area: aside;
+    outline: solid black 2px;
+ 
+}
+#aside1 {
+    grid-area: aside-1;
+   
+}
+
+#aside2 {
+    grid-area: aside-2;
+    
+}
+main {
+    background-color: #b3d1ff;
+    grid-area: main;
+    border-style: double;
+    background-image: url(/icon/favicon.svg);
+    background-attachment: fixed;
+    background-clip: content-box, padding-box;
+    background-origin: border-box;
+    background-size: auto; 
+}
+
+h1 {
+    font-size: 1.5cm;
+    text-align: center;
+}
+
+body > div{
+    outline: #006600;
+    margin: 20px auto;
+    padding: 10px;
+    height: auto;
+    width: calc(800px + 20%);  
+    width: 1500px;
+    display: -ms-grid;
+    display: grid;
+    /*grid-template-columns: 1fr 750px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+            "header header header"
+            "aside-1 main aside-2"
+            "footer footer footer"; */
+    grid: 
+            "header header header"
+            "aside-1 main aside-2"
+            "footer footer footer"
+        /1fr 3fr 1fr;
+        /* relatiivsed ühikud: em rem (ex ch) % vw vh vmin vmax
+        absoluutsed ühikud: 0 cm mm Q in pc pt
+        nurga kraadid deg(300) rad(2PI) grad (400) turn(1)
+        aeg ühikud: s ms
+        sagedus: Hz kHz
+        resolutsiooni ühikud: dpi docm dopx
+        Hex: #A6BD78
+    /*  0 em(fondi suurus) */
+    grid-column-gap: 8px;
+    grid-row-gap: 4px;
+    justify-items: stretch;
+    align-items: start;
+    justify-content: space-evenly;
+    align-content: space-between;
+
+    overflow: hidden;
+    resize: both;
+   
+
+}
+
+p ~ p{
+    font-size: 1.5em;
+}
+span {
+    font-size: 1.5em;
+}
+body > div > footer {
+    justify-self: stretch;
+    min-width: 60vmin;
+    max-width: 60vmax;
+    margin: auto;
+
+}

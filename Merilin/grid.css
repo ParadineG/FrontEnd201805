@@ -1,0 +1,130 @@
+/* start grid */
+/* värvid: */
+/* Hex: #B7A4bc #A7D (võrdväärne #AA77DD) 16-süsteem arvud, FF == 255, # on võrgne RGB-väärtusega; #RGBA -> A-alpha #B7A4BCFF (läbipaistvus) */ 
+/* black white green coral */
+/* rgb(183, 164, 188) rgba(183, 164, 188, 1) max 255 */
+/* rgb(72%, 64%, 74%) rgba(72%, 64%, 74%, 1) */
+/* hsl-> hsl(288, 15%, 69%) hsla(288, 15%, 69%, 1) I 0-359*/
+
+body > div > header {
+    background-color: bisque;
+    grid-area: header;
+    padding: 10px;
+    border-width: 20px;
+    border-width: 20px 10px;
+    /*border-width: 32px 13px 8px 4px;*/
+    border-style: dashed;
+    border-top-style: dotted;
+    border-color: black;
+    border-right-color: brown;
+    border-radius: 15px;
+    border-top-left-radius: 25px;
+    /*border-image: url(/icon/favicon-32x32.png) 20% round;*/
+    /* border: 20px solid black; */
+    outline: lightblue solid 20px; 
+    outline-offset: 45px;
+    margin: 20px;
+
+    box-shadow: -30px 25px 10px -5px rgba(226, 168, 158, 0.5); 
+}
+header > h2, header > h3 {
+    background-color: rgb(226, 196, 121);
+}
+body > div > header:hover{
+    transform: rotate(0.01turn);
+    transition-duration: 1s;
+    transition-property: transform;
+}
+
+body > div > footer {
+    background-color: rgb(196, 228, 199);
+    background-image: url(/icon/favicon.svg), url(/icon/favicon-32x32.png);
+    background-repeat: round;
+    background-attachment: fixed, local;
+    background-position: left 15px top 25px;
+    background-clip: content-box, padding-box;
+    background-origin: content-box;
+    background-size: contain;
+    padding: 25px;
+
+    grid-area: footer;
+    justify-self: stretch;
+    resize: horizontal;
+    min-width: 60vmin; /*  in landscape == vh and in portrait == vw */
+    max-width: 60vmax; /* in landscape == vw and in portrait == vh */
+}
+
+body > div > aside {
+    background-color: lightcyan;
+}
+
+aside#aside-1 {
+    grid-area: aside-1;
+}
+
+aside#aside-2 {
+    grid-area: aside-2;
+    cursor: url("/icon/favicon-32x32.png"), 
+        progress;
+}
+
+main {
+    background-color: lavender;
+    grid-area: main;
+    background-image: url(/icon/favicon.svg);
+    /*background-image: url(/icon/favicon.svg);*/
+    background-repeat: round;
+    background-attachment: fixed;
+}
+
+body > div {
+    margin: 5px auto;
+    padding: 5px;
+    border: 2px solid black;
+    width: calc(800px + 20%);
+    height: 1500px;
+    display: -ms-grid; 
+    display: grid;
+    /*grid-template-columns: 250px 750px 250px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header"
+        "aside-1 main aside-2"
+        "footer footer footer";*/
+    grid: 
+        "header header header"
+        "aside-1 main aside-2"
+        "footer footer footer"
+        / 1fr 3fr 1fr; 
+    /* nt auto teeks 3 võrdset tulpa*/ 
+    /* relatiivsed ühikud: em->fondi suurus, tavaliselt teksti suuruse määramiseks, umbes 16px; rem->võtab veebilehitseja üldise suuruse, 
+    toimib nagu esimese antud suuruse järgi; vw->ütleb et anna mulle nii mitu % veebilehitseja suurusest; 
+    vh->võtab nii mitu % veebilehitseja kõrgusest; vmin->viewporti %-uaalne osa; vmax->on maksimaalne %-uaalne osa 
+    absoluutsed ühikud: 0; cm; mm; Q-> 1/4mm-st in-> inch; pc->; pt->punktid 1/72inchi (viimased 6 on kasutusel eelkõige printimisel) px->pikslid, html'is vaikimisi ühik*/
+    /* nurga kraadid: deg (kuni 360); rad (kuni 2PI); grad (max 400 ühe ringi saamiseks); turn (1) */
+    /* aeg ühikud: s ms */
+    /* sagedus: Hz kHz  -> need kasutust ei leia */
+    /* resolutsiooni ühikud: dpi (density per inch); dpcm (tihedus cm kaupa); dppx (tihedus piksli kohta) */ 
+    grid-column-gap: 8px;
+    grid-row-gap: 4px;
+    justify-items: stretch;
+    align-items: start;
+    justify-content: space-evenly;
+    align-content: space-between;
+    
+    overflow: hidden;
+    resize: both;
+   
+}
+
+p ~ p {
+    font-size: 1.5em;
+} 
+span {
+    font-size: 1.5rem;
+}
+/*body > div > footer {
+    justify-self: stretch;
+    min-width: 60vmin;
+    max-width: 60vmax;
+}*/

@@ -34,7 +34,8 @@ aside ~ aside {
 }
 
 body > header {
-    background-color: rgba(243, 247, 45, 0.863)
+    background-color: rgba(243, 247, 45, 0.863);
+    grid-area: header;
 }
 body > footer {
     background-color: rgba(202, 34, 104, 0.979)
