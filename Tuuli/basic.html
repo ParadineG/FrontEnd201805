@@ -13,7 +13,13 @@
 
       <link rel="stylesheet" href="grid.css" type="text/css"title="Grid">  
       <link rel="alternate stylesheet" href="display.css" type="text/css"title="Flexbox">   
-   
+        <style media="screen" type="text/css" nonce>
+            h3{
+                font-style: oblique;
+            }
+        </style>
+        
+
     </head> 
    </body> 
     <div>
@@ -23,7 +29,7 @@
         </header>
         <aside id="aside-1">
             <h4>H4 dfjkdf jhfjhdjkfh</h4>
-            <p>Etiam lobortis tincidunt 10 <span>2</span>felis, eget pulvinar eros tincidunt et. Integer fermentum vitae massa at feugiat. Morbi ac tincidunt libero. Praesent mi ante, pulvinar ut placerat vitae, ultrices at ex. Aenean quis faucibus neque, eu cursus nisi. Pellentesque non est convallis, hendrerit mi vel, placerat nulla. Ut porta, urna eget ultrices molestie, ante leo rutrum ligula, sed sagittis neque sapien euismod massa. </p>
+            <p style="font-size: 0.8em; font-kerning: none"> Etiam lobortis tincidunt 10 <span>2</span>felis, eget pulvinar eros tincidunt et. Integer fermentum vitae massa at feugiat. Morbi ac tincidunt libero. Praesent mi ante, pulvinar ut placerat vitae, ultrices at ex. Aenean quis faucibus neque, eu cursus nisi. Pellentesque non est convallis, hendrerit mi vel, placerat nulla. Ut porta, urna eget ultrices molestie, ante leo rutrum ligula, sed sagittis neque sapien euismod massa. </p>
         </aside>
         <main>
             <article>
@@ -45,9 +51,14 @@
             <h4>dfkdölfk dkfkldflkdlfrtf</h4>
             <p>Nulla mattis nunc leo, a dignissim ipsum faucibus nec. Etiam aliquet nisl ac nisi egestas finibus. Nam quis vestibulum neque. Pellentesque enim ipsum, tincidunt non ligula elementum, efficitur sodales neque. Duis lobortis, ligula ac finibus tempor, nisl ipsum cursus neque, luctus rhoncus lacus massa ut massa. Aliquam tincidunt suscipit magna in convallis. In vel elementum orci. Morbi mollis sollicitudin enim, nec placerat dui eleifend ut. </p>
         </aside>
-        <footer>
+        <footer onclick="console.log('footer clicked');">
            <p><small>ajhahja hkjahkjhkja jhakjhkjahkjaa</small></p>
         </footer>
-    </div>    
-   </body>
+    </div>   
+     <!--script, headi lõppu kui kohe vaja enne lehe renderdamist, tavaliselt kõige lõppu  --> 
+     <script src="app.js" charset="utf-8" type="text/ecmascript" defer></script> <!--async jooksuta samal ajal kui muud operatsioone üles laed, eelista deferi-->
+     <script type="text/ecmascript">
+        console.log('end-of-file');
+     </script>
+    </body>
 </html>
