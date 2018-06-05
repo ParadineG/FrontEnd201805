@@ -9,7 +9,9 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }*/
 /* .woff .woff2 .ttf .otf .eot .svg .svgz */
-
+:root {
+    --main-color: #AA77DD;
+}
 /* start grid */
     /* värvid */
     /* Hex: #B7A4bc #A7D (#AA77DD) 16-süsteem arvud 0 1 2 3 4 5 6 7 8 9 A B C D E F */
@@ -66,6 +68,9 @@ body > div > footer {
     resize: horizontal;
     min-width: 60vmin; /* in landscape == vh and in portrait == vw */
     max-width: 60vmax; /* in landscape == vw and in portrait == vh */
+
+    transform-origin: top left;
+    transform: translate(12px, -100px) scale(0.8, 1.1) skew(10deg, -10deg); 
 }
 body > div > aside {
     background-color: rgb(226, 168, 158);
@@ -125,6 +130,8 @@ main {
     letter-spacing: 2px;
     text-indent: 2em;
     /* hanging-punctuation: first; */
+
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
 }
 body > div {
     margin: 0px auto;
@@ -193,4 +200,7 @@ span {
 }
 #aside-1:hover {
     animation-play-state: running;
+}
+article header, article footer {
+    background-color: var(--main-color);
 }

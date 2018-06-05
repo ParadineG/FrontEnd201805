@@ -14,7 +14,13 @@
 
         <link rel="stylesheet" href="grid.css" type="text/css" title="Grid">
         <link rel="alternate stylesheet" href="display.css" type="text/css" title="flexbox">
+        
+        <style media="screen" type="text/css">
+            h3{font-style:oblique;}
+        </style>
+        
     </head>
+
     <body>
         <div>
         <header>
@@ -43,11 +49,15 @@
         </main>
         <aside id="aside-2">
             <h4>Kõrvalteema2 pealkiri h4</h4>
-            <p>Aliquam viverra egestas mi pellentesque pharetra. Praesent neque odio, pretium ac imperdiet in, cursus sit amet nunc. Cras vitae lectus varius, suscipit mauris id, pretium dolor. Praesent in bibendum nibh, vitae euismod felis. Nulla ut consectetur purus. Sed augue magna, blandit eget purus at, facilisis suscipit purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce convallis nunc id rhoncus cursus. </p>
+            <p style="font-size: 0.9em; color:blueviolet;">Aliquam viverra egestas mi pellentesque pharetra. Praesent neque odio, pretium ac imperdiet in, cursus sit amet nunc. Cras vitae lectus varius, suscipit mauris id, pretium dolor. Praesent in bibendum nibh, vitae euismod felis. Nulla ut consectetur purus. Sed augue magna, blandit eget purus at, facilisis suscipit purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce convallis nunc id rhoncus cursus. </p>
         </aside>        
-        <footer>
+        <footer onclick="console.log('footer clicked');">
             <p><small>Oluline tekst lehe footeris</small></p>
         </footer>
         </div>
+        <script src="app.js" charset="UTF-8" type="text/ecmascript" async defer>
+            
+        </script>
+        <!--<script type="text/ecmascript">console.log('end-of-file'); </script>-->
     </body>
 </html>

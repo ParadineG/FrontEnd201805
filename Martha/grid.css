@@ -101,11 +101,11 @@ body > div > aside {
     background-image: linear-gradient(lightcoral 10%, darkblue);  
 }
 
-#aside3{
+/*#aside3{
     grid-area: aside-3;
     
 }
-   
+   */
 main {
     background-color: #623961;
     grid-area: main;
@@ -145,7 +145,7 @@ body > div{
     grid: 
             "header header header"
             "aside-1 main aside-2"
-            "aside-1 main aside-3" 
+            /*"aside-1 main aside-3"*/ 
             "footer footer footer"
         /1fr 3fr 1fr;
         /* relatiivsed ühikud: em rem (ex ch) % vw vh vmin vmax

@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Poor+Story);
+
+
+:root{
+    --main-color:#AA77DD;
+}
 /* start grid */
     /* värvid */
     /* Hex: #B7A4bc #A7D (#AA77DD) 16-süsteem arvud 0 1 2 3 4 5 6 7 8 9 A B C D E F */
@@ -7,7 +13,6 @@
     /* rgb(72%, 64%, 74%) rgba(72%, 64%, 74%, 1) */
     /* hsl(288, 15%, 69%) hsla(288, 15%, 69%, 1) I 0-359 */
 body > div > header {
-    
     background-color: #B7A4bc;
     grid-area: header;
     padding: 20px;
@@ -20,8 +25,8 @@ body > div > header {
     border-right-color: brown;
     border-radius: 15px;
     border-top-left-radius: 25px;
-    /* border-image: url(/icon/favicon-32x32.png) 20% round; */
-    /* border: 20px solid black; */
+    border-image: repeating-linear-gradient(#6783af ,#35284f) 10% round; 
+    border: 20px solid black;
     outline: lightskyblue solid 20px;
     outline-offset: 45px;
     margin: 20px;
@@ -32,9 +37,12 @@ header > h2, header > h3 {
     background-color: rgb(119, 106, 122);
 }
 body > div > header:hover {
-    transform: rotate(0.01turn);
+    transform: rotate(1turn);
+    background-color: rgba(226, 168, 158, 0.7);
     transition-duration: 3s;
-    transition-property: transform;
+    transition-property: transform, background-color;
+    transition-delay: 0.4s;
+    transition-timing-function: easeInOutElastic;
 }
 body > div > footer {
     background-color: rgb(88, 106, 119);
@@ -51,17 +59,41 @@ body > div > footer {
     resize: horizontal;
     min-width: 60vmin; /* in landscape == vh and in portrait == vw */
     max-width: 60vmax; /* in landscape == vw and in portrait == vh */
+    transform-origin: top left;
+    /*transform: translate(12px, -100px) scale(0.8, 1.1) skew(10deg, -10deg);*/
 }
 body > div > aside {
     background-color: rgb(226, 168, 158);
 }
 aside#aside-1 {
     grid-area: aside-1;
+    font-family: Helvetica;
+    /*serif sans-serif cursive fantasy monospace */
+    /*font-stretch: ultra-condensed; /*condensed normal expanded*/
+    /*font-style: oblique;*/
+    font-style: 1em;
+    font-size-adjust: 0.5;
+    font-kerning: none;
+    /*font-variant
+    font-variant-position: super;*/
+    font-variant-numeric: slashed-zero;
+    text-transform: capitalize;
+    /*white-space: pre-line;
+    tab-size:40px;
+    word-break: break-all;
+    line-break: strict;
+    hyphens: strict;
+    overflow-wrap:normal
+    word-wrap: break-spaces;*/
+
+
 }
 aside#aside-2 {
     grid-area: aside-2;
     cursor: url("/icon/favicon-32x32.png"),
             progress;
+
+    background-image: linear-gradient(#6783af 55%,#35284f)
 }
 main {
     background-color: coral;
@@ -70,13 +102,20 @@ main {
     background-image: url("/icon/favicon.svg");
     background-repeat: round;
     background-attachment: fixed;
+    text-align: justify;
+    text-align-last: left;
+    word-spacing: 150%;
+    letter-spacing: 2px;
+    text-indent: 2em;
+    /*hanging-punctuation: first;*/
+    /*transform:matrix(1,-0.3, 0,1,0,0);*/
 }
 body > div {
     margin: 0px auto;
     padding: 10px;
     border: 2px solid black;
     width: calc(800px + 20%);
-    height: 650px;
+    height: 100%;
     display: -ms-grid;
     display: grid;
     /*grid-template-columns: 1fr 750px 1fr;
@@ -114,4 +153,36 @@ p ~ p {
 }
 span {
     font-size: 1.5rem;
+}
+@keyframes frames {
+    from{
+        width: 70%;
+        animation-timing-function: ease-in-out;
+
+    }
+    50%{
+        width: 300px;
+    }
+    to{
+        width: 40%;
+    }
+}
+#aside-1 {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: paused;
+}
+#aside-1:hover {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-play-state: running;
+    animation-fill-mode: backwards;
+}
+
+article header, article footer {
+    background-color: var(--main-color);
 }
