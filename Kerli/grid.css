@@ -97,7 +97,7 @@ aside#aside2:hover {
 main {
     background-color: #abc5d1;
     grid-area: main;
-    transform: matrix(1, -0.3, 0, 1, 0, 0);
+    /*transform: matrix(1, -0.3, 0, 1, 0, 0);*/
 }
 body > div {
     /*width: 1200px;*/
