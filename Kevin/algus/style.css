@@ -305,3 +305,12 @@ p::first-letter {
   text-decoration: underline;
   }
 }
+
+figure img:empty {
+  background-color: #ebe6f4;
+  object-fit: cover;
+  object-position: 50% 50%;
+  image-orientation:90deg;
+  image-resolution:300dpi;
+  mix-blend-mode: difference;
+}
