@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Kaushan+Script&subset=latin-ext');
+
+/* Tekitame muutuja, mida saame igal pool kutsuda, nagu nt värvid */
+:root {
+    --main-color: rgba(48, 121, 121, 0.637);
+}
+
 body > div > header {
     background-color: bisque;
     grid-area: header;
-    transition-duration: 1s;
-    transition-property: transform;
+    transition-duration: 1s, 3s;
+    transition-property: transform, background-color;
+    transition-delay: 0.2s, 0s;
     border: 5px solid black;
     border-style: groove;
     padding: 10px;
@@ -25,13 +33,33 @@ body > div > header {
 
 header > h2, header > h3 {
     background-color: rgba(255, 235, 205, 0.726);
+    text-align: center;
+    font-family: 'Faster One', cursive;
 }
 
-body > div > header:hover, aside:hover, footer:hover, main:hover {
+body > div > aside:hover, footer:hover, main:hover {
     transform: scale(1.03);
-    background-image: url(../icon/favicon.svg);
-    background-repeat: round;
-    background-attachment: fixed;
+}
+
+body > div > .aside-1 {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes frames {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 50%;
+    }
+}
+
+body > div > header:hover {
+    transform: scale(1.03);
+    background-color: aqua;
 }
 
 body > div > footer {
@@ -52,24 +80,48 @@ body > div > footer {
     /*
     background-position: left 50px top 25px;
     */
+    transform: translate(12px, -100px) scale(0.8, 1.1) skew(10deg, 15deg);
+    transform-origin: center;
 }
 
 body > div > aside {
     background-color: beige;
     transition-duration: 1s;
     transition-property: transform;
-    background-image: url(../icon/favicon.svg);
-    background-repeat: round;
-    background-attachment: fixed;
     cursor: url(../icon/favicon-32x32.png), progress;
 }
 
-#aside-1 {
+.aside-1 {
     grid-area: aside-1;
+    /* serif, sans-serif, cursive, fantasy, monospace */ 
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 900;
+    font-stretch: expanded;
+    font-style: oblique;
+    /* xx-small (h6), x-small, small (h5), medium (h4), large (h2), x-large (h1), xx-large */
+    font-size: small;
+    font-size-adjust: 0.5;
+    font-synthesis: none;
+    font-kerning: auto;
+    font-variant-numeric: ordinal;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right, red, orange 50%, brown);
+
+    /* fondist sõltumatud */
+    text-transform: capitalize;
+    white-space: pre-line;
+    /*
+    word-break: break-all;
+    */
+    hyphens: none;
+    overflow-wrap: break-word;
 }
 
-#aside-2 {
+.aside-2 {
     grid-area: aside-2;
+    background-image: repeating-linear-gradient(blueviolet 1px, blue 2px, green 3px);
+    height: 1000px;
 }
 
 main {
@@ -80,6 +132,10 @@ main {
     background-image: url(../icon/favicon.svg);
     background-repeat: round;
     background-attachment: fixed;
+    text-align: center;
+    word-spacing: 150%;
+    letter-spacing: 0.1em;
+    transform: matrix(-0.3, 0.5, -0.5, 0.5, 0, 0)
 }
 
 body > div {
@@ -124,3 +180,7 @@ span {
     rgb()
     hsl(288, 15%, 69%) hsla(288, 15%, 69%, 1) I 0-359
     */
+
+article header, article footer {
+    background-color: var(--main-color);
+}
