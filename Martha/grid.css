@@ -6,8 +6,12 @@
     rgb(183, 164, 188) rgpa(183, 154, 188, 1) max 255 alpha 0-1
     rgb(72%, 64%, 74%) rgpa(72%, 64%, 74%, 1) 
     hsl(288, 15%, 69%) rgpa(288, 15%, 69%, 1) I 0-359
+    adobe color cc
     */
 
+:root {
+    --main-color: rgb(102, 28, 163);
+}
 
 
 body > div > header {
@@ -17,14 +21,12 @@ body > div > header {
     text-align: center;
     background-color:#006600;
     grid-area: header;
-    border-width: 5px;
     border-style: double;
     padding-top: 2px;  
     box-shadow: -10px 5px 10px 4px #064d86;
     background-image: url(/icon/favicon.svg);
     background-attachment: fixed;
-
-   
+    background-clip: padding-box;  
 }
 
 head > h2, header > h3 {
@@ -36,9 +38,13 @@ body > div > header:hover {
     grid-area: header;
     padding-top: 2px;
     text-align: center;
-    transform: rotate(0.01turn);
-    transition-duration: 1s;
+    transform: rotate(10turn);
+    transition-duration: 1s, 5s;
+    transition-delay: 2s, 0s;
     transition-property: transform;
+    /* transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); */
+
+
 
 }
 body > div > footer {
@@ -46,38 +52,74 @@ body > div > footer {
     outline: solid black 2px;
     grid-area: footer;
     background-image: url(/icon/favicon-32x32.png), url(/icon/favicon.svg);
-    background-repeat: round;
     background-attachment: fixed;
-    background-clip: content-box, padding-box;
-    background-origin: border-box;
+    background-clip: border-box;
     background-size: contain; 
     cursor: progress;
+    justify-self: stretch;
+    min-width: 60vmin;
+    max-width: 60vmax;
+    margin: auto;
+
+    transform: rotate(0.01turn) translate(12px, -100px) scale(0.8, 1.1) skew(10deg);
+    transform-origin: top left;
 }
  
 body > div > aside {
     background-color:  #ffb3cc;
     grid-area: aside;
-    outline: solid black 2px;
+    outline-style: double;
+    margin: 0.1cm;
+
  
 }
 #aside1 {
     grid-area: aside-1;
-   
+    font-family: Helvetica, Arial,  sans-serif;
+    /* serif sans-serif cursive, fantasy, monospace 
+    font-weight: 400;
+    font-size-adjust: 0.8;
+    font-stretch: condensed; */
+    font-style: oblique;
+    font-size: 0.45cm;
+    font-kerning: none;
+    
+    /* text-transform: capitalize; */
+    text-decoration-line: underline;    
+    white-space: pre-line;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    word-spacing: 20%;
+    letter-spacing: 1px;
+    
 }
 
 #aside2 {
     grid-area: aside-2;
+    background-image: linear-gradient(lightcoral 10%, darkblue);  
+}
+
+#aside3{
+    grid-area: aside-3;
     
 }
+   
 main {
-    background-color: #b3d1ff;
+    background-color: #623961;
     grid-area: main;
     border-style: double;
-    background-image: url(/icon/favicon.svg);
-    background-attachment: fixed;
+    /* background-image: url(/icon/favicon.svg);
+    background-attachment: fixed; */
     background-clip: content-box, padding-box;
     background-origin: border-box;
     background-size: auto; 
+    text-align: center;
+    text-indent: 2cm;
+    /* hanging-punctuation: first; */
+    transform: matrix(1, -0.3, 0, 1, 0, 0); 
+
 }
 
 h1 {
@@ -93,7 +135,7 @@ body > div{
     width: calc(800px + 20%);  
     width: 1500px;
     display: -ms-grid;
-    display: grid;
+    display: inline-grid;
     /*grid-template-columns: 1fr 750px 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
@@ -103,6 +145,7 @@ body > div{
     grid: 
             "header header header"
             "aside-1 main aside-2"
+            "aside-1 main aside-3" 
             "footer footer footer"
         /1fr 3fr 1fr;
         /* relatiivsed ühikud: em rem (ex ch) % vw vh vmin vmax
@@ -118,8 +161,8 @@ body > div{
     justify-items: stretch;
     align-items: start;
     justify-content: space-evenly;
-    align-content: space-between;
-
+    align-content: space-around;
+/* align items*/
     overflow: hidden;
     resize: both;
    
@@ -132,10 +175,32 @@ p ~ p{
 span {
     font-size: 1.5em;
 }
-body > div > footer {
-    justify-self: stretch;
-    min-width: 60vmin;
-    max-width: 60vmax;
-    margin: auto;
 
+@keyframes frames {
+    from {
+        width: 184px;
+    }
+
+    50% {
+        width: 194px;
+    }
+    to {
+        width: 150px;
+    }
+}
+#aside1{
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-delay: 2s;
+    animation-play-state: paused;
+}
+
+#aside1:hover{
+    animation-play-state: running;
+}
+
+article header, article footer {
+    background-color: var(--main-color);
 }
