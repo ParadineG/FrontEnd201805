@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic,latin-ext');
+/*
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), 
+        url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TzBic6CsQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}*/
+/* .woff .woff2 .ttf .otf .eot .svg .svgz */
+
+/* start grid */
+    /* värvid */
+    /* Hex: #B7A4bc #A7D (#AA77DD) 16-süsteem arvud 0 1 2 3 4 5 6 7 8 9 A B C D E F */
+    /* FF == 255 #RGB #RGBA A-alpha #B7A4BCFF */
+    /* black white green coral */
+    /* rgb(183, 164, 188) rgba(183, 164, 188, 1)  max 255 alpha 0-1 */
+    /* rgb(72%, 64%, 74%) rgba(72%, 64%, 74%, 1) */
+    /* hsl(288, 15%, 69%) hsla(288, 15%, 69%, 1) I 0-359 */
+body > div > header {
+    
+    background-color: #B7A4bc;
+    grid-area: header;
+    padding: 20px;
+    border-width: 20px;
+    border-width: 20px 10px;
+    border-width: 32px 16px 8px 4px;
+    border-style: dashed;
+    border-top-style: dotted;
+    border-color: black;
+    border-right-color: brown;
+    border-radius: 15px;
+    border-top-left-radius: 25px;
+    border-image: repeating-linear-gradient(lightskyblue 15px, red 25px, lightgreen 35px) 40% round;
+    /* border: 20px solid black; */
+    outline: lightskyblue solid 20px;
+    outline-offset: 45px;
+    margin: 20px;
+
+    box-shadow: -30px 25px 10px -5px rgba(226, 168, 158, 0.7); 
+}
+header > h2, header > h3 {
+    background-color: rgb(119, 106, 122);
+}
+body > div > header:hover {
+    transform: rotate(0.01turn);
+    background-color: dodgerblue;
+    transition-duration: 1s, 5s;
+    transition-property: transform, background-color;
+    transition-delay: 2s, 0s;
+    transition-timing-function: ease-in-out;
+}
+body > div > footer {
+    background-color: rgb(88, 106, 119);
+    background-image: url("/icon/favicon.svg"), url("/icon/favicon-32x32.png");
+    background-repeat: round;
+    background-attachment: fixed, local;
+    background-position: left 15px top 25px;
+    background-clip: content-box, padding-box;
+    background-origin: border-box;
+    background-size: auto;
+    padding: 25px;
+    grid-area: footer;
+    justify-self: stretch;
+    resize: horizontal;
+    min-width: 60vmin; /* in landscape == vh and in portrait == vw */
+    max-width: 60vmax; /* in landscape == vw and in portrait == vh */
+}
+body > div > aside {
+    background-color: rgb(226, 168, 158);
+}
+aside#aside-1 {
+    grid-area: aside-1;
+    
+    font-family: 'Roboto', Helvetica, sans-serif;
+    /* serif sans-serif cursive fantasy monospace */
+    font-weight: bolder;
+    font-stretch: ultra-condensed; /* condensed normal expanded */
+    font-style: italic;
+    /* xx-small (h6) x-small small (h5) medium (h4) large (h2) x-large (h1) xx-large 
+    1.5em smaller larger */
+    font-size: larger;
+    font-size-adjust: 0.5;
+    /* täiendavad fondi valikud */
+    font-kerning: none;
+    /* font-variant */
+    font-variant-numeric: normal;
+
+    /* fondist sõltumatud */
+    text-transform: capitalize;
+    white-space: pre-line;
+    /* tab-size: 24px; */
+    
+    word-break: break-all;
+    /* hyphens: auto; */
+    /* line-break: normal; */
+    word-wrap: break-word;
+    overflow-wrap:  break-word;
+
+    background-image: radial-gradient(farthest-side ellipse at 12% 25%, rgb(3, 152, 245) 25%, red 30%, lightgreen 35%);
+}
+aside#aside-1 span {
+    font-variant-position: super;
+    font-variant-caps: small-caps;
+}
+aside#aside-2 {
+    grid-area: aside-2;
+    cursor: url("/icon/favicon-32x32.png"),
+            progress;
+
+    background-image: linear-gradient(to bottom right, lightskyblue 25%, red 30%, lightgreen 35%);
+}
+main {
+    background-color: coral;
+    grid-area: main;
+
+    background-image: url("/icon/favicon.svg");
+    background-repeat: round;
+    background-attachment: fixed;
+
+    text-align: justify;
+    text-align-last: end;
+    word-spacing: 150%;
+    letter-spacing: 2px;
+    text-indent: 2em;
+    /* hanging-punctuation: first; */
+}
+body > div {
+    margin: 0px auto;
+    padding: 10px;
+    border: 2px solid black;
+    width: calc(800px + 20%);
+    height: 2050px;
+    display: -ms-grid;
+    display: grid;
+    /*grid-template-columns: 1fr 750px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header aside-2"
+        "aside-1 main aside-2"
+        "footer footer footer";*/
+    grid: 
+        ". header aside-2"
+        "aside-1 main aside-2"
+        "footer footer footer"
+        / 1fr 3fr 1fr;
+    grid-column-gap: 8px;
+    grid-row-gap: 4px;
+    justify-items: stretch;
+    align-items: start;
+    justify-content: space-evenly;
+    align-content: space-between;
+    
+    overflow: hidden;
+    resize: both;
+}
+/* end grid */
+
+/* relatiivsed ühikud: em rem (ex ch) % vw vh vmin vmax*/
+/* absoluutsed ühikud: 0 cm mm Q in pc pt px*/
+/* nurga kraadid: deg (360) rad (2PI) grad (400) turn (1) */
+/* aeg ühikud: s ms */
+/* sagedus (ainult teooria): Hz kHz */
+/* resolutsiooni ühikud: dpi dpcm dppx */ 
+
+p ~ p {
+    font-size: 1.5em;
+}
+span {
+    font-size: 1.5rem;
+}
+@keyframes frames {
+    from {
+        width: 184px;
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        width: 194px;
+    }
+    to {
+        width: 150px;
+    }
+}
+#aside-1 {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    animation-play-state: paused;
+}
+#aside-1:hover {
+    animation-play-state: running;
+}

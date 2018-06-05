@@ -6,22 +6,69 @@
 /* rgb(72%, 64%, 74%) rgba(72%, 64%, 74%, 1) */
 /* hsl-> hsl(288, 15%, 69%) hsla(288, 15%, 69%, 1) I 0-359*/
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=latin-ext');
+
+/* kui @importi linki pole, siis teed alljärgneva osa kuskil netis ja kausta oma arvutisse:
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Roboto Bold Italic'), local('Roboto-BoldItalic')
+    url(......)
+    unicode-range: ......
+} */
+
+/* .woff .woff2 .ttf .otf .eot .svg .svgz */
+
+
 body > div > header {
     background-color: bisque;
     grid-area: header;
+    padding: 10px;
+    border-width: 20px;
+    border-width: 20px 10px;
+    /*border-width: 32px 13px 8px 4px;*/
+    border-style: dashed;
+    border-top-style: dotted;
+    border-color: black;
+    border-right-color: brown;
+    border-radius: 15px;
+    border-top-left-radius: 25px;
+    border-image: repeating-linear-gradient(lightcyan 5px, lightyellow 15px, lightpink 35px);
+    /* border: 20px solid black; */
+    outline: lightblue solid 20px; 
+    outline-offset: 45px;
+    margin: 20px;
+
+    box-shadow: -30px 25px 10px -5px rgba(226, 168, 158, 0.5); 
+}
+header > h2, header > h3 {
+    background-color: rgb(226, 196, 121);
 }
 
-body > div > header:hover{
+body > div > header:hover {
     transform: rotate(0.01turn);
-    transition-duration: 1s;
-    transition-property: transform;
+    background-color: cornflowerblue;
+    transition-duration: 1s, 5s;
+    transition-property: transform, background-color;
+    transition-delay: 2s, 0s;
+    transition-timing-function: ease-in-out;
 }
 
 body > div > footer {
-    background-color: rgb(196, 228, 170);
+    background-color: rgb(196, 228, 199);
+    background-image: url(/icon/favicon.svg), url(/icon/favicon-32x32.png);
+    background-repeat: round;
+    background-attachment: fixed, local;
+    background-position: left 15px top 25px;
+    background-clip: content-box, padding-box;
+    background-origin: content-box;
+    background-size: contain;
+    padding: 25px;
+
     grid-area: footer;
     justify-self: stretch;
-
+    resize: horizontal;
     min-width: 60vmin; /*  in landscape == vh and in portrait == vw */
     max-width: 60vmax; /* in landscape == vw and in portrait == vh */
 }
@@ -29,26 +76,70 @@ body > div > footer {
 body > div > aside {
     background-color: lightcyan;
 }
+aside#aside-1 span {
+    font-variant-position: super;
+    font-variant-caps: small-caps;
+}
 
 aside#aside-1 {
     grid-area: aside-1;
+
+    font-family: 'Roboto', Helvetica, sans-serif;
+    /* serif sans-serif cursive fantasy monospace */
+    font-weight: bold;
+    font-stretch: ultra-condensed; /* condensed normal expanded */
+    font-style: italic; /* kui oblique ole, siis proovitakse italic'ut panna */
+    /* 1.5em xx-small (h6) x-small small (h5) medium (h4) large (h2) x-large (h1) xx-large smaller larger */
+    font-size: larger; /* absoluutne, suhteline või protsentuaalne väärtus*/
+    font-size-adjust: 0.5;
+    /* täiendavad fondi valikud */
+    font-kerning: none;
+    /* font-variant */
+    /* font-variant-position: super -> tõstab mingi sümboli üles nagu astmes näitamine */
+    /* font-variant-caps: 
+    font-variant-numeric: ordinal; */
+    text-transform: capitalize;
+    white-space: pre-wrap;
+    tab-size: 12px;
+    /*word-break: break-all;*/
+    hyphens: auto;
+    line-break: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    background-image: radial-gradient(farthest-side ellipse at 25% 12%, lightblue, lightyellow, lightgreen)
 }
 
 aside#aside-2 {
     grid-area: aside-2;
+    cursor: url("/icon/favicon-32x32.png"), 
+        progress;
+
+    background-image: linear-gradient(135deg, lightcyan 25%, lightyellow 30%, lightpink)
+    /* võib lisada ka to top left või to bottom right) */
 }
 
 main {
     background-color: lavender;
     grid-area: main;
+    background-image: url(/icon/favicon.svg);
+    /*background-image: url(/icon/favicon.svg);*/
+    background-repeat: round;
+    background-attachment: fixed;
+    text-align: justify;
+    text-align-last: left;
+    word-spacing: 150%;
+    letter-spacing: 2px;
+    text-indent: 2em; 
+    /* hanging-punctuation: first; */
 }
 
 body > div {
-    margin: 20px auto;
+    margin: 5px auto;
     padding: 10px;
     border: 2px solid black;
     width: calc(800px + 20%);
-    height: 1500px;
+    height: 1250px;
     display: -ms-grid; 
     display: grid;
     /*grid-template-columns: 250px 750px 250px;
@@ -77,6 +168,10 @@ body > div {
     align-items: start;
     justify-content: space-evenly;
     align-content: space-between;
+    
+    overflow: hidden;
+    resize: both;
+   
 }
 
 p ~ p {
@@ -90,3 +185,28 @@ span {
     min-width: 60vmin;
     max-width: 60vmax;
 }*/
+
+@keyframes frames {
+    from { 
+        width: 184px;
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        width: 194px;
+    }
+    to {
+        width: 150px;
+    }
+}
+#aside-1 {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    animation-play-state: paused;
+}
+#aside-1:hover {
+    animation-play-state: running; 
+}

@@ -90,6 +90,9 @@ details p:nth-child(2) {
 :target {
     border: 2px solid #d4d4d4;
 }
+/*figure img:empty {
+    object-fit: ;
+}*/
 /* enabled disabled
     ::first-line ::first-letter ::before ::after
 */

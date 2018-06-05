@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme+Expanded|Raleway+Dots&subset=latin-ext');
+* {
+    font-family: Bernini, "Bernini Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 main, aside, footer {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     /* margin: 10px;*/
@@ -6,28 +10,38 @@ h1, h2, h3, h4, p {
     padding-left: 15px;
 }
 h2 {
+    font-family: 'Raleway Dots', cursive;
+    font-stretch: condensed;
     border: 2px solid #5b32ac;
     border-radius: 10px;
+    /*font-size-adjust: ;*/
     /*outline-offset: 5px;*/
 }
 p {
     padding-right: 15px;
     text-align: justify;
     cursor: pointer;
+    font-kerning: auto;
+    /*font-variant-position: super;
+    font-variant-caps: small-caps;
+    font-variant-numeric: normal*/
 }
 body > div > header {
     background: linear-gradient(to bottom, #9966ff 0%, #ff99cc 100%);
     grid-area: header;
     margin-top: 10px;
+    text-transform: capitalize;
 }
 body > div > header:hover {
-    transition-duration: 1s;
-    transition-property: transform;
+    transition-duration: 1s, 2s;
     transform: rotate(0.001turn);
+    background: linear-gradient(to bottom, #c8b7e9 0%, #e2b9cd 100%);
+    transition-property: transform, background-color;
+    transition-delay: 2s, 0;
+    /*transition-timing-function: ;*/
 }
 body > div > footer {
     background-color: #c2d18e;
-    /*background-image: url(/icon/favicon-32x32.png);*/
     background-image: url("/icon/favicon-32x32.png");
     background-repeat: repeat-y;
     background-position: right;
@@ -46,13 +60,28 @@ body > div > footer {
     resize: both; /* töötab kui overflow on määratud */
     overflow: auto;
 }
+#picture {
+    object-fit: cover;
+    object-position: 50% 50%;
+    /*ix-blend-mode: ;*/
+}
 body > aside {
     background-color: #e09b9b;
     grid-area: aside;
 }
 aside#aside1 {
+    font-family: 'BioRhyme Expanded', serif;
     background-color: #e09b9b66;
     grid-area: aside1;
+    white-space: pre-line;
+    tab-size: 14px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-align: center;
+    text-align-last: justify;
+    word-spacing: 2%;
+    /*text-indent: ;*/
 }
 aside#aside2 {
     background-color: #e09b9b;
@@ -95,4 +124,22 @@ body > div {
     sagedus: Hz kHz
     resolutsioon: dpi dpcm dppx
     värvid: hex rgb hsl */
+}
+@keyframes frames {
+    from {
+        width: 320px;
+        animation-timing-function: ease-in-out;
+    }
+    to {
+        width: 300px;
+    }
+}
+#aside1:hover {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: 2; /*infinite*/
+    animation-direction: alternate;
+    /*animation-play-state: paused|running nt: :hover
+    animation-delay: 2s
+    animation-fill-mode: both*/
 }

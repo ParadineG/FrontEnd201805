@@ -1,0 +1,125 @@
+body > div > header {
+    background-color: #0072CE ;
+    grid-area: header;
+    padding: 10px;
+    border-width: 10px;
+    border-width: 20px 10px;
+    border-width: 32px 16px 8px 4px;
+    border-style: dashed;
+    border-top-style: dotted;
+    border-color: black;
+    border-right-color: white;
+    border-left-color: white;
+    border-top-left-radius: 44px;
+    border-top-right-radius: 44px;
+    /* border-image: url(/icon/favicon-32x32.png) 20% round; */
+    /* border: 20px solid red */
+    outline: gray solid 5px;
+    outline-offset:5px; 
+    margin: 30px;
+    box-shadow: 30px -25px 5px 5px rgba(0, 132, 255, 0.7);
+}
+header > h2, header > h3 {
+    background-color: white;
+    cursor: url(/icon/favicon-32x32.png), progress;
+}
+    /* värvid */
+    /* hex-kood : #0072CE  #A7D (#AA77DD) - 
+    hex arvud on 16-süsteemis; 0 1 2 3 4 5 6 7 8 9 A B C D E F; 2 arvu max, nt "FF == 255" 
+    #RGB #RGBA A-alpha #B7A4BCFF*/
+    /* black white green coral */
+    /* rgb(183, 163, 188) rgba(183, 163, 188, 1) max 255 */
+    /* rgb(72%, 64%, 74%) rgba(72%, 64%, 74%, 1) max 100% */
+    /* hsl(288, 15%, 69%) rgba(288%, 15%, 69%, 1) [0-359;100%] Hue,saturation,light - kasutusel kunstnike poolt*/
+body > div > header:hover {
+    transition-duration: 5s;
+    transition-property: transform;
+    transform: rotate(1turn)
+}
+body > div > footer {
+    background-color: rgba(220, 20, 60, 0.377);
+    background-image: url(/icon/favicon-32x32.png) ;
+    background-repeat: round;
+    background-clip: border-box, content-box;
+    padding: 25px;
+    background-attachment: fixed, local;
+    background-position: left 15px top 25px;
+    background-origin: border-box;
+    background-size: auto;
+    grid-area: footer;
+    resize: horizontal;
+    
+
+    justify-self: stretch;
+}
+body > div > aside {
+    background-color: black;
+    color: white;
+}
+aside#aside-1 {
+    grid-area: aside-1;
+}
+aside#aside-2 {
+    grid-area: aside-2;  
+}
+main {
+    background-color: white ;
+    background-image: url(/icon/favicon.svg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed, local;
+    background-position: center;
+    grid-area: main;
+}
+body > div {
+    outline: #0072CE solid 15px;
+    margin: 0px auto;
+    padding: 15px;
+    border: 15px solid black;
+    width: calc(800px + 40%); /* saame kombineerida ka relatiivseid + absoluutseid mõõtmeid [paindlikkus]*/
+    height: 1000px;
+    display: -ms-grid;
+    display: grid;
+    /* grid-template-columns: 1fr 750px 1fr; 
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header header"
+    "aside-1 main aside-2"
+    "footer footer footer"; */
+    grid: 
+    "header header header"
+    "aside-1 main aside-2"
+    "footer footer footer"
+    / 1fr 3fr 1fr;
+    
+    grid-column-gap: 8px;
+    grid-row-gap: 4px ;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-evenly;
+    align-content: space-between;
+    
+    overflow: auto;
+    resize: both;
+    
+}
+    /* relatiivsed ühikud  em <- fondisuurus(vaikimisi 16px)(juba kutsutud 
+    elemendi sees suurendab topelt; rem - alustab originaalsest fondist;
+    (ex ; ch) <- fondist sõltuv; % ; vw -viewport width;vh - viewport height ; */
+    /* absoluutsed ühikud: 0 ; cm ; mm ; Q -quarter; in ; pc ; pt <= Kasutatakse eelkõige printimisel;
+    px-vaikimisi ühik, kasutada 1px kõige väiksema väärtusena*/
+    /* nurga kraadid (sulgudes max väärtus): deg(360); rad (2PI); grad (400) turn (1) */
+    /* aeg ühikud: s ms */
+    /* sagedus (ainult teooria): Hz kHz */
+    /* resolutsiooni ühikud: dpi (density PER inch); dpcm (PER centimeter); dppx (PER pixel)*/
+p ~ p {
+    font-size: 1.5em;
+}
+span {
+    font-size: 1.25rem;
+}
+body > div > footer {
+    justify-self: stretch;
+    width: 60vmax; /* in landscape == vh and in portrait == vw */
+    width: 60vmin; /* in landscape == vh and in portrait == vw */
+    margin: auto;
+}
