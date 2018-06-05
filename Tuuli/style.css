@@ -162,3 +162,15 @@ p::first-letter{ /*iga paragraaf hakkab suure värvilise tähega*/
 /*grid - terminalide puhul või vanemat tüüpi telefoni display, millel üks font toetatud*/
 /*tv and (scan: progressive või interlace) see teleka ekraani seadistamine (progressiivne vaatab 2 kaadrit, otsib erinevust üles)*/
 
+#pic {
+    background-color: aliceblue;
+    object-fit: cover;
+    object-position: 25% 25%;
+    image-orientation: 90deg;
+    image-resolution: from-image 150dpi;
+    background-blend-mode: difference;
+    
+}
+circle {
+    mix-blend-mode: difference; /*blendimine st paned 2 pilti kokku*/
+}
