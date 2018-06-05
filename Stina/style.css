@@ -139,3 +139,13 @@ seadmes üks suurus reeglina */
         color: rgb(255, 152, 16);
     }
 }
+#pic {
+    background-color: aliceblue;
+    object-fit: cover;
+    object-position: 35%;
+    image-orientation: 90deg;
+    image-resolution: from-image 300dpi;
+}
+circle {
+    mix-blend-mode: multiply;
+}

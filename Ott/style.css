@@ -189,4 +189,18 @@ p::first-letter {
 }
 /* monochrome color-index grid*/ 
 /* tv and (scan: progressive) või interlace*/
+
+#pic {
+    background-color: aliceblue;
+    object-fit: cover;
+    object-position: 400%;
+    image-orientation: 90deg;
+    image-resolution: 300dpi from-image;
+    mix-blend-mode: difference;
+ }
+
+circle {
+    mix-blend-mode: exclusion;
+}
+
  
