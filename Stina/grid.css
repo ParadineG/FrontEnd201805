@@ -7,10 +7,16 @@ rgb(183, 164, 188) rgba(183, 164, 188, 1) max 255   alpha 0-1
 rgb(72%, 64%, 74%) rgba(72%, 64%, 74%, 1)
 rgb(288, 15%, 69%) rgba(288, 15%, 69%, 1)  I 0-359 
 
+
+fontid: .woff .woff2 .ttf .otf .eot .svg .svgz 
 */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body > div > header {
     
     background-color: rgba(243, 247, 45, 0.863);
+    background-image: repeating-linear-gradient(lightblue 5px, pink 20px, lightgreen 10px);
     grid-area: header;
     padding: 20px;
     border-width: 20px 10px;
@@ -29,10 +35,17 @@ body > div > header {
 
     box-shadow: -30px 25px 5px -5px rgba(226, 168, 104, 0.5);
 }
-body > div > header:hover{
+
+header > h2, header > h3 {
+    background-color: hotpink;
+}
+
+body > div > header:hover {
         transform: rotate(0.01turn);
-        transition-duration: 1s;
+        transition-duration: 1s, 5s;
         transition-property: transform;
+        transition-delay: 2s, 0s;
+        transition-timing-function: ease-in-out;
 }
 
 body > div > footer {
@@ -57,21 +70,55 @@ body > div > aside {
 }
 aside#aside-1 {
     grid-area: aside-1;
+    background-image: linear-gradient(lightblue, pink, lightgreen);
+
+    font-family: 'Roboto', Helvetica, sans-serif;
+    /* serif sans-serif cursive, fantasy, monospace
+    
+    condensed normal expanded*/
+    font-weight: bolder;
+    font-stretch: ultra-expanded;
+    font-style: italic;
+   /*  1em; xx-small x-small small medium large x-large xx-large smaller larger */
+    font-size: larger;
+    font-size-adjust: 1;
+    /* täiendavad fondi valikud:    */ 
+    font-kerning: none;
+    /* font-variant-position: super; */
+    font-variant-numeric: normal;
+
+    /* fondist sõltumatud */
+
+    text-transform: capitalize;
+    white-space: pre-line;
+    /* tab-size: 12px; */
+    word-break: break-all; 
+    /* hyphens: auto; */
+    /* line-break: strict; */
+    overflow-wrap: break-word;
+
 }
 
 aside#aside-2 {
     grid-area: aside-2;
-    cursor: url(/icon/favicon-32x32.png),
+    cursor: url("/icon/favicon-32x32.png"),
             progress;
+    background-image: radial-gradient(farthest-side ellipse at 25%, lightblue 30%, red, pink 50%, lightgreen);
 }
 
 main {
     background-color: rgba(145, 175, 231, 0.795);
     grid-area: main;
 
-    background-image: url("/icon/favicon-32x32.png");
+    background-image: linear-gradient(lightblue, pink, lightgreen);
     background-repeat: round;
     background-attachment: fixed;
+
+    text-align: justify-all;
+    text-align-last: end;
+    word-spacing: 150%;
+    letter-spacing: 2px;
+    text-indent: 2em;
 
 }
 body > div {
@@ -80,7 +127,7 @@ body > div {
     padding: 10px;
     border: 2px solid black;
     width: calc(800px + 20%);
-    height: 800px;
+    height: 1000px;
     display: -ms-grid;
     display: grid;
 
@@ -125,4 +172,30 @@ p ~ p {
 }
 span {
     font-size: 1.5rem;
+}
+
+@keyframes frames {
+    from {
+        width: 184px;
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        width: 194px;
+    }
+    to {
+        width: 150px;
+    }
+}
+#aside-1 {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    animation-play-state: paused;
+}
+
+#aside-1:hover {
+    animation-play-state: running;
 }

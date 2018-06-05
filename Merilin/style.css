@@ -159,3 +159,14 @@ orientation:portrait, landscape - vist olid nii)*/
         color: blueviolet;
     }
 }
+/* #pic {  - siin on mul midagi valesti või puudu, ilmselt index-failis*/ 
+figure img:empty {
+    background-color: aliceblue;
+    object-fit: fill;
+    object-position: 25%;
+    image-orientation: 90deg;
+    image-resolution: 300dpi;
+}
+circle {
+    mix-blend-mode: exclusion;
+}

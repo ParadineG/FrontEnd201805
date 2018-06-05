@@ -174,3 +174,15 @@ p::first-letter{
 }
 /*monochrome, color-index(mitu värvi minimaalselt on), grid(used for consoles)*/
 /*tv and (scan:procressive) või scan:interlace*/
+figure img:empty {
+    background-color: rgb(194, 155, 155);
+    object-fit: cover;
+    object-position: 35%;
+    image-orientation: 90deg;
+    image-resolution: 300dpi from-image;
+
+    
+}
+circle{
+    mix-blend-mode: difference;
+}
