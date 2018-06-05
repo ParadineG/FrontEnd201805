@@ -163,6 +163,15 @@ p::first-letter {
     to   { transform: scaleX(1); }
   }
 svg {
+    background-color: rgba(255, 20, 145, 0.795);
+}
+
+circle {
+    animation: 2s ease-in alternate infinite slidein;
+    mix-blend-mode: exclusion;
+}
+
+rect {
     animation: 2s ease-in alternate infinite slidein;
 }
 /*
@@ -202,3 +211,23 @@ svg {
 }
 */
 
+figure {
+    background-color: aqua;
+}
+
+figure > img:empty {
+    background-color: yellow;
+    image-orientation: 90deg;
+    mix-blend-mode: multiply;
+}
+
+img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 150px; /* Set a small width */
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
