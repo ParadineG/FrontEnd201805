@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic,latin-ext');
+
+/*@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), 
+    url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TzBic6CsQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}*/
+/*.woff | .woff2 | .ttf | .otf | .svg | .sgvz*/
+
 /*start grid*/
 /*värvid*/
 /*Hex: #0fc2db| #A7D == (AA77DD) 16-süsteem[0 1 2 3 4 5 6 7 8 9 a b c d e f]*/
@@ -11,6 +22,7 @@ body > div > header{
     grid-area: header;
     outline: blue solid 5px;
     margin: 0;
+    
     /*border:2px solid black;*/
     padding: 10; 
     border-width: 20px 10px;
@@ -23,14 +35,19 @@ body > div > header{
     /*border-image: url(/icon/favicon-32x32.png) 50% space;*/
     outline-offset: 15px;
     box-shadow: -25px 20px 20px 15px #0fa1dbff ;
+   /* background-image: repeating-linear-gradient(lightcyan 5px, lightpink 30px,red 50px)*/
 }
 header > h2, header > h3 {
     background-color: #0fa1db;
+    
 }
 body > div > header:hover{
     transform: rotate(0.01turn);
-    transition-duration: 1s;
-    transition-property: transform;
+    background-color: white;
+    transition-duration: 1s, 5s;
+    transition-property: transform, background-color;
+    transition-delay: 1s, 0;
+    transition-timing-function: ease-in-out;
 }
 body > div > aside{
     background-color: rgb(182, 214, 255);
@@ -38,15 +55,44 @@ body > div > aside{
 }
 aside#aside-1{
     grid-area: aside-1;
+
+    font-family: 'Roboto', Helvetica, sans-serif;
+    /*serif | sans-serif | cursive | fantasy | monospace*/
+    font-weight: bolder;
+    font-stretch: ultra-expanded;
+    font-style: italic;
+    /*1.5em |xx-small(h6)|x-small|small(h5)|medium(h4)|large(h2)|x-large(h1)|xx-large|smaller|larger...h on mõeldud pealkirjana*/
+    font-size: larger;
+    font-size-adjust: 0.5;
+    /*Täiendavad fondi valikud*/
+    font-kerning: auto;
+    /*Font-varitant*/
+    font-variant-position: super;
+
+    /*fondist sõltmatud*/
+    text-transform: capitalize;
+    white-space: pre-wrap;
+    /*tab-size: 12px;*/
+    /*word-break: break-all;*/
+    /*hypens: auto;
+    line-break: strict;*/
+    word-wrap: break-spaces;
+    overflow-wrap: break-spaces;
+    background-image: radial-gradient(/*15em 40% ellipse at center*/ farthest-corner ellipse at center ,lightcyan 25%, lightpink ,red)
+
+    
 }
 aside#aside-2{
     grid-area: aside-2;
     cursor:  url(/icon/favicon-32x32.png),progress;
+    /*repeating-linear-gradient|linear-gradient|radial-gradient|repeating-radial-gradient(circle, ellipse)*/
+    background-image: linear-gradient(-45deg,lightcyan 25%, lightpink ,red);
+    /*Suunad. Top, bottom, right, left, deg*/
 }
 body > div > footer{
     background-color: black;
     color: white;
-    background-image: url(/icon/favicon.svg), url(/icon/favicon-32x32.png);
+    background-image: url("/icon/favicon.svg"), url("/icon/favicon-32x32.png");
     background-repeat: round;
     background-attachment: fixed, local;
     background-position: left 15px top 25px;
@@ -66,11 +112,20 @@ body > div > footer{
 main{
     background-color: darkcyan;
     grid-area: main;
-    background-image: url(/icon/favicon.svg), url(/icon/favicon-32x32.png);
+    background-image: url("/icon/favicon.svg");
     background-repeat: round;
     background-attachment: fixed, local;
     
     background-clip: padding-box;
+    
+    text-align: justify;
+    text-align-last: left;
+    word-spacing: 150%;
+
+    letter-spacing: 2px;
+    text-indent: 3em;
+    /*hanging-punctuation:first;*/
+
 }
 body{
     margin: 0;
@@ -82,7 +137,7 @@ body > div {
     border:2px solid black;
     padding: 20px; 
     width: calc(800px + 30%);
-    height: 1100px;
+    height: 1600px;
     display: -ms-grid;/*Toetab ka vanemaid veebilehe versioone*/
     display: grid;
    /* grid-template-columns: 1fr 700px 1fr; /*fr-vaba ühik(gridiga kaasa tulnud ühik, st et ekraan jaotatakse nii mitmeks osaks kui inimene ära määrab.)|*/
@@ -124,4 +179,28 @@ p ~ p{
 }
 span{
     font-size: 1.5rem;
+}
+@keyframes frames{
+    from{
+        width: 184px;
+        animation-timing-function: ease-in-out;
+    }
+    50%{
+        width: 194px;
+    }
+    to{
+        width: 150px;
+    }
+}
+#aside-1{
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    animation-play-state: paused;
+}
+#aside-1:hover{
+    animation-play-state: running;
 }
