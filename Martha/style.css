@@ -133,4 +133,11 @@ p::first-letter {
         display: flow-root;
         color: blueviolet;
     }
+#pic {
+    background-color: aliceblue;
+    object-fit: fill;
+    object-position: 35%;
+    image-orientation: 90deg;
+    image-resolution: 150dpi;
+}
 }
