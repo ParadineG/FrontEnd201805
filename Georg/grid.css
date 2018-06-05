@@ -1,10 +1,15 @@
-/*header, main, aside, footer {
-    margin: 10px;
-}*/
+/*css-tricks.com*/
+/*color.adobe.com*/
+@import url('https://fonts.googleapis.com/css?family=Parisienne|Permanent+Marker');
+/*.woff .woff2 .ttf .otf .eot . .z (font failid)*/
+
+:root {
+    --main-color: rgb(238, 180, 22);
+}
 
 /*start grid*/
 body > div > header {
-    background-color:lightcoral;
+    background-color:teal;
     grid-area: header;
 
     border-width: 10px;
@@ -15,9 +20,10 @@ body > div > header {
 }
 
 body > div > header:hover {
-    transform: rotate(10turn);
+    transform: rotate(1turn);
     transition-property: transform;
     transition-duration: 2s;
+    
 }
 
 main:hover {
@@ -28,28 +34,28 @@ main:hover {
 
 #aside2:hover {
     transform: rotate3d(2, -1, -1, -0.2turn);
-    transition-property: transform;
+    background-color: lightblue;
+    transition-property: transform, background-color;
+    transition-delay: 0s, 2s;
     transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+   
+    
 
     
 }
 
-#aside1:hover {
-    transform: rotateY(55deg);
-    transition-property: transform;
-    transition-duration: 1s;
-    border-top-right-radius: 10px;
-}
 
-footer:hover {
-    transform: translate3d(3.7rem, -3rem, 1rem);;
-    transition-property: transform;
-    transition-duration: 1s;
-}
+
 
 body > div > footer {
     background-color: rgb(196, 228, 170);
     grid-area: footer;
+
+    transition-property: transform;
+    transform-origin: right bottom;
+    transform: scale(0.8,1.1) translate(12px, -100px) skew(50deg, -10deg)
+    
 }
 
 
@@ -61,7 +67,7 @@ body > aside {
 }
 aside#aside1 {
     text-shadow: 0 1px 0 black;
-    background-image: url("/icon/favicon.svg"), url("/icon/favicon-32x32.png");
+    background-image: url("/icon/favicon."), url("/icon/favicon-32x32.png");
     grid-area: aside1;
     border-style: ridge;
     border-width: 5px 0 5px 5px;
@@ -70,6 +76,8 @@ aside#aside1 {
     background-attachment: fixed;
 }
 aside#aside2 {
+    font-family: 'Permanent Marker', cursive;
+
     padding: 5px;
     height: 300px;
     overflow: auto;
@@ -84,15 +92,52 @@ aside#aside2 {
 }
 
 main {
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
     cursor: url("/icon/favicon-32x32.png"), progress;
     padding:10px;
-    background-color: lavender;
     grid-area: main;
     border-style: groove;
     border-width: 5px 0 5px 0;
     border-color: black;
     border-radius: 10px;
+
+    /*serif sans-serif, Arial, fantasy, monospace*/
+    font-family: 'Parisienne', cursive;
+    /*100-õhuke 400-normaalne 900-paks*/
+    font-weight: 550;
+    /*font-strtch: määrab kui lähestiku on tähed üksteisele*/ 
+    font-stretch: condensed;
+    /*xx-small(h6). x-small(h5), small, medium(h4), x-large(h1), xx-large*/
+    font-size: small; /*larger, smaller*/
+    /*Hoiab teksti sarnase suurusega, juhul kui fallback font-family läheb kasutusse*/
+    font-size-adjust: 0.5;
+    /**täiendavad font valikud*/
+    font-variant: unset;
+    font-kerning: none;
+    /*font-variant-position: super; (Saab teha numbritele/tähtedele astmeid)*/
+
+    /*Fondist sõltumatud:*/
+    text-transform: capitalize;
+    white-space: normal;
+    word-break: keep-all;
+    hyphens: auto;
+    line-break: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    text-align: justify;
+    text-align-last: left;
+    /*word-spacing: 1em;*/
+    letter-spacing: 1px;
+    text-indent: 1em;
+    /*hanging-punctuation: first; */
+
+    /*linear-, radial-gradient*/
+    /*background-image: linear-gradient(25deg,lightskyblue, #8f2f2f , teal 80%);*/
+    background-image: radial-gradient(ellipse at center, teal, #8f2f2f , lightskyblue);
+    /*ellipse at center*/
 }
+    
 
 body > div {
     outline: rgb(39, 5, 11) solid 2px;
@@ -140,4 +185,29 @@ p ~ p {
 
 span {
     font-size: 1rem;
+}
+
+@keyframes frames {
+    from {
+    width: 150%;
+    }
+    to {
+        width: 50%;
+    }
+}
+
+#aside1 {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: paused;
+}
+
+#aside1:hover {
+    animation-play-state: running;
+}
+
+article header, article section {
+    color: var(--main-color)
 }
