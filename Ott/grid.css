@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic,latin-ext');
+/*
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xGIzIFKw.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+*/
+/* .woff .woff2 .ttf .otf .eot .svg .svgz */
 
 /* Värvid */
 /* Hex: #B7A4bc #A7D(#AA77DD) 16-süsteem arvud 0123456789ABCDEF*/
@@ -28,14 +39,20 @@ body > div > header {
     margin: 20px;
 
     box-shadow: -30px 25px 10px -10px rgb(226, 168, 158, 0.5);
+
+    background-image: repeating-linear-gradient(lightskyblue 5px, lightpink 15px, lightgreen 25px);
 }
 header > h2, header > h3 {
     background-color: rgb(87, 93, 99);
+    
 }
-body > div > header:hover{
-    transition-duration: 1s;
-    transition-property: transform;
-    transform: rotate(0.001turn);
+body > div > header:hover {
+    transform: rotate(0.01turn);
+    background-color: dodgerblue;
+    transition-duration: 1s, 5s;
+    transition-property: transform, background-color;
+    transition-delay: 2s, 0s;
+    transition-timing-function: ease-in-out;
 }
 body > div > footer {
     background-color: grey;
@@ -54,6 +71,7 @@ body > div > footer {
 
     max-width: 60vmin; /* in landscape == vh in portrait == vw */
     max-width: 60vmax; /* in landscape == vw in portrait == vh */
+    
 }
 
 body > div > aside {
@@ -61,20 +79,60 @@ body > div > aside {
     grid-area: aside;
 }
 aside#aside-1 {
+    padding: 15px;
     grid-area: aside-1;
+
+    font-family: 'Roboto', Helvetica, sans-serif;
+    /* serif sans-serifcursive, fanasy, monospace */
+    font-weight: bold;
+    font-stretch: ultra-condensed; /* condensed normal expanded*/
+    font-style: oblique;
+    /* 1.5em, xx-small(h6), x-small, small(h5), medium(h4), large(h2), x-large(h1), xx-large, smaller, larger */
+    font-size: 1em;;
+    font-size-adjust: 0.5;
+    /*täiendavad fondi valikud */
+    font-kerning: none; 
+    /* font-variant*/
+    font-variant-numeric: normal;
+
+    /* Fondist sõltumatud */
+    text-transform: capitalize;
+    white-space: pre-line;
+    /* tab-size: 12px; */
+    word-break: break-all;
+    /* hyphens: auto; */
+    /* line-break: normal; */
+    overflow-wrap: break-word;
+    word-wrap: break-spaces;
+
+    background-image: radial-gradient(farthest-side ellipse at 12% 25%,lightskyblue 20%, lightpink 30%, lightgreen 40%);
+}
+
+#aside-1 span{
+    font-variant-position: super;
+    font-variant-caps: small-caps;
 }
 aside#aside-2 {
     grid-area: aside-2;
     cursor: url(/icon/favicon-32x32.png),
-    progress;
+                progress;
+    background-image: linear-gradient(135deg,lightskyblue 20%, lightpink 30%, lightgreen 40%);
 }
 
 main {
+    padding: 15px;
     background-color: aquamarine;
     grid-area: main;
     background-image: url("/icon/favicon.svg");
     background-repeat: round;
     background-attachment: fixed;
+    text-align: justify;
+    text-align-last: end;
+    word-spacing: 150%;
+    letter-spacing: 2px;
+    text-indent: 2em;
+    /*hanging-punctuation: first;*/
+    
 }
 
 /* Start Grid */
@@ -84,7 +142,7 @@ body > div {
     padding: 10px;
     border: 2px solid black;
     width: calc(800px + 20%);
-    height: 1200px;
+    height: 1850px;
     display: -ms-grid;
     display: grid;
    /* grid-template-columns: 1fr 750px 1fr;
@@ -126,4 +184,27 @@ p ~ p {
 }
 span {
     font-size: 1.5rem;
+}
+@keyframes frames {
+    from {
+        width: 184px;
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        width: 194px;
+    }
+    to {
+        width: 150px;
+    }
+}
+#aside-1 {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 2s;
+    animation-play-state: paused;
+}
+#aside-1:hover {
+    animation-play-state: running;
 }
