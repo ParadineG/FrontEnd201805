@@ -1,3 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i');
+
+/* .woff ; -woff2 ; .ttf ; .otf ; .eot ; .svg ; .svgz */
+
+
+:root {
+    --main-color: #AA77DD;
+}
+article header, article footer {
+    background-color: var(--main-color);
+
+}
 body > div > header {
     background-color: #0072CE ;
     grid-area: header;
@@ -17,7 +30,7 @@ body > div > header {
     outline: gray solid 5px;
     outline-offset:5px; 
     margin: 30px;
-    box-shadow: 30px -25px 5px 5px rgba(0, 132, 255, 0.7);
+    box-shadow: 0px -25px 5px 5px rgba(0, 132, 255, 0.7);
 }
 header > h2, header > h3 {
     background-color: white;
@@ -32,12 +45,15 @@ header > h2, header > h3 {
     /* rgb(72%, 64%, 74%) rgba(72%, 64%, 74%, 1) max 100% */
     /* hsl(288, 15%, 69%) rgba(288%, 15%, 69%, 1) [0-359;100%] Hue,saturation,light - kasutusel kunstnike poolt*/
 body > div > header:hover {
-    transition-duration: 5s;
-    transition-property: transform;
-    transform: rotate(1turn)
+    transition-duration: 5s,3s;
+    transition-property: transform, background-color;
+    transform: rotate(100turn);
+    background-color: forestgreen;
+    transition-delay: 1s, 0s;
+    transition-timing-function: ease-in-out;
 }
 body > div > footer {
-    background-color: rgba(220, 20, 60, 0.377);
+    background-color: silver;
     background-image: url(/icon/favicon-32x32.png) ;
     background-repeat: round;
     background-clip: border-box, content-box;
@@ -48,26 +64,62 @@ body > div > footer {
     background-size: auto;
     grid-area: footer;
     resize: horizontal;
-    
-
     justify-self: stretch;
+    transform-origin: top left;
+    transform: translate(12px, 20px) scale(1.1, 0.8) skew(-10deg, -10deg);
+    transition-delay: 1s;
+    transition-duration: 1s;
 }
+
 body > div > aside {
     background-color: black;
-    color: white;
+    color: white;   
+    font-family: 'roboto', Arial, sans-serif;
+    /* serif sans-serif cursive fantasy monospace*/
+    font-weight: 700;
+    font-stretch: ultra-condensed; /* condensed normal expanded */
+    font-style: italic;
+    font-size: medium; /* 1.5em; xx-small (h6); x-small (h5); medium (h4); large (h2); x-large (h1);
+     xx-large; smaller; larger; */
+    font-size-adjust: 0.5;
+    /* täiendavad */
+    font-kerning: normal;
+    /* font-variant
+    font-variant-position: super;
+    font-variant-caps: petite-caps;
+    font-variant-numeric: oldstyle-nums; */
+
+    /*fondist sõltumatud */
+    text-transform: capitalize;
+    white-space: pre-line; 
+    /* tab-size: 50px; */
+    /* word-break: break-all; */
+    /* line-break: strict; */
+    hyphens: none;
+    overflow-wrap: break-spaces;
+    word-wrap: break-spaces;
+    text-align: justify;
+    /* text-align-last: start; */
+    letter-spacing: 2px;
+    word-spacing: 150%;
+    /* hanging-punctuation: first; */
+    }
+body > div > aside > p {
+    text-indent: 2em;
 }
 aside#aside-1 {
     grid-area: aside-1;
+   
 }
-aside#aside-2 {
-    grid-area: aside-2;  
+aside#aside-2{
+    grid-area: aside-2; 
 }
 main {
-    background-color: white ;
-    background-image: url(/icon/favicon.svg) ;
+    background-image: radial-gradient(65% 5em ellipse at center, yellow,gold,orange,orangered, red, rgba(0, 0, 0, 0.77), gray );
+    /*background-image: url(/icon/favicon.svg) ;
     background-repeat: no-repeat;
     background-attachment: fixed, local;
-    background-position: center;
+    background-position: center; */
     grid-area: main;
 }
 body > div {
@@ -122,4 +174,34 @@ body > div > footer {
     width: 60vmax; /* in landscape == vh and in portrait == vw */
     width: 60vmin; /* in landscape == vh and in portrait == vw */
     margin: auto;
+
+}
+@keyframes frames {
+    from{
+        align-items: center;
+        height: 856px;
+        width: 834px;
+        animation-timing-function: ease-in-out
+
+    }
+    50% {
+        height: 856px;
+        width: 1200px;
+        }
+    to {
+        align-content: center;
+        height: 856px;
+        width: 834px;
+    }
+}
+main {
+    animation-name: frames;
+    animation-duration:5s;
+    animation-iteration-count: 0;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    transform: matrix(1, -0.2, 0, 1, 0, 0);
+}
+main:hover {
+    animation-play-state: paused;
 }
