@@ -92,6 +92,7 @@
                 <li><a href="../Kerli/">Kerli koduleht</a></li>
                 <li><a href="/Roman/">Romani koduleht</a></li>
                 <li><a href="https://google.com">Google koduleht</a></li>
+                <li><a href="../icon/favicon.svg"><img src="../icon/favicon-32x32.png" alt="Pilt"></a></li>
             </ul>
         </nav>
         <main>
@@ -205,22 +206,27 @@
                 <li><kbd>Ctrl</kbd> + <kbd>S</kbd></li>
 
             </ul>
-
-            <picture>
-                <!-- Kui aken on väiksem kui ekraani laius (1080px), siis muudab pildi teiseks. Saab kasutada ka max-width -->
-                <source srcset="/icon/favicon.svg" media="(min-width: 1080px)">
-                <source srcset="/icon/favicon-32x32.png" media="(min-width: 700px)">
-                <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x" 
-                alt="Picture example" width="150" referrerpolicy="unsafe-url" longdesc="#definition">
-            </picture>
+                <picture>
+                    <!-- Kui aken on väiksem kui ekraani laius (1080px), siis muudab pildi teiseks. Saab kasutada ka max-width -->
+                    <source srcset="/icon/favicon.svg" media="(min-width: 1080px)">
+                    <source srcset="/icon/favicon-32x32.png" media="(min-width: 700px)">
+                    <img src="/icon/favicon-16x16.png" srcset="/icon/favicon-16x16.png 1x, /icon/favicon-32x32.png 2x" 
+                    alt="Picture example" width="150" referrerpolicy="unsafe-url" longdesc="#definition">
+                </picture>
             <br>
             <!-- SVG kujundid -->
-            <svg height="100" width="width">
+            <svg height="100" width="100">
                 <circle cx="50" cy="50" r="40" stroke="green" stroke-width="10" fill="yellow" />
             </svg>
             <svg>
                 <rect width="200" height="200" fill="purple" />
                 <text x="50" y="15" fill="red" transform="rotate(30 -10, 80)">Pauh!</text>
+            </svg>
+            <br>
+            <svg height="100" width="125">
+                <circle cx="40" cy="40" r="40" fill="blue" />
+                <circle cx="60" cy="40" r="40" fill="green" />
+                <circle cx="80" cy="60" r="40" fill="yellow" />
             </svg>
             <br>
             <!-- Video -->

@@ -144,6 +144,7 @@ p::first-letter {
 @media (min-aspect-ratio: 3/2) {
     p::first-letter{
         font-size: 100%;
+    }
 }
 /* 8-bit -> 3-bit red, 3-bit green, 2-bit blue === color: 2*/
 @media all and (min-color: 8) {
@@ -166,4 +167,15 @@ p::first-letter {
     textarea {
         color: forestgreen;
     }
+}
+
+#figurePic {
+    object-fit: cover;
+    object-position: 35%;
+    image-orientation: 90deg;
+    image-resolution: from-image 300dpi;
+}
+
+circle {
+    mix-blend-mode: exclusion;
 }
