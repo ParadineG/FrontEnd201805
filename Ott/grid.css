@@ -10,6 +10,10 @@
 */
 /* .woff .woff2 .ttf .otf .eot .svg .svgz */
 
+:root {
+    --main-color: rgb(193, 133, 209);
+}
+
 /* Värvid */
 /* Hex: #B7A4bc #A7D(#AA77DD) 16-süsteem arvud 0123456789ABCDEF*/
 /* 2 arvu max == 255, #RGB, #RGBA A-alpha*/
@@ -71,6 +75,9 @@ body > div > footer {
 
     max-width: 60vmin; /* in landscape == vh in portrait == vw */
     max-width: 60vmax; /* in landscape == vw in portrait == vh */
+
+    transform-origin: top left;
+    transform: translate(12px, -100px) scale(0.8, 1.1) skew(10deg, -10deg);
     
 }
 
@@ -133,6 +140,7 @@ main {
     text-indent: 2em;
     /*hanging-punctuation: first;*/
     
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
 }
 
 /* Start Grid */
@@ -207,4 +215,8 @@ span {
 }
 #aside-1:hover {
     animation-play-state: running;
+}
+
+article header, article footer {
+    background-color: var(--main-color);
 }
