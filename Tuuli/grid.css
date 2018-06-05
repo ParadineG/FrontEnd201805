@@ -1,4 +1,10 @@
-   
+@import url('https://fonts.googleapis.com/css?family=Roboto&subset=latin-ext'); /*see imporditud google fonts alt*/
+/* .woff .woff2 .ttf .eot .svg .svgz*/
+
+:root {
+    --main-color: 
+}
+
    /*VÄRVID*/
    /* Hex: #B7A4bc #A7D (=#AA77DD) 16-süsteem arvud, nende lugemine käib 0 1 2 3 4 5 6 7 8 9 A B C D E F*/
    /* FF == 255; #RGB=red green blue; #RGBA A-alpha ehk läbipaistvus #B7A4BCFF*/
@@ -10,6 +16,7 @@
    /*start grid*/
 body > div > header {
     background-color: #B7A4bc;
+    background-image: repeating-linear-gradient(lightskyblue 5px, lightpink 15px, lightgreen 25px);
     grid-area: header;
     padding: 20px;
     border-width: 20px;
@@ -31,11 +38,16 @@ body > div > header {
 }
 header > h2, header > h3 {
     background-color: brown;
+    
 }
 body > div > header:hover {
-    transform: rotate(0.01turn);  /*kasutan turn ühikut*/
-    transition-duration: 1s;
-    transition-property: transform;
+    transform: rotate(0.05turn);  /*kasutan turn ühikut*/
+    background-color: lightseagreen;
+    transition-duration: 1s, 5s;/*liiguta kasti*/
+    transition-property: transform, background-color;
+    transition-delay: 2s, 0;
+    transition-timing-function: ease-in-out;
+
 }
 body > div > footer {
     background-color: rgb(126, 150, 180);
@@ -52,33 +64,76 @@ body > div > footer {
     resize: both;
     min-width: 60vmin;
     max-width: 60vmax;
+
+    transform-origin: center; /* võib ka kirjutada 0-100% */
+    transform: translate(12px, -100px) scale(0.8, 1.1) skew(20deg, 10deg); /*rotate alati kirjuta esimesena*/
+
+
+
 }
 body > div > aside {
     background-color: rgb(144, 145, 86);
     grid-area: aside;
 }
 aside#aside-1 {
-    grid-area: aside-1;
+    grid-area: aside-1; 
+    font-family: 'Roboto', Arial, Helvetica, sans-serif; /*fondi muutmiseks*/
+    /*serif(Times New Roman tuntuim) sans-serif (Helvica tuntuim, Arial) 
+    cursive (kirjakeelne stiil, käekiri) fantasy (Comic Sans) monospace (et tähed ära mahuks i ja o näide) */
+    font-weight: 900;/*tavaliselt 400 väärtus, 700 juba bold*/
+    font-stretch: ultra-condensed;/*condensed-pressitakse kokku, */
+    font-style: oblique; /*oblique =sama mis italic*/
+    font-size: large; /*nt em % xx-small(h6) x-small small(h5) medium(h4) large(h2) x-large(h1) xx-large smaller*/
+    font-size-adjust: 0.75;
+    /*täiendavad fondi valikud*/
+    font-kerning: none; /*auto, normal, none*/
+    /*fondist sõltumatud*/
+    text-transform: capitalize;/*paneb suured esitähed*/
+    white-space: pre-wrap; /**/
+    /*tab-size: 24px;*/
+    word-break: break-all; /*lõhub sealt, kus asub*/
+    /*hyphens: auto;*/
+    /*line-break: normal;*/
+    overflow-wrap: break-word;
+    
+    background-image: radial-gradient(15em 20% ellipse at center, lightskyblue, lightpink, lightgreen);
 }
+aside#aside-1 span{
+ font-variant-position: super; /*css variant kuidas ülesse panna numbreid*/
+}
+
 aside#aside-2 {
     grid-area: aside-2;
     cursor: url(/icon/favicon-32x32.png),
     progress; /*näitab et kursor mõtleb või muutub ikooniks*/
+
+    background-image: linear-gradient(to bottom right, lightskyblue 25%, lightpink 40%, lightgreen 15%); /*ilma protsendita jääb ilus hägus, 
+    nt.135deg tuleb nurk võib ka to bottom right*/
+    
 }
 main {
-     background-color: rgb(228, 231, 36);
-     grid-area: main;
+    background-color: rgb(228, 231, 36);
+    grid-area: main;
 
-     background-image: url(/icon/favicon.svg);
+    background-image: url(/icon/favicon.svg);
     background-repeat: round;
     background-attachment: fixed;
+
+    text-align: justify;
+    text-align-last: end;
+    word-spacing: 150%;
+    letter-spacing: 2px;
+    text-indent: 2em;/*tekitab tühiku*/
+    /*hanging-punctuation: first;*/ 
+
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
 }
 
 body > div {
     outline: blue solid 5px;
-    margin: 20px auto;
+    margin: 30px auto;
     width: calc(800px + 40%);
-    height: 600px;
+    height: 2200px;
     display: -ms-grid; /*microsofti puhul, veebilehitsejate prefiksid*/
     display: grid;
 
@@ -126,4 +181,33 @@ body > div > footer {
     justify-self: stretch;
     min-width: 60vmin;
     max-width: 60vmax;
+}
+@keyframes frames {
+    from {
+        width: 200px;
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        widows: 194px;;
+    }
+    to {
+        width: 150px;
+    }
+}
+#aside-1 {
+    animation-name: frames;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; /*infinite=teeb igavesti animatsiooni, alternate=liigub lõppu ja sealt tagasi*/
+    animation-direction: reverse;
+    animation-fill-mode: both;
+
+    animation-delay: 2s;
+    animation-play-state: paused;
+}
+#aside-1:hover {
+    animation-play-state: running;
+}
+
+article header, article footer {
+    background-color: var(--main-color);
 }
