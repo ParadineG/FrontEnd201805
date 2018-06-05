@@ -2,6 +2,9 @@
 * {
     font-family: Bernini, "Bernini Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+:root {
+    --main-color: #b19bdd;
+}
 main, aside, footer {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     /* margin: 10px;*/
@@ -27,7 +30,7 @@ p {
     font-variant-numeric: normal*/
 }
 body > div > header {
-    background: linear-gradient(to bottom, #9966ff 0%, #ff99cc 100%);
+    background: linear-gradient(to bottom, #9966ff 20%, #ff99cc 100%);
     grid-area: header;
     margin-top: 10px;
     text-transform: capitalize;
@@ -35,7 +38,7 @@ body > div > header {
 body > div > header:hover {
     transition-duration: 1s, 2s;
     transform: rotate(0.001turn);
-    background: linear-gradient(to bottom, #c8b7e9 0%, #e2b9cd 100%);
+    background: linear-gradient(to bottom, #c8b7e9 20%, #7c4560 100%);
     transition-property: transform, background-color;
     transition-delay: 2s, 0;
     /*transition-timing-function: ;*/
@@ -87,9 +90,14 @@ aside#aside2 {
     background-color: #e09b9b;
     grid-area: aside2;
 }
+aside#aside2:hover {
+    transform-origin: top left;
+    transform: translate(10px, -2px) scale(0.81, 1) skew(3deg, 5grad);
+}
 main {
     background-color: #abc5d1;
     grid-area: main;
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
 }
 body > div {
     /*width: 1200px;*/
@@ -142,4 +150,7 @@ body > div {
     /*animation-play-state: paused|running nt: :hover
     animation-delay: 2s
     animation-fill-mode: both*/
+}
+article header, article footer {
+    background-color: var(--main-color);
 }

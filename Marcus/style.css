@@ -176,3 +176,14 @@ p::first-letter {
         color: blueviolet;
     }
 }
+#pic {
+    background-color: aqua;
+    object-fit: cover;
+    object-position: 25% 25%;
+    image-orientation: 90deg;
+    image-resolution: from-image 300dpi ;
+    
+}
+#circle22 {
+    mix-blend-mode: exclusion;
+}
