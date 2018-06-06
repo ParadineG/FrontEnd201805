@@ -1,15 +1,15 @@
 'use strict';
 
 console.log('Hello TS');
-//tõene ja väär
+//TÕENE JA VÄÄR - loogikaelement
 const kasTehtud: boolean = false;
-//numbrid
+//NUMBRID
 const kumnend: number = 6;
 const hex = 0xFD02;
 const binaar = 0b1010;
 let octal = 0o732;
 octal = 7
-//sõned
+//SÕNED
 const lause: string = 'Tere. \n'
                     + 'Täna meil programmeerimine';
 const vanus = 29;
@@ -17,20 +17,20 @@ const minuVanus =
     `Minu vanus on ${vanus}.
 
     Tere tulemast!`;
-//massiivid
+//MASSIVID
 const massiiv: number[] = [1, 4, 7];
 const massiiv2: Array<number> = [1, 5, 9];
 const fikseeritud: ReadonlyArray<number> = massiiv2;
 const arv = massiiv[0];
 
-//Tuple
+//TUPLE
 const Tuple: [string, number] = ['tere', 15];
 const sone = Tuple[0];
 
-//Loendajad
+//LOENDAJAD
 enum Varv{punane,roheline, sinine};
 const varv: Varv = 2;
-//any void
+//ANY VOID
 let poleKindel: any = 'Tere';
 poleKindel = 5;
 const nimekiri: any[] = [2,'hi', 5.32];
@@ -42,20 +42,20 @@ function funktsioon(): void {
     return;
 }
 
-//null, undefined
+//NULL, UNDEFINED
 const u: undefined = undefined;
 const n: null = null;
 let un: string;
 
-//never
+//NEVER
 function tsukkel(): never{
     while (true) {console.log('dfd');}
 }
-//object - kõik ülejäänud peale eelmiste
+//OBJECT - kõik ülejäänud peale eelmiste
 const obj: object = tsukkel;
 const obj2: object = {nimi: 'Juku', vanus: 25};
 
-//var let const
+//VAR LET CONST
 /*for(var i = 0; i < 10; i++){
     setTimeout(function() { console.log(i); }, 100 * i);
 };
@@ -77,7 +77,7 @@ function varLet() {
 //varLet();
 
 
-//Destruktureerimine
+//DESTRUKTUEERIMINE
 const sisend = [1, 2, 3, 4, 5];
 
 const [esi, teine, ...ulejaanud] = sisend;
@@ -102,7 +102,7 @@ function hoiaObjektAlles(terveObjekt:{x: string, y?:number}) {
 }
 hoiaObjektAlles({x: 'Tere', y: 2017});
 
-//spread
+//SPREAD
 const mass = [1, 2];
 const mass2 = [3, 4];
 const suurMass = [1,...mass, ...mass2, 5];
@@ -117,7 +117,7 @@ const maheKohvik = {
     toit: 'Mahe',
 };
 
-//interface
+//INTERFACE
 interface IRuut{
     readonly x:number; 
     y: number;
@@ -144,3 +144,45 @@ interface IminiArray {
 }
 const minimassiiv: IminiArray = ['Juku', 'Kalle'];
 const juku = minimassiiv[0];
+
+//FUNKTSIOONID
+function summa(arv1: number, arv2: number): number;
+function summa(arv1: string, arv2: string): string;
+function summa(arv1: any, arv2: any) {
+    return arv1 + arv2;
+}
+console.log(summa(3,4))
+console.log(summa('Tere ','pere!'))
+//console.log(summa(3,4);
+//const minuSumma = function(arv1: number, arv2: number) {return arv1 + arv2; };
+//console.log(minuSumma(3,4));
+//const minuSumma:(arv1: number, arv2: number) => number
+//= function(arv1: number, arv2: number) {return arv1 + arv2; };
+//(function(arv1: number, arv2: number) {return arv1 + arv2; })(3,4);
+const minuSumma = (arv1: number, arv2: number) => arv1 +arv2; 
+console.log(minuSumma(3,4))
+
+//TYPES
+
+type Funktsioon = (sisend: string) => boolean;
+type tarn = 1 | 2 | 3 | 4 | 5 | 6;
+const visatudtarn: tarn = 4;
+type Suvaline = 2 | 'Tere' | false | undefined | null;
+const suvaline: Suvaline = undefined;
+//m2rk !== m2rk2 
+const m2rk: symbol = Symbol("key");
+const m2rk2: symbol = Symbol("key");
+
+//IF, ELSE IFELSE Switch| === == !== != < > <= >= || &&
+let arv3 = 26;
+let arv4 = 43;
+if (arv3 + arv4 === 699) {
+    console.log('esimene');
+} else if (arv3 + arv4 === 50) {
+    console.log('teine');
+} else {
+    console.log('kolmas');
+}
+
+const muutujad = arv3 < arv4 ? true : false;
+console.log(muutujad);

@@ -17,30 +17,30 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 console.log('Hello TS');
-//tõene ja väär
+//TÕENE JA VÄÄR - loogikaelement
 var kasTehtud = false;
-//numbrid
+//NUMBRID
 var kumnend = 6;
 var hex = 0xFD02;
 var binaar = 10;
 var octal = 474;
 octal = 7;
-//sõned
+//SÕNED
 var lause = 'Tere. \n'
     + 'Täna meil programmeerimine';
 var vanus = 29;
 var minuVanus = "Minu vanus on " + vanus + ".\n\n    Tere tulemast!";
-//massiivid
+//MASSIVID
 var massiiv = [1, 4, 7];
 var massiiv2 = [1, 5, 9];
 var fikseeritud = massiiv2;
 var arv = massiiv[0];
-//Tuple
+//TUPLE
 var Tuple = ['tere', 15];
 var sone = Tuple[0];
-//Loendajad
+//LOENDAJAD
 var Varv;
-//Loendajad
+//LOENDAJAD
 (function (Varv) {
     Varv[Varv["punane"] = 0] = "punane";
     Varv[Varv["roheline"] = 1] = "roheline";
@@ -48,7 +48,7 @@ var Varv;
 })(Varv || (Varv = {}));
 ;
 var varv = 2;
-//any void
+//ANY VOID
 var poleKindel = 'Tere';
 poleKindel = 5;
 var nimekiri = [2, 'hi', 5.32];
@@ -58,20 +58,20 @@ function funktsioon() {
     console.log('hello');
     return;
 }
-//null, undefined
+//NULL, UNDEFINED
 var u = undefined;
 var n = null;
 var un;
-//never
+//NEVER
 function tsukkel() {
     while (true) {
         console.log('dfd');
     }
 }
-//object - kõik ülejäänud peale eelmiste
+//OBJECT - kõik ülejäänud peale eelmiste
 var obj = tsukkel;
 var obj2 = { nimi: 'Juku', vanus: 25 };
-//var let const
+//VAR LET CONST
 /*for(var i = 0; i < 10; i++){
     setTimeout(function() { console.log(i); }, 100 * i);
 };
@@ -91,7 +91,7 @@ function varLet() {
     console.log(variable2);//error
 };*/
 //varLet();
-//Destruktureerimine
+//DESTRUKTUEERIMINE
 var sisend = [1, 2, 3, 4, 5];
 var esi = sisend[0], teine = sisend[1], ulejaanud = sisend.slice(2);
 console.log(esi + " " + teine + " " + ulejaanud + " ");
@@ -109,7 +109,7 @@ function hoiaObjektAlles(terveObjekt) {
     console.log(x + y);
 }
 hoiaObjektAlles({ x: 'Tere', y: 2017 });
-//spread
+//SPREAD
 var mass = [1, 2];
 var mass2 = [3, 4];
 var suurMass = [1].concat(mass, mass2, [5]);
@@ -128,4 +128,36 @@ saaAla(ruut);
 var miniFunktsioon = function (sisend) { return false; };
 var minimassiiv = ['Juku', 'Kalle'];
 var juku = minimassiiv[0];
+function summa(arv1, arv2) {
+    return arv1 + arv2;
+}
+console.log(summa(3, 4));
+console.log(summa('Tere ', 'pere!'));
+//console.log(summa(3,4);
+//const minuSumma = function(arv1: number, arv2: number) {return arv1 + arv2; };
+//console.log(minuSumma(3,4));
+//const minuSumma:(arv1: number, arv2: number) => number
+//= function(arv1: number, arv2: number) {return arv1 + arv2; };
+//(function(arv1: number, arv2: number) {return arv1 + arv2; })(3,4);
+var minuSumma = function (arv1, arv2) { return arv1 + arv2; };
+console.log(minuSumma(3, 4));
+var visatudtarn = 4;
+var suvaline = undefined;
+//m2rk !== m2rk2 
+var m2rk = Symbol("key");
+var m2rk2 = Symbol("key");
+//IF, ELSE IFELSE Switch| === == !== != < > <= >= || &&
+var arv3 = 26;
+var arv4 = 43;
+if (arv3 + arv4 === 699) {
+    console.log('esimene');
+}
+else if (arv3 + arv4 === 50) {
+    console.log('teine');
+}
+else {
+    console.log('kolmas');
+}
+var muutujad = arv3 < arv4 ? true : false;
+console.log(muutujad);
 //# sourceMappingURL=app.js.map
