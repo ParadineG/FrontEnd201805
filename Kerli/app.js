@@ -130,4 +130,48 @@ inter(ruut);
 var sak = function (sisend) { return false; };
 var s = ['Aa', 'Bb'];
 var aa = s[0];
+function summa(a, b) {
+    return a + b;
+}
+console.log(summa(3, 4));
+console.log(summa('Kol', 'lane'));
+function sum6(a, b) {
+    if (a === void 0) { a = 2; }
+    if (b === void 0) { b = 4; }
+    return a + b;
+}
+var mSumma = function (a, b) { return a + b; };
+var mmSumma = function (a, b) { return a + b; };
+console.log(mSumma(4, 5));
+(function (a, b) { return a + b; })(3, 4);
+function summa2(a, b) {
+    return a + b;
+}
+console.log(summa2(3, 'test'));
+var msSumma = function (a, b) { return a + b; };
+var mssSumma = function (a, b) {
+    if (a === void 0) { a = 2; }
+    if (b === void 0) { b = 3; }
+    return a + b;
+};
+console.log(mssSumma());
+console.log(mssSumma(3, 4));
+var vt2rn = 4;
+var suva = false;
+//m2rk !== m2rk2; sümbol on alati unikaalne
+var m2rk = Symbol('key');
+var m2rk2 = Symbol('key');
+/*if else*/
+var g = 4;
+var e = 6;
+if (g + e === 9) {
+    console.log('');
+}
+else if (g + e === 12) {
+    console.log('');
+}
+else {
+    console.log('');
+}
+var muutujad = g < e ? true : false;
 //# sourceMappingURL=app.js.map
