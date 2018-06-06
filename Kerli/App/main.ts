@@ -129,3 +129,49 @@ interface funktsArray {
 const s: funktsArray = ['Aa', 'Bb'];
 const aa = s[0];
 
+/*funktsioonid*/
+function summa(a: string, b: string): string;
+function summa(a: number, b: number): number;
+function summa(a: any, b: any): any {
+    return a + b;
+}
+console.log(summa(3, 4));
+console.log(summa('Kol', 'lane'));
+function sum6(a = 2, b = 4) {
+    return a + b;
+}
+const mSumma = function(a: number, b: number){return a + b;};
+const mmSumma: (a: number, b: number) => number
+ = function(a: number, b: number){return a + b;};
+console.log(mSumma(4, 5));
+(function(a: number, b: number){return a + b;})(3, 4);
+function summa2 (a: number, b: string) {
+    return a + b;
+}
+console.log(summa2(3, 'test'));
+const msSumma = (a: number, b: number) => a + b;
+const mssSumma = (a = 2, b = 3) => a + b;
+console.log(mssSumma());
+console.log(mssSumma(3, 4));
+
+/*tüübid*/
+type Func = (sisend: string) => boolean;
+type T2rn = 1 | 2 | 3 | 4 | 5;
+const vt2rn: T2rn = 4;
+type Suva = 2 | 'smth' | false | undefined;
+const suva: Suva = false;
+//m2rk !== m2rk2; sümbol on alati unikaalne
+const m2rk: symbol = Symbol('key');
+const m2rk2: symbol = Symbol('key');
+
+/*if else*/
+const g = 4;
+const e = 6;
+if (g + e === 9) {
+    console.log('');
+} else if g + e === 12){
+    console.log('');
+} else {
+    console.log('');
+}
+const muutujad = g < e ? true : false;
