@@ -123,4 +123,49 @@ saaAla(ruut);
 var miniFunk = function (sisend) { return false; };
 var minimassiiv = ['Juku', 'Kalle'];
 var juku = minimassiiv[0];
+function summa(arv1, arv2) {
+    return arv1 + arv2;
+}
+console.log(summa('Tere', ' pere'));
+console.log(summa(3, 4)); // vastus 7
+// console.log(summa(true, false))        // error
+var minuSumma = function (arv1, arv2) { return arv1 + arv2; }; //see on anonüümne funktsioon
+console.log(minuSumma(3, 4)); // vastus 7
+(function (arv1, arv2) { return arv1 + arv2; })(3, 4); // vastus 7
+var minuSumma2 = function (arv1, arv2) {
+    if (arv1 === void 0) { arv1 = 2; }
+    if (arv2 === void 0) { arv2 = 7; }
+    return arv1 + arv2;
+};
+console.log(minuSumma2(3, 4)); // vastus 7
+console.log(minuSumma2()); // vastus 9
+var visatudT2rn = 4;
+var suvaline = 14;
+// m2rk !== m2rk2 (ei ole võrdväärne), symbol on alati unikaalne, pole kunagi teisega võrdne 
+var m2rk = Symbol("key");
+var m2rk2 = Symbol("key");
+if (m2rk === m2rk2) {
+    console.log('Esimene');
+}
+else if (m2rk == m2rk2) {
+    console.log('Teine');
+}
+else {
+    console.log('Muu');
+}
+/* if else switch */
+/* === !== == != < > <= >= */
+/* || (üks tingimustest on täidetud)  && (mõlemad tingimused peavad olema täidetud)  */
+var arv3 = 26;
+var arv4 = 43;
+if (arv3 + arv4 === 30) {
+    console.log('Esimene');
+}
+else if (2 + 2 === 3) {
+    console.log('2 + 2 = 3');
+}
+else {
+    console.log('Kumbki ei sobinud');
+}
+var muutujad = arv3 < arv4 ? true : false; // kui arv3 on väiksem kui arv4, kui see on tõsi, siis tuleb väärtus enne koolonit (true), kui ei, siis väärtus peale koolonit (false)
 //# sourceMappingURL=app.js.map
