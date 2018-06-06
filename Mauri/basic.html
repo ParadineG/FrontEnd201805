@@ -14,6 +14,12 @@
     <!-- Stiilid -->
     <link rel="stylesheet" href="grid.css" type="text/css" title="Grid">
     <link rel="alternate stylesheete" href="display.css" type="text/css" title="Flexbox">
+    <!-- Üks viis, kuidas CSSi lisada -->
+    <style media="screen" type="text/css" nonce="">
+        h3 {
+            font-style: oblique;
+        }
+    </style>
 </head>
 
 <body>
@@ -61,16 +67,21 @@
             </article>
         </main>
         <aside class="aside-2">
-            <p>Nunc iaculis lorem lacus, ut efficitur arcu rutrum ut. Vestibulum mollis elementum nulla, non convallis libero
+            <!-- Võimalus, kuidas CSSi HTMLi kirjutada -->
+            <p style="font-size: 1.2em; color: gold;">Nunc iaculis lorem lacus, ut efficitur arcu rutrum ut. Vestibulum mollis elementum nulla, non convallis libero
                 luctus sit amet. Aliquam suscipit aliquam purus, sed faucibus neque pharetra in. Ut varius nibh id sapien
                 sollicitudin, ac pulvinar nulla dapibus.</p>
         </aside>
-        <footer>
+        <footer onclick="console.log('Vajutasid!')";>
             <p>
                 <small>Lorem ipsum dolor sit amet.</small>
             </p>
         </footer>
     </div>
+    <script src="app.js" charset="utf-8" type="text/ecmascript" defer></script>
+    <script type="text/ecmascript">
+        console.log("end-of-file");
+    </script>
 </body>
 
 </html>
