@@ -151,3 +151,58 @@ interface IRuut {
  }
  const minimassiiv: MiniArray = ['Juku', 'Kalle'];
  const juku = minimassiiv[0];
+
+ /* funktsioonid */
+ 
+ function summa(arv1: string, arv2: string): string;
+ function summa(arv1: number, arv2: number): number;
+ function summa(arv1: any, arv2: any): any {
+     return arv1 + arv2;
+ }
+ console.log(summa('Tere', ' pere!'))
+ console.log(summa(3, 4)); //7
+ // console.log(summa(true, false)); //error
+
+ const minuSumma: (arv1: number, arv2:number) => number 
+    = function(arv1: number, arv2: number) { return arv1 + arv2; };
+ console.log(minuSumma(3, 4));
+
+ (function(arv1: number, arv2: number) { return arv1 + arv2; })(3, 4); //7
+
+ const minuSumma2 = (arv1: 2, arv2: 7) => arv1 + arv2;
+ console.log(minuSumma(3, 4)); //7
+ //console.log(minuSumma2()); //9
+
+ /* types */
+
+ type Funktsioon = (sisend: string) => boolean;
+ type T2rn = 1 | 2 | 3 | 4 | 5 | 6;
+ const visatudT2rn: T2rn = 4;
+ type Suvaline = number | 'Tere' | false | undefined | null;
+ const suvaline: Suvaline =  false;
+
+ // m2rk !== m2rk2
+ const m2rk: symbol = Symbol('key');
+ const m2rk2: symbol = Symbol('key');
+ if (m2rk === m2rk2) {
+    console.log('Esimen');
+ } else if(m2rk == m2rk2) {
+    console.log('Teine');
+ }else {
+     console.log('Muu')
+ }
+
+ /* if else */
+ /* === !== == != < > >= <= */
+ /*|| && */
+ let arv3 = 26
+ let arv4 = 43;
+ if(arv3 + arv4 === 30) {
+     console.log('Esimene');
+ } else if(arv3 + arv4 === 4) {
+    console.log('2 + 2 === 4');
+ } else {
+     console.log('Kumbki ei sobinud')
+ }
+
+ const muutujad = arv3 < arv4 ? true : false;
