@@ -131,4 +131,44 @@ saaAla(ruut);
 var miniFunk = function (sisend) { return false; };
 var minimassiiv = ['Juku', 'Kalle'];
 var juku = minimassiiv[0];
+function summa(arv1, arv2) {
+    return arv1 + arv2;
+}
+console.log(summa('Tere', ' pere!'));
+console.log(summa(3, 4)); //7
+// console.log(summa(true, false)); //error
+var minuSumma = function (arv1, arv2) { return arv1 + arv2; };
+console.log(minuSumma(3, 4));
+(function (arv1, arv2) { return arv1 + arv2; })(3, 4); //7
+var minuSumma2 = function (arv1, arv2) { return arv1 + arv2; };
+console.log(minuSumma(3, 4)); //7
+var visatudT2rn = 4;
+var suvaline = false;
+// m2rk !== m2rk2
+var m2rk = Symbol('key');
+var m2rk2 = Symbol('key');
+if (m2rk === m2rk2) {
+    console.log('Esimen');
+}
+else if (m2rk == m2rk2) {
+    console.log('Teine');
+}
+else {
+    console.log('Muu');
+}
+/* if else */
+/* === !== == != < > >= <= */
+/*|| && */
+var arv3 = 26;
+var arv4 = 43;
+if (arv3 + arv4 === 30) {
+    console.log('Esimene');
+}
+else if (arv3 + arv4 === 4) {
+    console.log('2 + 2 === 4');
+}
+else {
+    console.log('Kumbki ei sobinud');
+}
+var muutujad = arv3 < arv4 ? true : false;
 //# sourceMappingURL=app.js.map
