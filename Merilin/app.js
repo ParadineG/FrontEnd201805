@@ -17,90 +17,83 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 console.log('Hello TS');
-/* Tõene ja väär*/
+/* Tõene ja väär */
 var kasTehtud = false;
 /* Numbrid */
 var kymnend = 6;
 var hex = 0xFD02;
 var binaar = 10;
 var octal = 474;
-octal = 7;
-/* Sõnad */
-var lause = 'Tere tulemast' + ' koolitusele\n'
-    + 'Täna meil programmeerimine';
+/* Sõned */
+var lause = 'Tere tulemast' + 'koolitusele.\n' + 'Täna on programmeerimine';
 var vanus = 29;
-var minuVanus = "Minu vanus on " + vanus + ".\n    \n    Tere tulemast!";
-/* Massiivid */
+var minuVanusLauses = "Minu vanus on " + vanus + ".\n    \n    Tere tulemast";
+/* Massiivid (2 on keerukamatel juhtudel)*/
 var massiiv = [1, 4, 7];
 var massiiv2 = [1, 5, 9];
-var fikseeritud = massiiv;
-var arv = massiiv[3]; // 7
-/* Tuple */
+var fikseeritud = massiiv2;
+var arv = massiiv[2]; //7
+/* Tuple -> hoiab rohkem kui ühte tüüpi informatsiooni */
 var tuple = ['Tere', 15];
-var sona = tuple[0];
-/* Loendajad */
+var s6ne = tuple[0];
+/* Loendajad (loendaja tüüp)*/
 var V2rv;
-/* Loendajad */
+/* Loendajad (loendaja tüüp)*/
 (function (V2rv) {
     V2rv[V2rv["Punane"] = 0] = "Punane";
     V2rv[V2rv["Roheline"] = 1] = "Roheline";
     V2rv[V2rv["Sinine"] = 2] = "Sinine";
 })(V2rv || (V2rv = {}));
 var v2rv = V2rv.Sinine;
-/* any void */
+/* any void -> ilma tüübita väärtused*/
 var poleKindel = 'Tere';
 poleKindel = 5;
 var nimekiri = [2, 'Hi', 5.32];
 nimekiri[0] = 'Tere';
 var tervitus = nimekiri[1];
 function funktsioon() {
-    console.log('Hello function');
-    return;
+    console.log('hello function');
+    return; //return on tagastamisfunktsioon
 }
-/* null undefined */
+/* null (väärtusena kasutatav) undefined (tüübina kasutatav, tuleb vaikimisi kaasa kui algväärtus on määramata)*/
 var un;
 var u = undefined;
 var n = null;
-/* nver */
-function l6pututsykkel() {
+/* never -> mine siia tsükli sisse ja ära sealt kunagi välju */
+function l6putuTsykkel() {
     while (true) {
         console.log('ddfd');
     }
 }
-/* object - kõik ülejäänud peale eelmiste */
-var obj = l6pututsykkel;
+/* object -> kõik ülejäänud on seda tüüpi peale eelmiste */
+var obj = l6putuTsykkel;
 var obj2 = { nimi: 'Juku', vanus: 25 };
-/* var let */
+/* var let const */
+/* var ja let erinevus */
 function varLet() {
-    for (var i = 0; i > 10; i++) {
-        setTimeout(function () { console.log(i); }, 200);
-    }
-    for (var i = 0; i > 10; i++) {
-        setTimeout(function () { console.log(i); }, 200);
-    }
-    var variable = 15;
-    var variable2 = 15;
-    if (false) {
+    var variable = 17;
+    var variable2 = 17;
+    if (true) {
         var variable = 27;
         var variable2_1 = 27;
     }
-    console.log(variable); //27 undefined
-    console.log(variable2); // 17 error
+    console.log(variable); // 27
+    console.log(variable2); // 17
 }
-//varLet();
-/*Destruktureerimine */
+;
+/* Destruktureerimine */
 var sisend = [1, 2, 3, 4, 5];
-//const [a, b] = sisend;
-//const [c] = sisend;
 var esi = sisend[0], teine = sisend[1], ylej22nud = sisend.slice(2);
-//console.log(a + b);
-//console.log(c);
-console.log(esi + " " + teine + " " + ylej22nud);
+var c = sisend[0];
+console.log(esi + teine);
+console.log(c);
+console.log(ylej22nud);
+/* console.log(`${esi} ${teine} ${c} ${ylej22nud}`) */
 var o = {
-    a: 'abc',
+    a: 'ssds',
     b: 1234,
     c: 'kar',
-    d: 321
+    d: 134
 };
 var kar = o.c;
 var a = o.a, b = o.b, l6pp = __rest(o, ["a", "b"]);
@@ -110,14 +103,14 @@ function hoiaObjektAlles(terveObjekt) {
     console.log(x + y);
 }
 hoiaObjektAlles({ x: 'Tere ', y: 2017 });
-/* spread (eelmise abil võtsime lahti, selle abil paneme kokku) */
+/* spread -> paneme elemente kokku */
 var mass = [1, 2];
 var mass2 = [3, 4];
 var suurMass = [1].concat(mass, mass2, [5]);
 var vaikeV22rtused = {
     toit: 'Terav',
-    hind: 'kõrvetav',
-    keskkond: 'Rahulik'
+    hind: 'Kõrvetav',
+    keskkond: 'Rahulik',
 };
 var maheKohvik = __assign({}, vaikeV22rtused, { toit: 'Mahe' });
 function saaAla(_a) {
@@ -125,7 +118,6 @@ function saaAla(_a) {
     console.log(x * y * z);
 }
 var ruut = { x: 12, y: 15 };
-//ruut.x = 134;
 ruut.y = 10;
 saaAla(ruut);
 var miniFunk = function (sisend) { return false; };
