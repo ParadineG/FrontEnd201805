@@ -1,4 +1,14 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -16,7 +26,149 @@ var __rest = (this && this.__rest) || function (s, e) {
             t[p[i]] = s[p[i]];
     return t;
 };
-console.log("Hello TS!");
+console.log("\ndom.ts");
+var omBool = true;
+var omNumber = 5.126513;
+console.log("\nNumber:");
+console.log(omNumber.toFixed(2));
+console.log(omNumber.toPrecision(4));
+console.log(omNumber.toString().length);
+omNumber = 12 / 0;
+console.log(Number.isNaN(omNumber));
+console.log(Number.isInteger(omNumber));
+omNumber = 2.54540;
+console.log(Number.isInteger(omNumber));
+console.log(Number.isFinite(omNumber));
+console.log("\nMassiiv:");
+var massiiv3 = [6, 7, 8, 9, 10];
+console.log(massiiv3.concat(massiiv3));
+console.log(massiiv3.length);
+massiiv3.push(11);
+console.log(massiiv3.slice(2, 4));
+console.log(massiiv3.reverse());
+console.log("\nSet:");
+var set2 = new Set([6, 4, 2, 7, 10, 20]);
+console.log(set2.size);
+console.log(set2.has(20));
+console.log("\nMap:");
+var map2 = new Map([
+    [2, 5],
+    [2, 10],
+    [4, 10],
+    [55, 10]
+]);
+console.log(map2);
+console.log("\nSõne:");
+var sone = "             Tervist! Hei!    ";
+console.log(sone.trim());
+console.log(sone.toLowerCase());
+console.log(sone.toUpperCase());
+console.log(sone.split("!"));
+while (sone.search(" ") !== -1) {
+    sone = sone.replace(" ", "");
+}
+console.log(sone);
+console.log(parseInt("22.544"));
+console.log(parseFloat("22.544"));
+console.log("\nMatemaatika:");
+console.log(Math.PI);
+console.log((Math.random() * 20).toFixed(0));
+console.log(Math.sqrt(25));
+console.log(Math.floor(12.5));
+console.log(Math.round(12.5));
+console.log(Math.ceil(12.3));
+console.log(Math.abs(-55));
+console.log("\nKuupäev:");
+var aeg = new Date();
+console.log(aeg);
+console.log(aeg.getDate());
+console.log(aeg.getMonth());
+console.log(aeg.getDay());
+console.log(aeg.getHours());
+console.log(aeg.getFullYear());
+console.log("\nklass.ts");
+var Klass = /** @class */ (function () {
+    function Klass(name) {
+        this.privaatne = "Vaike väärtus";
+        this.ainultLugemiseks = "";
+        this.ainultLugemiseks = name;
+    }
+    Klass.prototype.avalikMeetod = function () {
+        this.privaatneMeetod();
+    };
+    Klass.prototype.kaitstudMeetod = function () {
+    };
+    Klass.prototype.privaatneMeetod = function () {
+        console.log(this.privaatne);
+    };
+    return Klass;
+}());
+var minuKlass = new Klass("Tervitus!");
+minuKlass.avalikMeetod();
+console.log("\nkujund.ts");
+var Kujund = /** @class */ (function () {
+    function Kujund(a, b) {
+        this.a = a;
+        this.b = b;
+        this.avalik = "avalik";
+        this.nimetus = "Kujund ";
+    }
+    Kujund.prototype.nimeta = function () {
+        console.log(this.nimetus + this.leiaAla());
+    };
+    Kujund.staatiline = function () {
+        console.log("Static!");
+    };
+    return Kujund;
+}());
+Kujund.staatiline();
+var Ruut = /** @class */ (function (_super) {
+    __extends(Ruut, _super);
+    function Ruut(a) {
+        var _this = _super.call(this, a, a) || this;
+        _this.nimetus = "Ruut ";
+        return _this;
+    }
+    Ruut.prototype.leiaAla = function () {
+        return this.a * this.b;
+    };
+    Ruut.prototype.nimeta = function () {
+        _super.prototype.nimeta.call(this);
+        console.log("Minu ruut " + this.leiaAla());
+    };
+    return Ruut;
+}(Kujund));
+var Ristkylik = /** @class */ (function (_super) {
+    __extends(Ristkylik, _super);
+    function Ristkylik(a, b) {
+        var _this = _super.call(this, a, b) || this;
+        _this.nimetus = "Ristkülik ";
+        return _this;
+    }
+    Ristkylik.prototype.leiaAla = function () {
+        return this.a * this.b;
+    };
+    return Ristkylik;
+}(Kujund));
+var ruutk = new Ruut(12);
+ruutk.nimeta();
+console.log(ruutk.avalik);
+var kylik = new Ristkylik(12, 14);
+kylik.nimeta();
+console.log("\nnimetuum.ts");
+var Nimeruum;
+(function (Nimeruum) {
+    console.log("Tere!");
+    var funkNimetus = "Funkar";
+    function funkar() {
+        console.log(funkNimetus);
+    }
+    Nimeruum.funkar = funkar;
+})(Nimeruum || (Nimeruum = {}));
+function funkar2() {
+    console.log("\nFunkar2");
+}
+console.log("\nHello TS!");
 /* Boolean: tõene ja väär */
 var kasTehtud = false;
 /* Numbrid */
@@ -118,7 +270,6 @@ function saaAla(_a) {
 var ruut = { x: 15, y: 15 };
 saaAla({ x: 12, y: 15, z: 20 });
 saaAla(ruut);
-var miniFunk = function (sisend) { return false; };
 var miniMassiiv = ["Juku", "Mari"];
 var juku = miniMassiiv[0];
 console.log(juku);
@@ -168,4 +319,102 @@ else {
 // Kiire if lause
 var muutujad = arv3 < arv4 ? "arv3 on väiksem" : "arv3 on suurem";
 console.log(muutujad);
+/* Switch */
+var key = "Punane";
+switch (key) {
+    case "Punane":
+        console.log("Värv on punane!");
+        break;
+    case "Sinine":
+        console.log("Värv on sinine!");
+        break;
+    default:
+        console.log("Muu värv!");
+        break;
+}
+/* for, while, do while */
+var kordus = true;
+var tekst = "";
+console.log("\nWhile tsükkel:");
+while (kordus) {
+    tekst += "a";
+    console.log(tekst);
+    if (tekst.length >= 7) {
+        kordus = false;
+    }
+    if (tekst === "aaaa") {
+        continue;
+    }
+    if (tekst === "aaaa") {
+        break;
+    }
+}
+var doWhile = 1;
+console.log("\nDo while tsükkel:");
+do {
+    console.log(doWhile + " Tere!");
+    doWhile++;
+} while (doWhile <= 4);
+console.log("\nFor tsükkel:");
+tekst = "";
+for (var i = 0; i < 10; i++) {
+    console.log(tekst += i);
+}
+console.log("\nPaarisarvud:");
+for (var i = 10; i >= 0; i--) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+}
+console.log("\nPaaritud:");
+for (var i = 10; i >= 0; i--) {
+    if ((i % 3 === 0 || i === 1) && (i != 0)) {
+        console.log(i);
+    }
+}
+var list = [4, 5, 6];
+console.log("\n\nList: " + list);
+console.log("\nListi indeksid:");
+for (var key_1 in list) {
+    console.log(key_1);
+}
+console.log("\nListi indeksi väärtused:");
+for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
+    var key_2 = list_1[_i];
+    console.log(key_2);
+}
+// Kõik elemendid on unikaalsed. Kaks kassi on ikka üks kass. Set ei ole massiiv.
+console.log("\nSet:");
+var set = new Set(["Kass", "Koer", "Hamster", "Kass"]);
+var array = Array.from(set);
+for (var _a = 0, array_1 = array; _a < array_1.length; _a++) {
+    var key_3 = array_1[_a];
+    console.log(key_3);
+}
+for (var key_4 in set) {
+    if (set.hasOwnProperty(key_4)) {
+        console.log(key_4); // Ei leia sisu, ei toimi Seti puhul
+    }
+}
+console.log("\nFor each tsükkel:");
+set.forEach(function (item) {
+    console.log(item);
+});
+var map = new Map([
+    ["Kass", "Juku"],
+    ["Koer", "Sergio"],
+    ["Hamster", "Piiks"]
+]);
+console.log("\nMap:");
+console.log(map);
+map.forEach(function (value, key) {
+    console.log(key + ": " + value);
+});
+console.log("\nSama asi teistsuguselt:");
+// Alternatiiv
+map.forEach(function (key, value) {
+    console.log(value + ": " + key);
+});
+funkar2();
+Nimeruum.funkar();
 //# sourceMappingURL=app.js.map

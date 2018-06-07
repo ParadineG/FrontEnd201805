@@ -13,9 +13,13 @@ abstract class Kujund implements IKujund{
     public nimeta(){
         console.log(this.nimetus+ this.leiaAla());
     }
+    public static staatiline() {
+        console.log('Staatiline');
+    }
 }
+Kujund.staatiline();
 class Ruut extends Kujund {
-    constructor(a: number){
+    constructor(a: number) {
         super(a, a);
         this.nimetus = 'Ruut';
     }
