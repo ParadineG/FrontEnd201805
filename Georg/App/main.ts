@@ -139,7 +139,7 @@ saaAla (ruut);
 interface miniFunk{
     (sisend: string): boolean;
 }
-const miniFunk: miniFunk = (sisend: string) => false ;
+const miniFunk: miniFunk = (_sisend: string) => false ;
 interface miniArray {
     [index: number]: string;
 }
@@ -197,3 +197,82 @@ else{
     console.log('Kumbki ei sobinud')
 }
 const muutujad = arv5 < arv6 ? true : false;
+
+let key = "Sinine"
+switch (key) {
+    case "Punane":
+        console.log("Punane");
+        break;
+    case "Sinine":
+        console.log("Sinine");
+        break;
+    default:
+        console.log('default');
+        break;
+}
+
+let kordus = true;
+let tekst = '';
+
+do {
+    console.log(`do jookseb alati ühe korra olenemata while konditsioonist`)
+    tekst += 'a';
+    if (tekst === 'aaaaaaaa') {
+        kordus = false;
+    }
+    //continue command jätab selle vahele mis continue all on ja alustab uut ringi
+    if (tekst.length === 4) {
+        continue;
+    }
+    if (tekst.length > 5) {
+        break;
+    }
+} while (kordus);
+
+console.log('kordus: ' + kordus);
+
+for (let i = 0; i < 10; i++) {
+    tekst += i;
+}
+console.log(tekst)
+
+//TEHTED
+let tulemus = 2 + 3;
+tulemus = 5 % 2; //jääk: 1
+tulemus = 5 ** 2; //25 
+tulemus **= 2 // tulemus = tulemus ** 2
+--tulemus; // tulemus = tulemus - 1
+tulemus /= 2; // tulemus = tulemus / 2
+
+let list = [4,5,6]
+for (const key in list) {
+    console.log(key);//[0,1,2] annab iga key indexi arrays
+}
+for (const i of list) {
+    console.log(i); // [4,5,6]
+}
+
+// korduvaid elemente ei saa olla Set([array])
+let set = new Set(['Kass', 'Koer', 'Hamster', 'Kass']);
+//console.log(set) = 'Kass', 'Koer', 'Hamster'
+/*
+let map = new Map([
+    [Kass: 'Oss'],
+    [Koer: 'Muki'],
+    [Hamster: 'rotike']
+]);*/
+for (const x in set) {
+    console.log(x);
+}
+for (const i of Array.from(set)) {
+    console.log(i); 
+}
+set.forEach( (value: string, value2: string) => {
+    console.log(`${value}  ${value2}`);
+});
+
+//map.forEach( (value: string, value2: string) => {
+//    console.log(`${value}  ${value2}`);
+//});
+
+funkar2();
