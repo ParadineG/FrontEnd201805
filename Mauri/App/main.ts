@@ -1,6 +1,8 @@
+/// <reference path="nimeruum.ts"/>
 "use strict";
 
-console.log("Hello TS!");
+
+console.log("\nHello TS!");
 
 /* Boolean: tõene ja väär */
 let kasTehtud: boolean = false;
@@ -139,7 +141,7 @@ interface IMiniFunk {
     (sisend: string): boolean;
 }
 
-const miniFunk: IMiniFunk = (sisend: string) => false;
+//const miniFunk: IMiniFunk = (sisend: string) => false;
 
 interface IMiniArray {
     [index: number]: string;
@@ -208,3 +210,115 @@ if (arv3 + arv4 > 113 || 20 > 10) {
 // Kiire if lause
 const muutujad = arv3 < arv4 ? "arv3 on väiksem" : "arv3 on suurem";
 console.log(muutujad);
+
+/* Switch */
+let key = "Punane";
+switch (key) {
+    case "Punane":
+        console.log("Värv on punane!");
+        break;
+    case "Sinine":
+        console.log("Värv on sinine!");
+        break;
+    default:
+        console.log("Muu värv!");
+        break;
+}
+
+/* for, while, do while */
+let kordus = true;
+let tekst = "";
+console.log("\nWhile tsükkel:");
+while (kordus) {
+    tekst += "a";
+    console.log(tekst);
+    if (tekst.length >= 7) {
+        kordus = false;
+    }
+    if (tekst === "aaaa") {
+        continue;
+    }
+    if (tekst === "aaaa") {
+        break;
+    }
+}
+
+let doWhile = 1;
+console.log("\nDo while tsükkel:");
+do {
+    console.log(doWhile + " Tere!");
+    doWhile++;
+} while (doWhile <= 4);
+
+console.log("\nFor tsükkel:");
+tekst = "";
+for (let i = 0; i < 10; i++) {
+    console.log(tekst += i);
+}
+
+console.log("\nPaarisarvud:");
+for (let i = 10; i >= 0; i--) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+}
+
+console.log("\nPaaritud:");
+for (let i = 10; i >= 0; i--) {
+    if ((i % 3 === 0 || i === 1) && (i != 0)) {
+        console.log(i);
+    }
+}
+
+let list = [4, 5, 6];
+console.log("\n\nList: " + list);
+
+console.log("\nListi indeksid:");
+for (const key in list) {
+    console.log(key);
+}
+console.log("\nListi indeksi väärtused:");
+for (const key of list) {
+    console.log(key);
+}
+
+// Kõik elemendid on unikaalsed. Kaks kassi on ikka üks kass. Set ei ole massiiv.
+console.log("\nSet:");
+let set = new Set(["Kass", "Koer", "Hamster", "Kass"]);
+
+const array = Array.from(set);
+for (const key of array) {
+    console.log(key);
+}
+
+for (const key in set) {
+    if (set.hasOwnProperty(key)) {
+        console.log(key); // Ei leia sisu, ei toimi Seti puhul
+    }
+}
+
+console.log("\nFor each tsükkel:");
+set.forEach(function (item) {
+    console.log(item);
+});
+
+let map = new Map([
+    ["Kass", "Juku"],
+    ["Koer", "Sergio"],
+    ["Hamster", "Piiks"]
+]);
+
+console.log("\nMap:");
+console.log(map);
+map.forEach((value, key) => {
+    console.log(key + ": " + value);
+});
+
+console.log("\nSama asi teistsuguselt:");
+// Alternatiiv
+map.forEach(function (key, value) {
+    console.log(value + ": " + key);
+});
+
+funkar2();
+Nimeruum.funkar();
