@@ -1,3 +1,4 @@
+/// <reference path='nimeroom.ts'/>
 'use strict';
 
 console.log('Hello TS');
@@ -28,8 +29,8 @@ const Tuple: [string, number] = ['tere', 15];
 const sone = Tuple[0];
 
 //LOENDAJAD
-enum Varv{punane,roheline, sinine};
-const varv: Varv = 2;
+enum V2rv{punane,roheline, sinine};
+const v2rv: V2rv = 2;
 //ANY VOID
 let poleKindel: any = 'Tere';
 poleKindel = 5;
@@ -186,3 +187,88 @@ if (arv3 + arv4 === 699) {
 
 const muutujad = arv3 < arv4 ? true : false;
 console.log(muutujad);
+let v2rvus = 'Sinine;'
+switch (v2rvus) {
+    case 'Punane':
+        console.log('punane');
+        break;
+    case 'Sinine':
+        console.log('sinine');
+    default:
+        console.log('muu');
+
+}
+
+
+//FOR WHILE DO WHILE
+
+let kordus = true;
+let tekst = '';
+while (kordus) {
+    tekst += 'ab';
+    if(tekst.length >= 7){
+        kordus = false;
+    }
+    if (tekst === 'abab') {
+        continue;
+    }
+    if (tekst === 'abab') {
+        break;
+    }
+}
+console.log(tekst);
+
+do {
+    console.log('tere');
+}
+while (kordus);
+tekst = '';
+//+ - * / % ** 
+// = += -= *= /= ++ -- **= \\
+for (let index = 0; index < 10; index++) {
+    tekst += index;
+    
+}
+console.log(tekst);
+let tulemus = 2 + 3;
+tulemus = 5 % 2; // 1 jääk
+tulemus = 5 ** 2; // astmed
+--tulemus; //24 (25 -1)
+tulemus /= 2; //12 (24/2)
+tulemus = 2 + 3 * 4; //14
+tulemus = (2 + 3) * 4;//20
+let list = [4, 5, 6]
+for (const key in list) {
+    if (list.hasOwnProperty(key)){
+        console.log(key);
+    }
+}
+for (const i of list) {
+    console.log(i);
+}
+let valik = new Set (['Kass', 'Koer', 'Hamster']);
+let valik2 = new Map ([
+    ['Kass', 'Juku'],
+    ['Koer', 'Malle'],
+    ['Hamster', 'Paul']
+]);
+for (const v6ti in valik) {
+    if (valik.hasOwnProperty(v6ti)){
+    console.log(v6ti);
+    }
+}
+const array = Array.from(valik)
+for (const i of array ) {
+    console.log(i);
+}
+valik.forEach(
+    (value: string, value2: string) => {
+        console.log(value + ' ' + value2);
+    });
+valik2.forEach(
+    (value: string, v6ti: string) => {
+        console.log(value + ' ' + v6ti);
+    });
+
+funkar2();
+Nimeruum.funkar();
