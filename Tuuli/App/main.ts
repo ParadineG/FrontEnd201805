@@ -1,3 +1,4 @@
+/// <reference path="nimeroom.ts"/>
 'use strict';
 
 console.log('Hello TS');
@@ -185,4 +186,88 @@ if ((arv3 + arv4 > 30) || (arv3 < arv4)) {
     console.log('Kumbki ei sobinud');
 }
 const muutujad = arv3 < arv4 ? true : false;
+let v2rvus = 'Sinine'
+switch (v2rvus) { //puhul oluline vaadata, kus on break, liigub seni kuni tuleb break;
+    case 'Punane':
+        console.log('Punane');
+        break;
+    case 'Sinine':
+        console.log('Sinine');
+        break;
+    case 'Roheline:':
+    default:
+        console.log('Muu');
+}
+/* for while do while */
+let kordus = true;
+let tekst = ''; 
+while (kordus) {
+    tekst += 'a';
+    if (tekst.length >= 7) {
+        kordus = false;
+    }
+    if (tekst === 'abab') {
+        continue;
+    }
+    if (tekst === 'abab') {
+        break;
+    }
+} 
+console.log(tekst);
+  
+do {
+    console.log('Tere');
+    kordus = false;
+} while (kordus);
+tekst = '';
+// index = index + 2;
 
+for (let index = 0; index < 10; index++) { //for koosneb tihti 3 osast; 1 osa muutuja, 2 osa võrrelda millega, 3 osa suurendan 3 võrra (suurendan 2 võrra index +=2)
+    tekst += index;
+}
+console.log(tekst);
+/* tehted (expressions) */
+/* + - * / % **(astmed) */
+/*= += -= *= /= **= ++ -- */
+let tulemus = 2 + 3;
+tulemus = 5 % 2; // 1-jääk
+tulemus = 5 ** 2; //5 astmes 2 ehk tulemus 25
+--tulemus; //24 (25 - 1)
+tulemus /= 2; //12 (24 / 2)
+tulemus = 2 + 3 * 4; // vastus 14
+tulemus = (2 + 3)* 4; //vastus 20
+
+let list = [4, 5, 6];
+for (const key in list) { //anna mulle kõik elemendi võtmed..0 1 2 3
+    if (list.hasOwnProperty(key)){
+    console.log(key);
+}
+}
+for (const i of list) { // pakub terve nimekirja kõikidest elementidest
+    console.log(i);
+}
+let valik = new Set(['Kass', 'Koer', 'Hamster']);
+let valik2 = new Map([
+    ['Kass', 'Juku'], 
+    ['Koer', 'Malle'], 
+    ['Hamster', 'Paul']
+]);
+for (const v6ti in valik) {
+    if (valik.hasOwnProperty(v6ti)){
+    console.log(v6ti);
+    }
+}
+const array = Array.from(valik);
+for (const i of array) { 
+    console.log(i);
+}
+valik.forEach(
+    (value: string, value2: string) => {//kirjutab välja koer koer, kass kass, hamster hamster
+    console.log(value + ' ' + value2)
+});
+valik2.forEach(
+    (value: string, v6ti: string) => {//kirjutab välja koer koer, kass kass, hamster hamster
+    console.log(value + ' ' + v6ti)
+});
+funkar2();
+Nimeruum.funkar();
