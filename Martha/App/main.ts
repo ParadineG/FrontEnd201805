@@ -1,5 +1,5 @@
+/// <reference path='nimeroom.ts'/>
 'use strict';
-
 console.log('Hello TS');
 /* Tõene ja väär */
 let kasTehtud: boolean = false; 
@@ -167,7 +167,7 @@ function summa(arv1:number, arv2:number): number;
 function summa(arv1:any, arv2:any):any {
         return arv1 + arv2;
 }
-console.log('Tere', ' pere!'));
+console.log('Tere', 'pere!');
 console.log(summa(3,4)); // 7
 console.log(summa()); // 6
 const minuSumma: (arv1: number, arv2: number) => number
@@ -215,7 +215,72 @@ if ( (arv3 + arv4 > 30) )  {
 
 const muutujad = arv3 < arv4 ?  true : false
 
+let key = "Sinine";
+switch (key) {
+    case "Punane":
+    console.log("Punane");
+        "";
+         break;
+    case "Sinine":
+        console.log("Sinine");
 
+    default:
+        console.log("Muu");
+        break;
+}
+
+/* for while do while */
+let kordus = true;
+let tekst = '';
+while (kordus) {
+    tekst += 'ab';
+    if (tekst.length === 7) {
+        kordus = false;
+    }
+    if (tekst === 'abab') {
+        continue;
+    }
+    if (tekst === 'abab') {
+        break;
+    }
+}
+console.log(tekst);
+do {
+   console.log('Tere');
+}while (kordus);
+tekst = '';
+for (let index = 0; index < 10; index++) {
+    tekst += index;
+}
+console.log(tekst);
+
+/* tehted ( expressions) */
+
+let tulemus = 2 + 3;
+tulemus = 5 % 2; // 1 - jääk
+tulemus = 5 ** 2; // 25-astet
+--tulemus; // 24 ( 25-1)
+tulemus /=2; //12 (24/2)
+tulemus = 2 + 3 * 4 // 14
+
+let list = [4, 5, 6];
+
+//setis kõik elemendid unikaalsed, 
+let valik = new Set(['Kass', 'Koer', 'Hamster']);
+let valik2 = new Map([['Kass', 'Juku'],
+                     ['Koer', 'Malle'], 
+                     ['Hamster', 'Paul']]);
+for (valik.hasOwnProperty(v6ti)) {
+    console.log(v6ti);  // ei leia sisu Setis või Mapis
+}
+const array  = Array.from(valik);
+for (const i of array) {
+    console.log(i); 
+}
+valik.forEach((value: string, value2: string) => {console.log(value + ' ' + value2)});
+
+funkar2();
+Nimeruum.funkar();
 
 
 

@@ -1,4 +1,14 @@
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -16,6 +26,131 @@ var __rest = (this && this.__rest) || function (s, e) {
             t[p[i]] = s[p[i]];
     return t;
 };
+console.log('dom.ts');
+var omBool = true;
+var omNumber = 5345325.65;
+var bNumber = 5.34e+6;
+console.log(omNumber.toExponential()); //5.34532565e+6
+/* toString()
+toExponential(x) - teaduslik,
+toFixed(x) - ümardamine (komakohtadega),
+toPrecision(x) - mitu arvu ekraanil soovite kuvada */
+omNumber = Number.MIN_SAFE_INTEGER; //kõige väiksem väärtus, mis on toetatud.
+omNumber = Number.MAX_VALUE;
+omNumber = Number.EPSILON; //väikseim komaarv 0.0....01 - (nt suurim veaühik).
+omNumber = Number.POSITIVE_INFINITY;
+omNumber = 12 / 0;
+omNumber = NaN;
+console.log(Number.isFinite(omNumber));
+/* isFinite(x); isInteger(x);
+isNan(x) -Kas tegu on arvuga või mitte, nt nulliga jagamine, või NaN;
+isSafeInteger(x) - (max arv(2 astmes 53 - 1)); */
+var massiiv3 = [6, 7, 8, 9];
+massiiv3 = massiiv3.concat(massiiv3);
+massiiv3.pop(); //eemaldab viimase
+massiiv3.shift(); //eemaldab esimese
+massiiv3.unshift(12); //lisab esimese
+massiiv3.push(17); //lisab lõppu uue elemendi
+massiiv3.reverse(); //pöörab ümber
+massiiv3.sort(function (a, b) {
+    console.log(a + ' ' + b);
+    return a - b;
+});
+console.log(massiiv3);
+var set3 = new Set([6, 7, 8, 9]);
+set3.add(12);
+set3.delete(8);
+console.log(set3.size + ' ' + set3.has(8));
+set3.clear();
+var map3 = new Map([
+    [2, 6], [3, 7],
+    [4, 8], [5, 9],
+]);
+console.log('klass.ts');
+var Klass = /** @class */ (function () {
+    function Klass(name) {
+        this.privaatne = 'Vaike väärtus';
+        this.ainultLugemiseks = '';
+        this.ainultLugemiseks = name;
+    }
+    Klass.prototype.avalikMeetod = function () {
+        // this.ainultLugemiseks = '';
+        this.privaatneMeetod();
+    };
+    Klass.prototype.kaitstudMeetod = function () {
+        //this.ainultLugemiseks = '';
+    };
+    Klass.prototype.privaatneMeetod = function () {
+        console.log(this.privaatne);
+    };
+    return Klass;
+}());
+var minuKlass = new Klass('Tervitus');
+minuKlass.avalikMeetod();
+console.log('kujund.ts');
+var Kujund = /** @class */ (function () {
+    function Kujund(a, b) {
+        this.a = a;
+        this.b = b;
+        this.avalik = 'avalik';
+        this.nimetus = 'nimetus';
+    }
+    Kujund.prototype.nimeta = function () {
+        console.log('Ruut ' + this.leiaAla());
+    };
+    return Kujund;
+}());
+var Ruut = /** @class */ (function (_super) {
+    __extends(Ruut, _super);
+    function Ruut(a) {
+        var _this = _super.call(this, a, a) || this;
+        _this.nimetus = 'Kujund ';
+        return _this;
+    }
+    Ruut.prototype.leiaAla = function () {
+        return this.a * this.b;
+    };
+    Ruut.prototype.nimeta = function () {
+        _super.prototype.nimeta.call(this);
+        console.log('Ruut ' + this.leiaAla());
+    };
+    Ruut.staatiline = function () {
+        console.log('Static');
+    };
+    return Ruut;
+}(Kujund));
+//Kujund.staatiline();
+var Ristkylik = /** @class */ (function (_super) {
+    __extends(Ristkylik, _super);
+    function Ristkylik(a, b) {
+        return _super.call(this, a, b) || this;
+    }
+    Ristkylik.prototype.leiaAla = function () {
+        return this.a * this.b;
+    };
+    Ristkylik.prototype.nimeta = function () {
+        console.log('Kylik ' + this.leiaAla());
+    };
+    return Ristkylik;
+}(Kujund));
+var ruut = new Ruut(12);
+ruut.nimeta();
+console.log(ruut.avalik);
+var kylik = new Ristkylik(12, 14);
+kylik.nimeta();
+console.log('nimeroom.ts');
+var Nimeruum;
+(function (Nimeruum) {
+    console.log('Tere');
+    var funkNimetus = 'Funkar';
+    function funkar() {
+        console.log(funkNimetus);
+    }
+    Nimeruum.funkar = funkar;
+})(Nimeruum || (Nimeruum = {}));
+function funkar2() {
+    console.log('Funkar2');
+}
 console.log('Hello TS');
 /* Tõene ja väär */
 var KasTehtud = false;
@@ -132,10 +267,10 @@ function saaAla(_a) {
     var x = _a.x, y = _a.y, _b = _a.z, z = _b === void 0 ? 1 : _b;
     console.log(x * y * z);
 }
-var ruut = { x: 12, y: 16 };
+var iruut = { x: 12, y: 16 };
 // ruut.x = 134; // readonly keelab ülekirjutamise ära
-ruut.y = 10;
-saaAla(ruut);
+iruut.y = 10;
+saaAla(iruut);
 var miniFunk = function (sisend) { return false; };
 var minimassiiv = ['Juku', 'Kalle'];
 var juku = minimassiiv[0];
@@ -179,4 +314,86 @@ else {
     console.log('Kumbki ei sobinud');
 }
 var muutujad = arv5 < arv6 ? true : false;
+var v2rvus = 'Sinine';
+switch (v2rvus) {
+    case 'Punane':
+        console.log('Punane');
+        break;
+    case 'Sinine':
+        console.log('Sinine');
+        break;
+    default:
+        console.log('Amuuuu!');
+        break;
+}
+/* for while do while */
+var kordus = true;
+var tekst = '';
+while (kordus) {
+    tekst += 'ab';
+    if (tekst.length >= 7) {
+        kordus = false;
+    }
+    if (tekst === 'abab') {
+        continue;
+    }
+    if (tekst === 'abab') {
+        break;
+    }
+}
+console.log(tekst);
+do {
+    console.log('Tere');
+    kordus = false;
+} while (kordus);
+tekst = '';
+// index = index + 2;
+/* '+'   '-'   '*'   '/'   '%'   '**'    */
+/* '='  '+='  '-='  '*='  '/='  '++'  '--'  '**' '**=' */
+for (var index = 0; index < 10; index += 3) {
+    tekst += index;
+}
+var tulemus = 2 + 3;
+tulemus = 5 % 2; // 1 <= jääk
+tulemus = Math.pow(5, 2); // 25 <= astmes
+--tulemus; // 24 <= lahutab viimasest väärtusest ühe
+tulemus /= 2; // 12 <= jagab viimase väärtuse kahega
+tulemus = 2 + 3 * 4; // 14 <= tehte järjekord loeb
+tulemus = (2 + 3) * 4; // 20 <= tehte järjekord loeb
+console.log(tekst);
+console.log(tulemus);
+var list = [4, 5, 6];
+for (var key in list) {
+    if (list.hasOwnProperty(key)) {
+        console.log(key);
+    }
+}
+for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
+    var i = list_1[_i];
+    console.log(i);
+}
+var valik = new Set(['Kass', 'Koer', 'Hamster']);
+var valik2 = new Map([
+    ['Kass', 'Juku'],
+    ['Koer', 'Malle'],
+    ['Hamster', 'Paul']
+]);
+for (var v6ti in valik) {
+    if (valik.hasOwnProperty(v6ti)) {
+        console.log(v6ti); // ei leia sisu Set'is või Map'is
+    }
+}
+var array = Array.from(valik);
+for (var _a = 0, array_1 = array; _a < array_1.length; _a++) {
+    var i = array_1[_a];
+    console.log(i);
+}
+valik.forEach(function (value, value2) {
+    console.log(value + ' ' + value2);
+});
+valik2.forEach(function (value, v6ti) {
+    console.log(value + ' ' + v6ti);
+});
+funkar2();
+Nimeruum.funkar();
 //# sourceMappingURL=app.js.map
