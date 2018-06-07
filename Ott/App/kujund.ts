@@ -15,7 +15,11 @@ abstract class Kujund implements IKujund{
     public nimeta() {
         console.log('kujund' + this.leiaAla());
     }
+    public static  staatiline() {
+        console.log('Static');
+    }
 }
+Kujund.staatiline();
 
 class Ruut extends Kujund {
     constructor(a: number) {
