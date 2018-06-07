@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="java.js"></script>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<base href="/kevin/">
+	<base href="/kevin/algus/">
 	<meta name="referrer" content=""><!--no-referrer, no-referrer-when-downgrade, same-origin, origin, strict-origin, origin-when-crossorigin, strict-origin-when-crossorigin, unsafe-url-->
 	<link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -20,8 +20,8 @@
 			<nav id="nav" role='navigation'>
 		  		<ul>
 		    		<li><a href="index.html">Avaleht</a></li>
-		    		<li><a href="/kevin/portfolio.html">Portfoolio</a></li>
-		    		<li class="active"><a href="/kevin/kontakt.php">Kontakt</a></li>
+		    		<li><a href="portfolio.html">Portfoolio</a></li>
+		    		<li class="active"><a href="kontakt.php">Kontakt</a></li>
 		  		</ul>
 			</nav>
 		</div>
