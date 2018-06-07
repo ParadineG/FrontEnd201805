@@ -44,8 +44,52 @@ var massiiv3 = [6, 7, 8, 9];
 massiiv3 = massiiv3.concat(massiiv3);
 massiiv3.pop();
 massiiv3.shift();
+massiiv3.unshift(12);
 massiiv3.push(17);
+massiiv3.reverse();
+massiiv3.sort(function (a, b) { return a - b; });
 console.log(massiiv3);
+var set3 = new Set([6, 7, 8, 9]);
+set3.add(12);
+set3.delete(6);
+console.log(set3.size + ' ' + set3.has(6));
+set3.clear();
+set3.has(7);
+var map3 = new Map([
+    [2, 6], [3, 7],
+    [4, 8], [5, 9],
+]);
+map3.set(9, 12);
+console.log(map3);
+var s6ne3 = 'Lorem Ipsum Ipsum';
+s6ne3 = s6ne3.toLowerCase();
+var s6ned = s6ne3.split(' ');
+while (s6ne3.search('ipsum') !== -1) {
+    s6ne3 = s6ne3.replace('ipsum', 'amet');
+}
+console.log(s6ned);
+var arvuke = parseFloat('2.45678');
+// matemaatika
+var pi = Math.PI;
+omNumber = Math.pow(12, 2);
+omNumber = Math.sqrt(16);
+omNumber = Math.random() * 10;
+omNumber = Math.floor(12.7); //round ceil 
+omNumber = Math.abs(-1.2);
+omNumber = Math.sin(Math.PI);
+//kuupäev
+var aeg = new Date(Date.now());
+console.log('Aeg: ' + aeg.getDate());
+aeg.setDate(21);
+console.log('Aeg: ' + aeg.getDate());
+// veatuvastus
+try {
+    throw 'ere';
+}
+catch (error) {
+    console.log(typeof (error));
+    console.log(error);
+}
 console.log('klass.ts');
 var Klass = /** @class */ (function () {
     function Klass(name) {
