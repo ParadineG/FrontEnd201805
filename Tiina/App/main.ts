@@ -1,4 +1,6 @@
+/// <reference path='nimeroom.ts'/>
 'use strict';
+
 console.log('Hei hei TS');
 //Tõene või väär
 let kasTehtud: boolean=false;
@@ -198,3 +200,83 @@ else{
 }
 const  muutujad = arv3 > arv4 ? true : false;//kas arv3 on suurem kui arv4
 console.log(muutujad);
+let v2rvus= 'Sinine'
+switch (v2rvus) {
+    case  'Kollane':
+        console.log('Kollane');
+        break;
+    case 'Sinine':
+        console.log('Sinine');
+        break;        
+    default:
+        console.log('Muu');
+        
+}
+//for |while| do while
+let kordus = true;
+let tekst = '';
+while(kordus){
+    tekst += 'ab';
+    if(tekst.length >= 9){
+        kordus = false;
+    }
+    if(tekst === 'ababab'){
+        continue;
+    }
+    if(tekst === 'ababab'){
+        break;
+    }
+}
+console.log(tekst);
+
+//do while
+do {
+    console.log('Tere');
+    kordus = false;
+}
+while(kordus);
+tekst='';
+
+// index = index +2;
+
+for (let index = 0; index < 10; index += 2){
+    tekst += index;
+}
+console.log(tekst);
+/* tehted (expressions)
++|-|*|/|%|**
+=|+=|-=|*=|/=| **=|++|-- */
+let tulemus= 2+3;
+tulemus=5%2;// 1 - jääk
+tulemus= 5**2 // 25 - astendamine
+--tulemus; // vasatus on 24 kuna lahutab eelmisest tulemust 1 arvu
+tulemus /=2; //12 (24/2)
+
+let list = [4,5,6,8];
+for (const key in list) {
+    console.log(key);
+}//tagastab asukohta indeksist
+for (const i of list) {
+    console.log(i);
+}//otsib spetsiifilist elementi
+let valik = new Set (['Kass','Koer','Metssiga']);//kõik set elemendid peavad olema unikaalsed, Sama elementi ta mitu korda ei loe
+let valik2= new Map ([
+    ['Kass', 'Miisu'],
+    ['Koer', 'Muki'],
+    ['Metssiga','Roosi']
+]);
+for (const v6ti in valik) {
+    if (valik.hasOwnProperty(v6ti)) {
+       console.log(v6ti); //ei leia sisu Setis või Mapis
+    }
+    
+}
+
+const array = Array.from(valik)
+for (const i of array ) {
+    console.log(i);
+}
+
+valik2.forEach((value: string, value2: string) => {console.log(value+' '+value2);});
+funkar2();
+Nimeruum.funkar();
