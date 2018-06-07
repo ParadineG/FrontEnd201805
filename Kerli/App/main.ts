@@ -1,5 +1,5 @@
+/// <reference path='nimeruum.ts'/>
 'use strict';
-
 console.log('main ts ss');
 /* true false*/
 const kasTehtud: boolean = false;
@@ -46,7 +46,7 @@ const n: null = null;
 /*never*/
 function l6putuTsykkel(): never { //ei välju kunagi tsüklist
     while(true) {
-        console.log('v2ljund');
+//        console.log('v2ljund');
     }
 }
 /*object - kõik ülejäänud*/
@@ -84,10 +84,10 @@ const o = {
 };
 const kk = o.c;
 const {a, b, ...l6pp} = o;
-console.log(a + b + l6pp.d);
+//console.log(a + b + l6pp.d);
 function cc (terveObjekt: {x: string, y?: number}) {
     const {x, y = 200} = terveObjekt;
-    console.log(x, y);
+//    console.log(x, y);
 }
 cc({x: 'Test'}); //, y: 201
 const mass = [1, 2];
@@ -112,7 +112,7 @@ interface IKuup extends IRuut{
     z?: number;
 }
 function inter ({x, y, z = 1}: IKuup){
-    console.log(x * y * z);
+ //   console.log(x * y * z);
 }
 const ruut: IRuut = {x: 3, y: 4};
 //ruut.x = 13;
@@ -135,24 +135,24 @@ function summa(a: number, b: number): number;
 function summa(a: any, b: any): any {
     return a + b;
 }
-console.log(summa(3, 4));
-console.log(summa('Kol', 'lane'));
+//console.log(summa(3, 4));
+//console.log(summa('Kol', 'lane'));
 function sum6(a = 2, b = 4) {
     return a + b;
 }
 const mSumma = function(a: number, b: number){return a + b;};
 const mmSumma: (a: number, b: number) => number
  = function(a: number, b: number){return a + b;};
-console.log(mSumma(4, 5));
+//console.log(mSumma(4, 5));
 (function(a: number, b: number){return a + b;})(3, 4);
 function summa2 (a: number, b: string) {
     return a + b;
 }
-console.log(summa2(3, 'test'));
+//console.log(summa2(3, 'test'));
 const msSumma = (a: number, b: number) => a + b;
 const mssSumma = (a = 2, b = 3) => a + b;
-console.log(mssSumma());
-console.log(mssSumma(3, 4));
+//console.log(mssSumma());
+//console.log(mssSumma(3, 4));
 
 /*tüübid*/
 type Func = (sisend: string) => boolean;
@@ -168,10 +168,84 @@ const m2rk2: symbol = Symbol('key');
 const g = 4;
 const e = 6;
 if (g + e === 9) {
-    console.log('');
-} else if g + e === 12){
-    console.log('');
+//    console.log('');
+} else if (g + e === 12){
+//    console.log('');
 } else {
-    console.log('');
+ //   console.log('');
 }
 const muutujad = g < e ? true : false;
+let key = 'Sinine';
+switch (key) {
+    case 'Punane':
+//        console.log('punane');
+        break;
+    case 'Sinine':
+//        console.log('sinine');
+        break;
+    default:
+        console.log('muu');
+}
+/*for while do while*/
+let kordus = true;
+let tekst = '';
+while (kordus) {
+    tekst += 'sS';
+    if (tekst.length >= 8) {
+        kordus = false;
+    }
+    if (tekst === 'sSsS') {
+        continue; //läheb algusesse
+    }
+    if (tekst === 'sSsS') {
+        break;
+    }
+}
+//console.log(tekst);
+do {
+//    console.log('gg');
+    kordus = false;
+} while (kordus);
+tekst = '';
+for (let index = 0; index < 10; index+=2) { //index = index + 2
+    tekst += index;
+}
+//console.log(tekst);
+let tulemus = 2 + 3;
+tulemus = 5 % 2; //1
+tulemus = 5 ** 2; //25
+--tulemus; //25-1 = 24
+tulemus /= 2; //24 / 2 = 12
+
+let list = [4, 5, 6];
+for (const key in list) {//elemendi võtmed, asukoht indeksis
+ //   console.log(key);
+}
+for (const i of list) {
+ //   console.log(i);
+}
+let valik = new Set(['kass', 'koer','lehm']); //ei saa dubleerida element, peavad olema unikaalsed
+let valik2 = new Map([
+    ['Kass', 'KassN'],
+    ['Koer', 'KoerN'],
+    ['Lehm', 'LehmN']
+]);
+for (const v6ti in valik) {//elemendi võtmed, asukoht indeksis
+    if(valik.hasOwnProperty(v6ti)) {
+//        console.log('v6ti' + v6ti);
+    }
+}
+const array = Array.from(valik);
+for (const i of array) {
+//    console.log('array' + i);
+}
+valik.forEach(
+    (value: string, value2: string) => {
+//        console.log(value + ' ' + value2)
+});
+valik2.forEach(
+    (value: string, v6ti: string) => {
+ //       console.log(value + ' ' + v6ti)
+});
+tass1();
+Nimeruum.tass();
