@@ -26,6 +26,59 @@ var __rest = (this && this.__rest) || function (s, e) {
             t[p[i]] = s[p[i]];
     return t;
 };
+console.log('dom.ts');
+var omBool = true;
+var omNumber = 55555.55;
+console.log(omNumber.toExponential());
+omNumber = Number.MIN_SAFE_INTEGER;
+omNumber = Number.MAX_VALUE;
+omNumber = Number.EPSILON;
+omNumber = Number.POSITIVE_INFINITY;
+omNumber = 12 / 2;
+console.log(Number.isFinite(omNumber));
+var massiiv3 = [6, 7, 8, 9, 10];
+massiiv3 = massiiv3.concat(massiiv3);
+massiiv3.shift(); //eemaldab esimese
+massiiv3.pop(); //eemaldab viimase
+massiiv3.unshift(12);
+//massiiv3.push(17); lükkab arvu 17 massiivi
+massiiv3.reverse();
+massiiv3.sort(function (a, b) { return a - b; }); //suuruse järjekorras numbrid
+massiiv3.sort(function (a, b) {
+    console.log(a + ' ' + b);
+    return a - b;
+});
+console.log(massiiv3);
+var set3 = new Set([6, 7, 8, 9]);
+set3.add(13);
+set3.delete(8);
+console.log(set3.size + '' + set3.has(8));
+set3.clear();
+var map3 = new Map([[2, 6], [3, 5], [4, 6]]);
+map3.set(9, 12); //lisad elemendi
+var s6ne3 = 'Jaaniuss Hele Hele';
+s6ne3 = s6ne3.toLowerCase();
+s6ne3 = s6ne3.replace('hele', 'Juuli');
+while (s6ne3.search('hele') !== -1) {
+    s6ne3 = s6ne3.replace('hele', 'Juuli');
+}
+var s6ned = s6ne3.split(' ');
+console.log(s6ned);
+var komArv = parseFloat('2.44444');
+var pi = Math.PI;
+omNumber = Math.pow(2, 2);
+omNumber = Math.sqrt(16);
+omNumber = Math.random() * 10;
+var kp = new Date(Date.now());
+console.log(kp.getDate());
+kp.setDate(21);
+console.log('aeg ' + kp.getDay());
+try {
+    throw 'Kk';
+}
+catch (error) {
+    console.log(error);
+}
 console.log('klass.ts');
 var Klass1 = /** @class */ (function () {
     function Klass1(name) {
@@ -56,8 +109,12 @@ var Kujund = /** @class */ (function () {
     Kujund.prototype.nimeta = function () {
         console.log(this.nimetus + this.leiaAla());
     };
+    Kujund.staatiline = function () {
+        console.log('Staatiline');
+    };
     return Kujund;
 }());
+Kujund.staatiline();
 var Ruut = /** @class */ (function (_super) {
     __extends(Ruut, _super);
     function Ruut(a) {
