@@ -29,7 +29,7 @@ octal = 10;
 var lause = 'Tere tulemast' + 'koolitusele.\n' +
     'Täna on meil programeerimine';
 var vanus = 25;
-var minuVanusLauses = "Minu vanus on " + vanus + ".\n\n    Tere tulemast!";
+var minuVanusLauses = "Minu vanus on " + vanus + ".\n    Tere tulemast!";
 /* massiivid */
 var massiiv = [1, 4, 7];
 var massiiv2 = [1, 5, 9,];
@@ -41,7 +41,6 @@ var tuple = ['Tere', 15];
 var s6na = tuple[0];
 /* Loendajad */
 var V2rv;
-/* Loendajad */
 (function (V2rv) {
     V2rv[V2rv["Punane"] = 0] = "Punane";
     V2rv[V2rv["Roheline"] = 2] = "Roheline";
@@ -123,7 +122,7 @@ console.log(suurMass);
 var vaikeV22rtused = {
     toit: 'Terav',
     hind: 'Kõrvetav',
-    keskkond: 'Rahulik',
+    keskkond: 'Rahulik'
 };
 var maheKohvik = __assign({}, vaikeV22rtused, { toit: 'Mahe' // (hilisem) kirjutab vaikeväärtuse üle
  });
@@ -152,18 +151,18 @@ console.log(minuSumma2(6, 6));
 var visatudT2rn = 4;
 var Suvaline = false;
 // m2rk !== m2rk2
-var m2rk = Symbol("key");
-var m2rk2 = Symbol("key");
-if (m2rk === m2rk2) {
-    console.log('esimene');
+/*const m2rk: symbol = Symbol("key");
+const m2rk2: symbol = Symbol("key");
+if (m2rk === m2rk2){
+    console.log('esimene')
 }
 else if (m2rk == m2rk2) {
-    console.log('Teine');
+    console.log('Teine')
 }
 else {
-    console.log('muu');
-}
-;
+    console.log('muu')
+};
+*/
 /* if else switch*/
 /* === !== == != < > <= >= */
 /* || && */ // && puhul mõlemad täidetud
@@ -179,4 +178,3 @@ else {
     console.log('Kumbki ei sobinud');
 }
 var muutujad = arv5 < arv6 ? true : false;
-//# sourceMappingURL=app.js.map

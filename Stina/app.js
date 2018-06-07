@@ -17,33 +17,33 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 console.log('Hello TS');
-/*Tõene ja väär*/
-var kasTehtud = false; /*loo mulle üks mudel, mis on boolean väärtusega*/
-/*Numbrid*/
-var kymnend = 6;
-var hex = 0xFD02;
+var kasTehtud = false;
+/* Numbrid */
+var kümnend = 6;
+var hex = 0xfd02;
 var binaar = 10;
 var octal = 474;
 octal = 7;
-/*Sõned */
-var lause = 'Tere tulemast' + 'koolitusele.\n'
-    + 'Täna me programmeerime';
-var vanus = 23;
-var minuVanusLauses = "Minu vanus on " + vanus + ".\n    Tere tulemast";
-/*massiivid */
-var massiiv = [1, 4, 7]; /*massiiv koosneb 3 nr, milleks on 1 4 ja 7*/
+/*sõned*/
+var lause = 'Tere tulemast koolitusele!\n'
+    + 'Täna on meil põnev ';
+var vanus = 29;
+var minuVanusLauses = "Minu vanus on " + vanus + ". \n\n    Tere tulemast! ";
+/*massiivid*/
+var massiiv = [1, 4, 7];
 var massiiv2 = [1, 5, 9];
-var arv = massiiv[0];
-/*Tuple=tüüp mis hoiab rohkem kui ühte tüüpi enda sees */
+var fikseeritud = massiiv2;
+var arv = massiiv[2]; //7
+/* Tuple - tüüp, mis hoiab endas mitu erinevat tüüpi korraga */
 var tuple = ['Tere', 15];
 var s6ne = tuple[0];
-/*Loendajad */
+/* Loendajad */
 var V2rv;
-/*Loendajad */
+/* Loendajad */
 (function (V2rv) {
     V2rv[V2rv["Punane"] = 0] = "Punane";
-    V2rv[V2rv["Roheline"] = 1] = "Roheline";
-    V2rv[V2rv["Sinine"] = 2] = "Sinine";
+    V2rv[V2rv["Roheline"] = 2] = "Roheline";
+    V2rv[V2rv["Sinine"] = 3] = "Sinine";
 })(V2rv || (V2rv = {}));
 var v2rv = V2rv.Sinine;
 /*any void */
@@ -56,20 +56,20 @@ function funktsioon() {
     console.log('hello function');
     return;
 }
-/*null undefined */
+/* null undefined */
 var un;
 var u = undefined;
 var n = null;
-/*never */
+/*never*/
 function l6putuTsykkel() {
     while (true) {
         console.log('ddfd');
     }
 }
-/*object - kõik ülejäänud peale eelmiste */
+/* object - kõik ülejäänud peale eelmiste */
 var obj = l6putuTsykkel;
 var obj2 = { nimi: 'Juku', vanus: 25 };
-/*var let*/
+/* var let const*/
 function varLet() {
     for (var i = 0; i < 10; i++) {
         setTimeout(function () { console.log(i); }, 200);
@@ -80,22 +80,22 @@ function varLet() {
     for (var i_1 = 0; i_1 < 10; i_1++) {
         _loop_1(i_1);
     }
-    var variable = 17;
-    var variable2 = 17;
+    var variable = 15;
+    var variable2 = 12;
     if (true) {
-        var variable = 27;
-        var variable2_1 = 27;
+        var variable = 10;
+        var variable2_1 = 10;
     }
     console.log(variable); // 27 undefined
-    console.log(variable2); //17 error
+    console.log(variable2); // 17 error
 }
-//varLet();
-/* Destruktureerimine - võtame lahti */
+// varLet();
+/* Destruktureerimine */
 var sisend = [1, 2, 3, 4, 5];
 var esi = sisend[0], teine = sisend[1], ylej22nud = sisend.slice(2);
 console.log(esi + " " + teine + " " + ylej22nud);
 var o = {
-    a: 'ssds ',
+    a: 'ssds',
     b: 1234,
     c: 'kar',
     d: 134
@@ -105,10 +105,9 @@ var a = o.a, b = o.b, l6pp = __rest(o, ["a", "b"]);
 console.log(a + b + l6pp.d);
 function hoiaObjektAlles(terveObjekt) {
     var x = terveObjekt.x, _a = terveObjekt.y, y = _a === void 0 ? 2018 : _a;
-    console.log(x + y);
 }
 hoiaObjektAlles({ x: 'Tere', y: 2017 });
-/* stread - paneme kokku */
+/* spread */
 var mass = [1, 2];
 var mass2 = [3, 4];
 var suurMass = [1].concat(mass, mass2, [5]);
@@ -119,25 +118,27 @@ var vaikeV22rtused = {
 };
 var maheKohvik = __assign({}, vaikeV22rtused, { toit: 'Mahe' });
 function saaAla(_a) {
-    var x = _a.x, y = _a.y, _b = _a.z, z = _b === void 0 ? 1 : _b;
-    console.log(x * y * z);
+    var x = _a.x, y = _a.y;
+    console.log(x * y * 1);
 }
 var ruut = { x: 12, y: 15 };
-//ruut.x = 134;
+// ruut.x = 134;
 ruut.y = 10;
 saaAla(ruut);
 var miniFunk = function (sisend) { return false; };
 var minimassiiv = ['Juku', 'Kalle'];
 var juku = minimassiiv[0];
 function summa(arv1, arv2) {
+    if (arv1 === void 0) { arv1 = any; }
+    if (arv2 === void 0) { arv2 = any; }
     return arv1 + arv2;
 }
 console.log(summa('Tere', ' pere!'));
-console.log(summa(3, 4));
-//console.log(summa(true, false));//
+console.log(summa(3, 4)); //7
+// console.log(summa(true, false)); //6
 var minuSumma = function (arv1, arv2) { return arv1 + arv2; };
-console.log(minuSumma(3, 4));
-(function summa(arv1, arv2) { return arv1 + arv2; })(3, 4); //7
+console.log(minuSumma(3, 4)); //7
+(function (arv1, arv2) { return arv1 + arv2; })(3, 4); //7
 var minuSumma2 = function (arv1, arv2) {
     if (arv1 === void 0) { arv1 = 2; }
     if (arv2 === void 0) { arv2 = 7; }
@@ -145,9 +146,9 @@ var minuSumma2 = function (arv1, arv2) {
 };
 console.log(minuSumma2(3, 4)); //7
 console.log(minuSumma2()); //9
-var visatudT2rn = 4; //siia saab panna ainult nr, mis eespool märgitud
+var visatudT2rn = 6;
 var suvaline = 14;
-/* m2rk |== m2rk2 ... märk ei ole võrdne märk2-ga */
+// m2rk !== m2rk2
 var m2rk = Symbol("key");
 var m2rk2 = Symbol("key");
 if (m2rk === m2rk2) {
@@ -159,16 +160,16 @@ else if (m2rk === m2rk2) {
 else {
     console.log('Muu');
 }
-/* if else */
-/* === võrdne == võrdväärne = < > <= => */
-/* ||=... ;  &&=and */
+/* if else switch */
+/* === !== == != >< <= >= */
+/* || && */
 var arv3 = 26;
 var arv4 = 43;
-if ((arv3 + arv4 > 30) || (arv3 < arv4)) {
+if (arv3 + arv4 === 69) {
     console.log('Esimene');
 }
 else if (2 + 2 === 3) {
-    console.log('2 + 2 = 4');
+    console.log('2 + 2 === 3');
 }
 else {
     console.log('Kumbki ei sobinud');
