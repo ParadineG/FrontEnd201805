@@ -1,6 +1,45 @@
 'use strict'
 console.log('dom.ts');
 
+const aside = document.getElementById('aside-1');
+const asides = document.getElementsByTagName('asides');
+// document.getElementsByClassName
+// document.getElementsByName
+// $('#aside-1'); jquery
+const pealkiri = document.querySelector('header > h2'); // ainult esimene leitud element
+const pealkirjad = document.querySelectorAll('header > h3'); // kõik leitud elemendid
+if (aside && asides.length >= 2) {
+    console.log(aside);
+    console.log(asides.item(1));
+}
+if (pealkiri && asides.length >= 1) {
+    pealkiri.classList.add('lisa');
+    const s6naKlass = pealkiri.getAttribute('class');
+    if(s6naKlass) {
+        const klassid = s6naKlass.split(' ');
+        klassid.push('lisa3');
+        //klassid.join('');
+        pealkiri.setAttribute('class', klassid.join(' '));
+    }
+   // pealkiri.setAttribute('class', 'lisa lisa2');
+
+    const syndmus = () => {
+        pealkirjad.item(0).classList.add('lisa');
+        const nupp = document.createElement('BUTTON');
+        nupp.addEventListener('click', () => {alert('Tere nupp')});
+        const tekst = document.createElement('Vajuta mind');
+        nupp.appendChild(tekst);
+        pealkirjad.item(0).appendChild(nupp);
+        pealkiri.removeEventListener('click', syndmus);
+    };
+     pealkiri.addEventListener('click', syndmus);
+    //pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    //pealkiri.outerHTML = pealkirjad.item(0).outerHTML;
+    console.log(pealkirjad.item(0));
+}
+
+
+
 let omBool = true;
 let omNumber = 0.000000012;
 console.log(omNumber.toExponential()); //1.2 * 10 astmes -8
@@ -52,6 +91,8 @@ const s6nad = s6na3.split(' ');
 console.log(s6nad);
 const arvuke = parseFloat('2.4567');
 
+
+
 //matemaatika */
 const pi = Math.PI;
 omNumber = Math.pow(12, 2); //pow == astmed
@@ -68,12 +109,14 @@ aeg.setDate(21);
 console.log('Aeg: ' + aeg.getDate());
 
 /* vea tuvastus*/
-try {
+/* try {
     throw 'ere';
 } catch (error) {
     console.log(typeof(error));
     console.log(error);
-}
-throw ' ere';
+}*/
+// throw ' ere';
+
+
 
 

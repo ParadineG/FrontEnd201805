@@ -1,5 +1,42 @@
 'use strict';
 console.log('dom.ts');
+/* dom */
+const aside = document.getElementById('aside-1');
+const asides = document.getElementsByTagName('aside');
+// document.getElementsByClassName
+// document.getElementsByName
+// $('#aside-1'); - sellega sai Jquery's kasutada
+const pealkiri = document.querySelector('header > h2'); // - tagastab ainult esimese elemendi, mille ta leiab
+const pealkirjad = document.querySelectorAll('header > h3'); // - tagastab kõik elemendid, mille ta leiab
+if (aside) {
+    console.log(aside);
+    console.log(asides.item(1));
+}    
+if (pealkiri && asides.length >= 1) {
+    pealkiri.classList.add('lisa');
+    const s6neKlass = pealkiri.getAttribute('class');
+    if (s6neKlass) {
+        const klassid = s6neKlass.split(' ');
+        klassid.push('lisa3');
+        pealkiri.setAttribute('class', klassid.join(' '));
+    }
+    
+const syndmus = () => {
+    pealkirjad.item(0).classList.add('lisa')
+    const nupp = document.createElement('BUTTON');
+    nupp.addEventListener('click', () => { alert('Tere nupp');});
+    const tekst = document.createTextNode('Vajuta mind');
+    nupp.appendChild(tekst);
+    pealkirjad.item(0).appendChild(nupp);
+    pealkiri.removeEventListener('click', syndmus);
+};
+pealkiri.addEventListener('click', syndmus);
+
+    //pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    //pealkiri.innerHTML = '<em>Hello Typescript</em>';
+    console.log(pealkirjad.item(0));
+}
+
 
 let omBool = true;
 let omNumber = 0.000000012;
@@ -67,3 +104,4 @@ try {
     console.log(typeof(error));
     console.log(error);
 }
+
