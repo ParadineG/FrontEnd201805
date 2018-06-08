@@ -88,3 +88,47 @@ try {
 }
 throw "jama";
 */
+
+const aside = document.getElementsByClassName("aside-1");
+
+if (aside) {
+    console.log(aside);
+}
+
+const asides = document.getElementsByTagName("aside");
+
+if (asides.length !== 0) {
+    console.log(asides.item(1));
+}
+
+// $("#aside-1"); //Jquery
+
+const pealkiri = document.querySelector("header > h2"); // Ainult esimene leitud element
+const pealkirjad = document.querySelectorAll("header > h3"); // Kõik leitud elemendid
+
+if (pealkiri) {
+    //pealkiri.classList.add("lisa");
+    const s6neKlassid = pealkiri.getAttribute("class");
+    if (s6neKlassid) {
+        const klassid = s6neKlassid.split(" ");
+        klassid.push("lisa3");
+        pealkiri.setAttribute("class", klassid.join(" "));
+    }
+    const nupp = document.createElement("button");
+    const syndmus = () => {
+        pealkiri.classList.add("lisa");
+        nupp.addEventListener("click", () => {
+            alert("Vajutasid nuppu!");
+        });
+        const tekst = document.createTextNode("Vajuta mind!");
+        nupp.appendChild(tekst); // Pane see asi nupu sisse
+        pealkirjad.item(0).appendChild(nupp);
+        pealkiri.removeEventListener("click", syndmus);
+    }
+    pealkiri.addEventListener("click", syndmus);
+    nupp.addEventListener("click", () => {
+        pealkirjad.item(0).removeChild(nupp);
+    });
+    //pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    pealkiri.innerHTML = "<em>Hello TypeScript!</em>";
+}
