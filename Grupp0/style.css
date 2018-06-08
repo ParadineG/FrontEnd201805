@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=latin-ext');
+
+:root {
+    font-family: 'Roboto', sans-serif!important;
+    --t-green: #28B78D;
+    --t-black: #0F0F0F;
+    --t-yellow: #F2C94C;
+    --t-lgray: #E0E0E0;
+    --t-dgray: #828282;
+    --t-white: #F2F2F2;
+}
+.bg-dark {
+    background-color: var(--t-black)!important;
+}
+.text-line {
+    color: var(--t-white);
+}
