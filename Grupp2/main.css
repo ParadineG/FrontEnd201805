@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&amp;subset=latin-ext');
 :root {
     font-family: 'Roboto', sans-serif !important;
+    font-size: 12px;
     --t-green: #28B78D;
     --t-black: #0F0F0F;
     --t-yellow: #F2C94C;
@@ -8,12 +9,58 @@
     --t-dgray: #828282;
     --t-white: #F2F2F2;
 }
+
+body {
+    font-size: 12px;
+}
+
+.bg-green {
+    background-color: var(--t-green) !important;
+}
+
 .bg-dark {
     background-color: var(--t-black) !important;
 }
+
 .text-light {
     color: white !important;
 }
+
 footer ul li a {
     text-transform: uppercase;
 }
+
+small {
+    font-size: 10px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+#main-menu-ul {
+    width: 848px;
+}
+
+#main-menu-ul span, #main-menu-ul li {
+    max-width: 421px;
+    min-width: 421px;
+}
+
+#main-menu-ul a {
+    display: inline-block;
+    min-width: 210px;
+    max-width: 210px;
+}
+
+.mr-05 {
+    margin-right: 1px !important;
+}
+
+.ml-15 {
+    margin-left: 3px !important;
+}
+.mr-15 {
+    margin-right: 3px !important;
+}
+
