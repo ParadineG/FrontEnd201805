@@ -27,6 +27,41 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 console.log('dom.ts');
+var aside = document.getElementById('aside-1');
+var asides = document.getElementsByTagName('asides');
+// document.getElementsByClassName
+// document.getElementsByName
+// $('#aside-1'); jquery
+var pealkiri = document.querySelector('header > h2'); // ainult esimene leitud element
+var pealkirjad = document.querySelectorAll('header > h3'); // kõik leitud elemendid
+if (aside && asides.length >= 2) {
+    console.log(aside);
+    console.log(asides.item(1));
+}
+if (pealkiri && asides.length >= 1) {
+    pealkiri.classList.add('lisa');
+    var s6naKlass = pealkiri.getAttribute('class');
+    if (s6naKlass) {
+        var klassid = s6naKlass.split(' ');
+        klassid.push('lisa3');
+        //klassid.join('');
+        pealkiri.setAttribute('class', klassid.join(' '));
+    }
+    // pealkiri.setAttribute('class', 'lisa lisa2');
+    var syndmus_1 = function () {
+        pealkirjad.item(0).classList.add('lisa');
+        var nupp = document.createElement('BUTTON');
+        nupp.addEventListener('click', function () { alert('Tere nupp'); });
+        var tekst = document.createElement('Vajuta mind');
+        nupp.appendChild(tekst);
+        pealkirjad.item(0).appendChild(nupp);
+        pealkiri.removeEventListener('click', syndmus_1);
+    };
+    pealkiri.addEventListener('click', syndmus_1);
+    //pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    //pealkiri.outerHTML = pealkirjad.item(0).outerHTML;
+    console.log(pealkirjad.item(0));
+}
 var omBool = true;
 var omNumber = 0.000000012;
 console.log(omNumber.toExponential()); //1.2 * 10 astmes -8
@@ -84,15 +119,6 @@ var aeg = new Date(Date.now());
 console.log(aeg.getDate);
 aeg.setDate(21);
 console.log('Aeg: ' + aeg.getDate());
-/* vea tuvastus*/
-try {
-    throw 'ere';
-}
-catch (error) {
-    console.log(typeof (error));
-    console.log(error);
-}
-throw ' ere';
 console.log('klass.ts');
 var klass = /** @class */ (function () {
     function klass(name) {

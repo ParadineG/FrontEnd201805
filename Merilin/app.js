@@ -27,6 +27,40 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 console.log('dom.ts');
+/* dom */
+var aside = document.getElementById('aside-1');
+var asides = document.getElementsByTagName('aside');
+// document.getElementsByClassName
+// document.getElementsByName
+// $('#aside-1'); - sellega sai Jquery's kasutada
+var pealkiri = document.querySelector('header > h2'); // - tagastab ainult esimese elemendi, mille ta leiab
+var pealkirjad = document.querySelectorAll('header > h3'); // - tagastab kõik elemendid, mille ta leiab
+if (aside) {
+    console.log(aside);
+    console.log(asides.item(1));
+}
+if (pealkiri && asides.length >= 1) {
+    pealkiri.classList.add('lisa');
+    var s6neKlass = pealkiri.getAttribute('class');
+    if (s6neKlass) {
+        var klassid = s6neKlass.split(' ');
+        klassid.push('lisa3');
+        pealkiri.setAttribute('class', klassid.join(' '));
+    }
+    var syndmus_1 = function () {
+        pealkirjad.item(0).classList.add('lisa');
+        var nupp = document.createElement('BUTTON');
+        nupp.addEventListener('click', function () { alert('Tere nupp'); });
+        var tekst = document.createTextNode('Vajuta mind');
+        nupp.appendChild(tekst);
+        pealkirjad.item(0).appendChild(nupp);
+        pealkiri.removeEventListener('click', syndmus_1);
+    };
+    pealkiri.addEventListener('click', syndmus_1);
+    //pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    //pealkiri.innerHTML = '<em>Hello Typescript</em>';
+    console.log(pealkirjad.item(0));
+}
 var omBool = true;
 var omNumber = 0.000000012;
 console.log(omNumber.toExponential()); // 1,2 * 10 astmes -8
@@ -163,7 +197,15 @@ console.log('nimeroom.ts');
 var Nimeruum;
 (function (Nimeruum) {
     console.log('Tere');
+    var funkNimetus = 'Funkar';
+    function funkar() {
+        console.log('Funkar');
+    }
+    Nimeruum.funkar = funkar;
 })(Nimeruum || (Nimeruum = {}));
+function funkar2() {
+    console.log('Funkar2');
+}
 console.log('Hello TS');
 /* Tõene ja väär */
 var kasTehtud = false;

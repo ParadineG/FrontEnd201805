@@ -215,3 +215,6 @@ span{
 article header, article footer  {
     background-color: var(--main-color);
 }
+.lisa{
+    background-color: #AA77DD!important;
+}
