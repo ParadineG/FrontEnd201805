@@ -27,6 +27,41 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 console.log('dom.ts');
+/*dom */
+var aside = document.getElementById('aside-1'); //tagastab kas html elementi või 0
+var asides = document.getElementsByTagName('aside'); //tagastab massiivi, mitmuses
+// document.getElementsByClassName
+// document.getElementsByName vormide jaoks
+// $('#aside-1');//Jquery
+var pealkiri = document.querySelector('header > h2'); //tagastab ainult esimese leitud elemendi
+var pealkirjad = document.querySelectorAll('header > h2'); //tagastab kõik leitud elemendid
+if (aside) {
+    console.log(aside);
+    console.log(asides.item(1));
+}
+if (pealkiri && asides.length >= 1) {
+    pealkiri.classList.add('lisa');
+    var s6neKlass = pealkiri.getAttribute('class');
+    if (s6neKlass) {
+        var klassid = s6neKlass.split(' ');
+        klassid.push('lisa3');
+        pealkiri.setAttribute('class', klassid.join(' '));
+    }
+    var syndmus_1 = function () {
+        pealkirjad.item(0).classList.add('lisa');
+        var nupp = document.createElement('BUTTON');
+        nupp.addEventListener('click', function () { alert('Tere nupp'); });
+        var tekst = document.createTextNode('Vajuta mind');
+        nupp.appendChild(tekst); //pane see node selle nupu sisse
+        pealkirjad.item(0).appendChild(nupp);
+        pealkiri.removeEventListener('click', syndmus_1);
+    };
+    pealkiri.addEventListener('click', syndmus_1);
+    //pealkiri.setAttribute('class', 'lisa lisa2');
+    // pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    pealkiri.innerHTML = '<em>Hello Typescript</em>'; //muutis pealkirja ära
+    console.log(pealkirjad.item(0));
+}
 var omBool = true;
 var omNumber = 0.0000000012;
 console.log(omNumber.toExponential()); ///1.2 * 10 astmes -9
