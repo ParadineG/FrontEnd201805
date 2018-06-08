@@ -25,17 +25,17 @@ body {
 small {
     font-size: 10px;
 }
-.font-14{
+.font-14 {
     font-size: 14px;
 }
-#main-menu-ul{
+#main-menu-ul {
     width: 848px;
 }
-#main-menu-ul span, #main-menu-ul li{
+#main-menu-ul span, #main-menu-ul li {
     min-width: 421px;
     max-width: 421px;
 }
-#main-menu-ul a{
+#main-menu-ul a {
     display: inline-block;
     min-width: 210px;
     max-width: 210px;
