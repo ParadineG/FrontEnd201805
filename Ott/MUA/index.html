@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="et">
+    <head>
+        <meta charset="utf-8">
+        <title>Eliise Timusk M.U.A</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Ott K">
+        <link rel="author" href="mailto:ott.kossar@gmail.com">
+        <meta name="description" content="Lisa content siia!">
+        <meta name="keywords" content="Eliise Timusk, MUA, M.U.A, Make Up, Meik">
+        
+        <link rel="icon" type="image/jpg" sizes="32x32" href="ikoonid/logo-32x32.jpg">
+        <link rel="icon" type="image/jpg" sizes="16x16" href="ikoonid/logo-16x16.jpg">
+
+        <link rel="stylesheet" href="style.css" type="text/css" title="default">
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.png" alt="Logo" id="logo">
+            <div class="pealkiri">
+                <h2>Eliise Timusk M.U.A</h2>
+                <blockquote>Love of beauty is taste. The creation of beauty is art.</blockquote>
+            </div>
+            <nav>
+                <ul class="navBar">
+                    <li><a href="index.html">Avaleht</a></li>
+                    <li><a href="Teenused.html">Teenused</a></li>
+                    <li><a href="Galerii.html">Galerii</a></li>
+                    <li><a href="Kontakt.html">Kontakt</a></li>
+                    <li><a href="https://www.facebook.com/EliiseTimusk.M.U.A/"><img src="images/facebook58.png" class="socialmedia"></a></li>
+                    <li><a href="https://www.instagram.com/eliisetimuskmua/"><img src="images/instagram.png" class="socialmedia"></a></li>
+                </ul>
+            </nav>
+            
+        </header>
+        <!--Navigatsiooni riba lehekülje üles-->
+       
+        <aside id="aside">
+            <h3>Midagi siia ka</h3>
+            <p>Duis ac sollicitudin sem. Donec vel quam iaculis, iaculis erat at, consequat orci. Donec pulvinar lacinia libero non finibus. Mauris posuere a tellus sed pharetra. Vestibulum a nulla at justo accumsan accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in tellus id elit finibus finibus nec at sem.</p>
+            <img src="images/mua6.jpg" class="foto">
+            <p>Pellentesque scelerisque, ligula vel vestibulum dictum, nibh arcu rutrum lacus, id suscipit lacus eros ut odio. Sed velit odio, tempus vel ultricies tempus, dictum eu orci. Donec ac blandit sapien. In vel felis ornare sapien posuere euismod non vitae massa. Nam eget efficitur massa, ut blandit risus. Pellentesque at lorem purus. Sed id turpis mi.</p>
+        </aside>
+        <main>
+            <article>
+                <h1>Teadaanded</h1>
+                <p>Duis at dui eu quam facilisis tristique. Proin ullamcorper libero in felis tempor tempor. Duis tincidunt ligula viverra sapien consequat, sed accumsan eros mollis. Donec auctor, leo tempor rutrum hendrerit, sapien nunc placerat ante, nec semper quam nunc eu purus. Proin a justo elementum, sagittis sapien id, laoreet est. Vivamus euismod sem lacus, ac hendrerit elit laoreet sit amet. Etiam leo enim, sagittis eu mauris id, finibus convallis ipsum. Aenean elit risus, malesuada et sapien efficitur, fringilla condimentum est. Pellentesque at malesuada magna.</p>
+                <img src="images/mua1.jpg" class="foto">
+            </article>
+        </main>
+        <footer>
+                <div id="map"> <p></p></div>
+            <p>
+                <small>
+                    Eliise Timusk M.U.A<br>
+                    Gonsiori 44<br>
+                    10147 Tallinn<br>
+                    <strong>Tel: </strong>+372 5257213<br>
+                    <strong>E-mail: </strong>
+                        <a href="mailto:eliisetimusk@gmail.com">
+                        eliisetimusk@gmail.com</a>
+                </small>       
+            </p>
+        </footer>
+        <script>
+            function myMap() {
+            var myLatLng = {lat: 59.431097, lng: 24.780628};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+            zoom:13,
+            center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Kaart'
+            });
+                }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDto72X4qhfvu7WxGRUaahAZhoFjxateuA&amp;callback=myMap"></script>
+    </body>
+</html>
