@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i&subset=latin-ext');
+
+:root {
+    font-family: "Roboto", sans-serif!important;
+    --t-green: #28b78d;
+    --t-black: #0f0f0f;
+    --t-yellow: #f2c94c;
+    --t-lightgrey: #e0e0e0;
+    --t-darkgrey: #828282;
+    --t-white: #f2f2f2;
+}
+
+.text-light {
+    font-family: "Roboto", sans-serif;
+    font-variant-caps: all-small-caps;
+    color: var(--t-white);
+    font-size: 90%;
+    font-weight: 500;
+}
+
+.bg-dark {
+    background-color: var(--t-black)!important;
+}
+
+.navbar-brand {
+    font-variant: normal;
+    font-size: 75%;
+}
