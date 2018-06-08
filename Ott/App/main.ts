@@ -1,3 +1,4 @@
+/// <reference path='nimeruum.ts' />
 'use strict';
 
 console.log('Hello TS');
@@ -206,3 +207,92 @@ interface IRuut {
  }
 
  const muutujad = arv3 < arv4 ? true : false;
+
+ let v2rvus = 'Sinine';
+ switch (v2rvus) {
+     case 'Punane':
+        console.log('Punane');
+         break;
+    case 'Sinine':
+        console.log('Sinine');
+    case 'Roheline':
+     default:
+         console.log('Muu');
+ }
+ /* for while do while */
+ let kordus = true;
+ let tekst = '';
+ while (kordus) {
+     tekst += 'ab';
+     if(tekst.length >= 7) {
+         kordus = false;
+     }
+     if (tekst === 'abab') {
+        continue;
+    }
+     if (tekst === 'abab') {
+         break;
+     }
+ }
+ console.log(tekst);
+ do {
+     console.log('Tere');
+     kordus = false;
+ } while (kordus);
+
+ tekst = '';
+ // index = index + 2;
+ 
+ for (let index = 0; index < 10; index += 2) {
+     tekst += index;
+ }
+ console.log(tekst);
+
+ /* tehted expressions*/
+ /* + - * / % ** */
+ /* operaatorid = += -= *= /= **= ++ -- */
+ let tulemus = 2 + 3;
+ tulemus = 5 % 2; // 1 - jääk
+ tulemus = 5 ** 2; // 25 - astet
+ --tulemus; // 24 (25-1)
+ tulemus /= 2; // 12 (24 / 2)
+ tulemus = 2 + 3 * 4; //14
+ tulemus = ( 2 + 3) * 4; //20
+
+ let list = [4, 5, 6]
+ for (const key in list) {
+     console.log(key);
+ }
+ for (const i of list) {
+    console.log(i);
+}
+
+let valik = new Set(['Kass', 'Koer', 'Hamster']);  //Ei saa kasutada kahte ühesugust
+let valik2 = new Map([
+    ['Kass', 'Juku'],
+    ['Koer', 'Malle'],
+    ['Hamster', 'Kati']
+]);
+//Map 
+
+for (const v6ti in valik) {
+    if(valik.hasOwnProperty(v6ti)) {
+        console.log(v6ti);
+    }
+ }
+const array =  Array.from(valik);
+for (const i of array) {
+    console.log(i);
+ }
+ valik.forEach(
+  (value: string, value2: string) => {
+     console.log(value + ' ' + value2)});
+
+valik2.forEach(
+(value: string, v6ti: string) => {
+    console.log(value + ' ' + v6ti)});
+      
+
+funkar2();
+Nimeruum.funkar();
+

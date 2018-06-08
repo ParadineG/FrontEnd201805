@@ -1,3 +1,5 @@
+/// <reference path='nimeroom.ts'/>
+
 'use strict';
 
 console.log('Hello TS');
@@ -133,10 +135,10 @@ interface IKuup extends IRuut {
 function saaAla({x, y, z=1}: IRuut) {
     console.log(x * y * z);    
 }
-const ruut: IRuut = {x: 12, y: 16};
+const iruut: IRuut = {x: 12, y: 16};
 // ruut.x = 134; // readonly keelab ülekirjutamise ära
-ruut.y = 10;
-saaAla (ruut);
+iruut.y = 10;
+saaAla (iruut);
 
 
 interface miniFunk{
@@ -201,3 +203,95 @@ else{
     console.log('Kumbki ei sobinud')
 }
 const muutujad = arv5 < arv6 ? true : false;
+
+let v2rvus = 'Sinine';
+switch (v2rvus) {
+    case 'Punane':
+        console.log('Punane');
+        break;
+    case 'Sinine':
+        console.log('Sinine');
+        break
+    default:
+        console.log('Amuuuu!');
+        break;
+}
+/* for while do while */
+
+let kordus = true;
+let tekst = '';
+while (kordus) {
+    tekst += 'ab';
+    if (tekst.length >= 7) {
+        kordus = false;
+    }
+    if (tekst === 'abab') {
+        continue;
+    }
+    if (tekst === 'abab') {
+        break;
+    }
+}
+console.log(tekst);
+do {
+    console.log('Tere');
+    kordus = false;
+}
+while (kordus);
+tekst = ''
+// index = index + 2;
+/* '+'   '-'   '*'   '/'   '%'   '**'    */
+/* '='  '+='  '-='  '*='  '/='  '++'  '--'  '**' '**=' */
+for (let index = 0; index < 10; index += 3) {
+    tekst += index;
+}
+let tulemus = 2 + 3;
+tulemus = 5 % 2; // 1 <= jääk
+tulemus = 5 ** 2; // 25 <= astmes
+--tulemus; // 24 <= lahutab viimasest väärtusest ühe
+tulemus /= 2; // 12 <= jagab viimase väärtuse kahega
+tulemus = 2 + 3 * 4; // 14 <= tehte järjekord loeb
+tulemus = (2 + 3) * 4; // 20 <= tehte järjekord loeb
+console.log(tekst);
+console.log(tulemus);
+
+
+let list = [4, 5, 6]; 
+for (const key in list) {
+    if (list.hasOwnProperty(key)) {    
+    console.log (key);
+    }
+}
+for (const i of list) {
+    console.log (i);
+}
+
+let valik = new Set (['Kass', 'Koer', 'Hamster']);
+let valik2 = new Map ([
+    ['Kass', 'Juku'],
+    ['Koer', 'Malle'],
+    ['Hamster', 'Paul']
+]);
+for (const v6ti in valik) {
+    if (valik.hasOwnProperty(v6ti)) {
+    console.log (v6ti); // ei leia sisu Set'is või Map'is
+    }
+}
+const array = Array.from(valik);
+for (const i of array) {
+console.log (i);
+}
+valik.forEach(
+    (value: string, value2: string) => {
+        console.log(value + ' ' + value2);
+    } 
+);
+valik2.forEach(
+    (value: string, v6ti: string) => {
+        console.log(value + ' ' + v6ti);
+    } 
+);
+funkar2();
+Nimeruum.funkar();
+
+
