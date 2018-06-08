@@ -211,3 +211,12 @@ span {
 article header, article section {
     color: var(--main-color)
 }
+
+.lisa {
+    color: black;
+    border-color: black;
+    background-image: linear-gradient(25deg,lightskyblue, #8f2f2f , teal 80%);
+    width: 100%;
+    border-radius: 15px;
+
+}
