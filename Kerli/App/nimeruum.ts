@@ -2,12 +2,12 @@
 console.log('nimeruum.ts');
 
 namespace Nimeruum {
-    console.log('Test');
+ //   console.log('Test');
     let tassNim = 'Tass';
     export function tass() {
-        console.log(tassNim);
+//        console.log(tassNim);
     }
 }
 function tass1() {
-    console.log('Tass1');
+  //  console.log('Tass1');
 }

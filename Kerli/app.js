@@ -35,7 +35,7 @@ omNumber = Number.MAX_VALUE;
 omNumber = Number.EPSILON;
 omNumber = Number.POSITIVE_INFINITY;
 omNumber = 12 / 2;
-console.log(Number.isFinite(omNumber));
+//console.log(Number.isFinite(omNumber));
 var massiiv3 = [6, 7, 8, 9, 10];
 massiiv3 = massiiv3.concat(massiiv3);
 massiiv3.shift(); //eemaldab esimese
@@ -45,14 +45,13 @@ massiiv3.unshift(12);
 massiiv3.reverse();
 massiiv3.sort(function (a, b) { return a - b; }); //suuruse järjekorras numbrid
 massiiv3.sort(function (a, b) {
-    console.log(a + ' ' + b);
     return a - b;
 });
-console.log(massiiv3);
+//console.log(massiiv3);
 var set3 = new Set([6, 7, 8, 9]);
 set3.add(13);
 set3.delete(8);
-console.log(set3.size + '' + set3.has(8));
+//console.log(set3.size + '' + set3.has(8));
 set3.clear();
 var map3 = new Map([[2, 6], [3, 5], [4, 6]]);
 map3.set(9, 12); //lisad elemendi
@@ -63,21 +62,53 @@ while (s6ne3.search('hele') !== -1) {
     s6ne3 = s6ne3.replace('hele', 'Juuli');
 }
 var s6ned = s6ne3.split(' ');
-console.log(s6ned);
+//console.log(s6ned);
 var komArv = parseFloat('2.44444');
 var pi = Math.PI;
 omNumber = Math.pow(2, 2);
 omNumber = Math.sqrt(16);
 omNumber = Math.random() * 10;
 var kp = new Date(Date.now());
-console.log(kp.getDate());
+//onsole.log(kp.getDate());
 kp.setDate(21);
-console.log('aeg ' + kp.getDay());
+//console.log('aeg ' + kp.getDay());
 try {
     throw 'Kk';
 }
 catch (error) {
     console.log(error);
+}
+var aside2 = document.getElementById('aside2');
+var aside = document.getElementsByTagName('aside');
+var pealkiri = document.querySelector('header > h2'); //tagastab esimese elemendi
+var pealkirjad = document.querySelectorAll('header > h2'); //tagastab kõik elemendid
+if (aside2 && aside.length >= 2) {
+    console.log(aside2);
+    console.log(aside.item(1));
+}
+if (pealkiri && aside.length >= 1) {
+    pealkiri.classList.add('lisa');
+    //pealkiri.classList.add('lisa');
+    //peakiri.setAttribute('class', 'lisa');
+    var klassid = pealkiri.getAttribute('class');
+    if (klassid) {
+        var kl = klassid.split(' ');
+        kl.push('lisa3');
+        pealkiri.setAttribute('class', kl.join(' '));
+    }
+    var syndmus_1 = function () {
+        pealkirjad.item(0).classList.add('lisa');
+        var nupp = document.createElement('BUTTON');
+        nupp.addEventListener('click', function () { alert('Juust'); });
+        var tekst = document.createTextNode('Klikk');
+        nupp.appendChild(tekst); //pane element sisse
+        pealkirjad.item(0).appendChild(nupp);
+        pealkiri.removeEventListener('click', syndmus_1);
+    };
+    pealkiri.addEventListener('click', syndmus_1);
+    // pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    // pealkiri.outerHTML = pealkirjad.item(0).outerHTML;
+    console.log(pealkirjad.item(0));
 }
 console.log('klass.ts');
 var Klass1 = /** @class */ (function () {
@@ -107,10 +138,10 @@ var Kujund = /** @class */ (function () {
         this.nimetus = 'Kujund';
     }
     Kujund.prototype.nimeta = function () {
-        console.log(this.nimetus + this.leiaAla());
+        //console.log(this.nimetus+ this.leiaAla());
     };
     Kujund.staatiline = function () {
-        console.log('Staatiline');
+        //console.log('Staatiline');
     };
     return Kujund;
 }());
@@ -126,7 +157,7 @@ var Ruut = /** @class */ (function (_super) {
         return this.a * this.b;
     };
     Ruut.prototype.nimeta = function () {
-        console.log('MRuut ' + this.leiaAla());
+        //console.log('MRuut '+ this.leiaAla());
     };
     return Ruut;
 }(Kujund));
@@ -142,27 +173,27 @@ var Ristkylik = /** @class */ (function (_super) {
     };
     Ristkylik.prototype.nimeta = function () {
         _super.prototype.nimeta.call(this);
-        console.log('MRistkylik ' + this.leiaAla());
+        //console.log('MRistkylik '+ this.leiaAla());
     };
     return Ristkylik;
 }(Kujund));
 var square = new Ruut(4);
 square.nimeta(); //kujund 16
-console.log(square.avalik);
+//console.log(square.avalik);
 var ristkylik = new Ristkylik(4, 6);
 ristkylik.nimeta(); //kujund 24
 console.log('nimeruum.ts');
 var Nimeruum;
 (function (Nimeruum) {
-    console.log('Test');
+    //   console.log('Test');
     var tassNim = 'Tass';
     function tass() {
-        console.log(tassNim);
+        //        console.log(tassNim);
     }
     Nimeruum.tass = tass;
 })(Nimeruum || (Nimeruum = {}));
 function tass1() {
-    console.log('Tass1');
+    //  console.log('Tass1');
 }
 console.log('main ts ss');
 /* true false*/
