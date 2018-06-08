@@ -26,7 +26,7 @@ var __rest = (this && this.__rest) || function (s, e) {
             t[p[i]] = s[p[i]];
     return t;
 };
-console.log('dom.ts');
+console.log('------------dom.ts------------');
 var omBool = true;
 var omNumber = 0.000012;
 console.log(omNumber.toExponential()); //1.2 * 10^(-5)
@@ -85,12 +85,53 @@ console.log(aeg.getDay());
 aeg.setDate(21);
 console.log(aeg.getDay());
 try {
-    throw 'mkaaaaay';
+    // throw 'mkaaaaay';
 }
 catch (error) {
     console.log(typeof (error));
     console.log(error);
 }
+//DOM
+var aside = document.getElementById('aside1');
+var asides = document.getElementsByTagName('aside');
+// document.getElementsByClassName
+// document.getElementsByName
+//$('#aside')
+//if(aside) === if(aside !== null || aside !== undefined))
+if (aside && asides.length !== 0) {
+    console.log(aside, asides.item(1));
+}
+var pealkirih2 = document.querySelector('h2'); //sama mis jQuery, tagastab esimese ettejuhtuva
+var pealkirjad = document.querySelectorAll('h3'); //tagastab kõik sellised elemendid
+//outerHTML: <h3>tekst koos tagidega</h3>; innerHTML: tekst ilma tagideta 
+if (pealkirih2) {
+    pealkirih2.classList.add('lisa');
+    console.log('test');
+    var s6neKlass = pealkirih2.getAttribute('class');
+    if (s6neKlass) {
+        console.log(s6neKlass);
+        var klassid = s6neKlass.split(' ');
+        klassid.push('lisa3');
+        pealkirih2.setAttribute('class', klassid.join(' '));
+    }
+    //pealkirjad.item(0).outerHTML = pealkirih2.outerHTML;
+    //pealkirih2.outerHTML = pealkirjad.item(0).outerHTML;
+    console.log(pealkirjad.item(0));
+}
+/*pealkirih2.setAttribute('class', 'lisa lisa2');
+pealkirih2.innerHTML = '<em>Hello TypeScript</em>';
+pealkirjad.item(0).outerHTML = pealkirih2.outerHTML; */
+var tekstike = document.querySelector('section > p');
+tekstike.addEventListener('click', function () {
+    var nupp = document.createElement('BUTTON');
+    nupp.addEventListener('click', function () {
+        alert('vajutasid nuppu');
+    });
+    tekstike.appendChild(nupp);
+    var tekst = document.createTextNode('createTextNode');
+    nupp.appendChild(tekst);
+    nupp.classList.add('lisa');
+});
 console.log('kass.ts');
 var Klass = /** @class */ (function () {
     function Klass(name) {
@@ -120,8 +161,12 @@ var Kujund = /** @class */ (function () {
     Kujund.prototype.nimeta = function () {
         console.log('kujund ' + this.leiaAla());
     };
+    Kujund.staatiline = function () {
+        console.log('Static');
+    };
     return Kujund;
 }());
+Kujund.staatiline();
 var Ruut = /** @class */ (function (_super) {
     __extends(Ruut, _super);
     function Ruut(a) {
@@ -379,6 +424,7 @@ set.forEach(function (value, value2) {
 //    console.log(`${value}  ${value2}`);
 //});
 funkar2();
+Nimeruum.funkar();
 console.log('nimeruum.ts');
 var Nimeruum;
 (function (Nimeruum) {

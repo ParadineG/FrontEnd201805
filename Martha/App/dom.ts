@@ -1,5 +1,42 @@
 'use strict';
 console.log('dom.ts');
+// dom 
+const aside = document.getElementById('aside-1');
+const asides = document.getElementsByTagName('aside');
+// document.getElementsByClassName 
+// document.getElementByName
+// jQuery $('#aside-1');
+const pealkiri = document.querySelector('header > h2') // esimene element mis ette satub
+const pealkirjad =  document.querySelectorAll('header > h3') // kõik elemendid mis selle nimetusega
+if (aside && asides.length >= 2) {
+    console.log(aside);
+    console.log(asides.item(1));
+}
+if(pealkiri && asides.length >= 1) {
+    pealkiri.classList.add('lisa');
+    const s6neKlass = pealkiri.getAttribute('class');
+    if(s6neKlass) {
+        const klassid = s6neKlass.split(' ');
+        klassid.push('lisa3');
+        pealkiri.setAttribute('class', klassid.join(' '));
+    }
+
+    const syndmus = pealkiri.addEventListener('click', () => {
+        pealkirjad.item(0).classList.add('lisa')
+        const nupp = document.createElement('BUTTON');
+        nupp.addEventListener('click', ()=> {alert('Tere nupp')});
+        const tekst = document.createTextNode('Click me!');
+        nupp.appendChild(tekst); //appendChild - pane see textnode nupu sisse
+        pealkirjad.item(0).appendChild(nupp);
+        pealkiri.removeEventListener('click', syndmus);
+     });
+    pealkiri.addEventListener('click', syndmus);
+    pealkiri.setAttribute('class', 'lisa lisa2');
+    //pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    //pealkiri.outerHTML = pealkirjad.item(0).outerHTML;
+    console.log(pealkirjad.item(0));
+    
+    }
 
 let omBool = true;
 let omNumber = 0.0000000012;
@@ -34,7 +71,7 @@ console.log(massiiv3);
 let set3 = new Set([6, 7, 8, 9]);
 set3.add(12);
 set3.delete(8);
-console.log(set3.size + ' ' set3.has(8));
+// console.log(set3.size + ' ' set3.has(8));
 set3.clear();
 
 let map3 = new Map([

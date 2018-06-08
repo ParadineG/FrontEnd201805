@@ -11,10 +11,10 @@ abstract class Kujund implements IKujund{
     }
     protected abstract leiaAla(): number;
     public nimeta(){
-        console.log(this.nimetus+ this.leiaAla());
+        //console.log(this.nimetus+ this.leiaAla());
     }
     public static staatiline() {
-        console.log('Staatiline');
+        //console.log('Staatiline');
     }
 }
 Kujund.staatiline();
@@ -27,7 +27,7 @@ class Ruut extends Kujund {
         return this.a * this.b;
     }
     public nimeta(){
-        console.log('MRuut '+ this.leiaAla());
+        //console.log('MRuut '+ this.leiaAla());
     }
 }
 class Ristkylik extends Kujund {
@@ -40,11 +40,11 @@ class Ristkylik extends Kujund {
     }
     public nimeta(){
         super.nimeta();
-        console.log('MRistkylik '+ this.leiaAla());
+        //console.log('MRistkylik '+ this.leiaAla());
     }
 }
 const square = new Ruut(4);
 square.nimeta(); //kujund 16
-console.log(square.avalik);
+//console.log(square.avalik);
 const ristkylik = new Ristkylik(4, 6);
 ristkylik.nimeta(); //kujund 24

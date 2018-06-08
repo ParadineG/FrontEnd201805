@@ -199,3 +199,9 @@ span {
 #aside-1:hover {
     animation-play-state: running;
 }
+article header, article footer {
+    background-color: var (--main-color);
+}
+.lisa{
+    background-color: darkgoldenrod!important;
+}
