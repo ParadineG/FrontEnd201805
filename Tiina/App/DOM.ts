@@ -1,5 +1,40 @@
 'use strict';
 console.log('dom.ts');
+//dom
+const aside = document.getElementById('aside-1');
+const asides = document.getElementsByTagName('aside');
+//$('#aside-1');//jQuery
+const pealkiri = document.querySelector('header > h2');//Tagasatb esimese elemendi, mille leiab
+const pealkirjad = document.querySelectorAll('header > h3');//Tagastab kõik elemendid, mille leiab
+if (aside && asides.length !== 0) {
+    console.log(aside);
+    console.log(asides.item(1));
+}
+if (pealkiri) {
+    pealkiri.classList.add('lisa');
+    const soneklass = pealkiri.getAttribute('class');
+    if (soneklass){
+        const klassid = soneklass.split('');
+        klassid.push('lisa3');
+        klassid.join(' ');
+        pealkiri.setAttribute('class', klassid.join(' '));
+    }
+    const syndmus = () =>{ pealkirjad.item(0).classList.add('lisa');
+    const nupp = document.createElement('BUTTON');
+    nupp.addEventListener('click', () => {alert('mistoimub');});
+    const tekst = document.createTextNode('vajuta mind');
+    nupp.appendChild(tekst);
+    pealkirjad.item(0).appendChild(nupp);
+    pealkiri.removeEventListener('click', syndmus);
+};
+    pealkiri.addEventListener('click',syndmus );
+    //pealkiri.addEventListener('click', () => pealkiri.classList.remove('lisa'));
+    //pealkiri.addEventListener('click', () => {alert('It is me, Mario'); });
+    //pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    //pealkiri.innerHTML = "Hello Typescript";
+    
+}
+
 
 let omBool = true;
 let omNumber = 0.00000018;
@@ -60,9 +95,12 @@ console.log(aeg.getDate());
 aeg.setDate(21);
 console.log('Kuupäev: ' + aeg.getDate());
 
+//vea tuvastus
 try {
     throw 'Try!!!!!';
 } catch (error) {
     console.log(typeof(error));
     console.log(error);
 }
+
+

@@ -1,6 +1,42 @@
 'use strict';
 console.log('dom.ts');
 
+/*dom */
+const aside = document.getElementById('aside-1');//tagastab kas html elementi või 0
+const asides = document.getElementsByTagName('aside');//tagastab massiivi, mitmuses
+// document.getElementsByClassName
+// document.getElementsByName vormide jaoks
+// $('#aside-1');//Jquery
+const pealkiri = document.querySelector('header > h2');//tagastab ainult esimese leitud elemendi
+const pealkirjad = document.querySelectorAll('header > h2');//tagastab kõik leitud elemendid
+if (aside) {
+    console.log(aside);
+    console.log(asides.item(1));
+}
+if (pealkiri && asides.length >=1) {
+    pealkiri.classList.add('lisa');
+    const s6neKlass = pealkiri.getAttribute('class');
+    if (s6neKlass) {
+        const klassid = s6neKlass.split(' ');
+        klassid.push('lisa3');
+        pealkiri.setAttribute('class', klassid.join(' '));
+    }
+    const syndmus = () => {
+        pealkirjad.item(0).classList.add('lisa'); 
+        const nupp = document.createElement('BUTTON');
+        nupp.addEventListener('click', () => { alert ('Tere nupp')});
+        const tekst = document.createTextNode('Vajuta mind');
+        nupp.appendChild(tekst); //pane see node selle nupu sisse
+        pealkirjad.item(0).appendChild(nupp);
+        pealkiri.removeEventListener('click', syndmus); 
+    };
+    pealkiri.addEventListener('click', syndmus);
+    //pealkiri.setAttribute('class', 'lisa lisa2');
+   // pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    pealkiri.innerHTML = '<em>Hello Typescript</em>';//muutis pealkirja ära
+    console.log(pealkirjad.item(0));
+    
+}
 let omBool = true;
 let omNumber = 0.0000000012; 
 console.log(omNumber.toExponential());///1.2 * 10 astmes -9
@@ -73,3 +109,6 @@ try {
     console.log(typeof(error));
     console.log(error);
 }
+
+
+
