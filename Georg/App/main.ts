@@ -1,3 +1,4 @@
+/// <referance path='nimeroom.ts'/>
 'use strict';
 
 console.log('Hello TS');
@@ -276,3 +277,4 @@ set.forEach( (value: string, value2: string) => {
 //});
 
 funkar2();
+Nimeruum.funkar();

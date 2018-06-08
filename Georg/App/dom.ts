@@ -1,5 +1,5 @@
 'use strict'
-console.log('dom.ts');
+console.log('------------dom.ts------------');
 
 let omBool = true;
 let omNumber = 0.000012;
@@ -67,9 +67,59 @@ console.log(aeg.getDay());
 
 
 try {
-    throw 'mkaaaaay';
+    // throw 'mkaaaaay';
 } catch (error) {
     console.log(typeof(error));
     console.log(error);
 }
+
+//DOM
+const aside = document.getElementById('aside1');
+const asides = document.getElementsByTagName('aside');
+// document.getElementsByClassName
+// document.getElementsByName
+//$('#aside')
+//if(aside) === if(aside !== null || aside !== undefined))
+
+if (aside && asides.length !== 0) {
+    console.log(aside, asides.item(1));
+}
+
+const pealkirih2 = document.querySelector('h2') //sama mis jQuery, tagastab esimese ettejuhtuva
+const pealkirjad = document.querySelectorAll('h3') //tagastab kõik sellised elemendid
+
+//outerHTML: <h3>tekst koos tagidega</h3>; innerHTML: tekst ilma tagideta 
+if (pealkirih2) {
+    pealkirih2.classList.add('lisa');
+    console.log('test');
+    
+    const s6neKlass = pealkirih2.getAttribute('class');
+    if (s6neKlass) {
+        console.log(s6neKlass);
+        const klassid = s6neKlass.split(' ');
+        klassid.push('lisa3');
+        pealkirih2.setAttribute('class', klassid.join(' '));
+    }
+
+    //pealkirjad.item(0).outerHTML = pealkirih2.outerHTML;
+    //pealkirih2.outerHTML = pealkirjad.item(0).outerHTML;
+    console.log(pealkirjad.item(0));
+}
+/*pealkirih2.setAttribute('class', 'lisa lisa2');
+pealkirih2.innerHTML = '<em>Hello TypeScript</em>';
+pealkirjad.item(0).outerHTML = pealkirih2.outerHTML; */ 
+
+const tekstike = document.querySelector('section > p');
+
+tekstike.addEventListener('click', () => {
+    const nupp = document.createElement('BUTTON');
+    nupp.addEventListener('click', () => {
+        alert('vajutasid nuppu');
+    })
+    tekstike.appendChild(nupp);
+    const tekst = document.createTextNode('createTextNode');
+    nupp.appendChild(tekst);
+    nupp.classList.add('lisa');
+});
+
 
