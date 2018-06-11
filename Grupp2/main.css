@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&amp;subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=latin-ext');
 :root {
     font-family: 'Roboto', sans-serif !important;
-    font-size: 12px;
     --t-green: #28B78D;
     --t-black: #0F0F0F;
     --t-yellow: #F2C94C;
@@ -23,7 +22,7 @@ body {
 }
 
 .text-light {
-    color: white !important;
+    color: var(--t-white) !important;
 }
 
 footer ul li a {
@@ -85,12 +84,12 @@ small {
 }
 
 .px-45 {
-    margin-left: 30px !important;
-    margin-right: 30px !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
 }
 
 .mb-25 {
-    margin-bottom: 6px;
+    margin-bottom: 6px !important;
 }
 @media (min-width: 992px) {
     .ml-lg-15 {
@@ -105,6 +104,6 @@ small {
 @media (min-width: 1200px) {
     #personal-menu {
         max-width: 296px;
-        padding: 59px 12px;
+        padding: 59px 12px !important;
     }
 }
