@@ -1,24 +1,25 @@
-console.log('helper.ts');
+console.log("helper.ts");
 
 namespace Helper {
     const _cacheHTML = new Map<string, string>();
-    // fetch API ja vanemate veebilehitsejate toetuseks xhr
-    export const fetchContent = async(file: string) => {
+
+    // Fetch API xhr
+    export const fetchContent = async (file: string) => {
+        // Tasub panna (try & catch) siia ümber
         const response = await fetch(file);
         const templateHTML = await response.text();
-        // try catch vahele lisatakse !!!
-
         return templateHTML;
     }
-    export const getHTMLTemplate = async(name: string) => {
+
+    export const getHTMLTemplate = async (name: string) => {
         if (!_cacheHTML.has(name)) {
-            const content = await fetchContent(`templates/${name}-template.html`); 
+            const content = await fetchContent(`template/${name}-template.html`);
             if (content) {
                 _cacheHTML.set(name, content);
             } else {
-                alert('error');
+                alert("error!");
             }
         }
         return _cacheHTML.get(name);
-    }
+    };
 }
