@@ -119,6 +119,7 @@ var AcquireItems = /** @class */ (function (_super) {
                         _a._template = _b.sent();
                         if (this._module && this._template) {
                             this._module.outerHTML = this._template;
+                            this._module = document.querySelector('main');
                         }
                         this._bindEvents();
                         this._render();
@@ -128,17 +129,83 @@ var AcquireItems = /** @class */ (function (_super) {
         });
     };
     AcquireItems.prototype._bindEvents = function () {
+        // tyhi
     };
     AcquireItems.prototype._render = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Helper.fetchContent('/data/featuredPosts.php')];
+                    case 1:
+                        data = _a.sent();
+                        console.log(data);
+                        if (data) {
+                            this._posts = JSON.parse(data);
+                            if (this._module) {
+                                this._module.innerText = this._posts[0].description;
+                            }
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     return AcquireItems;
 }(Page));
+/// <reference path='helper.ts'/>
+/// <reference path='page.ts'/>
+console.log('acquireItems.ts');
+var ProvideItem = /** @class */ (function (_super) {
+    __extends(ProvideItem, _super);
+    function ProvideItem() {
+        var _this = _super.call(this) || this;
+        _this._posts = [];
+        _this._cacheDOM();
+        return _this;
+        // bind events
+        // render
+    }
+    ProvideItem.prototype._cacheDOM = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this._module = document.querySelector('main');
+                        _a = this;
+                        return [4 /*yield*/, Helper.getHTMLTemplate('provide-item')];
+                    case 1:
+                        _a._template = _b.sent();
+                        if (this._module && this._template) {
+                            this._module.outerHTML = this._template;
+                        }
+                        this._bindEvents();
+                        this._render();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ProvideItem.prototype._bindEvents = function () {
+    };
+    ProvideItem.prototype._render = function () {
+    };
+    return ProvideItem;
+}(Page));
 ///<reference path='page.ts'/>
 ///<reference path='acquireItems.ts'/>
+///<reference path='provideItem.ts'/>
 console.log('main.ts');
 var App = /** @class */ (function () {
     function App() {
+        this._mainNavLinks = [{ name: 'Acquire items', link: '#acquire/items' },
+            { name: 'Provide item', link: '#provide/item' },
+            { name: 'Acquire services', link: '#acquire/services' },
+            { name: 'Provide service', link: '#provide/service' }];
+        this._navLinks = [];
         this._page;
+        this._navLinks = this._mainNavLinks /*, ...this._footerNavLinks*/.slice();
         this._bindEvents();
         this._setup();
     }
@@ -147,13 +214,22 @@ var App = /** @class */ (function () {
         //()=>{}  
     };
     App.prototype._setup = function () {
-        if (window.location.hash === '') {
-            this._page = new AcquireItems();
-        }
         this._urlChanged();
     };
     App.prototype._urlChanged = function () {
         console.log(window.location.hash);
+        if (window.location.hash === this._navLinks[0].link) {
+            this._page = new AcquireItems();
+        }
+        else if (window.location.hash === this._navLinks[1].link) {
+            this._page = new ProvideItem();
+        }
+        else if (window.location.hash === '') {
+            this._page = new ProvideItem();
+        }
+        else {
+            this._page = new ProvideItem();
+        }
     };
     return App;
 }());

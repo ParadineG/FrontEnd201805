@@ -28,14 +28,23 @@ class AcquireItems extends Page {
         
         if (this._module && this._template) {
             this._module.outerHTML = this._template;
+            this._module = document.querySelector('main');
         }
         this._bindEvents();
         this._render();
     }
     protected _bindEvents() {
+        // tyhi
 
     }
-    protected _render() {
-
+    protected async _render() {
+        const data = await Helper.fetchContent('/data/featuredPosts.php');
+        console.log(data);
+        if (data) {
+            this._posts = JSON.parse(data) as IPost[];
+            if (this._module) {
+                this._module.innerText = this._posts[0].description;
+            }
+        }
     }
 }
