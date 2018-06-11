@@ -7,7 +7,7 @@
     --t-black: #0F0F0F;
     --t-yellow: #F2C94C;
     --t-lgray: #E0E0E0;
-    --t-dgray: #828282;
+    --t-dgray: #828282; 
     --t-white: #F2F2F2;
 }
 body {
@@ -34,21 +34,60 @@ small {
 }
 #main-menu-ul span, #main-menu-ul li {
     min-width: 421px;
-    max-width: 421px;
+   /* max-width: 421px; */
 }
 #main-menu-ul a {
     display: inline-block;
-    min-width: 210px;
-    max-width: 210px;
+    min-width: 49.8%;
+    /* max-width: 210px; */
+}
+#personal-menu {
+    min-width: 296px;
+}
+
+#personal-menu > button, #personal-menu ul a {
+    min-height: 36px;
+    max-height: 36px;
+
+}
+
+#userName {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .mr-05 {
     margin-right: 1px!important;
 }
-
-.mr-15 {
-    margin-right: 3px!important;
+.mx-35 {
+    margin-left: 12px!important;
+    margin-right: 12px!important;
 }
-.ml-15 {
-    margin-left: 3px!important;
+
+.py-25 {
+    padding-top: 6px!important;
+    padding-bottom: 6px!important;
+}
+
+.px-45 {
+    padding-left: 30px!important;
+    padding-right: 30px!important;
+}
+.mb-25 {
+    margin-bottom: 6px;
+}
+@media (min-width: 992px) {
+    .mr-lg-15 {
+        margin-right: 3px!important;
+    }
+    .ml-lg-15 {
+        margin-left: 3px!important;
+    }
+}
+@media (min-width: 1200px) {
+
+    #personal-menu {
+        max-width: 296px;
+        padding: 59px 12px;
+    }
 }
