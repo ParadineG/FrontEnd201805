@@ -104,3 +104,4 @@ if (pealkiri && aside.length >=1) {
     // pealkiri.outerHTML = pealkirjad.item(0).outerHTML;
      console.log(pealkirjad.item(0));
 }
+
