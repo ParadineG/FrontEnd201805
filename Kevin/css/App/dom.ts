@@ -70,3 +70,37 @@ try {
     console.log(typeof(error))
     console.log(error)
 }
+
+const aside2 = document.getElementById('aside2');
+const aside = document.getElementsByTagName('aside');
+const pealkiri = document.querySelector('header > h2'); //tagastab esimese elemendi
+const pealkirjad = document.querySelectorAll('header > h2'  ) //tagastab kõik elemendid
+if (aside2 && aside.length >= 2) {
+    console.log(aside2);
+    console.log(aside.item(1));
+}
+if (pealkiri && aside.length >=1) {
+    pealkiri.classList.add('lisa');
+     //pealkiri.classList.add('lisa');
+     //peakiri.setAttribute('class', 'lisa');
+     const klassid = pealkiri.getAttribute('class');
+     if (klassid) {
+        const kl = klassid.split(' ');
+        kl.push('lisa3');
+       pealkiri.setAttribute('class', kl.join(' '));
+
+     }
+     const syndmus = () => {
+        pealkirjad.item(0).classList.add('lisa');
+        const nupp = document.createElement('BUTTON');
+        nupp.addEventListener('click', () => {alert('Juust');});
+        const tekst = document.createTextNode('Klikk');
+        nupp.appendChild(tekst); //pane element sisse
+        pealkirjad.item(0).appendChild(nupp);
+        pealkiri.removeEventListener('click', syndmus);
+    };
+        pealkiri.addEventListener('click', syndmus);
+    // pealkirjad.item(0).outerHTML = pealkiri.outerHTML;
+    // pealkiri.outerHTML = pealkirjad.item(0).outerHTML;
+     console.log(pealkirjad.item(0));
+}
