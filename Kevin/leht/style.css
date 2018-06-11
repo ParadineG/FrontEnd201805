@@ -89,6 +89,6 @@ small {
 @media (min-width:1200px) {
     #personal-menu {
         max-width: 296px;
-        padding: 59px 12px;
+        padding: 59px 12px !important;
     }
 }
