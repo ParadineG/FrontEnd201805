@@ -49,6 +49,7 @@ var Helper;
 (function (Helper) {
     var _this = this;
     var _cacheHTML = new Map();
+    // fetch API ja vanemate veebilehitsejate toetuseks xhr
     Helper.fetchContent = function (file) { return __awaiter(_this, void 0, void 0, function () {
         var response, templateHTML;
         return __generator(this, function (_a) {
