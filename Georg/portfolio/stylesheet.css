@@ -1,0 +1,73 @@
+#GGT {
+  margin-top: 1em;
+}
+
+#profilePic {
+  display: block;
+  width: 230px;
+  border-style: solid;
+  border-radius: 50%;
+  margin-top: 80px;
+
+}
+
+div#GGT > h1{
+  margin-bottom: 1em;
+  font-size: 2.8rem;
+}
+
+div#about {
+  margin: 3em 2em 2em 2em;
+  text-align: justify;
+  width: 95%;
+}
+
+div#portfolio > h2 {
+  margin: 1.5em 2em 2.5em 0;
+}
+
+div.col {
+  margin-bottom: 2.5em;
+}
+
+div.col > a > img {
+  border-style: solid;
+  border-radius: 10px;
+}
+
+#certificates {
+  display: block;
+  margin-top: 100px;
+}
+
+#certificates > a {
+  display: block;
+}
+@media (min-width: 992px) {
+  div#about > p {
+    width: 65%;
+  }
+}
+
+@media (max-width: 992px) {
+  div#about {
+    margin: 1.5em 0 1em 0;
+  }
+  #certificates {
+    margin-top: 0;
+  }
+}
+
+.footer {
+  height:90px;
+  margin-top: 25px;
+}
+.footer > p {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.footer > a {
+  padding-right: 20px;
+
+}

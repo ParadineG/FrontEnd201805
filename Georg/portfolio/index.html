@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Georg-Gert Tammeleht">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="javascript.js"></script>
+    <title>Georg's Portfolio</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-light bg-light navbar-expand-sm fixed-top">
+        <a href="#" class="navbar-brand">GGT</a>
+
+        <button class="navbar-toggler" data-toggle="collapse"
+        data-target="#navCollapse"><span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="navbar-item">
+              <a href="#" class="nav-link">Portfolio</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="nav-link">About Me</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="GGT">
+        <img id="profilePic" src="profilePic.jpg" class="mx-auto img-fluid" alt="Responsive profile picture">
+        <h1 class="text-center">Georg-G. Tammeleht</h1>
+      </div>
+      <hr>
+
+    <div id="portfolio">
+      <h2>Here are some of my projects</h2>
+      <div class="row text-center">
+        <div class="col">
+          <a data-toggle="modal" data-target="#modalCalc"><img src="projectPics/simpleCalculator.png" style="width: 220px; height: 200px"></a>
+          <p>Calculator</p>
+        </div>
+        <div class="col">
+          <a data-toggle="modal" data-target="#modalTicTacToe"><img src="projectPics/ticTacToe.png" style="width: 220px; height: 200px"></a>
+          <p>Tic-Tac-Toe</p>
+        </div>
+        <div class="col">
+          <a data-toggle="modal" data-target="#modalWheather"><img src="projectPics/weatherApp.png" style="width: 220px; height: 200px"></a>
+          <p>Local Weather App</p>
+        </div>
+      </div>
+      <div class="row text-center justify-content-center">
+        <div class="col">
+          <a data-toggle="modal" data-target="#modalSimon"><img src="projectPics/simonGame.png" style="width: 220px; height: 200px"></a>
+          <p>Simon Game</p>
+        </div>
+        <div class="col">
+          <a data-toggle="modal" data-target="#modalPomodoro"><img src="projectPics/pomodoroTimer.png" style="width: 220px; height: 200px"></a>
+          <p>Pomodoro Timer</p>
+        </div>
+      </div>
+
+        <div class="modal fade" id="modalCalc">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">Simple Calculator</h5>
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body" style="text-align: center">
+                <img class="text-center" src="/Users/tammekas/Desktop/võrgurakendused/portfolio/projectPics/simpleCalculator.png" style="width:65%">
+                <p style="text-align: justify; padding: 10px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+              <div class="modal-footer">
+                <a href="https://codepen.io/georg234/pen/jYpWxz"><button class="btn btn-success">View Code</button></a>
+                <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <div id="about">
+      <h2>Little Bit About Me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+    <div id="certificates">
+      <h2>Certificates</h2>
+      <h6>My freeCodeCamp certificate</h6>
+      <img class="img-fluid"src="certificate.png" style="width: 718px">
+      <a href="https://www.freecodecamp.org/certification/georg234/legacy-front-end">Certification link</a>
+    </div>
+
+  </div>
+
+  <footer class="footer bg-light text-center">
+    <a><i class="fab fa-github fa-3x"></i><a>
+    <a><i class="fab fa-free-code-camp fa-3x"></i></a>
+    <p>georg.tammeleht@gmail.com</p>
+  </footer>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
