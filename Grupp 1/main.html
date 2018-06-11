@@ -9,19 +9,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-white">
     <div>
-        <nav class="navbar">
-            <a href="">
+        <nav class="navbar justify-content-center justify-content-xl-start px-0">
+            <a href="" class="navbar-brand mx-35 px-45">
                 <img src="images/logo.png" width="212" alt="Tradent">
             </a>
-            <ul id="main-menu-ul" class="nav">
-                <li class="nav-item clearfix flex-fill mr-15">
+            <ul id="main-menu-ul" class="nav justify-content-around">
+                <li class="nav-item clearfix flex-fill mx-0 mr-lg-15">
                     <span class="nav-link text-uppercase bg-green text-light font-14 text-center">Acquire</span>
                     <a class="nav-link text-uppercase bg-dark text-light float-left text-center mr-05" href="#acquire/item">Item</a>
                     <a class="nav-link text-uppercase bg-dark text-light float-right text-center" href="#acquire/service">Service</a>
                 </li>
-                <li class="nav-item clearfix flex-fill ml-15">
+                <li class="nav-item clearfix flex-fill mx-0 ml-lg-15">
                     <span class="nav-link text-uppercase bg-green text-light font-14 text-center">Provide</span>
                     <a class="nav-link text-uppercase bg-dark text-light float-left text-center mr-05" href="#provide/item">Item</a>
                     <a class="nav-link text-uppercase bg-dark text-light float-right text-center" href="#provide/service">Service</a>
@@ -29,22 +29,39 @@
             </ul>
         </nav>
     </div>
-    <div>
-        <nav>
-
+    <div class="d-flex flex-column-reverse flex-xl-row">
+        <nav id="personal-menu" class="navbar align-items-start align-self-xl-start p-0">
+            <button class="navbar-toggler bg-green text-light flex-fill rounded-0" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse flex-row justify-content-start align-items-start show" id="navbarNav">
+                <a id="username" class="navbar-brand bg-green text-light text-center w-100 h1 mb-2" href="#person/self">John Doe</a>
+                <ul class="nav nav-pills align-items-start">
+                    <li class="nav-item flex-fill align-middle mb-25">
+                        <a class="nav-link rounded-0 bg-green text-light text-center text-uppercase px-5 py-25 font-14 active" href="#person/self/items/">My Items
+                            <span class="sr-only"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item flex-fill align-middle mb-25">
+                        <a class="nav-link rounded-0 bg-green text-light text-center text-uppercase px-5 py-25 font-14" href="#person/self/wish/">Wishlist</a>
+                    </li>
+                    <li class="nav-item flex-fill align-middle mb-25">
+                        <a class="nav-link rounded-0 bg-green text-light text-center text-uppercase px-5 py-25 font-14" href="#person/self/trade/">Trade History</a>
+                    </li>
+                    <li class="nav-item flex-fill align-middle mb-25">
+                        <a class="nav-link rounded-0 bg-green text-light text-center text-uppercase px-5 py-25 font-14" href="#person/self/messages/">Messages</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-        <div>
-            <header>
+        <main>
 
-            </header>
-            <main>
-
-            </main>
-        </div>
+        </main>
     </div>
     <footer>
         <nav class="navbar bg-dark navbar-dark py-0">
-            <ul class="nav">
+            <ul class="nav flex-column my-2 my-sm-0 flex-sm-row">
                 <li class="nav-item">
                     <a class="nav-link active text-light text-uppercase" href="#about">About Tradent</a>
                 </li>
