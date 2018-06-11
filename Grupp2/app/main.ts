@@ -35,9 +35,7 @@ class App {
     }
     private _urlChanged() {
         console.log(window.location.hash);
-        console.log('wazaaa');
         if (window.location.hash === this._mainNavLinks[0].link) {
-            console.log('wazaaa');
             this._page = new AcquireItems();
         } else if (window.location.hash === this._mainNavLinks[1].link) {
             this._page = new Provideitem();

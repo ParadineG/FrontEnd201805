@@ -41,8 +41,11 @@ class AcquireItems extends Page {
 
     protected async _render() {
         const data = await Helper.fetchContent('/data/featuredPosts.php');
-        if (this._module) {
-            this._module.innerText = data;
+        if (data) {
+            this._posts = JSON.parse(data) as IPost[];
+            if (this._module) {
+                this._module.innerText = this._posts[0].description;
+            }
         }
     }
 }

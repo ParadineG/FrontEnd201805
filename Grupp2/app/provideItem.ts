@@ -18,7 +18,7 @@ class Provideitem extends Page {
 
     protected async _cacheDOM() {
         this._module = document.querySelector('main');
-        this._template = await Helper.getHTMLTemplate('acquire-items');
+        this._template = await Helper.getHTMLTemplate('provide-item');
 
         if (this._module && this._template) {
             this._module.outerHTML = this._template;

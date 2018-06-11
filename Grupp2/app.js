@@ -134,8 +134,11 @@ var AcquireItems = /** @class */ (function (_super) {
                     case 0: return [4 /*yield*/, Helper.fetchContent('/data/featuredPosts.php')];
                     case 1:
                         data = _a.sent();
-                        if (this._module) {
-                            this._module.innerText = data;
+                        if (data) {
+                            this._posts = JSON.parse(data);
+                            if (this._module) {
+                                this._module.innerText = this._posts[0].description;
+                            }
                         }
                         return [2 /*return*/];
                 }
@@ -163,7 +166,7 @@ var Provideitem = /** @class */ (function (_super) {
                     case 0:
                         this._module = document.querySelector('main');
                         _a = this;
-                        return [4 /*yield*/, Helper.getHTMLTemplate('acquire-items')];
+                        return [4 /*yield*/, Helper.getHTMLTemplate('provide-item')];
                     case 1:
                         _a._template = _b.sent();
                         if (this._module && this._template) {
@@ -206,9 +209,7 @@ var App = /** @class */ (function () {
     };
     App.prototype._urlChanged = function () {
         console.log(window.location.hash);
-        console.log('wazaaa');
         if (window.location.hash === this._mainNavLinks[0].link) {
-            console.log('wazaaa');
             this._page = new AcquireItems();
         }
         else if (window.location.hash === this._mainNavLinks[1].link) {

@@ -1,8 +1,7 @@
 <?php
 ini_set('display_errors','0');
 session_start();
-if(isset($_SESSION['login']))
-{
+
     $mysqli = mysqli_connect('localhost','root','','tradent');
 
     $global = mysqli_query($mysqli,"SELECT * FROM items ");
@@ -21,8 +20,5 @@ if(isset($_SESSION['login']))
     header('Content-type: application/json;charset=utf-8'); //Setting the page Content-type
     $myJSON = json_encode($myArray);
     echo $myJSON;
-} else {
-    header('Content-type: application/json;charset=utf-8');
-    echo '[]';
-}
+
 ?>
