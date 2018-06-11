@@ -1,16 +1,10 @@
 ///<reference path='helper.ts' />
 ///<reference path='page.ts' />
 
-console.log('acquireItems.ts');
+console.log('provideitem.ts');
 
-interface IPost {
-    name: string;
-    description: string;
-    price: number;
-    photo: string;
-}
 
-class AcquireItems extends Page {
+class Provideitem extends Page {
 
     private _posts: IPost[] = [];
     constructor() {  
@@ -28,7 +22,6 @@ class AcquireItems extends Page {
 
         if (this._module && this._template) {
             this._module.outerHTML = this._template;
-            this._module = document.querySelector('main');
         }
 
         this._bindEvents();
@@ -39,10 +32,7 @@ class AcquireItems extends Page {
         
     }
 
-    protected async _render() {
-        const data = await Helper.fetchContent('/data/featuredPosts.php');
-        if (this._module) {
-            this._module.innerText = data;
-        }
+    protected _render() {
+        
     }
 }

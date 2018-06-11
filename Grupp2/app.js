@@ -115,6 +115,7 @@ var AcquireItems = /** @class */ (function (_super) {
                         _a._template = _b.sent();
                         if (this._module && this._template) {
                             this._module.outerHTML = this._template;
+                            this._module = document.querySelector('main');
                         }
                         this._bindEvents();
                         this._render();
@@ -126,15 +127,74 @@ var AcquireItems = /** @class */ (function (_super) {
     AcquireItems.prototype._bindEvents = function () {
     };
     AcquireItems.prototype._render = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Helper.fetchContent('/data/featuredPosts.php')];
+                    case 1:
+                        data = _a.sent();
+                        if (this._module) {
+                            this._module.innerText = data;
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     return AcquireItems;
 }(Page));
+///<reference path='helper.ts' />
+///<reference path='page.ts' />
+console.log('provideitem.ts');
+var Provideitem = /** @class */ (function (_super) {
+    __extends(Provideitem, _super);
+    function Provideitem() {
+        var _this = _super.call(this) || this;
+        _this._posts = [];
+        _this._cacheDOM();
+        return _this;
+    }
+    Provideitem.prototype._cacheDOM = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this._module = document.querySelector('main');
+                        _a = this;
+                        return [4 /*yield*/, Helper.getHTMLTemplate('acquire-items')];
+                    case 1:
+                        _a._template = _b.sent();
+                        if (this._module && this._template) {
+                            this._module.outerHTML = this._template;
+                        }
+                        this._bindEvents();
+                        this._render();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Provideitem.prototype._bindEvents = function () {
+    };
+    Provideitem.prototype._render = function () {
+    };
+    return Provideitem;
+}(Page));
 ///<reference path='page.ts' />
 ///<reference path='acquireItems.ts' />
+///<reference path='provideItem.ts' />
 console.log('main.ts');
 var App = /** @class */ (function () {
     function App() {
+        this._mainNavLinks = [{ name: 'Acquire items', link: '#acquire/items' },
+            { name: 'Provide item', link: '#provide/item' },
+            { name: 'Acquire services', link: '#acquire/services' },
+            { name: 'Provide service', link: '#provide/service' }];
+        this._navLinks = [];
         this._page;
+        this._navLinks = this._mainNavLinks /*, ...this_footerNavLinks*/.slice();
         this._bindEvents();
         this._setup();
     }
@@ -142,13 +202,24 @@ var App = /** @class */ (function () {
         window.addEventListener('hashchange', this._urlChanged.bind(this));
     };
     App.prototype._setup = function () {
-        if (window.location.hash === '') {
-            this._page = new AcquireItems();
-        }
         this._urlChanged();
     };
     App.prototype._urlChanged = function () {
         console.log(window.location.hash);
+        console.log('wazaaa');
+        if (window.location.hash === this._mainNavLinks[0].link) {
+            console.log('wazaaa');
+            this._page = new AcquireItems();
+        }
+        else if (window.location.hash === this._mainNavLinks[1].link) {
+            this._page = new Provideitem();
+        }
+        else if (window.location.hash === '') {
+            this._page = new AcquireItems();
+        }
+        else {
+            this._page = new AcquireItems();
+        }
     };
     return App;
 }());
