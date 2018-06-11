@@ -11,6 +11,8 @@ interface IPost {
 
 class AcquireItems extends Page {
     private _posts: IPost[] = [];
+    private _template: string | undefined;
+    private _module: HTMLMainElement | null;
     constructor() {
         super();
         this._cacheDOM();
@@ -18,9 +20,6 @@ class AcquireItems extends Page {
         // render
     }
 
-    private _template: string | undefined;
-
-    private _module: HTMLMainElement | null;
     protected async _cacheDOM() {
         this._module = document.querySelector('main');
         this._template = await Helper.getHTMLTemplate('acquire-items');

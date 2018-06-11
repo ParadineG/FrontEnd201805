@@ -2,7 +2,7 @@ console.log('helper.ts');
 
 namespace Helper {
     const _cacheHTML = new Map<string, string>();
-
+    // fetch API ja vanemate veebilehitsejate toetuseks xhr
     export const fetchContent = async(file: string) => {
         const response = await fetch(file);
         const templateHTML = await response.text();
