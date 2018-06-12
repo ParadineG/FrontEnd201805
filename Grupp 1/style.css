@@ -109,6 +109,20 @@ footer > nav > ul {
     padding-top: 6px!important;
 }
 
+#main-item-list {
+    column-gap: 6px;
+}
+
+#main-item-list > li {
+    display: inline-block;
+    min-width: 278px;
+    max-width: 279px;
+}
+
+.column-count-auto {
+    column-count: auto;
+}
+
 @media (min-width: 992px) {
     .mr-lg-15 {
         margin-right: 3px!important;
@@ -121,21 +135,14 @@ footer > nav > ul {
     #main-item-list, main > form, main > hr {
         max-width: 848px;
     }
-
-    #main-item-list {
-        column-gap: 6px;
-    }
-
-    #main-item-list > li {
-        display: inline-block;
-        min-width: 278px;
-        max-width: 279px;
-    }
 }
 
 @media (min-width: 1200px) {
     #personal-menu {
         max-width: 296px;
         padding: 59px 12px;
+    }
+    .column-count-xl-3 {
+        column-count: 3;
     }
 }
