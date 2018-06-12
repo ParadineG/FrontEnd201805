@@ -83,15 +83,7 @@ small, .font-10 {
 .mb-35 {
     margin-bottom: 12px!important;
 }
-@media (min-width: 992px) {
-    .mr-lg-15 {
-        margin-right: 3px!important;
-    }
-    .ml-lg-15 {
-        margin-left: 3px!important;
-    }
-    
-    #main-item-list, main > form, main > hr {
+#main-item-list, main > form, main > hr {
         max-width: 848px; 
     }
     #main-item-list {
@@ -102,10 +94,23 @@ small, .font-10 {
         min-width: 278px;
         max-width: 279px;
     }
+    .column-count-auto {
+        column-count: auto;
+    }
+@media (min-width: 992px) {
+    .mr-lg-15 {
+        margin-right: 3px!important;
+    }
+    .ml-lg-15 {
+        margin-left: 3px!important;
+    }
 }
 @media (min-width: 1200px){
     #personal-menu {
         max-width:296px;
         padding: 59px 12px!important;
+    }
+    .column-count-xl-3 {
+        column-count: 3;
     }
 }

@@ -24,6 +24,6 @@ namespace Helper {
     };
     export const parseHTMLString = 
         (target: string, mustache: string, content: string) => {
-            return target.replace(new RegExp(mustache, 'g')  content);
+            return target.replace(new RegExp(mustache, 'g'),  content);
         }
 }

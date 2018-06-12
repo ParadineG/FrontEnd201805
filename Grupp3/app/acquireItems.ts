@@ -21,8 +21,7 @@ class AcquireItems extends Page {
     constructor() {
         super();
         this._cacheDom();
-
-    }
+}
 
     private _template: string | undefined;
 
@@ -31,6 +30,9 @@ class AcquireItems extends Page {
     private _module: HTMLMainElement | null;
 
     private _list: HTMLUListElement | null; 
+
+    private _input: HTMLInputElement | null;
+    
 
     protected async _cacheDom() {
         this._module = document.querySelector('main');
@@ -45,19 +47,23 @@ class AcquireItems extends Page {
                     this._microTemplate = temp.innerHTML;
                 }
                 this._list = this._module.querySelector('#main-item-list');
-                
-                
-            }
+                this._input = this._module.querySelector('input');
+               
+                this._bindEvents();
+                this._render();
+              }
         }
-        this._bindEvents();
-        this._render();
+        
     }
     protected _bindEvents(){
-        // tyhi
+        if(this._input){
+        this._input.addEventListener('input', this._render.bind(this, this._input));
+        }
     }
-    protected async _render(){
+    protected async _render(filter?: HTMLInputElement){
+        console.log(filter);
         const data = await Helper.fetchContent('/data/featuredPosts.php');
-        if(data && this._list) {
+        if (data && this._list) {
             this._posts = JSON.parse(data) as IPost[];
             
             let dataHTML = '';
@@ -67,8 +73,14 @@ class AcquireItems extends Page {
                     const parsePass2 = Helper.parseHTMLString(parsePass1, '{{cardDescription}}', value.description);
                     const parsePass3 = Helper.parseHTMLString(parsePass2, '{{cardLink}}', `/data/${value.photo}`);
                     const parsePass4 = Helper.parseHTMLString(parsePass3, '{{cardPrice}}', `${value.price}€`);
-                    dataHTML += parsePass4;
-                    console.log(dataHTML);
+                    if (filter){
+                        if (value.name.toLowerCase().includes(filter.value.toLowerCase())){
+                            dataHTML += parsePass4;
+                        }
+                    } else{
+                        dataHTML += parsePass4;
+                    }
+                   
                 }
             );
             this._list.innerHTML = dataHTML;
