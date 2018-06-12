@@ -1,3 +1,26 @@
-<main>
-    Acquire items!
+<main id="acquire-items" class="py-35">
+    <form class="form-inline mb-2 w-100 mx-auto">
+        <input type="search" placeholder="Search" aria-label="Search"
+            class="form-control m-0 w-100 rounded-0">
+    </form>
+    <h2 class="text-center font-14 text-uppercase mb-0">Featured posts</h2>
+    <hr class="mt-0 mb-35">
+    <ul id="main-item-list" 
+        class="card-columns text-center text-lg-left column-count-auto column-count-xl-3 p-0 mx-auto mx-xl-0">
+        <!-- sisu m22ratakse template abil -->
+    </ul>
+    <!-- <script id="item-template" type="text/template"> -->
+    <template id="item-template">
+        <li class="card border-0 shadow-sm">
+            <img class="card-img-top rounded-0" src="{{cardLink}}" alt="{{cardTitle}}">
+            <div class="card-body text-justify bg-gray border-top-0 p-1">
+                <h5 class="card-title font-14" >{{cardTitle}}</h5>
+                <p class="card-text text-gray font-10">{{cardDescription}}</p>
+                <p>
+                    <strong class="font-14">{{cardPrice}}</strong>
+                    <a href="#" class="btn bg-dark text-light rounded-0 float-right font-10">Details</a>
+                </p>
+            </div>
+        </li>
+    </template>
 </main>

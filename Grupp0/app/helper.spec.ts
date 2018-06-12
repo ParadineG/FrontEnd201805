@@ -1,7 +1,9 @@
-/// <reference path='provideItem.ts'/>
+/// <reference path='helper.ts'/>
 
+// @ts-ignore
 import * as mocha from 'mocha';
 import * as chai from 'chai';
+import '../app.js';
 
 const expect = chai.expect;
 describe('My math library', () => {
