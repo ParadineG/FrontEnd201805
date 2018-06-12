@@ -1,11 +1,15 @@
-Facebooki ja Instagrami logod pole menüü riba keskel,
-jäävad kas liiga alla või üles.
 
 
-Headeri laius ei ühti allpool oleva sisu laiusega(sellega hetkel ei ole tegelenud väga palju).
+// Update  12. Juuni
+-- 	kahjuks polnud aega et leht valmis saada.
 
-Sisu pole hetkel lisanud kuna soovisin üldist layouti paika saada. Ilmselt tuleb lehele veel
-mõni sektsioon maini ja footeri vahele. Nädalavahetusel rohkem aega tegeleda.
+--	Korrastasin cssi koodi, panin enam vähem loogilisse järjekorda,
+	et oleks parem elemente leida
+
+---	Hakkasin lisama mobiili vaadet max width 900px ja max width 600px.
+  	900px 
+
+--	Tahan ka teha navigatsiooni riba ümber mobiili vaate jaoks. Hamburgeri nupuga
 
 
-Samuti pole lisanud veel mobiili vaateid jms.
+
