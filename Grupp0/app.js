@@ -85,6 +85,10 @@ var Helper;
             }
         });
     }); };
+    function add(x, y) {
+        return x + y;
+    }
+    Helper.add = add;
 })(Helper || (Helper = {}));
 console.log('page.ts');
 var Page = /** @class */ (function () {

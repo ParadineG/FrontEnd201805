@@ -22,4 +22,7 @@ namespace Helper {
 
         return _cacheHTML.get(name);
     };
+    export function add(x: number, y: number) {
+        return x + y;
+    }
 }

@@ -13,6 +13,8 @@ class AcquireItems extends Page {
     private _posts: IPost[] = [];
     private _template: string | undefined;
     private _module: HTMLMainElement | null;
+    private _microTemplate: string;
+    private _list: HTMLUListElement | null;
 
     constructor() {
         super();
@@ -27,6 +29,13 @@ class AcquireItems extends Page {
         if (this._module && this._template) {
             this._module.outerHTML = this._template;
             this._module = document.querySelector("main");
+            if (this._module) {
+                const temp = this._module.querySelector("template");
+                if (temp) {
+                    this._microTemplate = temp.innerHTML;
+                }
+                this._list = this._module.querySelector("#main-item-list");
+            }
         }
         this._bindEvents();
         this._render();
@@ -38,11 +47,20 @@ class AcquireItems extends Page {
 
     protected async _render() {
         const data = await Helper.fetchContent("/data/featuredPosts.php");
-        if (data) {
+        if (data && this._list) {
             this._posts = JSON.parse(data) as IPost[];
-            if (this._module) {
-                this._module.innerText = this._posts[0].description;
-            }
+
+            let dataHTML = "";
+            this._posts.forEach(
+                (value: IPost) => {
+                    const parsePass1 = Helper.parseHTMLString(this._microTemplate, "{{cardTitle}}", value.name);
+                    const parsePass2 = Helper.parseHTMLString(parsePass1, "{{cardDescription}}", value.description);
+                    const parsePass3 = Helper.parseHTMLString(parsePass2, "{{cardLink}}", `/data/${value.photo}`);
+                    const parsePass4 = Helper.parseHTMLString(parsePass3, "{{cardPrice}}", `${value.price}€`);
+                    dataHTML += parsePass4;
+                }
+            );
+            this._list.innerHTML = dataHTML;
         }
     }
 }
