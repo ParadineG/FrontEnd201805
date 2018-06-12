@@ -116,6 +116,11 @@ small, .font-10 {
     min-width: 278px;
     max-width: 279px;
 }
+
+.column-count-auto {
+    column-count: auto;
+}
+
 @media (min-width: 992px) {
     .ml-lg-15 {
         margin-left: 3px !important;
@@ -134,5 +139,8 @@ small, .font-10 {
     #personal-menu {
         max-width: 296px;
         padding: 59px 12px !important;
+    }
+    .column-count-xl-3 {
+        column-count:  3;
     }
 }

@@ -125,18 +125,22 @@ var AcquireItems = /** @class */ (function (_super) {
                                     this._microTempate = temp.innerHTML;
                                 }
                                 this._list = this._module.querySelector('#main-item-list');
+                                this._input = this._module.querySelector('input');
+                                this._bindEvents();
+                                this._render();
                             }
                         }
-                        this._bindEvents();
-                        this._render();
                         return [2 /*return*/];
                 }
             });
         });
     };
     AcquireItems.prototype._bindEvents = function () {
+        if (this._input) {
+            this._input.addEventListener('input', this._render.bind(this, this._input));
+        }
     };
-    AcquireItems.prototype._render = function () {
+    AcquireItems.prototype._render = function (filter) {
         return __awaiter(this, void 0, void 0, function () {
             var data, dataHTML_1;
             var _this = this;
@@ -153,7 +157,14 @@ var AcquireItems = /** @class */ (function (_super) {
                                 var parsePass2 = Helper.parseHTMLString(parsePass1, '{{cardDescription}}', value.description);
                                 var parsePass3 = Helper.parseHTMLString(parsePass2, '{{cardLink}}', "/data/" + value.photo);
                                 var parsePass4 = Helper.parseHTMLString(parsePass3, '{{cardPrice}}', value.price + "\u20AC");
-                                dataHTML_1 += parsePass4;
+                                if (filter) {
+                                    if (value.name.toLowerCase().includes(filter.value.toLowerCase())) {
+                                        dataHTML_1 += parsePass4;
+                                    }
+                                }
+                                else {
+                                    dataHTML_1 += parsePass4;
+                                }
                             });
                             this._list.innerHTML = dataHTML_1;
                             //           if (this._module) {
