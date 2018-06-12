@@ -12,7 +12,7 @@ class App {
     [{name: 'Acquire items', link: '#acquire/items'},
     {name: 'Provide item', link: '#provide/item'},
     {name: 'Acquire services', link: '#acquire/services'},
-    {name: 'Provide service', link: '#acquire/service'}];
+    {name: 'Provide service', link: '#provide/service'}];
     private _navLinks: INavLink[] = [];
     private  _page: Page;
 

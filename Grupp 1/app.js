@@ -84,6 +84,9 @@ var Helper;
             }
         });
     }); };
+    Helper.parseHTMLString = function (target, mustache, content) {
+        return target.replace(new RegExp(mustache, "g"), content);
+    };
 })(Helper || (Helper = {}));
 console.log("page.ts");
 var Page = /** @class */ (function () {
@@ -104,7 +107,7 @@ var AcquireItems = /** @class */ (function (_super) {
     }
     AcquireItems.prototype._cacheDOM = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a;
+            var _a, temp;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -116,6 +119,14 @@ var AcquireItems = /** @class */ (function (_super) {
                         if (this._module && this._template) {
                             this._module.outerHTML = this._template;
                             this._module = document.querySelector("main");
+                            if (this._module) {
+                                temp = this._module.querySelector("template");
+                                if (temp) {
+                                    this._microTemplate = temp.innerHTML;
+                                }
+                                this._list = this._module.querySelector("#main-item-list");
+                                this._input = this._module.querySelector("input");
+                            }
                         }
                         this._bindEvents();
                         this._render();
@@ -125,20 +136,37 @@ var AcquireItems = /** @class */ (function (_super) {
         });
     };
     AcquireItems.prototype._bindEvents = function () {
+        if (this._input) {
+            this._input.addEventListener("input", this._render.bind(this, this._input));
+        }
     };
-    AcquireItems.prototype._render = function () {
+    AcquireItems.prototype._render = function (filter) {
         return __awaiter(this, void 0, void 0, function () {
-            var data;
+            var data, dataHTML_1;
+            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, Helper.fetchContent("/data/featuredPosts.php")];
                     case 1:
                         data = _a.sent();
-                        if (data) {
+                        if (data && this._list) {
                             this._posts = JSON.parse(data);
-                            if (this._module) {
-                                this._module.innerText = this._posts[0].description;
-                            }
+                            dataHTML_1 = "";
+                            this._posts.forEach(function (value) {
+                                var parsePass1 = Helper.parseHTMLString(_this._microTemplate, "{{cardTitle}}", value.name);
+                                var parsePass2 = Helper.parseHTMLString(parsePass1, "{{cardDescription}}", value.description);
+                                var parsePass3 = Helper.parseHTMLString(parsePass2, "{{cardLink}}", "/data/" + value.photo);
+                                var parsePass4 = Helper.parseHTMLString(parsePass3, "{{cardPrice}}", value.price + "\u20AC");
+                                if (filter) {
+                                    if (value.name.toLowerCase().includes(filter.value.toLowerCase().replace(/^\s+/g, ""))) {
+                                        dataHTML_1 += parsePass4;
+                                    }
+                                }
+                                else {
+                                    dataHTML_1 += parsePass4;
+                                }
+                            });
+                            this._list.innerHTML = dataHTML_1;
                         }
                         return [2 /*return*/];
                 }

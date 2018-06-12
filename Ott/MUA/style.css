@@ -2,6 +2,7 @@
 
 body {
     padding: 0;
+    margin: 0;
     display: -ms-grid;
     display: grid;
     grid: 
@@ -11,95 +12,85 @@ body {
     / 1fr 3fr;
     background-color: #FFBED7;
     font-family: 'Roboto', Helvetica, sans-serif;
-    
 }
-/*body > aside, body > main, body > footer {
-    margin: 15px;
-}*/
+
 body > * {
     margin: 10px;
 }
-aside {
-    grid-area: aside;
-    background-color: #FFD8E7;
-    padding: 15px;
-}
+
+/* Header ja selle elemendid */
 header {
     display: flex;
-    margin: 10px;
-    width: 99%;
-    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
     background-color: black;
     color: white;
     grid-area: header;
     position: relative;
-    
 }
 #logo {
     position: absolute;
     height: 120px;
     bottom: 30%;
-    left: 8%;
+    left: 7%;
 }
-.pealkiri {
+#header-pealkiri {
     position: absolute;
     bottom: 30%;
-    left: 30%;
+    left: 32%;
 }
-.pealkiri > h2 {
+#header-pealkiri > .pealkiri > h2 {
     font-weight: 400;
 }
 
-main {
-    padding: 10px;
-    grid-area: main;
-    background-color: #FFD8E7;
-}
+/* Navigatsiooni riba */
 .navBar {
-    
     display: flex;
     justify-content: flex-end;
     width: 100%;
     background-color: #B2738C;
-    height: 30px;
-    line-height: 30px;
     position: absolute;
     bottom: 0;
     margin: 0;
     padding: 0;
-    
-}
+ }
 li a {
+    display: block;
     text-decoration: none;
     color: white;
-    padding: 10px;
-    font-size: 18px;
-    text-align: center;
-    
+    height: 22px;
+    padding: 5px 10px 5px 10px;
+    font-size: 16px;
 }
 li {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    align-items: center;
+}
+.socialmedia {
+    height: 22px;
+    width: 22px;
+}
+a:hover {
+    background-color: #FFD8E7;
+    color: #B2738C;
 }
 
-/* seda kasutades lükkab navigatsiooni menüü  ikoonid vastu menüü alaserva */
-/*
-ul li img {
-    vertical-align: middle;
-}*/
+
+    /* Menüüriba lõppes*/
+/* Header lõppes */
 
 
-.navItem a:hover, a:hover {
+/* */
+ main {
+    padding: 10px;
+    grid-area: main;
     background-color: #FFD8E7;
-    
-    color: #B2738C;
- }
-
-.socialmedia {
-    height: 23px;
-    width: 23px;
+}
+aside {
+    grid-area: aside;
+    background-color: #FFD8E7;
+    padding: 15px;
 }
 footer {
     display: flex;
@@ -110,14 +101,98 @@ footer {
 footer > * {
     margin: 10px;
 }
-.foto {
-    width: 300px;
-}
-a {
+#E-mail {
     text-decoration: none;
     color: black;
 }
+#E-mail:hover {
+    background-color: #B2738C;
+    color: white;
+}
+
+.foto {
+    width: 300px;
+}
+
 #map {
     height: 150px;
     width: 250px;
 }
+/* Media query max-width 900px(Headeri elementide paigutus, et lehe nimi ja logo sobiksid sellises vaates paremini)*/
+@media screen and (max-width:900px){
+    body {
+       margin: 0;
+    }
+    header {
+        height: 250px;
+    }
+    #logo {
+        height: 100px;
+        bottom: 55%;
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #header-pealkiri{
+        bottom: 15%;
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 50px;
+    }
+    body, body > * {
+        margin: 5px;
+    }
+ }
+
+/* Media query max-width 600px, mobiili vaade*/
+@media screen and (max-width:600px){
+    body {
+        margin: 0;
+        padding: 0;
+        grid: 
+        "header"
+        "main"
+        "aside"
+        "footer";
+    }
+    /* Header max-width 600px*/
+    header{
+        margin: 0;
+        width: 100%;
+    }
+    
+    #logo {
+        height: 80px;
+        bottom: 57%;
+    }    
+    #header-pealkiri {
+        margin-left: 40px;
+        bottom: 16%;
+    }
+    #header-pealkiri > .pealkiri > h2 {
+        margin: 5px 0 5px 0;
+    }
+    #header-pealkiri > .pealkiri > blockquote {
+        margin: 10px 0 15px 25px;
+        font-size: 12px;
+    }
+    /*Menüü riba max width 600px(lihtsalt et hetkel oleks parem vaadata, proovin hamburger-menüü nupuga kohendada menüüd
+    ühe nupu alla, et nupule vajutades menüü avaneks) */ 
+    .navBar {
+        justify-content: center;
+        width: 100%;
+    }
+    li a {
+        padding: 8px 7px;
+        font-size: 22px;
+    }
+    .socialmedia {
+        height: 23px;
+        width: 23px;
+    }
+ }

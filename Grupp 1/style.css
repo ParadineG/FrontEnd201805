@@ -5,8 +5,8 @@
     --t-green: #28b78d;
     --t-black: #0f0f0f;
     --t-yellow: #f2c94c;
-    --t-lightgrey: #e0e0e0;
-    --t-darkgrey: #828282;
+    --t-lightgray: #e0e0e0;
+    --t-darkgray: #828282;
     --t-white: #f2f2f2;
 }
 
@@ -19,7 +19,7 @@ body {
     color: var(--t-white);
 }
 
-.navbar-brand {
+.navbar-brand, .font-10 {
     font-size: 10px;
 }
 
@@ -29,6 +29,14 @@ body {
 
 .bg-green {
     background-color: var(--t-green)!important;
+}
+
+.bg-gray {
+    background-color: var(--t-lightgray);
+}
+
+.text-gray {
+    color: var(--t-darkgray);
 }
 
 .font-14 {
@@ -78,6 +86,11 @@ footer > nav > ul {
     margin-right: 12px!important;
 }
 
+.py-35 {
+    padding-top: 12px!important;
+    padding-bottom: 12px!important;
+}
+
 .px-45 {
     padding-left: 30px!important;
     padding-right: 30px!important;
@@ -87,9 +100,27 @@ footer > nav > ul {
     margin-bottom: 6px;
 }
 
+.mb-35 {
+    margin-bottom: 12px!important;
+}
+
 .py-25 {
     padding-bottom: 6px!important;
     padding-top: 6px!important;
+}
+
+#main-item-list {
+    column-gap: 6px;
+}
+
+#main-item-list > li {
+    display: inline-block;
+    min-width: 278px;
+    max-width: 279px;
+}
+
+.column-count-auto {
+    column-count: auto;
 }
 
 @media (min-width: 992px) {
@@ -100,11 +131,18 @@ footer > nav > ul {
     .ml-lg-15 {
         margin-left: 3px!important;
     }
+
+    #main-item-list, main > form, main > hr {
+        max-width: 848px;
+    }
 }
 
 @media (min-width: 1200px) {
     #personal-menu {
         max-width: 296px;
         padding: 59px 12px;
+    }
+    .column-count-xl-3 {
+        column-count: 3;
     }
 }
