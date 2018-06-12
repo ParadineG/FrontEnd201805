@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<header>
-			<a class="logo">
+			<a class="logo" href="index.html">
 				<picture>
 					<img src="media/qualia_logo_medium_210x70.png">
 				</picture>
@@ -24,7 +24,7 @@
 					<a class="nav-link" title="Kolmas" href="#">Kolmas</a>
 					<a class="nav-link" title="Neljas" href="#">Neljas</a>
 					<a class="nav-link" title="Viies" href="#">Viies</a>
-					<a class="nav-link menuIcon" id="menuIcon" href="javascript:void(0);" onclick="showMenuIcon()">
+					<a class="nav-link menuIcon" id="menuIcon" onclick="showMenuIcon()">
 					<i class="fas fa-bars"></i></a>
 			</div>
 		</header>
@@ -82,11 +82,11 @@
 		</footer>
 		<script>
 		function showMenuIcon() {
-		    var x = document.getElementById("navbar-links");
-		    if (x.className === "navbar") {
-		        x.className += " responsive";
+		    var navbarLinks = document.getElementById("navbar-links");
+		    if (navbarLinks.className === "navbar") {
+		        navbarLinks.className += " responsive";
 		    } else {
-		        x.className = "navbar";
+		        navbarLinks.className = "navbar";
 		    }
 		}
 		</script>
