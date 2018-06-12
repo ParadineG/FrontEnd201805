@@ -85,6 +85,9 @@ var Helper;
             }
         });
     }); };
+    Helper.parseHTMLString = function (target, mustache, content) {
+        return target.replace(new RegExp(mustache, 'g'), content);
+    };
 })(Helper || (Helper = {}));
 console.log('page.ts');
 var Page = /** @class */ (function () {
@@ -108,7 +111,7 @@ var AcquireItems = /** @class */ (function (_super) {
     }
     AcquireItems.prototype._cacheDOM = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a;
+            var _a, temp;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -120,6 +123,13 @@ var AcquireItems = /** @class */ (function (_super) {
                         if (this._module && this._template) {
                             this._module.outerHTML = this._template;
                             this._module = document.querySelector('main');
+                            if (this._module) {
+                                temp = this._module.querySelector('template');
+                                if (temp) {
+                                    this._microTemplate = temp.innerHTML;
+                                }
+                                this._list = this._module.querySelector('#main-item-list');
+                            }
                         }
                         this._bindEvents();
                         this._render();
@@ -133,18 +143,25 @@ var AcquireItems = /** @class */ (function (_super) {
     };
     AcquireItems.prototype._render = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var data;
+            var data, dataHTML_1;
+            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, Helper.fetchContent('/data/featuredPosts.php')];
                     case 1:
                         data = _a.sent();
                         //this._module.innerText = data;
-                        if (data) {
+                        if (data && this._list) {
                             this._posts = JSON.parse(data);
-                            if (this._module) {
-                                this._module.innerText = this._posts[0].description;
-                            }
+                            dataHTML_1 = '';
+                            this._posts.forEach(function (value) {
+                                var parsePass1 = Helper.parseHTMLString(_this._microTemplate, '{{cardTitle}}', value.name);
+                                var parsePass2 = Helper.parseHTMLString(parsePass1, '{{cardDescription}}', value.description);
+                                var parsePass3 = Helper.parseHTMLString(parsePass2, '{{cardLink}}', "/data/" + value.photo);
+                                var parsePass4 = Helper.parseHTMLString(parsePass3, '{{cardPrice}}', value.price + "\u20AC");
+                                dataHTML_1 += parsePass4;
+                            });
+                            this._list.innerHTML = dataHTML_1;
                         }
                         return [2 /*return*/];
                 }
@@ -202,7 +219,7 @@ var App = /** @class */ (function () {
         this._mainNavLinks = [{ name: 'Acquire items', link: '#acquire/items' },
             { name: 'Provide item', link: '#provide/item' },
             { name: 'Acquire services', link: '#acquire/services' },
-            { name: 'Provide service', link: '#acquire/service' }];
+            { name: 'Provide service', link: '#provide/service' }];
         this._navLinks = [];
         this._page;
         this._navLinks = this._mainNavLinks /*, ...this._footerNavLinks*/.slice();
