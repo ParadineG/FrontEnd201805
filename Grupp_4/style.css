@@ -17,7 +17,7 @@ body{
     background-color: var(--t-black)!important;
 }
 .bg-gray {
-    background-color: var(--t-lgray)!important;
+    background-color: var(--t-lgrey)!important;
 }
 .bg-green{
     background-color: var(--t-green)!important;
@@ -26,7 +26,7 @@ body{
     color: var(--t-white)!important;
 }
 .text-gray {
-    color: var(--t-dgray)!important;
+    color: var(--t-dgrey)!important;
 }
 small, .font-10 {
     font-size: 10px;
@@ -95,6 +95,10 @@ small, .font-10 {
     min-width: 278px;
     max-width: 279px;
 }
+
+.column-count-auto {
+    column-count: auto;
+}
 @media(min-width: 992px){
     .mr-lg-15{
         margin-right: 3px!important;
@@ -111,5 +115,8 @@ small, .font-10 {
     #personal-menu{
         max-width: 296px;
         padding: 59px 12px!important;
+    }
+    .column-count-xl-3{
+        column-count: 3;
     }
 }
